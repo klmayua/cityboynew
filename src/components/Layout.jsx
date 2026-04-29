@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Navbar from './Navbar'
 
 const footerLinks = {
   resources: [
@@ -26,11 +25,8 @@ const socialLinks = [
 export default function Layout({ children }) {
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      {/* Navbar */}
-      <Navbar />
-      
       {/* Main Content */}
-      <main className="flex-1 pt-20">
+      <main className="flex-1">
         {children}
       </main>
 
