@@ -1,22 +1,18 @@
 import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, Sparkles, Search, ChevronDown, User, Heart, Users, Map, Video, MessageCircle, Briefcase } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { Menu, X, Search } from 'lucide-react'
 
 const navLinks = [
-  { name: 'Movement', href: '#' },
-  { name: 'Impact', href: '#' },
-  { name: 'Projects', href: '#' },
-  { name: 'Project Nigeria', href: '/project-nigeria' },
+  { name: 'Hub', href: '/', active: true },
+  { name: 'Transparency', href: '/transparency' },
+  { name: 'Donor', href: '/donate' },
   { name: 'Volunteer', href: '/volunteer' },
-  { name: 'Partner', href: '#' },
-  { name: 'Community', href: '#' },
-  { name: 'Media', href: '#' },
+  { name: 'Command', href: '#' },
 ]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
-  const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -25,48 +21,50 @@ export default function Navbar() {
   }, [])
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'glass py-3' : 'bg-transparent py-6'
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      scrolled 
+        ? 'border-b border-white/10 bg-[#003153]/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.5)]' 
+        : 'bg-transparent'
     }`}>
-      <div className="max-w-[1320px] mx-auto px-5 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3">
-          <div className="w-12 h-12 bg-gold rounded-xl flex items-center justify-center">
-            <span className="font-display font-bold text-prussian-dark text-lg">CB</span>
-          </div>
-          <span className="font-display font-bold text-xl text-white hidden sm:block">
-            CITY BOY<span className="text-gold">.</span>
-          </span>
-        </Link>
+      <div className="flex justify-between items-center px-8 h-20 w-full max-w-[1440px] mx-auto">
+        {/* Logo */}
+        <div className="text-2xl font-bold tracking-tighter text-secondary italic cursor-pointer">
+          City Boy Arena
+        </div>
 
-        <div className="hidden lg:flex items-center gap-8">
+        {/* Center Nav Links - Desktop */}
+        <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.href}
-              className="text-sm font-medium text-soft-ivory/80 hover:text-gold transition-colors"
+              className={`font-h3 text-[12px] uppercase font-bold tracking-tight transition-colors ${
+                link.active 
+                  ? 'text-secondary border-b-2 border-secondary pb-1' 
+                  : 'text-slate-300 hover:text-white'
+              }`}
             >
               {link.name}
             </Link>
           ))}
         </div>
 
-        <div className="hidden lg:flex items-center gap-4">
-          <button className="p-3 rounded-xl glass hover:bg-white/10 transition-colors">
-            <Search className="w-5 h-5 text-soft-ivory" />
-          </button>
-          <button className="p-3 rounded-xl glass hover:bg-white/10 transition-colors">
-            <Sparkles className="w-5 h-5 text-gold" />
-          </button>
-          <Link to="/join" className="btn-ghost text-sm py-3 px-5">
-            Join Arena
-          </Link>
-          <Link to="/donate" className="btn-gold text-sm py-3 px-5">
+        {/* Right Actions */}
+        <div className="flex items-center space-x-4">
+          <button className="px-6 py-2 bg-transparent border border-secondary text-secondary font-h3 text-[12px] uppercase font-bold hover:bg-secondary/10 transition-all">
             Donate
+          </button>
+          <Link 
+            to="/join" 
+            className="px-6 py-2 bg-secondary text-on-secondary font-h3 text-[12px] uppercase font-bold gold-glow active:scale-95 transition-all"
+          >
+            Join Now
           </Link>
         </div>
 
+        {/* Mobile Menu Button */}
         <button
-          className="lg:hidden p-3 rounded-xl glass"
+          className="md:hidden p-2"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? (
@@ -77,32 +75,35 @@ export default function Navbar() {
         </button>
       </div>
 
+      {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-0 top-20 bg-prussian-dark z-40 p-6">
+        <div className="md:hidden fixed inset-0 top-20 bg-surface-container-lowest z-40 p-6">
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
-                className="text-lg font-medium text-soft-ivory py-3 border-b border-white/10"
+                className="text-lg font-medium text-slate-300 py-3 border-b border-white/10"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.name}
               </Link>
             ))}
             <div className="flex flex-col gap-3 mt-6">
-              <Link to="/join" className="btn-ghost text-center">Join Arena</Link>
-              <Link to="/donate" className="btn-gold text-center">Donate</Link>
-            </div>
-            <div className="flex items-center gap-4 mt-6 pt-6 border-t border-white/10">
-              <button className="flex-1 flex items-center justify-center gap-2 py-3 glass rounded-xl">
-                <Search className="w-5 h-5" />
-                <span>Search</span>
-              </button>
-              <button className="flex-1 flex items-center justify-center gap-2 py-3 glass rounded-xl">
-                <Sparkles className="w-5 h-5 text-gold" />
-                <span>AI Helper</span>
-              </button>
+              <Link 
+                to="/donate" 
+                className="text-center py-3 border border-secondary text-secondary rounded-lg"
+                onClick={() => setMobileOpen(false)}
+              >
+                Donate
+              </Link>
+              <Link 
+                to="/join" 
+                className="text-center py-3 bg-secondary text-on-secondary rounded-lg font-bold"
+                onClick={() => setMobileOpen(false)}
+              >
+                Join Now
+              </Link>
             </div>
           </div>
         </div>
