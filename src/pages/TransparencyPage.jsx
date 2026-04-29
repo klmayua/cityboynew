@@ -1,216 +1,394 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
-import { DollarSign, Award, Users, Shield, MapPin, FileText, Download, TrendingUp, CheckCircle, ArrowRight } from 'lucide-react'
-
-const metrics = [
-  { icon: DollarSign, value: '₦2.4B', label: 'Total Raised', change: '+18%', color: 'gold' },
-  { icon: Award, value: '324', label: 'Projects Delivered', change: '+56', color: 'signal-green' },
-  { icon: DollarSign, value: '₦2.2B', label: 'Funds Deployed', change: '92%', color: 'prussian' },
-  { icon: Users, value: '12,847', label: 'Active Volunteers', change: '+847', color: 'gold' },
-]
-
-const projectList = [
-  { id: 1, name: 'Kano School Renovation Phase II', state: 'Kano', amount: '₦24.5M', status: 'completed', beneficiaries: '5,000 students', date: 'Apr 2026' },
-  { id: 2, name: 'Lagos Medical Outreach', state: 'Lagos', amount: '₦12.8M', status: 'completed', beneficiaries: '12,000 patients', date: 'Mar 2026' },
-  { id: 3, name: 'Abuja Skill Acquisition Center', state: 'Abuja', amount: '₦18.2M', status: 'in_progress', beneficiaries: '2,500 youth', date: 'Apr 2026' },
-  { id: 4, name: 'PHC Solar Installation', state: 'Rivers', amount: '₦15.6M', status: 'completed', beneficiaries: '25,000 patients', date: 'Feb 2026' },
-  { id: 5, name: 'Kaduna Water Project', state: 'Kaduna', amount: '₦32.1M', status: 'in_progress', beneficiaries: '15,000 households', date: 'Apr 2026' },
-  { id: 6, name: 'Enugu Youth Empowerment', state: 'Enugu', amount: '₦8.9M', status: 'completed', beneficiaries: '1,200 youth', date: 'Jan 2026' },
-]
-
-const states = [
-  { name: 'Lagos', projects: 45, funds: '₦420M', active: true },
-  { name: 'Kano', projects: 38, funds: '₦280M', active: true },
-  { name: 'Rivers', projects: 32, funds: '₦195M', active: true },
-  { name: ' Abuja', projects: 28, funds: '₦310M', active: true },
-  { name: 'Kaduna', projects: 24, funds: '₦180M', active: true },
-]
-
-const reports = [
-  { title: '2025 Annual Report', date: 'Jan 2026', size: '4.2 MB' },
-  { title: 'Q4 2025 Report', date: 'Jan 2026', size: '2.1 MB' },
-  { title: '2024 Annual Report', date: 'Jan 2025', size: '3.8 MB' },
-  { title: 'Audit Certificate 2025', date: 'Feb 2026', size: '1.2 MB' },
-]
 
 export default function TransparencyPage() {
   return (
-    <div className="min-h-screen pt-20 bg-soft-ivory">
-      <section className="py-16 bg-prussian">
-        <div className="max-w-[1320px] mx-auto px-5">
-          <div className="text-center mb-8">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/20 text-gold text-sm font-medium mb-4">
-              <Shield className="w-4 h-4" />
-              PUBLIC TRUST
-            </span>
-            <h1 className="font-display text-4xl md:text-6xl font-bold text-white mb-4">
-              Transparency Portal
-            </h1>
-            <p className="text-lg text-soft-ivory/70 max-w-2xl mx-auto">
-              Every naira tracked. Every project verified. Every impact measured.
-            </p>
+    <>
+      {/* TopNavBar */}
+      <header className="fixed top-0 w-full z-50 border-b border-white/10 bg-[#003153]/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+        <nav className="flex justify-between items-center px-8 h-20 w-full max-w-[1440px] mx-auto">
+          <div className="text-2xl font-black tracking-tighter text-secondary italic">City Boy Arena</div>
+          <div className="hidden md:flex items-center gap-8">
+            <Link to="/" className="font-sora tracking-tight font-bold uppercase text-xs text-slate-300 hover:text-white transition-colors">Hub</Link>
+            <Link to="/transparency" className="font-sora tracking-tight font-bold uppercase text-xs text-secondary border-b-2 border-secondary pb-1">Transparency</Link>
+            <Link to="/donate" className="font-sora tracking-tight font-bold uppercase text-xs text-slate-300 hover:text-white transition-colors">Donor</Link>
+            <Link to="/volunteer" className="font-sora tracking-tight font-bold uppercase text-xs text-slate-300 hover:text-white transition-colors">Volunteer</Link>
+            <Link to="#" className="font-sora tracking-tight font-bold uppercase text-xs text-slate-300 hover:text-white transition-colors">Command</Link>
           </div>
-
-          <div className="grid md:grid-cols-4 gap-4">
-            {metrics.map((metric, idx) => (
-              <div key={idx} className="glass-card rounded-2xl p-6">
-                <div className="flex items-center justify-between mb-2">
-                  <metric.icon className={`w-6 h-6 text-${metric.color}`} />
-                  <span className={`text-xs font-medium px-2 py-1 rounded-full bg-${metric.color}/10 text-${metric.color}`}>
-                    {metric.change}
-                  </span>
-                </div>
-                <p className="font-data text-3xl font-bold text-white">{metric.value}</p>
-                <p className="text-sm text-soft-ivory/60">{metric.label}</p>
-              </div>
-            ))}
+          <div className="flex items-center gap-4">
+            <button className="font-sora tracking-tight font-bold uppercase text-xs text-slate-300 hover:text-white transition-colors px-4 py-2">Donate</button>
+            <button className="bg-secondary text-on-secondary px-6 py-2 rounded-full font-sora font-bold uppercase text-xs shadow-[0_0_15px_rgba(233,195,73,0.3)] active:scale-95 transition-transform">Join Now</button>
           </div>
-        </div>
-      </section>
+        </nav>
+      </header>
 
-      <section className="py-12">
-        <div className="max-w-[1320px] mx-auto px-5">
-          <div className="grid lg:grid-cols-3 gap-6">
-            <div className="lg:col-span-2">
-              <div className="bg-white rounded-2xl p-8 shadow-lg">
-                <h2 className="font-display text-2xl font-bold text-prussian-dark mb-6">Project Map</h2>
-                <div className="aspect-[16/9] bg-cool-grey rounded-xl flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="w-12 h-12 text-prussian mx-auto mb-2" />
-                    <p className="text-steel-muted">Interactive Nigeria Map</p>
-                    <p className="text-sm text-steel-muted">Click any state to view projects</p>
-                  </div>
-                </div>
-                <div className="grid grid-cols-5 gap-2 mt-4">
-                  {states.map((state) => (
-                    <button
-                      key={state.name}
-                      className={`p-2 rounded-lg text-center transition-colors ${
-                        state.active 
-                          ? 'bg-signal-green/10 text-signal-green border border-signal-green/30' 
-                          : 'bg-cool-grey text-steel-muted'
-                      }`}
-                    >
-                      <p className="text-xs font-medium">{state.name}</p>
-                      <p className="text-xs opacity-60">{state.projects}</p>
-                    </button>
-                  ))}
-                </div>
-              </div>
+      <main className="pt-20">
+        {/* Hero Section */}
+        <section className="relative min-h-[614px] flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-[#003153]">
+          <div className="absolute inset-0 opacity-10 pointer-events-none">
+            <img className="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5-AnPkhfUk4mFaemDUto8vKPUiPlQOff5f5SMe0GIYDJo4aMtx0pqXex2VVViAlN4bTTeBleIgF_b_qekrw6yoGsPw4Go82Aetm0diHNF_wLW775m2zIwFF_E5zc9lK91mHMEL_cJV4NqvGJRzfPqjBFVHhuqsa7jWddHtHkJbZfUQudNiG59_i-EiAnHP3PuZJg7Lk02LacUSKR6dPuFRhSlG-r81CmbPqpBfsTrciD--bJWIHriPiZ4skGJjEaDT3BG9I0xb9o" alt="City grid"/>
+          </div>
+          <div className="relative z-10 max-w-4xl mx-auto space-y-6">
+            <span className="inline-block font-label-caps text-secondary px-4 py-1 border border-secondary/30 rounded-full bg-secondary/5">Institutional Integrity</span>
+            <h1 className="font-h1 text-white leading-tight">National Transparency Ledger</h1>
+            <p className="font-body-lg text-on-surface-variant max-w-2xl mx-auto">Providing every citizen with a real-time, immutable view of the resources, project milestones, and trust metrics fueling our nation's digital evolution.</p>
+          </div>
+        </section>
 
-              <div className="bg-white rounded-2xl p-8 shadow-lg mt-6">
-                <div className="flex items-center justify-between mb-6">
-                  <h2 className="font-display text-2xl font-bold text-prussian-dark">Public Ledger</h2>
-                  <select className="px-4 py-2 rounded-lg border border-cool-grey text-sm">
-                    <option>All Projects</option>
-                    <option>Completed</option>
-                    <option>In Progress</option>
-                  </select>
-                </div>
-                <div className="overflow-x-auto">
-                  <table className="w-full">
-                    <thead>
-                      <tr className="border-b border-cool-grey">
-                        <th className="text-left py-3 text-sm font-semibold text-steel-muted">Project</th>
-                        <th className="text-left py-3 text-sm font-semibold text-steel-muted">State</th>
-                        <th className="text-left py-3 text-sm font-semibold text-steel-muted">Amount</th>
-                        <th className="text-left py-3 text-sm font-semibold text-steel-muted">Status</th>
-                        <th className="text-left py-3 text-sm font-semibold text-steel-muted">Date</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {projectList.map((project) => (
-                        <tr key={project.id} className="border-b border-cool-grey last:border-0">
-                          <td className="py-4">
-                            <p className="font-medium text-prussian-dark">{project.name}</p>
-                            <p className="text-xs text-steel-muted">{project.beneficiaries}</p>
-                          </td>
-                          <td className="py-4 text-sm text-prussian-dark">{project.state}</td>
-                          <td className="py-4 font-data font-bold text-prussian-dark">{project.amount}</td>
-                          <td className="py-4">
-                            <span className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs ${
-                              project.status === 'completed'
-                                ? 'bg-signal-green/10 text-signal-green'
-                                : 'bg-gold/10 text-gold'
-                            }`}>
-                              {project.status === 'completed' && <CheckCircle className="w-3 h-3" />}
-                              {project.status === 'completed' ? 'Completed' : 'In Progress'}
-                            </span>
-                          </td>
-                          <td className="py-4 text-sm text-steel-muted">{project.date}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-                <Link to="/all-projects" className="mt-4 text-gold font-medium flex items-center gap-1 hover:underline">
-                  View All Projects <ArrowRight className="w-4 h-4" />
-                </Link>
+        {/* Massive Counters */}
+        <section className="relative -mt-24 px-6 z-20">
+          <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Total Funds */}
+            <div className="p-10 rounded-2xl border-t-2 border-secondary" style={{background: 'rgba(0, 49, 83, 0.4)', backdropFilter: 'blur(12px)', border: '1px solid rgba(233, 195, 73, 0.1)'}}>
+              <p className="font-label-caps text-secondary mb-4">Total Funds Raised</p>
+              <h2 className="font-h2 text-white tabular-nums">₦482.9B</h2>
+              <div className="mt-6 flex items-center gap-2 text-tertiary">
+                <span className="material-symbols-outlined text-sm">trending_up</span>
+                <span className="text-sm font-bold">12.4% Increase</span>
+                <span className="text-slate-500 text-xs ml-auto">Last 30 Days</span>
               </div>
             </div>
-
-            <div className="space-y-6">
-              <div className="bg-white rounded-2xl p-6 shadow-lg">
-                <div className="flex items-center gap-2 mb-4">
-                  <CheckCircle className="w-5 h-5 text-signal-green" />
-                  <h3 className="font-display font-bold text-prussian-dark">Verified Impact</h3>
-                </div>
-                <p className="text-sm text-steel-muted mb-4">
-                  All projects verified by independent third-party auditors
-                </p>
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between p-3 bg-cool-grey rounded-lg">
-                    <span className="text-sm text-prussian-dark">Trust Score</span>
-                    <span className="font-bold text-signal-green">94.2%</span>
-                  </div>
-                  <div className="flex items-center justify-between p-3 bg-cool-grey rounded-lg">
-                    <span className="text-sm text-prussian-dark">Verified Reports</span>
-                    <span className="font-bold text-prussian-dark">156</span>
-                  </div>
-                  <div className="flex items-center justify-between p-3 bg-cool-grey rounded-lg">
-                    <span className="text-sm text-prussian-dark">Audit Status</span>
-                    <span className="font-bold text-signal-green">Pass</span>
-                  </div>
-                </div>
+            {/* Projects Delivered */}
+            <div className="p-10 rounded-2xl border-t-2 border-white/20" style={{background: 'rgba(0, 49, 83, 0.4)', backdropFilter: 'blur(12px)', border: '1px solid rgba(233, 195, 73, 0.1)'}}>
+              <p className="font-label-caps text-slate-400 mb-4">Projects Delivered</p>
+              <h2 className="font-h2 text-white tabular-nums">1,402</h2>
+              <div className="mt-6 w-full h-2 bg-white/5 rounded-full overflow-hidden">
+                <div className="h-full bg-secondary w-3/4 rounded-full"></div>
               </div>
-
-              <div className="bg-white rounded-2xl p-6 shadow-lg">
-                <h3 className="font-display font-bold text-prussian-dark mb-4">Reports & Documents</h3>
-                <div className="space-y-2">
-                  {reports.map((report) => (
-                    <a
-                      key={report.title}
-                      href="#"
-                      className="flex items-center justify-between p-3 hover:bg-cool-grey rounded-lg transition-colors"
-                    >
-                      <div className="flex items-center gap-3">
-                        <FileText className="w-5 h-5 text-gold" />
-                        <div>
-                          <p className="text-sm font-medium text-prussian-dark">{report.title}</p>
-                          <p className="text-xs text-steel-muted">{report.date} • {report.size}</p>
-                        </div>
-                      </div>
-                      <Download className="w-4 h-4 text-steel-muted" />
-                    </a>
-                  ))}
-                </div>
-                <Link to="/all-reports" className="mt-4 text-gold text-sm font-medium flex items-center gap-1 hover:underline">
-                  All Reports <ArrowRight className="w-4 h-4" />
-                </Link>
+              <div className="mt-2 flex justify-between text-xs font-bold text-slate-500">
+                <span>75% Efficiency</span>
+                <span>Target: 1,850</span>
               </div>
-
-              <div className="bg-gradient-to-br from-prussian to-prussian-dark rounded-2xl p-6">
-                <h3 className="font-display font-bold text-white mb-2">Have Questions?</h3>
-                <p className="text-sm text-soft-ivory/70 mb-4">
-                  Contact our transparency team for detailed information.
-                </p>
-                <button className="w-full py-2 bg-white/10 rounded-lg text-white font-medium hover:bg-white/20 transition-colors">
-                  Contact Transparency Team
-                </button>
+            </div>
+            {/* Trust Index */}
+            <div className="p-10 rounded-2xl border-t-2 border-tertiary" style={{background: 'rgba(0, 49, 83, 0.4)', backdropFilter: 'blur(12px)', border: '1px solid rgba(233, 195, 73, 0.1)'}}>
+              <p className="font-label-caps text-tertiary mb-4">Trust Index</p>
+              <h2 className="font-h2 text-white tabular-nums">98.2%</h2>
+              <div className="mt-6 flex items-center gap-2">
+                <div className="flex -space-x-2">
+                  <div className="w-8 h-8 rounded-full border-2 border-[#003153] bg-slate-700"></div>
+                  <div className="w-8 h-8 rounded-full border-2 border-[#003153] bg-slate-600"></div>
+                  <div className="w-8 h-8 rounded-full border-2 border-[#003153] bg-slate-500"></div>
+                </div>
+                <span className="text-xs text-slate-400 ml-2 font-bold">Verified by 4.2M Citizens</span>
               </div>
             </div>
           </div>
+        </section>
+
+        {/* Interactive Map Section */}
+        <section className="py-[120px] px-6 max-w-[1440px] mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div className="max-w-xl">
+              <span className="font-label-caps text-secondary">Live Geo-Pulse</span>
+              <h2 className="font-h2 text-white mt-4">Infrastructure Heatmap</h2>
+              <p className="font-body-md text-on-surface-variant mt-2">Drill down into specific Local Government Areas to track project deployment, spending, and local impact scores in real-time.</p>
+            </div>
+            <div className="flex gap-4">
+              <select className="bg-surface-container border-outline-variant text-white font-sora text-sm px-6 py-3 rounded-xl focus:ring-secondary focus:border-secondary">
+                <option>Select Region</option>
+                <option>South West</option>
+                <option>South East</option>
+                <option>North Central</option>
+              </select>
+              <select className="bg-surface-container border-outline-variant text-white font-sora text-sm px-6 py-3 rounded-xl focus:ring-secondary focus:border-secondary">
+                <option>Select State</option>
+                <option>Lagos State</option>
+                <option>FCT Abuja</option>
+                <option>Kano State</option>
+              </select>
+            </div>
+          </div>
+          <div className="relative w-full aspect-[21/9] rounded-3xl overflow-hidden group" style={{background: 'rgba(0, 49, 83, 0.4)', backdropFilter: 'blur(12px)', border: '1px solid rgba(233, 195, 73, 0.1)'}}>
+            <img className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb1HFnH0yLqqD_QMFHTtE5sRojYvq15WX3qwV5MA9DzVSScG5pDwt5b6EUfzmjsLDTLv8aRIDZjlHqn_JMzcoCs07bOvS4eoXX-x-QiSH7Fc3buVQemZnyCSmgw_KXoL9jqqz82z1FQ6AX58H-wvTvjDWZrlEtHJ3BqdAVXYtMkJvVvGDv6uVk6n0t0MO37lE6utxy2FbflyExoptTlUHu3tVTzN7lOs7MEUbG6__zq36VBqP-YMMW6nZVmxElsd3d5FOdJ1MfbRY" alt="Nigeria map"/>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#003153] via-transparent to-transparent"></div>
+            <div className="absolute bottom-10 left-10 space-y-4">
+              <div className="bg-[#003153]/90 p-6 rounded-2xl border border-secondary/20 shadow-2xl">
+                <p className="font-label-caps text-slate-400 text-[10px]">Active Region Focus</p>
+                <h4 className="font-h3 text-white">Lagos Central Hub</h4>
+                <div className="flex gap-8 mt-4">
+                  <div>
+                    <span className="block text-xs text-slate-500 font-bold uppercase">Funding</span>
+                    <span className="text-secondary font-sora font-bold">₦12.8B</span>
+                  </div>
+                  <div>
+                    <span className="block text-xs text-slate-500 font-bold uppercase">Impact</span>
+                    <span className="text-tertiary font-sora font-bold">+15.2%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute top-10 right-10 flex flex-col gap-2">
+              <button className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center text-white hover:bg-secondary hover:text-on-secondary transition-colors">
+                <span className="material-symbols-outlined">add</span>
+              </button>
+              <button className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center text-white hover:bg-secondary hover:text-on-secondary transition-colors">
+                <span className="material-symbols-outlined">remove</span>
+              </button>
+              <button className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center text-white hover:bg-secondary hover:text-on-secondary transition-colors">
+                <span className="material-symbols-outlined">my_location</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Public Ledger Table */}
+        <section className="py-[120px] bg-surface-container-lowest">
+          <div className="max-w-[1440px] mx-auto px-6">
+            <div className="mb-12">
+              <h2 className="font-h2 text-white">Public Funding Ledger</h2>
+              <p className="font-body-md text-on-surface-variant max-w-2xl mt-4">Every Naira accounted for. View the linear flow of capital from initial pledge to project execution receipts.</p>
+            </div>
+            <div className="rounded-3xl overflow-hidden overflow-x-auto" style={{background: 'rgba(0, 49, 83, 0.4)', backdropFilter: 'blur(12px)', border: '1px solid rgba(233, 195, 73, 0.1)'}}>
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="bg-primary-container/50 border-b border-white/5">
+                    <th className="p-6 font-label-caps text-secondary">Transaction ID</th>
+                    <th className="p-6 font-label-caps text-slate-300">Target Project</th>
+                    <th className="p-6 font-label-caps text-slate-300">Value (₦)</th>
+                    <th className="p-6 font-label-caps text-slate-300">Status</th>
+                    <th className="p-6 font-label-caps text-slate-300">Ledger Hash</th>
+                    <th className="p-6 font-label-caps text-slate-300">Evidence</th>
+                  </tr>
+                </thead>
+                <tbody className="text-sm divide-y divide-white/5">
+                  <tr className="hover:bg-white/5 transition-colors">
+                    <td className="p-6 text-white font-mono">TXN-9021-X9</td>
+                    <td className="p-6 text-on-surface-variant font-bold">Solar Hub Kaduna Phase II</td>
+                    <td className="p-6 text-secondary font-bold">42,500,000</td>
+                    <td className="p-6"><span className="px-3 py-1 bg-tertiary/10 text-tertiary rounded-full text-xs font-bold border border-tertiary/20">Verified</span></td>
+                    <td className="p-6 text-slate-500 font-mono text-xs">0x88f2...b4c1</td>
+                    <td className="p-6"><button className="text-secondary hover:underline flex items-center gap-1 font-bold"><span className="material-symbols-outlined text-sm">receipt_long</span> View PDF</button></td>
+                  </tr>
+                  <tr className="hover:bg-white/5 transition-colors">
+                    <td className="p-6 text-white font-mono">TXN-7742-L0</td>
+                    <td className="p-6 text-on-surface-variant font-bold">Tech Academy Delta Support</td>
+                    <td className="p-6 text-secondary font-bold">12,000,000</td>
+                    <td className="p-6"><span className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs font-bold border border-secondary/20">Processing</span></td>
+                    <td className="p-6 text-slate-500 font-mono text-xs">0x44d1...a22f</td>
+                    <td className="p-6"><button className="text-secondary hover:underline flex items-center gap-1 font-bold"><span className="material-symbols-outlined text-sm">receipt_long</span> View Receipt</button></td>
+                  </tr>
+                  <tr className="hover:bg-white/5 transition-colors">
+                    <td className="p-6 text-white font-mono">TXN-1139-Z4</td>
+                    <td className="p-6 text-on-surface-variant font-bold">Digital Grid Lagos West</td>
+                    <td className="p-6 text-secondary font-bold">156,000,000</td>
+                    <td className="p-6"><span className="px-3 py-1 bg-tertiary/10 text-tertiary rounded-full text-xs font-bold border border-tertiary/20">Verified</span></td>
+                    <td className="p-6 text-slate-500 font-mono text-xs">0x99e5...f031</td>
+                    <td className="p-6"><button className="text-secondary hover:underline flex items-center gap-1 font-bold"><span className="material-symbols-outlined text-sm">receipt_long</span> View Evidence</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        {/* Project Cards */}
+        <section className="py-[120px] px-6 max-w-[1440px] mx-auto">
+          <div className="flex justify-between items-center mb-12">
+            <h2 className="font-h2 text-white">Project Spotlight</h2>
+            <button className="text-secondary font-bold flex items-center gap-2 hover:translate-x-1 transition-transform">
+              View All Projects <span className="material-symbols-outlined">arrow_right_alt</span>
+            </button>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            <div className="rounded-3xl overflow-hidden group" style={{background: 'rgba(0, 49, 83, 0.4)', backdropFilter: 'blur(12px)', border: '1px solid rgba(233, 195, 73, 0.1)'}}>
+              <div className="h-48 overflow-hidden relative">
+                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEEJUcZY9XaDDD66jlK5aStWyELGMtf3ACR3_lUC3Dpp4ndP0ifC5zIgcJYjhHwTNADtCv_GEvY5ptFnuWsbkT7NLUmQk-zwl_Y-HtFLywkp0NC17JzfLFEAjMDlawCIhgzWEtJy15QGW1O6TSIRA9-7wlAW-Uv3weO7Ae_ku5A5w0QgzX46ihZ06MpHGJTocUXxAZ0SHacND-avceHeoIL3jHuuDVGpG4KI-wpx8_yzMLwDmqag-0ZFc12e8c_JpQd7MEu1hXHoY" alt="Solar panels"/>
+                <div className="absolute top-4 right-4 bg-tertiary text-on-tertiary px-3 py-1 rounded-lg text-xs font-bold">LIVE</div>
+              </div>
+              <div className="p-8">
+                <p className="font-label-caps text-slate-500 mb-2">Sustainable Power</p>
+                <h4 className="font-h3 text-white mb-6">Kaduna Solar Grid</h4>
+                <div className="space-y-4">
+                  <div>
+                    <div className="flex justify-between text-xs font-bold mb-2">
+                      <span className="text-slate-400">Funding Milestones</span>
+                      <span className="text-secondary">88% Funded</span>
+                    </div>
+                    <div className="w-full h-1.5 bg-white/5 rounded-full">
+                      <div className="h-full bg-secondary w-[88%] rounded-full shadow-[0_0_10px_rgba(233,195,73,0.5)]"></div>
+                    </div>
+                  </div>
+                  <div className="flex justify-between items-center pt-4 border-t border-white/5">
+                    <div>
+                      <span className="block text-[10px] text-slate-500 font-bold">TOTAL BUDGET</span>
+                      <span className="text-sm font-bold text-white">₦2.4B</span>
+                    </div>
+                    <div className="text-right">
+                      <span className="block text-[10px] text-slate-500 font-bold">IMPACT AREA</span>
+                      <span className="text-sm font-bold text-white">40k Homes</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Card 2 */}
+            <div className="rounded-3xl overflow-hidden group" style={{background: 'rgba(0, 49, 83, 0.4)', backdropFilter: 'blur(12px)', border: '1px solid rgba(233, 195, 73, 0.1)'}}>
+              <div className="h-48 overflow-hidden relative">
+                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCepcos0KiWxvNzqff4sgL5yBHUsCHnpHvWGLqDgh5zVeqUocS-D487OnQqgn36ti97oSOr0fu4jB1lmlv1RpKO4VnmHXCJqV6H7X84T-DA0EqKg2BNJo279ffqmLLbu5fMdhcWGBVFjKAHYzV84cGvMUexZpfFBE8IJBgN9GFO8HtTmo1s_tZbZ55XNedNjJ8DwspmODOXebBDFtqDAYC1Q4ybu9LKFYEeyIhG836UAlyhme684gaNl85rLlwwkVet-Pl7mWL2fAI" alt="Tech Academy"/>
+                <div className="absolute top-4 right-4 bg-secondary text-on-secondary px-3 py-1 rounded-lg text-xs font-bold">UP NEXT</div>
+              </div>
+              <div className="p-8">
+                <p className="font-label-caps text-slate-500 mb-2">Human Capital</p>
+                <h4 className="font-h3 text-white mb-6">Delta Tech Academy</h4>
+                <div className="space-y-4">
+                  <div>
+                    <div className="flex justify-between text-xs font-bold mb-2">
+                      <span className="text-slate-400">Construction Progress</span>
+                      <span className="text-tertiary">42% Complete</span>
+                    </div>
+                    <div className="w-full h-1.5 bg-white/5 rounded-full">
+                      <div className="h-full bg-tertiary w-[42%] rounded-full"></div>
+                    </div>
+                  </div>
+                  <div className="flex justify-between items-center pt-4 border-t border-white/5">
+                    <div>
+                      <span className="block text-[10px] text-slate-500 font-bold">TOTAL BUDGET</span>
+                      <span className="text-sm font-bold text-white">₦850M</span>
+                    </div>
+                    <div className="text-right">
+                      <span className="block text-[10px] text-slate-500 font-bold">ENROLMENT</span>
+                      <span className="text-sm font-bold text-white">2.5k Students</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Card 3 */}
+            <div className="rounded-3xl overflow-hidden group border border-secondary/30" style={{background: 'rgba(0, 49, 83, 0.4)', backdropFilter: 'blur(12px)', border: '1px solid rgba(233, 195, 73, 0.1)'}}>
+              <div className="h-48 overflow-hidden relative">
+                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_XibZn0bJiXSv32rxeuP4PpN7fxYFSM_DLz0YCiSYWI8H3ue7pJxAHqW7NffTKUMkbiPJrUjg0qMNB-CuNQfyEbxAhPkQZP5o6bGI5gPR7Kn4eTALCJgsgmt9Zr_HfsLK58FXwix7lCIzHuHdbqhWb8caU_0WMSE3bJeZcmKDmuMYkXwxDZoNY4U-EEN6qpcDF1bkt60IRiPk9Pxr7e09sh5ySbF8DYbRZCUqplVIuW1kNFSryEXarQZqajs_0cJFcWlVW0_kyH4" alt="Command Center"/>
+                <div className="absolute top-4 right-4 bg-tertiary text-on-tertiary px-3 py-1 rounded-lg text-xs font-bold">COMPLETED</div>
+              </div>
+              <div className="p-8">
+                <p className="font-label-caps text-slate-500 mb-2">Institutional Core</p>
+                <h4 className="font-h3 text-white mb-6">Digital Command One</h4>
+                <div className="space-y-4">
+                  <div>
+                    <div className="flex justify-between text-xs font-bold mb-2">
+                      <span className="text-slate-400">Operational Health</span>
+                      <span className="text-tertiary">100% Online</span>
+                    </div>
+                    <div className="w-full h-1.5 bg-white/5 rounded-full">
+                      <div className="h-full bg-tertiary w-full rounded-full"></div>
+                    </div>
+                  </div>
+                  <div className="flex justify-between items-center pt-4 border-t border-white/5">
+                    <div>
+                      <span className="block text-[10px] text-slate-500 font-bold">TOTAL COST</span>
+                      <span className="text-sm font-bold text-white">₦1.2B</span>
+                    </div>
+                    <div className="text-right">
+                      <span className="block text-[10px] text-slate-500 font-bold">NETWORK UP</span>
+                      <span className="text-sm font-bold text-white">99.9%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Reports Section */}
+        <section className="py-[120px] px-6 bg-[#001F33]">
+          <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div>
+              <span className="font-label-caps text-secondary">Institutional Records</span>
+              <h2 className="font-h2 text-white mt-4">Audit & Accountability Reports</h2>
+              <p className="font-body-lg text-on-surface-variant mt-6">Download our quarterly and annual transparency reports, certified by international third-party audit firms. Our financial records are fully public and immutable.</p>
+              <div className="mt-12 grid grid-cols-2 gap-4">
+                <div className="p-6 rounded-2xl border border-white/10 hover:border-secondary transition-colors group cursor-pointer" style={{background: 'rgba(0, 49, 83, 0.4)', backdropFilter: 'blur(12px)', border: '1px solid rgba(233, 195, 73, 0.1)'}}>
+                  <span className="material-symbols-outlined text-secondary text-4xl mb-4 group-hover:scale-110 transition-transform">picture_as_pdf</span>
+                  <h5 className="font-bold text-white">Q3 Impact Report</h5>
+                  <p className="text-xs text-slate-500 mt-2">FY 2024 • 12.4MB</p>
+                </div>
+                <div className="p-6 rounded-2xl border border-white/10 hover:border-secondary transition-colors group cursor-pointer" style={{background: 'rgba(0, 49, 83, 0.4)', backdropFilter: 'blur(12px)', border: '1px solid rgba(233, 195, 73, 0.1)'}}>
+                  <span className="material-symbols-outlined text-secondary text-4xl mb-4 group-hover:scale-110 transition-transform">analytics</span>
+                  <h5 className="font-bold text-white">Financial Audit</h5>
+                  <p className="text-xs text-slate-500 mt-2">Verified PDF • 8.1MB</p>
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="aspect-square rounded-full flex items-center justify-center p-20 border-secondary/10 relative overflow-hidden" style={{background: 'rgba(0, 49, 83, 0.4)', backdropFilter: 'blur(12px)', border: '1px solid rgba(233, 195, 73, 0.1)'}}>
+                <div className="absolute inset-0 bg-secondary/5 blur-3xl rounded-full"></div>
+                <img className="w-full h-full object-cover rounded-3xl shadow-2xl relative z-10 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS-x27T637ctUmbbfNIUgPtqOFeRTF3-UYbKvENH094DNPnSR1IdAxAe2qj1QqET5QNnlCVmwT0y_fyvxhWCzgHgfQgYMAIlR1b9eCvjGmy5Djx02EgZRdfa268vacROVaOOvFhNkRq2UfJ0WRBYuM5N_bNmzUyYO3JLrCVeBOlVB0n6WYJmy5wZ56ygHNWFMxS71OcyjfaQadADX2lLIYosjGFpd8nrj77F6aYil58Zf_xN_7Ink_xHXJZE07zDZ9LA6SH6JDHCQ" alt="Ledger"/>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* National Impact Ticker */}
+        <div className="w-full bg-secondary py-4 overflow-hidden whitespace-nowrap border-y border-white/10">
+          <div className="inline-block animate-marquee">
+            <span className="font-label-caps text-on-secondary px-8">PROJECT DELTA HUB LIVE</span>
+            <span className="text-on-secondary text-lg">★</span>
+            <span className="font-label-caps text-on-secondary px-8">KADUNA SOLAR POWER 88% FUNDED</span>
+            <span className="text-on-secondary text-lg">★</span>
+            <span className="font-label-caps text-on-secondary px-8">NATIONAL TRUST INDEX 98.2%</span>
+            <span className="text-on-secondary text-lg">★</span>
+            <span className="font-label-caps text-on-secondary px-8">AUDIT COMPLETE BY KPMG</span>
+            <span className="text-on-secondary text-lg">★</span>
+            <span className="font-label-caps text-on-secondary px-8">PROJECT DELTA HUB LIVE</span>
+          </div>
+          <div className="inline-block animate-marquee">
+            <span className="font-label-caps text-on-secondary px-8">PROJECT DELTA HUB LIVE</span>
+            <span className="text-on-secondary text-lg">★</span>
+            <span className="font-label-caps text-on-secondary px-8">KADUNA SOLAR POWER 88% FUNDED</span>
+            <span className="text-on-secondary text-lg">★</span>
+            <span className="font-label-caps text-on-secondary px-8">NATIONAL TRUST INDEX 98.2%</span>
+            <span className="text-on-secondary text-lg">★</span>
+            <span className="font-label-caps text-on-secondary px-8">AUDIT COMPLETE BY KPMG</span>
+            <span className="text-on-secondary text-lg">★</span>
+            <span className="font-label-caps text-on-secondary px-8">PROJECT DELTA HUB LIVE</span>
+          </div>
         </div>
-      </section>
-    </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="w-full border-t border-white/5 pt-16 pb-8 bg-[#001F33] flex flex-col items-center text-center px-4">
+        <div className="text-xl font-bold text-white mb-4 italic">City Boy Arena</div>
+        <div className="flex flex-wrap justify-center gap-8 mb-12">
+          <Link to="#" className="font-sora text-xs text-slate-400 tracking-wide hover:text-secondary transition-colors">Impact Report</Link>
+          <Link to="#" className="font-sora text-xs text-slate-400 tracking-wide hover:text-secondary transition-colors">Privacy Policy</Link>
+          <Link to="#" className="font-sora text-xs text-slate-400 tracking-wide hover:text-secondary transition-colors">Security Ledger</Link>
+          <Link to="#" className="font-sora text-xs text-slate-400 tracking-wide hover:text-secondary transition-colors">Contact Command</Link>
+        </div>
+        <div className="font-sora text-xs text-slate-500 tracking-wide">
+          © 2024 City Boy Digital Arena. A Nation-Building Initiative.
+        </div>
+      </footer>
+
+      {/* BottomNavBar (Mobile Only) */}
+      <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-4 bg-[#003153]/95 backdrop-blur-lg rounded-t-3xl border-t border-secondary/30 shadow-[0_-10px_40px_rgba(0,0,0,0.8)]">
+        <button className="flex flex-col items-center justify-center text-slate-400 p-2">
+          <span className="material-symbols-outlined">home</span>
+          <span className="font-sora text-[10px] font-bold uppercase mt-1">Home</span>
+        </button>
+        <button className="flex flex-col items-center justify-center text-secondary bg-secondary/10 rounded-xl p-2 shadow-[0_0_15px_rgba(255,215,0,0.3)]">
+          <span className="material-symbols-outlined">visibility</span>
+          <span className="font-sora text-[10px] font-bold uppercase mt-1">Audit</span>
+        </button>
+        <button className="flex flex-col items-center justify-center text-slate-400 p-2">
+          <span className="material-symbols-outlined">military_tech</span>
+          <span className="font-sora text-[10px] font-bold uppercase mt-1">Impact</span>
+        </button>
+        <button className="flex flex-col items-center justify-center text-slate-400 p-2">
+          <span className="material-symbols-outlined">chat</span>
+          <span className="font-sora text-[10px] font-bold uppercase mt-1">Report</span>
+        </button>
+      </nav>
+      <style>{`
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+          display: inline-block;
+          animation: marquee 30s linear infinite;
+        }
+      `}</style>
+    </>
   )
 }

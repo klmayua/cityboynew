@@ -4,20 +4,20 @@ import { Link } from 'react-router-dom'
 export default function ProjectNigeriaPage() {
   return (
     <>
-      {/* Navbar */}
+      {/* TopNavBar */}
       <nav className="fixed top-0 w-full z-50 border-b border-white/10 bg-[#003153]/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
         <div className="flex justify-between items-center px-8 h-20 w-full max-w-[1440px] mx-auto">
-          <Link to="/" className="text-2xl font-black tracking-tighter text-secondary italic">City Boy Arena</Link>
+          <div className="text-2xl font-black tracking-tighter text-amber-500 italic">City Boy Arena</div>
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/project-nigeria" className="font-h3 text-[12px] uppercase font-bold tracking-tight text-secondary border-b-2 border-secondary pb-1">Hub</Link>
-            <Link to="/transparency" className="font-h3 text-[12px] uppercase font-bold tracking-tight text-slate-300 hover:text-white transition-colors">Transparency</Link>
-            <Link to="/donate" className="font-h3 text-[12px] uppercase font-bold tracking-tight text-slate-300 hover:text-white transition-colors">Donor</Link>
-            <Link to="/volunteer" className="font-h3 text-[12px] uppercase font-bold tracking-tight text-slate-300 hover:text-white transition-colors">Volunteer</Link>
-            <Link to="#" className="font-h3 text-[12px] uppercase font-bold tracking-tight text-slate-300 hover:text-white transition-colors">Command</Link>
+            <Link to="/project-nigeria" className="font-sora tracking-tight font-bold uppercase text-xs text-amber-400 border-b-2 border-amber-400 pb-1">Hub</Link>
+            <Link to="/transparency" className="font-sora tracking-tight font-bold uppercase text-xs text-slate-300 hover:text-white transition-colors">Transparency</Link>
+            <Link to="/donate" className="font-sora tracking-tight font-bold uppercase text-xs text-slate-300 hover:text-white transition-colors">Donor</Link>
+            <Link to="/volunteer" className="font-sora tracking-tight font-bold uppercase text-xs text-slate-300 hover:text-white transition-colors">Volunteer</Link>
+            <Link to="#" className="font-sora tracking-tight font-bold uppercase text-xs text-slate-300 hover:text-white transition-colors">Command</Link>
           </div>
           <div className="flex items-center space-x-4">
-            <Link to="/donate" className="px-6 py-2 rounded-full font-h3 font-bold text-xs uppercase bg-transparent text-white border border-white/20 hover:bg-white/5 transition-all">Donate</Link>
-            <Link to="/join" className="px-6 py-2 rounded-full font-h3 font-bold text-xs uppercase bg-secondary text-on-secondary hover:brightness-110 active:scale-95 transition-all shadow-[0_0_15px_rgba(233,195,73,0.3)]">Join Now</Link>
+            <button className="px-6 py-2 rounded-full font-sora font-bold text-xs uppercase bg-transparent text-white border border-white/20 hover:bg-white/5 transition-all">Donate</button>
+            <button className="px-6 py-2 rounded-full font-sora font-bold text-xs uppercase bg-secondary text-on-secondary hover:brightness-110 active:scale-95 transition-all shadow-[0_0_15px_rgba(233,195,73,0.3)]">Join Now</button>
           </div>
         </div>
       </nav>
@@ -26,16 +26,16 @@ export default function ProjectNigeriaPage() {
         {/* Hero Section */}
         <section className="relative h-[921px] flex items-center overflow-hidden">
           <div className="absolute inset-0 z-0">
-            <img className="w-full h-full object-cover brightness-[0.4]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBabdWin9I8xdGhAILzrSU42KTKicyezPSzjQi6fVYzKzVir2d4fn49MMdUbqqs_h2XZbX0j9zSNZveJDcRCj2Bcfv8BjdTG6tShMVA9Bq61DogG7Zyt0Qlbgqr3p_uMYT54JnxkJcEL6FekQdSDZXd3R4KHzwvN8JfFm4UIe4TvBjLEZeFgvH7NdeolqfaDcUCfnPlElqruOBDoL6TeK5FgAcO9hxhH3rICm_5LJhCWiix5WPfiaxo5LIxZgD2E8jfEELkGeWplA" alt="Lagos at dusk" />
+            <img className="w-full h-full object-cover brightness-[0.4]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBabdWin9I8xdGhAILzrSU42KTKicyezPSzjQi6fVYzKzVir2d4fn49MMdUbqqs_h2XZbX0j9zSNZveJDcRCj2Bcfv8BjdTG6tShMVA9Bq61DogG7Zyt0Qlbgqr3p_uMYT54JnxkJcEL6FekQdSDZXd3R4KHzwvN8JfFm4UIe4TvBjLEZeFgvH7NdeolqfaDcUCfnPlElqruOBDoL6TeK5FgAcO9hxhH3rICm_5LJhCWiix5WPfiaxo5LIxZgD2E8jfEELkGeWplA" alt="Lagos city"/>
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
           </div>
           <div className="relative z-10 max-w-[1440px] mx-auto px-8 w-full">
             <div className="max-w-4xl">
               <span className="font-label-caps text-secondary-fixed mb-4 block">THE IMPERIAL INITIATIVE</span>
-              <h1 className="font-h1 text-on-background mb-6 leading-tight">THE HEARTBEAT OF A <span className="text-secondary italic">NEW NATION</span></h1>
+              <h1 className="font-h1 text-on-background mb-6 leading-tight text-white">THE HEARTBEAT OF A <span className="text-secondary italic">NEW NATION</span></h1>
               <p className="font-body-lg text-on-surface-variant max-w-2xl mb-10">Experience the cinematic unfolding of Nigeria's digital transformation. Join the arena where civic duty meets modern luxury.</p>
               <div className="flex flex-wrap gap-4">
-                <button className="px-8 py-4 rounded-full bg-secondary text-on-secondary font-h3 text-lg flex items-center gap-3 gold-glow">
+                <button className="px-8 py-4 rounded-full bg-secondary text-on-secondary font-h3 text-lg flex items-center gap-3 shadow-[0_0_20px_rgba(233,195,73,0.2)]">
                   ENTER ARENA
                   <span className="material-symbols-outlined">arrow_forward</span>
                 </button>
@@ -69,7 +69,7 @@ export default function ProjectNigeriaPage() {
           <div className="flex justify-between items-end mb-12">
             <div>
               <span className="font-label-caps text-secondary mb-2 block uppercase">Editorial Selections</span>
-              <h2 className="font-h2">Voices of the Arena</h2>
+              <h2 className="font-h2 text-white">Voices of the Arena</h2>
             </div>
             <div className="flex gap-4">
               <button className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors">
@@ -80,9 +80,9 @@ export default function ProjectNigeriaPage() {
               </button>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[24px]">
             <div className="group relative aspect-[16/9] rounded-2xl overflow-hidden border border-white/10">
-              <img className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp_bn4vk4XSzhlUKBI_B7vzxw1HVmB82sQ6f5NdnBWUwdaVSxm65FJaUvBXkKxMogR_yMhQcitR0gfRNVK1ZTg-i_myZVFW7ZWJ7rYe3DOUFpx9Y86QjVZBIuqU-ulnKDMgnVACYrC9VtvTj_Q6w5x2bsjypnwJRvy7lkNaiKQJUdp6hwojAp3l3qUmZaXQrQZeIoPxD35j7CDm48LINX-mhu_5hYCQt5LCePsERwBWaqjl2rjJQG3GpiJleM1o-xxc8oonzE0ArU" alt="Tech visionary" />
+              <img className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp_bn4vk4XSzhlUKBI_B7vzxw1HVmB82sQ6f5NdnBWUwdaVSxm65FJaUvBXkKxMogR_yMhQcitR0gfRNVK1ZTg-i_myZVFW7ZWJ7rYe3DOUFpx9Y86QjVZBIuqU-ulnKDMgnVACYrC9VtvTj_Q6w5x2bsjypnwJRvy7lkNaiKQJUdp6hwojAp3l3qUmZaXQrQZeIoPxD35j7CDm48LINX-mhu_5hYCQt5LCePsERwBWaqjl2rjJQG3GpiJleM1o-xxc8oonzE0ArU" alt="Tech visionary"/>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-8 flex flex-col justify-end">
                 <span className="bg-secondary text-on-secondary px-3 py-1 rounded-full text-[10px] font-bold w-fit mb-4">PREMIUM FEATURE</span>
                 <h3 className="font-h3 text-white mb-2">The Architect of Lagos 2.0</h3>
@@ -90,7 +90,7 @@ export default function ProjectNigeriaPage() {
               </div>
             </div>
             <div className="group relative aspect-[16/9] rounded-2xl overflow-hidden border border-white/10">
-              <img className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHnfMdVvfvS_lmcGkoO7VqQSD02lr_p2qUWbDcJa9gxgEO7Vdvf_HMiwcrIQ5mrxUdPCRNfcpBoP5PHBrtcJzWp0dQCGU5AsRU94OCeISoYpoc9xeca5a2sn85ZEkDT6O1oY0nXLBOMs5mZKrawlmIynQXJPVJWDYD_o9PY2-9HAWKswg50CpDQaGHWMQmI8-R821zAv5pZpakV5UZT-rvLJWa4gNgjg3sprne0_OYcPUmkuJz0s5vIJoMzlys-mKQKIYejBwW4Ow" alt="Scholars" />
+              <img className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHnfMdVvfvS_lmcGkoO7VqQSD02lr_p2qUWbDcJa9gxgEO7Vdvf_HMiwcrIQ5mrxUdPCRNfcpBoP5PHBrtcJzWp0dQCGU5AsRU94OCeISoYpoc9xeca5a2sn85ZEkDT6O1oY0nXLBOMs5mZKrawlmIynQXJPVJWDYD_o9PY2-9HAWKswg50CpDQaGHWMQmI8-R821zAv5pZpakV5UZT-rvLJWa4gNgjg3sprne0_OYcPUmkuJz0s5vIJoMzlys-mKQKIYejBwW4Ow" alt="Scholars"/>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-8 flex flex-col justify-end">
                 <span className="bg-tertiary text-on-tertiary px-3 py-1 rounded-full text-[10px] font-bold w-fit mb-4">COMMUNITY SPOTLIGHT</span>
                 <h3 className="font-h3 text-white mb-2">Education Without Borders</h3>
@@ -106,7 +106,7 @@ export default function ProjectNigeriaPage() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
               <div className="lg:col-span-1">
                 <span className="font-label-caps text-secondary mb-4 block">LIVE INTERACTIVE GRID</span>
-                <h2 className="font-h2 mb-6">Regional <span className="italic text-secondary">Impact</span> Map</h2>
+                <h2 className="font-h2 mb-6 text-white">Regional <span className="italic text-secondary">Impact</span> Map</h2>
                 <p className="text-on-surface-variant font-body-lg mb-8">Navigate through the 36 states and the FCT to witness regional storytelling. Each node represents a citizen-led initiative currently unfolding.</p>
                 <div className="space-y-4">
                   <div className="flex items-center gap-4 p-4 rounded-xl bg-primary-container/20 border border-white/5">
@@ -131,11 +131,11 @@ export default function ProjectNigeriaPage() {
               </div>
               <div className="lg:col-span-2 relative">
                 <div className="aspect-video rounded-3xl overflow-hidden border border-secondary/20 shadow-2xl relative">
-                  <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMyFUhbz1A85WmQ5M5RTmZ1WG4xCKjIxgIqoGtK0QSbArdVxPGK3U54DaJQnJmUw1a1SPvpY3p_D4rjihSKrhb4N2GThKn6MmdT4M_i1RhqeOjKzcAWi50VCUuhNRsmt--0F15qQ8ehTzc3M7Xi8bUmf0dWed4TeVOv7Nk-x4jySWLOBYc3qLwjIusbommNlIbdLFvRRMHk6h2u-IO6AsaCk2s4Ldwn_yg_jtOAe33pf85mALYMByf2s7oxYdpINu2eQLcwKdbErs" alt="Nigeria map" />
+                  <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMyFUhbz1A85WmQ5M5RTmZ1WG4xCKjIxgIqoGtK0QSbArdVxPGK3U54DaJQnJmUw1a1SPvpY3p_D4rjihSKrhb4N2GThKn6MmdT4M_i1RhqeOjKzcAWi50VCUuhNRsmt--0F15qQ8ehTzc3M7Xi8bUmf0dWed4TeVOv7Nk-x4jySWLOBYc3qLwjIusbommNlIbdLFvRRMHk6h2u-IO6AsaCk2s4Ldwn_yg_jtOAe33pf85mALYMByf2s7oxYdpINu2eQLcwKdbErs" alt="Nigeria map"/>
                   <div className="absolute inset-0 bg-secondary/5 pointer-events-none"></div>
-                  <div className="absolute top-8 left-8 arena-glass p-4 rounded-2xl border border-white/10 max-w-[200px]">
+                  <div className="absolute top-8 left-8 p-4 rounded-2xl border border-white/10 max-w-[200px]" style={{background: 'rgba(0, 49, 83, 0.2)', backdropFilter: 'blur(10px)'}}>
                     <div className="text-[10px] font-bold text-secondary-fixed uppercase mb-2">Selected Hub</div>
-                    <div className="font-h3 text-xl mb-1">Enugu Tech</div>
+                    <div className="font-h3 text-xl mb-1 text-white">Enugu Tech</div>
                     <div className="text-xs text-on-surface-variant">Coal City Creative Cluster</div>
                   </div>
                 </div>
@@ -148,10 +148,11 @@ export default function ProjectNigeriaPage() {
         <section className="py-[120px] px-8 max-w-[1440px] mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="font-label-caps text-secondary mb-2 block uppercase">Movement Initiatives</span>
-            <h2 className="font-h2 mb-4">Join the Arena</h2>
+            <h2 className="font-h2 mb-4 text-white">Join the Arena</h2>
             <p className="text-on-surface-variant">Scale your impact by participating in verified national challenges. Earn Prestige while building the nation.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[24px]">
+            {/* Card 1 */}
             <div className="p-6 rounded-2xl border border-white/5 bg-surface-container relative group overflow-hidden">
               <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                 <span className="material-symbols-outlined text-6xl">military_tech</span>
@@ -159,7 +160,7 @@ export default function ProjectNigeriaPage() {
               <div className="mb-6 w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
                 <span className="material-symbols-outlined">electric_bolt</span>
               </div>
-              <h3 className="font-h3 text-xl mb-2">Power Pioneers</h3>
+              <h3 className="font-h3 text-xl mb-2 text-white">Power Pioneers</h3>
               <p className="text-sm text-on-surface-variant mb-6">Support the rollout of solar micro-grids in underserved coastal communities.</p>
               <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden mb-4">
                 <div className="h-full bg-secondary w-2/3 shadow-[0_0_8px_#e9c349]"></div>
@@ -169,6 +170,7 @@ export default function ProjectNigeriaPage() {
                 <button className="text-xs font-bold text-secondary uppercase hover:underline">Commit</button>
               </div>
             </div>
+            {/* Card 2 */}
             <div className="p-6 rounded-2xl border border-white/5 bg-surface-container relative group overflow-hidden">
               <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                 <span className="material-symbols-outlined text-6xl">diversity_3</span>
@@ -176,7 +178,7 @@ export default function ProjectNigeriaPage() {
               <div className="mb-6 w-12 h-12 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary">
                 <span className="material-symbols-outlined">eco</span>
               </div>
-              <h3 className="font-h3 text-xl mb-2">Green Belt Hub</h3>
+              <h3 className="font-h3 text-xl mb-2 text-white">Green Belt Hub</h3>
               <p className="text-sm text-on-surface-variant mb-6">Urban reforestation project targeting the top 10 most congested cities.</p>
               <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden mb-4">
                 <div className="h-full bg-tertiary w-1/4 shadow-[0_0_8px_#63dca6]"></div>
@@ -186,6 +188,7 @@ export default function ProjectNigeriaPage() {
                 <button className="text-xs font-bold text-secondary uppercase hover:underline">Commit</button>
               </div>
             </div>
+            {/* Card 3 */}
             <div className="p-6 rounded-2xl border border-white/5 bg-surface-container relative group overflow-hidden">
               <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                 <span className="material-symbols-outlined text-6xl">history_edu</span>
@@ -193,7 +196,7 @@ export default function ProjectNigeriaPage() {
               <div className="mb-6 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
                 <span className="material-symbols-outlined">auto_stories</span>
               </div>
-              <h3 className="font-h3 text-xl mb-2">Linguistic Archive</h3>
+              <h3 className="font-h3 text-xl mb-2 text-white">Linguistic Archive</h3>
               <p className="text-sm text-on-surface-variant mb-6">Preserving 500+ indigenous languages through digital vocal mapping.</p>
               <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden mb-4">
                 <div className="h-full bg-primary w-1/2 shadow-[0_0_8px_#a5caf4]"></div>
@@ -203,6 +206,7 @@ export default function ProjectNigeriaPage() {
                 <button className="text-xs font-bold text-secondary uppercase hover:underline">Commit</button>
               </div>
             </div>
+            {/* Card 4 */}
             <div className="p-6 rounded-2xl border border-white/5 bg-surface-container relative group overflow-hidden">
               <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                 <span className="material-symbols-outlined text-6xl">assured_workload</span>
@@ -210,7 +214,7 @@ export default function ProjectNigeriaPage() {
               <div className="mb-6 w-12 h-12 rounded-lg bg-error/10 flex items-center justify-center text-error">
                 <span className="material-symbols-outlined">medical_services</span>
               </div>
-              <h3 className="font-h3 text-xl mb-2">Health Ledger</h3>
+              <h3 className="font-h3 text-xl mb-2 text-white">Health Ledger</h3>
               <p className="text-sm text-on-surface-variant mb-6">Building blockchain-backed health records for nomadic populations.</p>
               <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden mb-4">
                 <div className="h-full bg-error w-1/3 shadow-[0_0_8px_#ffb4ab]"></div>
@@ -227,42 +231,46 @@ export default function ProjectNigeriaPage() {
         <section className="py-[120px] bg-surface-container-low overflow-hidden">
           <div className="max-w-[1440px] mx-auto px-8">
             <div className="flex items-center justify-between mb-16">
-              <h2 className="font-h2">The Storytellers</h2>
-              <a className="text-secondary font-bold flex items-center gap-2 group" href="#">
+              <h2 className="font-h2 text-white">The Storytellers</h2>
+              <Link to="#" className="text-secondary font-bold flex items-center gap-2 group">
                 VIEW ALL CREATORS
                 <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">trending_flat</span>
-              </a>
+              </Link>
             </div>
             <div className="flex space-x-8 overflow-x-auto pb-12">
+              {/* Creator 1 */}
               <div className="flex-shrink-0 w-80 group">
                 <div className="relative aspect-square rounded-3xl overflow-hidden mb-6 border border-white/5">
-                  <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG02Wv6YPHlTFA9r4DZ_qdoXtLF1eYKO2Yay3dJYI45dmspNT-Eer0jAc_W1HpMCnlh_vOcOn_httEIe1a6mLQLr6Ziwo-gOqpqp0OnFqt8SmgeGH_v6ams9yGNReQPfgM4pWN-E4y-DnkzAoQiLsQniPG5T50Y4jEOHO3YjxV-t28ZJvqRvJODgljgTE3K39VI-07uWQ8aOEeppLHT7Od0a2zhY4LqSVaJSoeRDd5F0I-zXvpwhR99SmTAq-7qqJYyxAYHCt6Znw" alt="Chidi Okafor" />
+                  <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG02Wv6YPHlTFA9r4DZ_qdoXtLF1eYKO2Yay3dJYI45dmspNT-Eer0jAc_W1HpMCnlh_vOcOn_httEIe1a6mLQLr6Ziwo-gOqpqp0OnFqt8SmgeGH_v6ams9yGNReQPfgM4pWN-E4y-DnkzAoQiLsQniPG5T50Y4jEOHO3YjxV-t28ZJvqRvJODgljgTE3K39VI-07uWQ8aOEeppLHT7Od0a2zhY4LqSVaJSoeRDd5F0I-zXvpwhR99SmTAq-7qqJYyxAYHCt6Znw" alt="Chidi Okafor"/>
                 </div>
-                <h4 className="font-h3 text-2xl mb-1">Chidi Okafor</h4>
+                <h4 className="font-h3 text-2xl mb-1 text-white">Chidi Okafor</h4>
                 <p className="font-label-caps text-secondary mb-4">CINEMATOGRAPHER</p>
                 <p className="text-on-surface-variant text-sm italic">"Capturing the architecture of our future, one frame at a time."</p>
               </div>
+              {/* Creator 2 */}
               <div className="flex-shrink-0 w-80 group">
                 <div className="relative aspect-square rounded-3xl overflow-hidden mb-6 border border-white/5">
-                  <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACDDHyXPvVOC9HkZU48joFw9LTGlOBCo_w_TEBzbzsk2n6vpU84OjXVhOl79BWwK1WYRCcU0RLolXacEwo6BLnYGt-w-uGxlVY47BneYqKUlxUkQKkC85Z2ku2iXkYA5zq4JcIM2iOmsVIy8YpY41zKRLNy9wblGG021wbAeYH7IvWgfi-6G3UF7Q0vaEo38o6aM8OFykj_4mGcc54H6gxqO036iN1yYoHHBX3z2TCwo8G7CM0YNVLIqgs5fqeemPEpWyToIHMmJ0" alt="Amina Yusuf" />
+                  <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACDDHyXPvVOC9HkZU48joFw9LTGlOBCo_w_TEBzbzsk2n6vpU84OjXVhOl79BWwK1WYRCcU0RLolXacEwo6BLnYGt-w-uGxlVY47BneYqKUlxUkQKkC85Z2ku2iXkYA5zq4JcIM2iOmsVIy8YpY41zKRLNy9wblGG021wbAeYH7IvWgfi-6G3UF7Q0vaEo38o6aM8OFykj_4mGcc54H6gxqO036iN1yYoHHBX3z2TCwo8G7CM0YNVLIqgs5fqeemPEpWyToIHMmJ0" alt="Amina Yusuf"/>
                 </div>
-                <h4 className="font-h3 text-2xl mb-1">Amina Yusuf</h4>
+                <h4 className="font-h3 text-2xl mb-1 text-white">Amina Yusuf</h4>
                 <p className="font-label-caps text-secondary mb-4">DATA POET</p>
                 <p className="text-on-surface-variant text-sm italic">"Turning national statistics into stories that move the soul."</p>
               </div>
+              {/* Creator 3 */}
               <div className="flex-shrink-0 w-80 group">
                 <div className="relative aspect-square rounded-3xl overflow-hidden mb-6 border border-white/5">
-                  <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfpEXVtlajXbY-QZR5gPx5pRHkWMsWD4nzyJ80dlqMc7IdZSK0SL4oYLnJyDOYKPquVdTcx81GhHs1f00sTA5uGHKLm8xSTGjiXg_Nr13gP5-ND01CYFa-U1pD7OCbHm50xbup4cJerfUevNWwnxW8tHgCetaVRSxtL2_MMVLuoZy3Gu2CWtp4UGauHYnEVToU2U6K3vqTQSfw0-elXisRnJrYIbL7QjlrLI_neFe-zu6FLCWrHLa1W-0r8k3ykldquB875_ElxYA" alt="Tunde Balogun" />
+                  <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfpEXVtlajXbY-QZR5gPx5pRHkWMsWD4nzyJ80dlqMc7IdZSK0SL4oYLnJyDOYKPquVdTcx81GhHs1f00sTA5uGHKLm8xSTGjiXg_Nr13gP5-ND01CYFa-U1pD7OCbHm50xbup4cJerfUevNWwnxW8tHgCetaVRSxtL2_MMVLuoZy3Gu2CWtp4UGauHYnEVToU2U6K3vqTQSfw0-elXisRnJrYIbL7QjlrLI_neFe-zu6FLCWrHLa1W-0r8k3ykldquB875_ElxYA" alt="Tunde Balogun"/>
                 </div>
-                <h4 className="font-h3 text-2xl mb-1">Tunde Balogun</h4>
+                <h4 className="font-h3 text-2xl mb-1 text-white">Tunde Balogun</h4>
                 <p className="font-label-caps text-secondary mb-4">CULTURAL ARCHIVIST</p>
                 <p className="text-on-surface-variant text-sm italic">"Digitizing our heritage to secure our global identity."</p>
               </div>
+              {/* Creator 4 */}
               <div className="flex-shrink-0 w-80 group">
                 <div className="relative aspect-square rounded-3xl overflow-hidden mb-6 border border-white/5">
-                  <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChP2MH15g2Wm9eCl_YS4RrMPFmzuybM-7sShtb2KSDcE_lhubU58vul8ykCT7eN_RPFb5bwWOAf4EZfRr-CTzEQ3VEtB5BkVsqP4PTSZLlETYpcXdHme9d66S0DT4f5PZWGakRLC_e6Nwz_yicf5qPC5oAbxRkP3gVtryy1hlgWx-S0QCr0jF6sWCQJTfoFKkt5pYwCsYMHH-yPbzUvuKkzVDYj5K38wnmpGRpK3JwC2w8rYq1MDSi8KCWpycY2Q2lORz-xIlpQR4" alt="Ifeoma Adeleke" />
+                  <img className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChP2MH15g2Wm9eCl_YS4RrMPFmzuybM-7sShtb2KSDcE_lhubU58vul8ykCT7eN_RPFb5bwWOAf4EZfRr-CTzEQ3VEtB5BkVsqP4PTSZLlETYpcXdHme9d66S0DT4f5PZWGakRLC_e6Nwz_yicf5qPC5oAbxRkP3gVtryy1hlgWx-S0QCr0jF6sWCQJTfoFKkt5pYwCsYMHH-yPbzUvuKkzVDYj5K38wnmpGRpK3JwC2w8rYq1MDSi8KCWpycY2Q2lORz-xIlpQR4" alt="Ifeoma Adeleke"/>
                 </div>
-                <h4 className="font-h3 text-2xl mb-1">Ifeoma Adeleke</h4>
+                <h4 className="font-h3 text-2xl mb-1 text-white">Ifeoma Adeleke</h4>
                 <p className="font-label-caps text-secondary mb-4">VIRTUAL ARCHITECT</p>
                 <p className="text-on-surface-variant text-sm italic">"Designing the spatial interfaces of the New Nigeria."</p>
               </div>
@@ -274,70 +282,70 @@ export default function ProjectNigeriaPage() {
         <section className="px-8 max-w-[1440px] mx-auto py-[120px]">
           <div className="relative rounded-[40px] overflow-hidden bg-primary-container p-12 md:p-24 border border-secondary/20 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
             <div className="absolute top-0 right-0 w-1/2 h-full opacity-30">
-              <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2RvoLRxUJ0hHL7U4rKsGPG60o7cRxIu1Lnp-kbinW6neuFVmpbsf9z2lsz8-75E8OgZP5JoGo8QjZs9K2jB5zA5yD-5IXHb2Yd3zWc0rsOy0XdO1M3i5spjvx4a5cKMN9XMJyX0TTXH_dF7eU7ZAQFE6urXfFT37VtnPRdXuBUZBc13tt0A7ReDg1CyThARB5320ttp2JcUV7vrO55p1Fcl4olIATn-H9MSuqFfGsr7H4M7D27saOnnc8gEdxEJoLToWUPnEWlao" alt="Corporate" />
+              <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2RvoLRxUJ0hHL7U4rKsGPG60o7cRxIu1Lnp-kbinW6neuFVmpbsf9z2lsz8-75E8OgZP5JoGo8QjZs9K2jB5zA5yD-5IXHb2Yd3zWc0rsOy0XdO1M3i5spjvx4a5cKMN9XMJyX0TTXH_dF7eU7ZAQFE6urXfFT37VtnPRdXuBUZBc13tt0A7ReDg1CyThARB5320ttp2JcUV7vrO55p1Fcl4olIATn-H9MSuqFfGsr7H4M7D27saOnnc8gEdxEJoLToWUPnEWlao" alt="Corporate professionals"/>
               <div className="absolute inset-0 bg-gradient-to-r from-primary-container via-transparent to-transparent"></div>
             </div>
             <div className="relative z-10 max-w-2xl">
               <span className="font-label-caps text-secondary mb-6 block">PRESTIGE OPPORTUNITY</span>
-              <h2 className="font-h2 mb-8">Patron of the <span className="text-secondary italic">National Narrative</span></h2>
+              <h2 className="font-h2 mb-8 text-white">Patron of the <span className="text-secondary italic">National Narrative</span></h2>
               <p className="font-body-lg text-on-primary-container mb-12">Institutional partners and high-impact individuals can now sponsor featured stories, ensuring the triumphs of the New Nigeria are broadcast to the world.</p>
               <div className="flex flex-col sm:flex-row gap-6">
-                <button className="px-10 py-5 rounded-full bg-secondary text-on-secondary font-h3 gold-glow">Request Ledger</button>
+                <button className="px-10 py-5 rounded-full bg-secondary text-on-secondary font-h3 shadow-[0_0_20px_rgba(233,195,73,0.2)]">Request Ledger</button>
                 <button className="px-10 py-5 rounded-full border border-secondary/40 text-secondary font-h3 hover:bg-secondary/5 transition-all">Institutional Access</button>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Content Feed */}
+        {/* Content Feed Masonry */}
         <section className="py-[120px] px-8 max-w-[1440px] mx-auto">
           <div className="flex items-center justify-between mb-16">
-            <h2 className="font-h2">Civic Feed</h2>
+            <h2 className="font-h2 text-white">Civic Feed</h2>
             <div className="flex gap-2 p-1 bg-surface-container rounded-full border border-white/5">
               <button className="px-4 py-2 rounded-full bg-secondary text-on-secondary text-xs font-bold">Trending</button>
               <button className="px-4 py-2 rounded-full text-slate-400 text-xs font-bold hover:text-white">Recent</button>
               <button className="px-4 py-2 rounded-full text-slate-400 text-xs font-bold hover:text-white">Verified</button>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="rounded-2xl overflow-hidden border border-white/5 bg-surface-container hover:border-secondary/30 transition-colors">
-              <img className="w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3bLvJxZ7ff9yJNNniER9BB2wB4czQj96Vi388nQdGD5HJmbXtEzUaMQLupuLDmMdr-DCxOpzln03Lf5x4uto-w1NiVtArcIWMkloJDqdECPH3XdyQyvhjUjnFBqSMoI-bodvUM4FIpAnh98TwGWsLHL4LkLYovUTd95yRuY5Iq1FLPnK11gD-aYfQLA3SRlVWYqt4OPQZVc8O9c10Crui5YO5ruef12eownWdu8iezIuN4RXMR0oqbEhKIJcoB-ZBVaTqlqJmmMQ" alt="Student" />
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-[24px] space-y-[24px]">
+            <div className="break-inside-avoid rounded-2xl overflow-hidden border border-white/5 bg-surface-container hover:border-secondary/30 transition-colors">
+              <img className="w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3bLvJxZ7ff9yJNNniER9BB2wB4czQj96Vi388nQdGD5HJmbXtEzUaMQLupuLDmMdr-DCxOpzln03Lf5x4uto-w1NiVtArcIWMkloJDqdECPH3XdyQyvhjUjnFBqSMoI-bodvUM4FIpAnh98TwGWsLHL4LkLYovUTd95yRuY5Iq1FLPnK11gD-aYfQLA3SRlVWYqt4OPQZVc8O9c10Crui5YO5ruef12eownWdu8iezIuN4RXMR0oqbEhKIJcoB-ZBVaTqlqJmmMQ" alt="Student with tablet"/>
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-8 h-8 rounded-full bg-slate-800 border border-white/10 overflow-hidden">
-                    <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk66CWiEJhFIFVvSpxTu-ZHTtRYvJfrw1qF_-JtNFQ5WWjKgZFRDdQy5OjpD7rhgBIRlCX-BetjdTzgN3Z2vNRONfOQraCrcAN7Wnk48L58Xs31aydq2OzKSx1mYIdUH9Z0dkyI0BZk0Q1b3ZVV425YazNJaBNwzLAPJYfTF-u7T9pymePzIndc44m8HOVxBA2WIMhSrlWL5ihCG5R09YtnD0edJiVU-h4VMefj9AHY1hu4l5nDPpvE7jIOL-goxKuzlGiFxh37o8" alt="Profile" />
+                    <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk66CWiEJhFIFVvSpxTu-ZHTtRYvJfrw1qF_-JtNFQ5WWjKgZFRDdQy5OjpD7rhgBIRlCX-BetjdTzgN3Z2vNRONfOQraCrcAN7Wnk48L58Xs31aydq2OzKSx1mYIdUH9Z0dkyI0BZk0Q1b3ZVV425YazNJaBNwzLAPJYfTF-u7T9pymePzIndc44m8HOVxBA2WIMhSrlWL5ihCG5R09YtnD0edJiVU-h4VMefj9AHY1hu4l5nDPpvE7jIOL-goxKuzlGiFxh37o8" alt="Portrait"/>
                   </div>
                   <span className="text-xs font-bold text-on-surface">@bola_creatives</span>
                 </div>
                 <p className="text-sm text-on-surface-variant">Connectivity reached the Gidan district today. The arena is growing.</p>
               </div>
             </div>
-            <div className="rounded-2xl overflow-hidden border border-white/5 bg-surface-container hover:border-secondary/30 transition-colors p-6">
+            <div className="break-inside-avoid rounded-2xl overflow-hidden border border-white/5 bg-surface-container hover:border-secondary/30 transition-colors p-6">
               <div className="font-h3 text-lg mb-4 text-secondary">"The infrastructure is the stage, but the citizens are the performers."</div>
               <p className="text-xs text-on-surface-variant uppercase font-bold tracking-widest">— Official Command Directive</p>
             </div>
-            <div className="rounded-2xl overflow-hidden border border-white/5 bg-surface-container hover:border-secondary/30 transition-colors">
-              <img className="w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDJDja_2GNf8e9tkW9LW5Rn_Swo9-e8Yi1pYKPMgvOMENwq6-71vkPF2mzjhW1NqkpcGlUPjNWFBYO6ESpFhndX4qLlNMf6AjeFN7ZW1ksoHneKnrNRd0zPTBzuaXVjjVQBzYALwcNwIjNzKOxdcNgqyTFLCB5jouhDNoE9DcbslPDeSIpIZHprJSc0dJ1TdGJfUet1Dxjy01rb9xqyEJIAqkF_c6lYDEEgxFMFOOxdXXtTSzbSiN6zThWAByQxtlb40_lk7izuy8" alt="Abuja" />
+            <div className="break-inside-avoid rounded-2xl overflow-hidden border border-white/5 bg-surface-container hover:border-secondary/30 transition-colors">
+              <img className="w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDJDja_2GNf8e9tkW9LW5Rn_Swo9-e8Yi1pYKPMgvOMENwq6-71vkPF2mzjhW1NqkpcGlUPjNWFBYO6ESpFhndX4qLlNMf6AjeFN7ZW1ksoHneKnrNRd0zPTBzuaXVjjVQBzYALwcNwIjNzKOxdcNgqyTFLCB5jouhDNoE9DcbslPDeSIpIZHprJSc0dJ1TdGJfUet1Dxjy01rb9xqyEJIAqkF_c6lYDEEgxFMFOOxdXXtTSzbSiN6zThWAByQxtlb40_lk7izuy8" alt="Abuja skyline"/>
               <div className="p-6">
                 <h4 className="font-bold text-white mb-2">Abuja Nightfall</h4>
                 <p className="text-xs text-on-surface-variant">Verified via Impact Ledger #8812</p>
               </div>
             </div>
-            <div className="rounded-2xl overflow-hidden border border-white/5 bg-surface-container hover:border-secondary/30 transition-colors">
-              <img className="w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWvbGpXfrmEdjk-_UzhsRuRseKuBsqXlqdjZgehFZ2AmkpSxUVzLve3UhOsPGtMAYpilCe70bkWNVS2JJJchMSHALlUAjSr-XeuQkpJmIzi6jLkUyEin0h1YWogcvrLD2G7s6KXGbX6EdvD-57VYeTlCKoZ5JLxgIbZ8uCUjryEY4FySsQyt7XHtGGQ7fyk50yJ6m6WjN0an0Iyp-RwmKQ7_VzJhiRFqNRLQQf-c7Ed39hXJcPAfPO4oqA6Z7hSZIOPgFHjMKTM-Q" alt="Workspace" />
+            <div className="break-inside-avoid rounded-2xl overflow-hidden border border-white/5 bg-surface-container hover:border-secondary/30 transition-colors">
+              <img className="w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWvbGpXfrmEdjk-_UzhsRuRseKuBsqXlqdjZgehFZ2AmkpSxUVzLve3UhOsPGtMAYpilCe70bkWNVS2JJJchMSHALlUAjSr-XeuQkpJmIzi6jLkUyEin0h1YWogcvrLD2G7s6KXGbX6EdvD-57VYeTlCKoZ5JLxgIbZ8uCUjryEY4FySsQyt7XHtGGQ7fyk50yJ6m6WjN0an0Iyp-RwmKQ7_VzJhiRFqNRLQQf-c7Ed39hXJcPAfPO4oqA6Z7hSZIOPgFHjMKTM-Q" alt="Workspace"/>
               <div className="p-6">
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-secondary-fixed">LIVE WORKSPACE</span>
-                  <span className="material-symbols-outlined text-secondary text-sm">verified</span>
+                  <span className="material-symbols-outlined text-secondary text-sm" style={{fontVariationSettings: "'FILL' 1"}}>verified</span>
                 </div>
               </div>
             </div>
-            <div className="rounded-2xl overflow-hidden border border-white/5 bg-surface-container hover:border-secondary/30 transition-colors p-6">
+            <div className="break-inside-avoid rounded-2xl overflow-hidden border border-white/5 bg-surface-container hover:border-secondary/30 transition-colors p-6">
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center text-secondary">
                   <span className="material-symbols-outlined">forum</span>
                 </div>
-                <div className="font-h3 text-lg">Hub Consensus Reached</div>
+                <div className="font-h3 text-lg text-white">Hub Consensus Reached</div>
               </div>
               <p className="text-sm text-on-surface-variant">The Port Harcourt creative cluster has voted to initiate the 'Oil to Art' transition project. Verification in progress.</p>
             </div>
@@ -352,33 +360,33 @@ export default function ProjectNigeriaPage() {
       <footer className="w-full border-t border-white/5 pt-16 pb-8 bg-[#001F33] flex flex-col items-center text-center px-4">
         <div className="text-xl font-bold text-white mb-4">City Boy Arena</div>
         <div className="flex flex-wrap justify-center gap-8 mb-12">
-          <a className="font-h3 text-xs text-slate-400 tracking-wide hover:text-secondary transition-colors" href="#">Impact Report</a>
-          <a className="font-h3 text-xs text-slate-400 tracking-wide hover:text-secondary transition-colors" href="#">Privacy Policy</a>
-          <a className="font-h3 text-xs text-slate-400 tracking-wide hover:text-secondary transition-colors" href="#">Security Ledger</a>
-          <a className="font-h3 text-xs text-slate-400 tracking-wide hover:text-secondary transition-colors" href="#">Contact Command</a>
+          <Link to="#" className="font-sora text-xs text-slate-400 tracking-wide hover:text-amber-400 transition-colors">Impact Report</Link>
+          <Link to="#" className="font-sora text-xs text-slate-400 tracking-wide hover:text-amber-400 transition-colors">Privacy Policy</Link>
+          <Link to="#" className="font-sora text-xs text-slate-400 tracking-wide hover:text-amber-400 transition-colors">Security Ledger</Link>
+          <Link to="#" className="font-sora text-xs text-slate-400 tracking-wide hover:text-amber-400 transition-colors">Contact Command</Link>
         </div>
-        <div className="font-h3 text-xs text-slate-500 tracking-wide">
+        <div className="font-sora text-xs text-slate-500 tracking-wide">
           © 2024 City Boy Digital Arena. A Nation-Building Initiative.
         </div>
       </footer>
 
-      {/* Mobile Bottom Nav */}
-      <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-4 bg-[#003153]/95 backdrop-blur-lg rounded-t-3xl border-t border-secondary/30 shadow-[0_-10px_40px_rgba(0,0,0,0.8)]">
-        <Link to="/" className="flex flex-col items-center justify-center text-secondary bg-secondary/10 rounded-xl p-2 shadow-[0_0_15px_rgba(255,215,0,0.3)]">
-          <span className="material-symbols-outlined">home</span>
-          <span className="font-h3 text-[10px] font-bold uppercase mt-1">Home</span>
+      {/* Mobile Bottom NavBar */}
+      <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-4 bg-[#003153]/95 backdrop-blur-lg rounded-t-3xl border-t border-amber-500/30 shadow-[0_-10px_40px_rgba(0,0,0,0.8)]">
+        <Link to="/" className="flex flex-col items-center justify-center text-amber-400 bg-amber-500/10 rounded-xl p-2 shadow-[0_0_15px_rgba(255,215,0,0.3)]">
+          <span className="material-symbols-outlined" style={{fontVariationSettings: "'FILL' 1"}}>home</span>
+          <span className="font-sora text-[10px] font-bold uppercase mt-1">Home</span>
         </Link>
-        <Link to="#" className="flex flex-col items-center justify-center text-slate-400 p-2">
+        <Link to="/project-nigeria" className="flex flex-col items-center justify-center text-slate-400 p-2">
           <span className="material-symbols-outlined">assignment</span>
-          <span className="font-h3 text-[10px] font-bold uppercase mt-1">Tasks</span>
+          <span className="font-sora text-[10px] font-bold uppercase mt-1">Tasks</span>
         </Link>
-        <Link to="#" className="flex flex-col items-center justify-center text-slate-400 p-2">
+        <Link to="/join" className="flex flex-col items-center justify-center text-slate-400 p-2">
           <span className="material-symbols-outlined">military_tech</span>
-          <span className="font-h3 text-[10px] font-bold uppercase mt-1">Rewards</span>
+          <span className="font-sora text-[10px] font-bold uppercase mt-1">Rewards</span>
         </Link>
         <Link to="#" className="flex flex-col items-center justify-center text-slate-400 p-2">
           <span className="material-symbols-outlined">chat</span>
-          <span className="font-h3 text-[10px] font-bold uppercase mt-1">Chat</span>
+          <span className="font-sora text-[10px] font-bold uppercase mt-1">Chat</span>
         </Link>
       </nav>
     </>

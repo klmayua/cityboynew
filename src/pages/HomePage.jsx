@@ -28,7 +28,7 @@ export default function HomePage() {
         {/* Hero Section: Cinematic Carousel */}
         <section className="relative h-[921px] w-full overflow-hidden">
           <div className="absolute inset-0">
-            <img alt="Nigerian Metropolis" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxdn7rXqG0UkGspsf3aCjHCRSLpSODNQ-BZ2vAENjSZDZ9vZo_aRnJUgKvp38Y3bY_1YHL1xLvegVwnNoZsfvpfA6sX86i083Odjz6OgMePeviRhwXtxaAthazy7kSpmfDu-KOpjGUFJRJiy13oJFN-ovBSxfjQ2eFv9mA28kod5KYqVX3viuMsMZvS0hLHTxC1Pi___1Y-nRsCn6ebrt7d2FjoJ19JZq89fIfOppRT0RrFtJUsY8dkcEPEA_3C6yPX2ZHeYDSqVU"/>
+            <img alt="Nigerian Metropolis" className="w-full h-full object-cover" src="https://i.imgur.com/scOJueT.jpeg"/>
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent"></div>
           </div>
