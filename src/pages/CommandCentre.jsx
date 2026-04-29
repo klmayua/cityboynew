@@ -3,8 +3,7 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import { Activity, MapPin, TrendingUp, Users, AlertCircle, ShieldCheck } from 'lucide-react';
 import { ArenaCard } from '../components/ArenaCard';
 import { ArenaMetric } from '../components/ArenaMetric';
-import { ArenaBadge } from '../components/ArenaBadge';
-import './CommandCentre.css';
+// Removed CSS import
 
 // Mock Data
 const sentimentData = [

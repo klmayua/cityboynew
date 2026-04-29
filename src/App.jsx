@@ -1,7 +1,7 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { MainLayout } from './components/MainLayout';
 import { HomePage } from './pages/HomePage';
+import { CommandCentre } from './pages/CommandCentre';
 
 // Placeholder components for routes yet to be implemented
 const PlaceholderPage = ({ title }) => (
@@ -19,7 +19,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="project-nigeria" element={<PlaceholderPage title="Project Nigeria" />} />
           <Route path="volunteer" element={<PlaceholderPage title="Volunteer App" />} />
-          <Route path="command-centre" element={<PlaceholderPage title="Command Centre" />} />
+          <Route path="command-centre" element={<CommandCentre />} />
           <Route path="chapter" element={<PlaceholderPage title="Chapters Dashboard" />} />
           <Route path="donate" element={<PlaceholderPage title="Premium Donor Gateway" />} />
           <Route path="join" element={<PlaceholderPage title="Join The Arena" />} />
