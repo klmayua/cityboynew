@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import HomePage from './pages/HomePage'
-import ProjectNigeria from './pages/ProjectNigeria'
-import Volunteer from './pages/Volunteer'
-import Transparency from './pages/Transparency'
-import Join from './pages/Join'
-import Donate from './pages/Donate'
+import ProjectNigeriaPage from './pages/ProjectNigeriaPage'
+import VolunteerApp from './pages/VolunteerApp'
+import TransparencyPage from './pages/TransparencyPage'
+import JoinPage from './pages/JoinPage'
+import DonatePage from './pages/DonatePage'
 
 function App() {
   return (
@@ -13,11 +13,11 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
-          <Route path="project-nigeria" element={<ProjectNigeria />} />
-          <Route path="volunteer" element={<Volunteer />} />
-          <Route path="transparency" element={<Transparency />} />
-          <Route path="join" element={<Join />} />
-          <Route path="donate" element={<Donate />} />
+          <Route path="project-nigeria" element={<ProjectNigeriaPage />} />
+          <Route path="volunteer" element={<VolunteerApp />} />
+          <Route path="transparency" element={<TransparencyPage />} />
+          <Route path="join" element={<JoinPage />} />
+          <Route path="donate" element={<DonatePage />} />
         </Route>
       </Routes>
     </BrowserRouter>
