@@ -1,21 +1,10 @@
-import { Link } from 'react-router-dom'
-import { ArrowRight, Play, TrendingUp, Users, DollarSign, MapPin, Star, Sparkles } from 'lucide-react'
-import { ArenaButton } from '../components/ArenaButton'
-import { ArenaMetric } from '../components/ArenaMetric'
-import { ArenaCard } from '../components/ArenaCard'
+import React from 'react'
 
-const liveStats = [
-  { value: '12,847', label: 'Active Volunteers', icon: Users },
-  { value: '324', label: 'Projects Live', icon: TrendingUp },
-  { value: '₦2.4B', label: 'Funds Deployed', icon: DollarSign },
-  { value: '36', label: 'States Active', icon: MapPin },
-]
-
-const floatingCards = [
-  { text: '+1,284 volunteers this week', time: '2h ago', highlight: true },
-  { text: 'Lagos chapter just went live', time: '5h ago' },
-  { text: '₦24m project funded', time: '1d ago' },
-  { text: 'Project Nigeria trending #1', time: 'Now', live: true },
+const stats = [
+  { value: '24,592', label: 'Active Volunteers', change: '+1,284 this week' },
+  { value: '₦45.2M', label: 'Raised Today', change: '+18%' },
+  { value: '142', label: 'Projects Funded', change: '12 completed' },
+  { value: '94%', label: 'Trust Score', change: 'Industry leading' },
 ]
 
 const tickerItems = [
@@ -24,182 +13,169 @@ const tickerItems = [
   '• 124,000 VOLUNTEERS',
   '• 45 CAMPAIGNS LIVE',
   '★ 8,500 DIASPORA MEMBERS',
-  '• 12 PROJECTS COMPLETED THIS WEEK',
 ]
 
-export const HomePage = () => {
+const projects = [
+  { title: 'Kano Solar Initiative', category: 'Energy', funded: 100, amount: '₦24.5M', image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=250&fit=crop' },
+  { title: 'Lagos Tech Hubs', category: 'Education', funded: 85, amount: '₦18.2M', image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop' },
+  { title: 'Rivers Healthcare', category: 'Health', funded: 92, amount: '₦31.8M', image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=250&fit=crop' },
+]
+
+export default function HomePage() {
   return (
-    <div className="home-page">
-      {/* Hero Arena */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-[#001B2E] via-[#003153] to-[#001B2E] pt-20">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#D4AF37]/5 rounded-full blur-[120px]" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#0E9F6E]/5 rounded-full blur-[120px]" />
-          <div className="absolute inset-0 opacity-30" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0)`,
-            backgroundSize: '40px 40px'
+    <div>
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#001B2E] via-[#003153] to-[#001B2E] pt-20">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#D4AF37]/10 rounded-full blur-[150px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#0E9F6E]/10 rounded-full blur-[120px]" />
+          <div className="absolute inset-0 opacity-20" style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0)`,
+            backgroundSize: '30px 30px'
           }} />
         </div>
-
-        <div className="relative max-w-[1320px] mx-auto px-5 py-16 w-full">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0E9F6E]/20 border border-[#0E9F6E]/30 mb-6">
-                <Star className="w-4 h-4 text-[#D4AF37] fill-[#D4AF37]" />
-                <span className="text-sm font-medium text-[#FAF8F2]">LIVE: National Mobilization</span>
+        
+        <div className="relative container text-center">
+          <div className="animate-fade-up">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0E9F6E]/20 border border-[#0E9F6E]/40 text-[#0E9F6E] text-sm font-medium mb-8">
+              <span className="w-2 h-2 bg-[#0E9F6E] rounded-full animate-pulse" />
+              LIVE: National Mobilization Active
+            </span>
+          </div>
+          
+          <h1 className="font-bold text-5xl md:text-7xl lg:text-8xl text-white leading-tight mb-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
+            Organize Hope.<br/>
+            <span className="text-gradient">Build Nigeria.</span>
+          </h1>
+          
+          <p className="text-xl text-white/70 max-w-2xl mx-auto mb-10 animate-fade-up" style={{ animationDelay: '0.2s' }}>
+            The digital command centre for positive civic participation. Track impact, join the movement, and help shape the national narrative.
+          </p>
+          
+          <div className="flex flex-wrap justify-center gap-4 mb-16 animate-fade-up" style={{ animationDelay: '0.3s' }}>
+            <a href="/join" className="btn btn-gold text-lg px-8 py-4 glow-gold">
+              Join Arena <span>→</span>
+            </a>
+            <a href="/project-nigeria" className="btn btn-outline text-lg px-8 py-4">
+              Explore Impact
+            </a>
+          </div>
+          
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto animate-fade-up" style={{ animationDelay: '0.4s' }}>
+            {stats.map((stat, i) => (
+              <div key={i} className="glass rounded-2xl p-6 text-center">
+                <div className="font-data text-3xl font-bold text-white mb-1">{stat.value}</div>
+                <div className="text-white/60 text-sm">{stat.label}</div>
+                <div className="text-[#0E9F6E] text-xs mt-1">{stat.change}</div>
               </div>
-
-              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6">
-                Organize Hope.<br />
-                <span className="text-[#D4AF37]">Build Nigeria.</span>
-              </h1>
-
-              <p className="text-lg text-[#FAF8F2]/80 max-w-lg mb-8 leading-relaxed">
-                The digital command centre for positive civic participation. 
-                Track impact, join the movement, and help shape the national narrative.
-              </p>
-
-              <div className="flex flex-wrap gap-4 mb-12">
-                <ArenaButton variant="gold" size="large">
-                  <Link to="/join" className="flex items-center gap-2">
-                    Join Arena <ArrowRight className="w-5 h-5" />
-                  </Link>
-                </ArenaButton>
-                <ArenaButton variant="ghost" size="large">
-                  <Play className="w-5 h-5 mr-2" /> Watch Vision
-                </ArenaButton>
-              </div>
-
-              <div className="flex flex-wrap gap-8 pt-8 border-t border-white/10">
-                {liveStats.map((stat, idx) => (
-                  <div key={idx} className="text-center">
-                    <div className="flex items-center gap-2 justify-center mb-1">
-                      <stat.icon className="w-4 h-4 text-[#0E9F6E]" />
-                      <span className="font-data text-2xl font-bold text-white">{stat.value}</span>
-                    </div>
-                    <span className="text-xs text-[#FAF8F2]/60 uppercase tracking-wider">{stat.label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative hidden lg:block">
-              <div className="relative w-full aspect-square max-w-[500px] mx-auto">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/20 to-transparent rounded-[40px] blur-2xl" />
-                <div className="relative bg-white/5 backdrop-blur-md rounded-[40px] p-8 h-full flex flex-col justify-center border border-white/10">
-                  <div className="absolute top-6 right-6 flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0E9F6E]/20 text-[#0E9F6E] text-xs font-medium">
-                    <span className="w-2 h-2 rounded-full bg-[#0E9F6E] animate-pulse" />
-                    Live Now
-                  </div>
-                  
-                  <h3 className="font-display text-2xl font-bold text-white mb-6">National Pulse</h3>
-                  
-                  <div className="space-y-4">
-                    {floatingCards.map((card, idx) => (
-                      <div 
-                        key={idx} 
-                        className={`p-4 rounded-xl border transition-all hover:scale-[1.02] cursor-pointer ${
-                          card.highlight 
-                            ? 'bg-[#D4AF37]/10 border-[#D4AF37]/30' 
-                            : card.live 
-                              ? 'bg-[#0E9F6E]/10 border-[#0E9F6E]/30'
-                              : 'bg-white/5 border-white/10'
-                        }`}
-                      >
-                        <p className="text-sm text-white font-medium">{card.text}</p>
-                        <span className="text-xs text-[#FAF8F2]/50 mt-1 block">{card.time}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="mt-6 pt-6 border-t border-white/10">
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-[#FAF8F2]/60">Trust Score</span>
-                      <span className="font-data font-bold text-[#D4AF37]">94.2%</span>
-                    </div>
-                    <div className="mt-2 h-2 bg-white/10 rounded-full overflow-hidden">
-                      <div className="h-full w-[94.2%] bg-gradient-to-r from-[#D4AF37] to-[#F0D060] rounded-full" />
-                    </div>
-                  </div>
-
-                  <button className="mt-6 w-full py-3 rounded-xl bg-white/5 hover:bg-white/10 transition-colors flex items-center justify-center gap-2 text-sm text-[#FAF8F2]">
-                    <Sparkles className="w-4 h-4 text-[#D4AF37]" />
-                    Ask AI Concierge
-                  </button>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Momentum Ribbon */}
-      <div className="bg-[#0F172A] border-y border-white/5 overflow-hidden">
-        <div className="flex animate-pulse">
-          {[...Array(2)].map((_, i) => (
-            <div key={i} className="flex whitespace-nowrap py-4">
-              {tickerItems.map((item, idx) => (
-                <span key={idx} className="px-8 font-display font-semibold text-[#D4AF37] tracking-wider">
-                  {item}
-                </span>
-              ))}
-            </div>
-          ))}
+      {/* Ticker */}
+      <div className="bg-[#0F172A] border-y border-white/5 overflow-hidden py-4">
+        <div className="ticker">
+          <div className="ticker-content">
+            {[...Array(2)].map((_, i) => (
+              <div key={i} className="flex">
+                {tickerItems.map((item, j) => (
+                  <span key={j} className="px-8 font-semibold text-[#D4AF37] whitespace-nowrap">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Project Nigeria Block */}
-      <section className="py-20 bg-[#FAF8F2]">
-        <div className="max-w-[1320px] mx-auto px-5">
+      {/* Project Nigeria */}
+      <section className="section-padding bg-[#FAF8F2]">
+        <div className="container">
           <div className="text-center mb-12">
-            <h2 className="font-display text-4xl font-bold text-[#003153] mb-4">Project Nigeria</h2>
-            <p className="text-lg text-[#5B6B7A]">Real stories of impact, transparently tracked.</p>
+            <span className="text-[#D4AF37] font-semibold text-sm uppercase tracking-wider">Real Impact</span>
+            <h2 className="text-4xl font-bold text-[#003153] mt-2">Project Nigeria</h2>
+            <p className="text-[#5B6B7A] mt-2">Real stories of change, transparently tracked.</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-6">
-            <ArenaCard interactive>
-              <div className="h-48 bg-[#0F172A] flex items-center justify-center rounded-t-2xl">
-                <span className="text-white/50 font-display">Kano Solar Initiative</span>
+            {projects.map((project, i) => (
+              <div key={i} className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+                <div className="relative h-48 overflow-hidden">
+                  <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#003153]/80 text-white text-xs font-medium">
+                    {project.category}
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="font-bold text-xl text-[#003153] mb-2">{project.title}</h3>
+                  <p className="text-[#5B6B7A] text-sm mb-4">{project.amount}</p>
+                  <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-[#D4AF37] to-[#F0D060] rounded-full" style={{ width: `${project.funded}%` }} />
+                  </div>
+                  <div className="flex justify-between mt-2 text-xs">
+                    <span className="text-[#5B6B7A]">{project.funded}% funded</span>
+                    <span className="text-[#0E9F6E]">Live</span>
+                  </div>
+                </div>
               </div>
-              <div className="p-6">
-                <div className="text-[#0E9F6E] text-xs font-semibold uppercase tracking-wider mb-2">100% Funded • Live</div>
-                <h3 className="font-display text-xl font-bold text-[#003153] mb-2">Powering 50 Schools</h3>
-                <p className="text-[#5B6B7A] text-sm">Clean energy deployment completed ahead of schedule by local chapters.</p>
-              </div>
-            </ArenaCard>
+            ))}
             
-            <ArenaCard interactive>
-              <div className="h-48 bg-[#003153] flex items-center justify-center rounded-t-2xl">
-                <span className="text-white/50 font-display">Lagos Tech Hubs</span>
-              </div>
-              <div className="p-6">
-                <div className="text-[#D4AF37] text-xs font-semibold uppercase tracking-wider mb-2">85% Funded • Active</div>
-                <h3 className="font-display text-xl font-bold text-[#003153] mb-2">Youth Coding Centers</h3>
-                <p className="text-[#5B6B7A] text-sm">Equipping 5,000 youths with modern development skills.</p>
-              </div>
-            </ArenaCard>
-
-            <ArenaCard variant="premium">
-              <div className="p-8 flex flex-col justify-center h-full text-center">
-                <h3 className="font-display text-xl font-bold text-[#003153] mb-2">Sponsor a Project</h3>
-                <p className="text-[#5B6B7A] text-sm mb-4">Direct impact. Full transparency. Quarterly reports.</p>
-                <ArenaButton variant="gold">View Opportunities</ArenaButton>
-              </div>
-            </ArenaCard>
+            {/* Sponsor Card */}
+            <div className="bg-gradient-to-br from-[#003153] to-[#0F172A] rounded-2xl p-8 flex flex-col justify-center items-center text-center">
+              <h3 className="font-bold text-2xl text-white mb-3">Sponsor a Project</h3>
+              <p className="text-white/60 mb-6">Direct impact. Full transparency. Quarterly reports.</p>
+              <a href="/donate" className="btn btn-gold">View Opportunities</a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Join CTA */}
-      <section className="py-20 bg-[#003153]">
-        <div className="max-w-[1320px] mx-auto px-5 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="text-center md:text-left">
-            <h2 className="font-display text-3xl font-bold text-white mb-2">Ready to build?</h2>
-            <p className="text-[#FAF8F2]/70">Join the movement in under 60 seconds.</p>
+      {/* Trust Section */}
+      <section className="section-padding bg-[#003153]">
+        <div className="container">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="text-[#D4AF37] font-semibold text-sm uppercase tracking-wider">Accountability</span>
+              <h2 className="text-4xl font-bold text-white mt-2 mb-6">Transparency is Our Currency</h2>
+              <p className="text-white/70 mb-8">
+                Every naira tracked. Every project verified. Every impact measured. Our commitment to radical transparency sets us apart.
+              </p>
+              <a href="/transparency" className="btn btn-outline">View Transparency Portal</a>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="glass rounded-2xl p-6 text-center">
+                <div className="font-data text-4xl font-bold text-[#D4AF37]">₦2.4B</div>
+                <div className="text-white/60 text-sm mt-1">Total Raised</div>
+              </div>
+              <div className="glass rounded-2xl p-6 text-center">
+                <div className="font-data text-4xl font-bold text-[#D4AF37]">324</div>
+                <div className="text-white/60 text-sm mt-1">Projects Delivered</div>
+              </div>
+              <div className="glass rounded-2xl p-6 text-center">
+                <div className="font-data text-4xl font-bold text-[#0E9F6E]">94%</div>
+                <div className="text-white/60 text-sm mt-1">Trust Score</div>
+              </div>
+              <div className="glass rounded-2xl p-6 text-center">
+                <div className="font-data text-4xl font-bold text-white">36</div>
+                <div className="text-white/60 text-sm mt-1">States Active</div>
+              </div>
+            </div>
           </div>
-          <ArenaButton variant="gold" size="large">
-            Join The Arena
-          </ArenaButton>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section-padding bg-gradient-to-b from-[#001B2E] to-[#003153]">
+        <div className="container text-center">
+          <h2 className="text-4xl font-bold text-white mb-4">Ready to Build?</h2>
+          <p className="text-white/70 mb-8 max-w-xl mx-auto">Join the movement in under 60 seconds. No commitment, just impact.</p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a href="/join" className="btn btn-gold text-lg px-10 py-4 glow-gold">Join Arena Now</a>
+            <a href="/donate" className="btn btn-outline text-lg px-10 py-4">Support the Cause</a>
+          </div>
         </div>
       </section>
     </div>

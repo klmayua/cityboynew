@@ -1,34 +1,23 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { MainLayout } from './components/MainLayout';
-import { HomePage } from './pages/HomePage';
-import { CommandCentre } from './pages/CommandCentre';
+import { Routes, Route } from 'react-router-dom'
+import Layout from './components/Layout'
+import HomePage from './pages/HomePage'
+import ProjectNigeria from './pages/ProjectNigeria'
+import Volunteer from './pages/Volunteer'
+import Transparency from './pages/Transparency'
+import Join from './pages/Join'
+import Donate from './pages/Donate'
 
-// Placeholder components for routes yet to be implemented
-const PlaceholderPage = ({ title }) => (
-  <div style={{ paddingTop: '120px', minHeight: '60vh', padding: '120px 24px 60px', textAlign: 'center' }}>
-    <h1 style={{ color: 'var(--color-prussian-blue)' }}>{title}</h1>
-    <p style={{ color: 'var(--color-muted-steel)', marginTop: '16px' }}>This module is currently in development for the prototype.</p>
-  </div>
-);
-
-function App() {
+export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<MainLayout />}>
-          <Route index element={<HomePage />} />
-          <Route path="project-nigeria" element={<PlaceholderPage title="Project Nigeria" />} />
-          <Route path="volunteer" element={<PlaceholderPage title="Volunteer App" />} />
-          <Route path="command-centre" element={<CommandCentre />} />
-          <Route path="chapter" element={<PlaceholderPage title="Chapters Dashboard" />} />
-          <Route path="donate" element={<PlaceholderPage title="Premium Donor Gateway" />} />
-          <Route path="join" element={<PlaceholderPage title="Join The Arena" />} />
-          <Route path="messaging" element={<PlaceholderPage title="Secure Messaging" />} />
-          <Route path="transparency" element={<PlaceholderPage title="Public Transparency Logs" />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="project-nigeria" element={<ProjectNigeria />} />
+        <Route path="volunteer" element={<Volunteer />} />
+        <Route path="transparency" element={<Transparency />} />
+        <Route path="join" element={<Join />} />
+        <Route path="donate" element={<Donate />} />
+      </Route>
+    </Routes>
+  )
 }
-
-export default App;
