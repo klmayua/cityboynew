@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 
 const footerLinks = {
   resources: [
@@ -27,7 +27,7 @@ export default function Layout({ children }) {
     <div className="min-h-screen flex flex-col bg-background">
       {/* Main Content */}
       <main className="flex-1">
-        {children}
+        <Outlet />
       </main>
 
       {/* Footer */}
