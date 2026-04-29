@@ -4,290 +4,326 @@ import { Link } from 'react-router-dom'
 export default function HomePage() {
   return (
     <>
-      {/* TopNavBar */}
-      <nav className="fixed top-0 w-full z-50 border-b border-white/10 bg-[#003153]/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
-        <div className="flex justify-between items-center px-8 h-20 w-full max-w-[1440px] mx-auto">
-          <div className="text-2xl font-black tracking-tighter text-secondary italic">City Boy Arena</div>
-          <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="font-h3 text-[12px] uppercase font-bold tracking-tight text-secondary border-b-2 border-secondary pb-1">Hub</Link>
-            <Link to="/transparency" className="font-h3 text-[12px] uppercase font-bold tracking-tight text-slate-300 hover:text-white transition-colors">Transparency</Link>
-            <Link to="/donate" className="font-h3 text-[12px] uppercase font-bold tracking-tight text-slate-300 hover:text-white transition-colors">Donor</Link>
-            <Link to="/volunteer" className="font-h3 text-[12px] uppercase font-bold tracking-tight text-slate-300 hover:text-white transition-colors">Volunteer</Link>
-            <Link to="#" className="font-h3 text-[12px] uppercase font-bold tracking-tight text-slate-300 hover:text-white transition-colors">Command</Link>
-          </div>
-          <div className="flex items-center space-x-4">
-            <Link to="/donate" className="px-6 py-2 bg-transparent border border-secondary text-secondary font-h3 text-[12px] uppercase font-bold hover:bg-secondary/10 transition-all">Donate</Link>
-            <Link to="/join" className="px-6 py-2 bg-secondary text-on-secondary font-h3 text-[12px] uppercase font-bold gold-glow active:scale-95 transition-all">Join Now</Link>
+      {/* TopAppBar */}
+      <header className="bg-[#003153]/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-amber-500/20 shadow-[0_0_20px_rgba(255,191,0,0.1)]">
+        <div className="flex justify-between items-center px-8 h-20 max-w-[1440px] mx-auto">
+          <div className="text-xl font-black tracking-widest text-amber-500 uppercase font-['Sora']">CITY BOY ARENA</div>
+          <nav className="hidden md:flex items-center gap-8 font-['Sora'] font-bold tracking-tight">
+            <Link to="/" className="text-amber-500 border-b-2 border-amber-500 pb-1">The Arena</Link>
+            <Link to="#" className="text-slate-300 hover:text-amber-200 transition-colors">National Pulse</Link>
+            <Link to="#" className="text-slate-300 hover:text-amber-200 transition-colors">Infrastructure</Link>
+            <Link to="#" className="text-slate-300 hover:text-amber-200 transition-colors">Impact Stories</Link>
+          </nav>
+          <div className="flex items-center gap-6">
+            <button className="material-symbols-outlined text-slate-300 hover:text-amber-400 transition-colors">notifications</button>
+            <button className="material-symbols-outlined text-slate-300 hover:text-amber-400 transition-colors">account_circle</button>
+            <button className="bg-secondary text-on-secondary px-6 py-2.5 rounded-full font-label-caps hover:brightness-110 active:scale-95 transition-all">
+              Enter Arena
+            </button>
           </div>
         </div>
-      </nav>
-      
+      </header>
+
       <main className="pt-20">
-        {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-8 py-24">
-          <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary-container via-[#001f33] to-surface-container-lowest">
-            {/* Decorative Particles Sim */}
-            <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-secondary rounded-full animate-pulse opacity-40"></div>
-            <div className="absolute top-3/4 left-2/3 w-1.5 h-1.5 bg-secondary rounded-full animate-pulse opacity-30"></div>
-            <div className="absolute top-1/2 left-1/3 w-1 h-1 bg-secondary rounded-full animate-pulse opacity-50"></div>
-          </div>
-          <div className="relative z-10 max-w-5xl text-center">
-            <span className="inline-block px-4 py-1 mb-6 rounded-full border border-secondary/30 bg-secondary/5 text-secondary font-h3 text-[12px] uppercase tracking-widest">Imperial Civic Architecture</span>
-            <h1 className="font-h1 text-[40px] md:text-[64px] leading-tight mb-8 text-white">
-              Building Trust. Driving Action. <br/>
-              <span className="text-secondary italic">Reimagining Nigeria Together.</span>
-            </h1>
-            <p className="font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
-              Join the digital vanguard of national transformation. We are deploying secure, audited, and high-impact infrastructure to empower every citizen.
-            </p>
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-              <Link to="/join" className="px-10 py-4 bg-secondary text-on-secondary font-h3 text-body-md font-bold rounded-full gold-glow hover:scale-105 transition-all">Join Arena</Link>
-              <Link to="/project-nigeria" className="px-10 py-4 bg-white/5 border border-white/20 text-white font-h3 text-body-md font-bold rounded-full hover:bg-white/10 transition-all flex items-center gap-2">
-                Explore Impact <span className="material-symbols-outlined">arrow_forward</span>
-              </Link>
-            </div>
-          </div>
-          {/* Floating Live Metrics Ribbon */}
-          <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-full max-w-6xl px-8">
-            <div className="arena-glass border border-white/10 rounded-2xl p-8 grid grid-cols-2 md:grid-cols-4 gap-8 shadow-2xl">
-              <div className="text-center md:border-r border-white/5">
-                <div className="font-stat-value text-secondary text-[24px] mb-1">142,800+</div>
-                <div className="font-label-caps text-[10px] text-slate-400">ACTIVE VOLUNTEERS</div>
-              </div>
-              <div className="text-center md:border-r border-white/5">
-                <div className="font-stat-value text-secondary text-[24px] mb-1">842</div>
-                <div className="font-label-caps text-[10px] text-slate-400">PROJECTS LIVE</div>
-              </div>
-              <div className="text-center md:border-r border-white/5">
-                <div className="font-stat-value text-secondary text-[24px] mb-1">₦4.2B+</div>
-                <div className="font-label-caps text-[10px] text-slate-400">FUNDS DEPLOYED</div>
-              </div>
-              <div className="text-center">
-                <div className="font-stat-value text-secondary text-[24px] mb-1">36/36</div>
-                <div className="font-label-caps text-[10px] text-slate-400">CHAPTERS ACTIVE</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* National Pulse */}
-        <section className="py-32 px-8 bg-surface-container-lowest">
-          <div className="max-w-[1440px] mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-              <div className="lg:col-span-4">
-                <h2 className="font-h2 text-[48px] mb-6">National Pulse</h2>
-                <p className="font-body-lg text-slate-400 mb-8">
-                  Real-time momentum tracking across the federation. Our heat indicators visualize engagement, infrastructure health, and local movement growth.
-                </p>
-                <div className="space-y-6">
-                  <div className="p-6 bg-white/5 rounded-xl border-l-4 border-tertiary">
-                    <div className="font-h3 text-body-md text-white mb-1">Health Metric: Lagos Hub</div>
-                    <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
-                      <div className="bg-tertiary h-full w-[88%]"></div>
-                    </div>
-                    <div className="mt-2 font-label-caps text-[10px] text-tertiary">88% MOMENTUM</div>
-                  </div>
-                  <div className="p-6 bg-white/5 rounded-xl border-l-4 border-secondary">
-                    <div className="font-h3 text-body-md text-white mb-1">Health Metric: Kano Sector</div>
-                    <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
-                      <div className="bg-secondary h-full w-[64%]"></div>
-                    </div>
-                    <div className="mt-2 font-label-caps text-[10px] text-secondary">64% MOMENTUM</div>
-                  </div>
-                </div>
-              </div>
-              <div className="lg:col-span-8 relative aspect-video bg-[#001f33] rounded-3xl overflow-hidden shadow-inner border border-white/5">
-                <img className="w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5N6fxeiknYnkxo0LndRonyo2Xb6oAAow7nFzABeocHaAmvs8j2BlgAvLVI6MPpj2eUkkltCgK1oAftapPxy4DctqrGGbn_Q-JQbhuhzWicoQn4_QOmBjO7JZQOmGBTk1FWwNe66FNW5Fcc94-EPdS1ufOLTW5z3mQCrCi-Vw63fUya1syR4BXUVtt-FSXNjM7fWp5nzttwy33S3NylYvgOuA_WUjt3u0XHS0CAJap8nMQEthdbkjRGhzO1CPaFU-8KCmW_X1p4vg" alt="Nigeria Map"/>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#001f33] via-transparent to-transparent"></div>
-                <div className="absolute top-10 right-10 flex flex-col gap-2">
-                  <div className="flex items-center gap-2 bg-secondary/20 backdrop-blur-md px-3 py-1 rounded text-secondary font-label-caps text-[10px]">
-                    <span className="w-2 h-2 rounded-full bg-secondary animate-ping"></span> LIVE UPDATES
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Impact Stories Grid */}
-        <section className="py-32 px-8 bg-surface">
-          <div className="max-w-[1440px] mx-auto">
-            <div className="flex justify-between items-end mb-16">
-              <div>
-                <h2 className="font-h2 text-[48px] mb-4">Impact Stories</h2>
-                <p className="font-body-lg text-slate-400">Human-centric milestones from the frontlines of progress.</p>
-              </div>
-              <button className="text-secondary font-h3 text-body-md flex items-center gap-2 hover:underline decoration-secondary underline-offset-8">View Archive <span className="material-symbols-outlined">chevron_right</span></button>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Story 1 */}
-              <div className="group bg-surface-container rounded-3xl overflow-hidden border border-white/5 hover:border-secondary/30 transition-all duration-500">
-                <div className="h-64 overflow-hidden">
-                  <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0KDdl2DctZ3mwTFBscBC-R0evgPkzdpwi87yRYDrnamxRKEP8qMArk5rh7iXPNk2swNAIf1Eg3kR1d4Wf9QNc9RGvBdSnCIWxHIG5TZxm_d6tR5_grWK8fvXGObT6fD2c-3Lu13L8-zj5i4bdaKiQA07hKTmw_LcxMyC6KF4UqyfumObD0NA2a9Hc8lV4LQqeAD27SnXWORKghDtRrkgsO2w7FHdZ6440e45IXQrk93ZYvmK93G3WkOmtHwtY1Sdt2FNSSpTV1lU" alt="Elder with tablet"/>
-                </div>
-                <div className="p-8">
-                  <div className="font-label-caps text-tertiary text-[10px] mb-4">DIGITAL LITERACY</div>
-                  <h3 className="font-h3 text-[24px] text-white mb-4 leading-snug">The Silver Hub: Empowering Elders in Ibadan</h3>
-                  <p className="font-body-md text-slate-400 mb-6">Bridging the generational gap through local command centers and shared learning.</p>
-                  <Link to="#" className="inline-flex items-center gap-2 text-secondary font-h3 text-body-md font-bold group-hover:gap-4 transition-all">Read Story <span className="material-symbols-outlined">east</span></Link>
-                </div>
-              </div>
-              {/* Story 2 */}
-              <div className="group bg-surface-container rounded-3xl overflow-hidden border border-white/5 hover:border-secondary/30 transition-all duration-500">
-                <div className="h-64 overflow-hidden">
-                  <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt2nTOFK3r5O8RTcXM0XvykJSdyH7q0SHstt2Onkhjq7EI4GyojZLu03HhsG8aPDudRJOwGmAv1FxDvnDzzqFIQ2yic3Un3Bq678rQNyBnd9j0ua8pcDpYhTbTP0SJXhkeAs2WOE7AgyvDco5H3L15uEoIuxmvLiWY-eoQeRViZqm1xRnFbFEeKLIybXSN8y9dB0KrvwjWFGu10wBC6VknbsCoamLdOSZXRjcCcGuvg6J3RSfqB29Tl5gs1JENBwCBmPXnnEJKRto" alt="Solar farm"/>
-                </div>
-                <div className="p-8">
-                  <div className="font-label-caps text-secondary text-[10px] mb-4">INFRASTRUCTURE</div>
-                  <h3 className="font-h3 text-[24px] text-white mb-4 leading-snug">Project Solar: Lighting Up the Northern Belt</h3>
-                  <p className="font-body-md text-slate-400 mb-6">Deploying sustainable power to 45 villages, impacting over 200,000 residents this quarter.</p>
-                  <Link to="#" className="inline-flex items-center gap-2 text-secondary font-h3 text-body-md font-bold group-hover:gap-4 transition-all">Read Story <span className="material-symbols-outlined">east</span></Link>
-                </div>
-              </div>
-              {/* Story 3 */}
-              <div className="group bg-surface-container rounded-3xl overflow-hidden border border-white/5 hover:border-secondary/30 transition-all duration-500">
-                <div className="h-64 overflow-hidden">
-                  <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC1w4_WbppRbT1Znv5yg5iJnPxA59YyqJvBJ3ePQa15exmrVNSC-QJbgqeiYvCc0cduJz_311P2v8qAmqc09OFVhuW1KaDWtXfy5wDuqVYBeJQY96hO8Mk_o2Xw4XnJeyEu9c99l2L8X5K09SwAACCLHiHVg5mRjb15MlSiqxKloNKbkdIr8D2mtzLS0GYH8mPnUdEwpz42RERrRXGtA2N6t1QDbj_rlTnlq67zJgylO7hkGMPWmywtnWz6lTiNqrz4PlyoQ8ZUCY" alt="Entrepreneurs"/>
-                </div>
-                <div className="p-8">
-                  <div className="font-label-caps text-primary text-[10px] mb-4">ECONOMIC ENGINE</div>
-                  <h3 className="font-h3 text-[24px] text-white mb-4 leading-snug">Arena Grants: Funding the Next 1,000 SMEs</h3>
-                  <p className="font-body-md text-slate-400 mb-6">Direct, audited funding pipelines that bypass bureaucracy to reach verified entrepreneurs.</p>
-                  <Link to="#" className="inline-flex items-center gap-2 text-secondary font-h3 text-body-md font-bold group-hover:gap-4 transition-all">Read Story <span className="material-symbols-outlined">east</span></Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Project Nigeria Flagship */}
-        <section className="relative h-[819px] flex items-center overflow-hidden">
+        {/* Hero Section: Cinematic Carousel */}
+        <section className="relative h-[921px] w-full overflow-hidden">
           <div className="absolute inset-0">
-            <img className="w-full h-full object-cover brightness-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCifcg358D12tRYn-dBam1PwTKBXDv7bJbwaPi6hQ0dSJ1IaWaPfO5ZdF-GTd3eCz42fX3RRBovnfs_l1qc5hLx6L-_OhFExzLKvLl1Tq2uaNRXjxfrdig4E-p3JzUn6VR1Cp26-M7_QkAfsoR549sIb_Q2btX4EWM1yisyXVd9QK_dNW7jW49L-sf77FfEKPYvKJ7TzAzBTgru1qJOevR7lJAeX_l5B3V_nWl9GSPW1vDcf6bpTyt72xPlrgfmv1zKerxqS6ycFE" alt="Nigeria skyline"/>
-            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent"></div>
+            <img alt="Nigerian Metropolis" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxdn7rXqG0UkGspsf3aCjHCRSLpSODNQ-BZ2vAENjSZDZ9vZo_aRnJUgKvp38Y3bY_1YHL1xLvegVwnNoZsfvpfA6sX86i083Odjz6OgMePeviRhwXtxaAthazy7kSpmfDu-KOpjGUFJRJiy13oJFN-ovBSxfjQ2eFv9mA28kod5KYqVX3viuMsMZvS0hLHTxC1Pi___1Y-nRsCn6ebrt7d2FjoJ19JZq89fIfOppRT0RrFtJUsY8dkcEPEA_3C6yPX2ZHeYDSqVU"/>
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent"></div>
           </div>
-          <div className="relative z-10 px-8 max-w-[1440px] mx-auto w-full">
-            <div className="max-w-2xl">
-              <span className="font-label-caps text-secondary text-[12px] mb-4 block">FLAGSHIP INITIATIVE</span>
-              <h2 className="font-h2 text-[56px] text-white mb-8 leading-tight">Project Nigeria: The Arena Mandate</h2>
-              <p className="font-body-lg text-slate-200 mb-10 leading-relaxed">
-                A massive visual storytelling band dedicated to the singular goal of unifying our fragmented infrastructure. Every stone laid, every line of code written, is a step toward a sovereign digital future.
-              </p>
-              <button className="px-12 py-5 bg-secondary text-on-secondary font-h3 text-body-lg font-black rounded-full gold-glow hover:bg-secondary-fixed transition-colors">Launch Deployment Hub</button>
+          <div className="relative z-10 container mx-auto px-[80px] h-full flex flex-col justify-center items-start max-w-[1440px]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/30 border border-secondary/50 mb-6">
+              <span className="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+              <span className="text-secondary font-label-caps uppercase text-[10px]">National Status: Operational</span>
+            </div>
+            <h1 className="font-h1 text-[64px] max-w-4xl mb-6 text-white">
+              Building Trust. <br/>
+              Driving Action. <br/>
+              <span className="bg-gradient-to-r from-[#FFE088] via-[#D4AF37] to-[#AF8D11] bg-clip-text text-transparent">Reimagining Nigeria Together.</span>
+            </h1>
+            <p className="font-body-lg text-[18px] text-on-surface-variant max-w-2xl mb-10">
+              The City Boy Arena is the premier digital command centre for national transformation. We bridge the gap between institutional vision and grassroots impact.
+            </p>
+            <div className="flex gap-4">
+              <button className="bg-secondary text-on-secondary-container px-10 py-4 rounded-full font-label-caps text-lg flex items-center gap-3 hover:shadow-[0_0_25px_rgba(233,195,73,0.4)] transition-all">
+                Join The Movement <span className="material-symbols-outlined">trending_flat</span>
+              </button>
+              <button className="bg-surface-container/80 backdrop-blur-md border border-outline/30 px-10 py-4 rounded-full font-label-caps text-lg hover:bg-surface-container-high transition-all">
+                Explore Projects
+              </button>
+            </div>
+          </div>
+          {/* Hero Indicators */}
+          <div className="absolute bottom-12 right-[80px] flex gap-4">
+            <div className="w-12 h-1 bg-secondary"></div>
+            <div className="w-12 h-1 bg-white/20"></div>
+            <div className="w-12 h-1 bg-white/20"></div>
+          </div>
+        </section>
+
+        {/* National Impact Ticker */}
+        <div className="bg-secondary py-3 overflow-hidden whitespace-nowrap border-y border-on-secondary/10">
+          <div className="flex items-center gap-12 text-on-secondary-container font-label-caps text-xs animate-marquee">
+            <span>NEW RAILWAY COMMISSIONED IN KANO</span>
+            <span className="material-symbols-outlined text-[8px]">star</span>
+            <span>LAGOS ENERGY GRID UPGRADED (+12%)</span>
+            <span className="material-symbols-outlined text-[8px]">star</span>
+            <span>FARMER-LED COOPERATIVES REACH 2M MEMBERS</span>
+            <span className="material-symbols-outlined text-[8px]">star</span>
+            <span>NATIONAL TRUST SCORE UP BY 4.2 POINTS</span>
+            <span className="material-symbols-outlined text-[8px]">star</span>
+            <span>NEW RAILWAY COMMISSIONED IN KANO</span>
+          </div>
+        </div>
+
+        {/* National Pulse: Sleek Card Band */}
+        <section className="py-[120px] bg-surface-container-lowest">
+          <div className="container mx-auto px-[80px] max-w-[1440px]">
+            <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+              <div className="max-w-2xl">
+                <span className="text-secondary font-label-caps uppercase mb-4 block">Real-Time Data</span>
+                <h2 className="font-h2 text-[48px] mb-4 text-white">National Pulse</h2>
+                <p className="font-body-md text-on-surface-variant">Monitoring the heartbeat of the federation through high-fidelity data streams and community sentiment indicators.</p>
+              </div>
+              <button className="flex items-center gap-2 text-secondary font-label-caps hover:gap-4 transition-all">
+                FULL DATA DASHBOARD <span className="material-symbols-outlined">arrow_forward</span>
+              </button>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-[24px]">
+              {/* Map Card */}
+              <div className="lg:col-span-2 glass-card rounded-3xl p-8 relative overflow-hidden group" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.2)'}}>
+                <div className="flex justify-between items-start mb-8 relative z-10">
+                  <div>
+                    <h3 className="font-h3 text-[32px] mb-1 text-white">Infrastructure Health</h3>
+                    <p className="text-on-surface-variant font-body-md">Active deployment zones across 36 states</p>
+                  </div>
+                  <div className="bg-on-tertiary-container/20 text-tertiary px-4 py-2 rounded-xl flex items-center gap-2">
+                    <span className="material-symbols-outlined text-sm">sensors</span>
+                    <span className="font-label-caps text-[10px]">LIVE FEED</span>
+                  </div>
+                </div>
+                <div className="h-[400px] w-full bg-surface-container-high/40 rounded-2xl flex items-center justify-center relative overflow-hidden">
+                  <img alt="Map of Nigeria Data Overlay" className="opacity-20 absolute inset-0 w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVlNIo8vNjbia3QJgZ7ign0d6hEoqE8HhmChsJEjqQcG2dgsuAXQIrb-M1jYmghMYWusHslmK87F88r14VrcE-0Z18pYy9TFMtc3lu2q6trLIswEHyRwoClXhcBSxNOvdMWSk0ia2vntt3UDP49l_kSGRXfsK2r94OLgXG7gT4bAcnTld8k8errVY1q0ugo83yshI_ZkW-P0GRCUME1zrc8LDXihdW6LsY8YECiw_smKTxjQRNxIhFO0zg2Rr1V3uMZKhUdjNmJSw"/>
+                  {/* Heat Map Pulse Points */}
+                  <div className="absolute top-1/4 left-1/2 w-4 h-4 bg-secondary rounded-full animate-ping"></div>
+                  <div className="absolute bottom-1/3 left-1/3 w-3 h-3 bg-secondary rounded-full animate-ping opacity-75"></div>
+                  <div className="absolute top-1/2 right-1/4 w-5 h-5 bg-tertiary rounded-full animate-ping opacity-50"></div>
+                </div>
+              </div>
+              {/* Metrics Stack */}
+              <div className="space-y-[24px]">
+                <div className="glass-card rounded-3xl p-8 hover:bg-surface-container-high transition-colors" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.2)'}}>
+                  <span className="text-on-surface-variant font-label-caps uppercase text-[10px] mb-4 block">Trust Score</span>
+                  <div className="flex items-baseline gap-2 mb-4">
+                    <span className="font-stat-value text-4xl text-secondary">78.4</span>
+                    <span className="text-tertiary font-label-caps text-xs">+1.2% this month</span>
+                  </div>
+                  <div className="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-secondary to-tertiary w-[78%]"></div>
+                  </div>
+                </div>
+                <div className="glass-card rounded-3xl p-8 hover:bg-surface-container-high transition-colors border-l-4 border-l-tertiary" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.2)'}}>
+                  <span className="text-on-surface-variant font-label-caps uppercase text-[10px] mb-4 block">Job Creation</span>
+                  <div className="font-stat-value text-4xl mb-2 text-white">420,000+</div>
+                  <p className="text-on-surface-variant text-sm">Direct & indirect artisanal roles filled in Q3 2024.</p>
+                </div>
+                <div className="glass-card rounded-3xl p-8 hover:bg-surface-container-high transition-colors" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.2)'}}>
+                  <span className="text-on-surface-variant font-label-caps uppercase text-[10px] mb-4 block">Active Projects</span>
+                  <div className="font-stat-value text-4xl mb-2 text-white">1,248</div>
+                  <div className="flex -space-x-2">
+                    <div className="w-8 h-8 rounded-full border-2 border-primary-container bg-surface-variant"></div>
+                    <div className="w-8 h-8 rounded-full border-2 border-primary-container bg-surface-variant"></div>
+                    <div className="w-8 h-8 rounded-full border-2 border-primary-container bg-surface-variant"></div>
+                    <div className="w-8 h-8 rounded-full border-2 border-primary-container bg-surface-variant flex items-center justify-center text-[10px] text-white">+12</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Trust Layer */}
-        <section className="py-24 bg-white text-[#003153]">
-          <div className="max-w-[1440px] mx-auto px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        {/* Project Nigeria: Full Bleed Cinematic */}
+        <section className="relative min-h-[716px] flex items-center bg-black overflow-hidden">
+          <div className="absolute inset-0">
+            <img alt="Civil Engineers on Site" className="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_rcS3qgdP0Pm7RAjtjhmWegi_YFkpWioiEUGRAtY0cjIoCIR356-3MFTYpWma1Ge8McPVzOOrwUExdgyHeSO1DHrQsTCuac1OHTzvQl2OTdfKuFS7ZjJOXpTjDArS4NnMqRd33di4uD4BRxL9qJg2R-ksR_dECI9dox_1wQVcqHbNrbl0eOV5sO0ql8lo8y64Ptb3g_p8YSnv7xf90p9rjcCR7TPVJP2coHh9gxGNCJRGQ1uv_RjGUbU09qVrAri79yW4-N6yqo0"/>
+            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent"></div>
+          </div>
+          <div className="relative z-10 container mx-auto px-[80px] max-w-[1440px] py-24">
+            <div className="max-w-xl">
+              <h2 className="font-h2 text-[48px] mb-8 leading-tight text-white">Project Nigeria:<br/>The Concrete Promise.</h2>
+              <p className="font-body-lg text-white/80 mb-12">
+                We aren't just building roads; we are paving the path to the African Century. Every girder placed and every kilovolt generated is a testament to our collective resilience.
+              </p>
+              <div className="flex flex-col gap-8">
+                <div className="flex items-start gap-6 group">
+                  <div className="w-12 h-12 rounded-full border border-secondary flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-black transition-all">
+                    <span className="material-symbols-outlined">play_arrow</span>
+                  </div>
+                  <div>
+                    <h4 className="font-h3 text-xl mb-1 text-white">Watch: The Blueprint</h4>
+                    <p className="text-white/60 text-sm">A 3-minute documentary on the national masterplan.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-6 group">
+                  <div className="w-12 h-12 rounded-full border border-secondary flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-black transition-all">
+                    <span className="material-symbols-outlined">description</span>
+                  </div>
+                  <div>
+                    <h4 className="font-h3 text-xl mb-1 text-white">Download Manifesto</h4>
+                    <p className="text-white/60 text-sm">The 2024-2028 Infrastructure Strategic Disclosure.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Impact Stories: Masonry Grid */}
+        <section className="py-[120px]">
+          <div className="container mx-auto px-[80px] max-w-[1440px]">
+            <div className="text-center mb-20">
+              <span className="text-secondary font-label-caps uppercase tracking-widest mb-4 block">Faces of Change</span>
+              <h2 className="font-h2 text-[48px] text-white">Impact Stories</h2>
+            </div>
+            <div className="columns-1 md:columns-2 lg:columns-3 gap-[24px] space-y-[24px]">
+              {/* Story Card 1 */}
+              <div className="break-inside-avoid glass-card rounded-3xl overflow-hidden group" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.2)'}}>
+                <div className="relative aspect-[4/5] overflow-hidden">
+                  <img alt="Tech Innovator" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiIBVlGvfThlcrXFRyQSXwVLPOzlY9LL_3hm21gDVI1MlX-bCmE3zmhbKjkppyqIl2KigmLTGiOQqxfT9QmHsV4bvHLP-1j2LstePMNMPAVxD6NG5pS6i7XH6nP4kwgAPtRJ-XhpKgOZTVOYtONW5aj7ffKDuzMaWCGiVz4pTFbpll56eIqpj2FYB3aEqXW700LgBM1X2bIRpGiTIuHGWCN6Y6WjdLdynPsRXU9MtHHd6vDigq1JXCOvlJKzMGk72KBQEHUMBfdiM"/>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <span className="bg-secondary text-on-secondary px-3 py-1 rounded text-[10px] font-label-caps mb-3 inline-block">TECH & INNOVATION</span>
+                    <h4 className="font-h3 text-xl text-white">How Fiber-to-Farm is doubling yields in Benue.</h4>
+                  </div>
+                </div>
+              </div>
+              {/* Story Card 2 */}
+              <div className="break-inside-avoid glass-card rounded-3xl p-8 border-t-4 border-t-secondary" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.2)'}}>
+                <p className="font-body-lg italic text-on-surface mb-8">"For the first time in thirty years, our market has 24-hour power. The Arena didn't just promise; they delivered the grid."</p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-surface-container-high overflow-hidden">
+                    <img alt="Market Trader" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqmekQ72PB4tzotiFQwlQ5YMpGrGB6txGv_fcyCzswZwYtq7h7iaAkOSvWDtxiN3xpWTfxam__RcEu3jvSYOdcJexMtxcJuCIfZYmv_lSO962LCfzM-dqFJiQsNighVY_EUWiXOnJ2SZQ-qVNTd27bsP2RRXfdbDD8Zsyk77EXsJiHJf0nK7clj0stHdku7PxCYFKDGr7WoPbTKkAy2NqdPbOPeqcvswLL5BYBeZetDaQxcUKNdO5ZbzR6u2P8genMgo3S9zcsHjE"/>
+                  </div>
+                  <div>
+                    <h5 className="font-label-caps text-sm text-white">Alhaji Musa S.</h5>
+                    <p className="text-on-surface-variant text-xs">Market Union Leader, Kaduna</p>
+                  </div>
+                </div>
+              </div>
+              {/* Story Card 3 */}
+              <div className="break-inside-avoid glass-card rounded-3xl overflow-hidden group" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.2)'}}>
+                <div className="relative aspect-square overflow-hidden">
+                  <img alt="Artisanal Work" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0oSbKhDzhqApPSSOWSyosoahZ7u_gR6DjB4TDW3woJgmX3_jK4L4si7Rm7pHYaq4JxP7_xbokvfrbHVqMLiK6papqFwBgjBaP4rkpPj-VVEInDatvItApBDYdcBBhCNHGdV9u4Oe7x-4oMdlpnAljnwbCpER0gsd9b0crACS2MXQR9wUt_1XJg2lVG2ilk6-z9RC4dbEeyob-7P7Gd0q922lsQcX31P9pCoj8R1YE5RjnX79ou5kV_yh3cesh-RgZGkuJTof97v4"/>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <span className="bg-tertiary text-on-tertiary px-3 py-1 rounded text-[10px] font-label-caps mb-3 inline-block">CULTURAL WEALTH</span>
+                    <h4 className="font-h3 text-xl text-white">Artisans of the Arena: Restoring National Pride.</h4>
+                  </div>
+                </div>
+              </div>
+              {/* Story Card 4 */}
+              <div className="break-inside-avoid glass-card rounded-3xl p-8 bg-gradient-to-br from-[#003153] to-background" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.2)'}}>
+                <div className="mb-6 text-secondary">
+                  <span className="material-symbols-outlined text-4xl" style={{fontVariationSettings: "'FILL' 1"}}>format_quote</span>
+                </div>
+                <h4 className="font-h3 text-2xl mb-4 text-white">"The Arena is more than a platform; it's a social contract signed in digital ink."</h4>
+                <button className="text-secondary font-label-caps text-xs flex items-center gap-2">READ FULL EDITORIAL <span className="material-symbols-outlined text-sm">open_in_new</span></button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Trust Standard: Clean & Ivory */}
+        <section className="py-[120px] bg-on-surface text-surface relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-surface-container-lowest/5 -skew-x-12 translate-x-1/2"></div>
+          <div className="container mx-auto px-[80px] max-w-[1440px] relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-[120px] items-center">
               <div>
-                <h2 className="font-h2 text-[48px] mb-6">The Trust Standard</h2>
-                <p className="font-body-lg text-slate-600 mb-12">
-                  Radical transparency is not an option; it is our foundation. All Arena figures are audited in real-time on our secure digital ledger.
+                <span className="text-secondary-container font-label-caps uppercase mb-4 block">Institutional Integrity</span>
+                <h2 className="font-h2 text-[48px] text-primary-container mb-8">The Trust Standard</h2>
+                <p className="font-body-lg text-primary-container/70 mb-10">
+                  Transparency is our baseline. Every naira tracked, every milestone audited by third-party institutional partners. No shadows, just results.
                 </p>
                 <div className="grid grid-cols-2 gap-8">
-                  <div className="border-t-2 border-[#003153] pt-6">
-                    <div className="font-stat-value text-[32px] text-[#003153]">100%</div>
-                    <div className="font-label-caps text-[10px] text-slate-500 uppercase">AUDIT COVERAGE</div>
+                  <div>
+                    <div className="text-3xl font-h3 text-primary-container mb-2">100%</div>
+                    <div className="font-label-caps text-[10px] uppercase text-primary-container/50">Audit Transparency</div>
                   </div>
-                  <div className="border-t-2 border-[#003153] pt-6">
-                    <div className="font-stat-value text-[32px] text-[#003153]">₦0</div>
-                    <div className="font-label-caps text-[10px] text-slate-500 uppercase">UNACCOUNTED FUNDS</div>
+                  <div>
+                    <div className="text-3xl font-h3 text-primary-container mb-2">94%</div>
+                    <div className="font-label-caps text-[10px] uppercase text-primary-container/50">Project Delivery Rate</div>
                   </div>
                 </div>
               </div>
-              <div className="flex flex-wrap justify-center items-center gap-12 opacity-60">
-                <div className="h-12 w-32 bg-slate-200 rounded flex items-center justify-center font-bold text-slate-400">PARTNER_ALPHA</div>
-                <div className="h-12 w-32 bg-slate-200 rounded flex items-center justify-center font-bold text-slate-400">TRUST_BETA</div>
-                <div className="h-12 w-32 bg-slate-200 rounded flex items-center justify-center font-bold text-slate-400">CIVIC_GAMMA</div>
-                <div className="h-12 w-32 bg-slate-200 rounded flex items-center justify-center font-bold text-slate-400">LEDGER_DELTA</div>
+              <div className="bg-white p-12 rounded-[40px] shadow-xl border border-primary-container/5">
+                <h4 className="font-label-caps text-primary-container/40 text-center mb-10">GLOBAL COMPLIANCE PARTNERS</h4>
+                <div className="grid grid-cols-2 gap-12 items-center opacity-60">
+                  <div className="h-12 bg-primary-container/10 rounded flex items-center justify-center font-black tracking-tighter text-primary-container/30">AUDIT_X</div>
+                  <div className="h-12 bg-primary-container/10 rounded flex items-center justify-center font-black tracking-tighter text-primary-container/30">GLOBE_TRUST</div>
+                  <div className="h-12 bg-primary-container/10 rounded flex items-center justify-center font-black tracking-tighter text-primary-container/30">STAND_CERT</div>
+                  <div className="h-12 bg-primary-container/10 rounded flex items-center justify-center font-black tracking-tighter text-primary-container/30">NIG_PULSE</div>
+                </div>
+                <div className="mt-12 pt-8 border-t border-primary-container/10 flex justify-center">
+                  <button className="bg-primary-container text-white px-8 py-3 rounded-full font-label-caps hover:bg-black transition-all">
+                    VIEW AUDIT REPORTS
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* Join Arena CTA */}
-        <section className="py-32 px-8">
-          <div className="max-w-4xl mx-auto text-center arena-glass p-16 rounded-[48px] border border-secondary/20 shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/10 blur-[120px] -mr-32 -mt-32"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 blur-[120px] -ml-32 -mb-32"></div>
-            <h2 className="font-h2 text-[48px] mb-6 text-white">Secure Your Place</h2>
-            <p className="font-body-lg text-slate-300 mb-10">Sign up in 60 seconds to join the Command Center and start contributing to national projects.</p>
-            <form className="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto">
-              <input className="flex-grow bg-white/5 border border-white/20 rounded-full px-8 py-4 text-white focus:outline-none focus:border-secondary transition-colors" placeholder="Enter your email address" type="email"/>
-              <button className="bg-secondary text-on-secondary px-10 py-4 rounded-full font-h3 font-bold hover:scale-105 active:scale-95 transition-all">Sign Up Now</button>
-            </form>
-            <p className="mt-6 font-label-caps text-[10px] text-slate-500">JOIN 12,000+ CITIZENS WHO SIGNED UP THIS WEEK</p>
           </div>
         </section>
       </main>
 
+      {/* BottomNavBar (Mobile Only) */}
+      <nav className="md:hidden bg-[#003153]/90 backdrop-blur-2xl fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-4 px-6 rounded-t-3xl border-t border-amber-500/30 shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
+        <Link to="/" className="flex flex-col items-center justify-center text-amber-500 drop-shadow-[0_0_8px_rgba(255,191,0,0.6)]">
+          <span className="material-symbols-outlined">account_balance</span>
+          <span className="font-['Sora'] text-[10px] font-semibold uppercase tracking-wider">Arena</span>
+        </Link>
+        <Link to="#" className="flex flex-col items-center justify-center text-slate-400 hover:text-amber-300">
+          <span className="material-symbols-outlined">insights</span>
+          <span className="font-['Sora'] text-[10px] font-semibold uppercase tracking-wider">Pulse</span>
+        </Link>
+        <Link to="#" className="flex flex-col items-center justify-center text-slate-400 hover:text-amber-300">
+          <span className="material-symbols-outlined">auto_stories</span>
+          <span className="font-['Sora'] text-[10px] font-semibold uppercase tracking-wider">Stories</span>
+        </Link>
+        <Link to="#" className="flex flex-col items-center justify-center text-slate-400 hover:text-amber-300">
+          <span className="material-symbols-outlined">security</span>
+          <span className="font-['Sora'] text-[10px] font-semibold uppercase tracking-wider">Vault</span>
+        </Link>
+      </nav>
+
       {/* Footer */}
-      <footer className="w-full border-t border-white/10 pt-16 pb-8 bg-[#001F33] flex flex-col items-center text-center px-4">
-        <div className="max-w-[1440px] w-full grid grid-cols-1 md:grid-cols-4 gap-12 text-left mb-16 px-8">
-          <div className="md:col-span-1">
-            <div className="text-xl font-bold text-white mb-4">City Boy Arena</div>
-            <p className="font-body-md text-slate-400">The premier platform for nation-building, trust-anchored infrastructure, and digital civic engagement.</p>
-          </div>
+      <footer className="bg-[#003153] border-t border-white/10 py-12 px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-7xl mx-auto">
           <div>
-            <h4 className="font-h3 text-body-md text-white mb-6 uppercase tracking-wider">Resources</h4>
-            <ul className="space-y-4">
-              <li><Link to="#" className="font-body-md text-slate-500 hover:text-secondary transition-colors">Impact Report</Link></li>
-              <li><Link to="#" className="font-body-md text-slate-500 hover:text-secondary transition-colors">Privacy Policy</Link></li>
-              <li><Link to="#" className="font-body-md text-slate-500 hover:text-secondary transition-colors">Security Ledger</Link></li>
-              <li><Link to="#" className="font-body-md text-slate-500 hover:text-secondary transition-colors">Contact Command</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-h3 text-body-md text-white mb-6 uppercase tracking-wider">Platform</h4>
-            <ul className="space-y-4">
-              <li><Link to="#" className="font-body-md text-slate-500 hover:text-secondary transition-colors">National Hub</Link></li>
-              <li><Link to="#" className="font-body-md text-slate-500 hover:text-secondary transition-colors">Command Centre</Link></li>
-              <li><Link to="#" className="font-body-md text-slate-500 hover:text-secondary transition-colors">Volunteer Grid</Link></li>
-              <li><Link to="#" className="font-body-md text-slate-500 hover:text-secondary transition-colors">Analytics</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-h3 text-body-md text-white mb-6 uppercase tracking-wider">Connect</h4>
+            <div className="text-amber-500 font-bold text-xl mb-4 font-['Sora']">CITY BOY ARENA</div>
+            <p className="text-slate-500 font-['Sora'] text-sm tracking-wide mb-6 max-w-sm">
+              Empowering the collective will of the people through data-driven governance and national pride.
+            </p>
             <div className="flex gap-4">
-              <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-secondary hover:text-on-secondary transition-all cursor-pointer">
-                <span className="material-symbols-outlined">share</span>
-              </div>
-              <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-secondary hover:text-on-secondary transition-all cursor-pointer">
-                <span className="material-symbols-outlined">public</span>
-              </div>
-              <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-secondary hover:text-on-secondary transition-all cursor-pointer">
-                <span className="material-symbols-outlined">mail</span>
-              </div>
+              <Link to="#" className="text-slate-500 hover:text-amber-500 transition-colors"><span className="material-symbols-outlined">public</span></Link>
+              <Link to="#" className="text-slate-500 hover:text-amber-500 transition-colors"><span className="material-symbols-outlined">alternate_email</span></Link>
+              <Link to="#" className="text-slate-500 hover:text-amber-500 transition-colors"><span className="material-symbols-outlined">group</span></Link>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-8">
+            <div className="flex flex-col gap-3">
+              <Link to="#" className="text-slate-500 hover:text-slate-300 font-['Sora'] text-sm">Privacy Protocol</Link>
+              <Link to="#" className="text-slate-500 hover:text-slate-300 font-['Sora'] text-sm">Institutional Disclosure</Link>
+            </div>
+            <div className="flex flex-col gap-3">
+              <Link to="#" className="text-slate-500 hover:text-slate-300 font-['Sora'] text-sm">Trust Standards</Link>
+              <Link to="#" className="text-slate-500 hover:text-slate-300 font-['Sora'] text-sm">Command Access</Link>
             </div>
           </div>
         </div>
-        <div className="w-full border-t border-white/5 pt-8">
-          <p className="font-label-caps text-xs text-slate-500 tracking-wide">© 2024 City Boy Digital Arena. A Nation-Building Initiative.</p>
+        <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/5 text-center md:text-left">
+          <p className="text-slate-500 font-['Sora'] text-xs">© 2024 City Boy Arena. National Infrastructure Command Centre.</p>
         </div>
       </footer>
-
-      {/* BottomNavBar (Mobile Only) */}
-      <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-4 bg-[#003153]/95 backdrop-blur-lg rounded-t-3xl border-t border-secondary/30 shadow-[0_-10px_40px_rgba(0,0,0,0.8)]">
-        <Link to="/" className="flex flex-col items-center justify-center text-secondary bg-secondary/10 rounded-xl p-2 shadow-[0_0_15px_rgba(255,215,0,0.3)]">
-          <span className="material-symbols-outlined">home</span>
-          <span className="font-h3 text-[10px] font-bold uppercase mt-1">Home</span>
-        </Link>
-        <Link to="/project-nigeria" className="flex flex-col items-center justify-center text-slate-400 p-2">
-          <span className="material-symbols-outlined">assignment</span>
-          <span className="font-h3 text-[10px] font-bold uppercase mt-1">Tasks</span>
-        </Link>
-        <Link to="/join" className="flex flex-col items-center justify-center text-slate-400 p-2">
-          <span className="material-symbols-outlined">military_tech</span>
-          <span className="font-h3 text-[10px] font-bold uppercase mt-1">Rewards</span>
-        </Link>
-        <Link to="#" className="flex flex-col items-center justify-center text-slate-400 p-2">
-          <span className="material-symbols-outlined">chat</span>
-          <span className="font-h3 text-[10px] font-bold uppercase mt-1">Chat</span>
-        </Link>
-      </nav>
     </>
   )
 }
