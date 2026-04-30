@@ -2,6 +2,25 @@
 @import "tailwindcss";
 
 @theme {
+  /* Platform Navy */
+  --color-platform-navy: #062B49;
+  --color-platform-navy-deep: #031B30;
+  --color-platform-navy-soft: #0A3B62;
+
+  /* Platform Gold */
+  --color-platform-gold: #D4AF37;
+  --color-platform-gold-light: #F1D27A;
+  --color-platform-gold-dark: #8C6A16;
+
+  /* Trusted Green */
+  --color-trusted-green: #16A34A;
+  --color-trusted-green-soft: #22C55E;
+
+  /* Neutral */
+  --color-neutral-white: #F8FAFC;
+  --color-neutral-text: #CBD5E1;
+  --color-neutral-muted: #94A3B8;
+
   /* Imperial Civic Design System */
   --color-surface: #121414;
   --color-surface-dim: #121414;
@@ -23,13 +42,13 @@
   --color-on-primary-container: #759ac1;
   
   /* Secondary - Gold */
-  --color-secondary: #e9c349;
+  --color-secondary: #D4AF37;
   --color-on-secondary: #3c2f00;
   --color-secondary-container: #af8d11;
   --color-on-secondary-container: #342800;
   
   /* Tertiary - Green */
-  --color-tertiary: #63dca6;
+  --color-tertiary: #16A34A;
   --color-on-tertiary: #003824;
   --color-tertiary-container: #003723;
   --color-on-tertiary-container: #27ab79;
@@ -41,6 +60,14 @@
   /* Outline */
   --color-outline: #8c9199;
   --color-outline-variant: #42474e;
+  
+  /* Border */
+  --color-border-soft: rgba(255,255,255,.08);
+  --color-border-gold-soft: rgba(212,175,55,.28);
+
+  /* Glass */
+  --color-glass-dark: rgba(4,18,32,.72);
+  --color-glass-soft: rgba(4,18,32,.52);
   
   /* Legacy compatibility */
   --color-prussian: #003153;
@@ -60,7 +87,7 @@
   /* Typography */
   --font-display: 'Sora', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
-  --font-data: 'IBM Plex Sans', system-ui, sans-serif;
+  --color-data: 'IBM Plex Sans', system-ui, sans-serif;
 }
 
 * { box-sizing: border-box; }

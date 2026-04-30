@@ -21,6 +21,11 @@ const StoriesPage = lazy(() => import('./pages/public/StoriesPage'))
 const PartnersPage = lazy(() => import('./pages/public/PartnersPage'))
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
 
+const AboutPage = lazy(() => import('./pages/public/AboutPage'))
+const InitiativesPage = lazy(() => import('./pages/public/InitiativesPage'))
+const LeadershipPage = lazy(() => import('./pages/public/LeadershipPage'))
+const MediaPage = lazy(() => import('./pages/public/MediaPage'))
+
 const AppVolunteerDashboard = lazy(() => import('./pages/app/volunteer/AppVolunteerDashboard'))
 const AppVolunteerTasks = lazy(() => import('./pages/app/volunteer/AppVolunteerTasks'))
 const AppVolunteerCommunity = lazy(() => import('./pages/app/volunteer/AppVolunteerCommunity'))
@@ -103,6 +108,10 @@ function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<HomePage />} />
+            <Route path="about" element={<AboutPage />} />
+            <Route path="initiatives" element={<InitiativesPage />} />
+            <Route path="leadership" element={<LeadershipPage />} />
+            <Route path="media" element={<MediaPage />} />
             <Route path="project-nigeria" element={<ProjectNigeriaPage />} />
             <Route path="transparency" element={<TransparencyPage />} />
             <Route path="volunteer" element={<VolunteerApp />} />
