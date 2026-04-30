@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom'
-import Layout from '../components/Layout'
 
 export default function NotFoundPage() {
   return (
-    <Layout>
+    <>
       <div className="min-h-screen bg-background pt-24 pb-12 flex items-center">
         <div className="container mx-auto px-[80px] max-w-[1440px] text-center">
           <span className="text-secondary font-label-caps uppercase tracking-widest mb-6 block">Lost?</span>
@@ -15,6 +14,6 @@ export default function NotFoundPage() {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   )
 }

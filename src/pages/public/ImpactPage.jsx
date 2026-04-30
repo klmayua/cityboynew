@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import Layout from '../../components/Layout'
 
 export default function ImpactPage() {
   const stats = [
@@ -14,7 +13,7 @@ export default function ImpactPage() {
     { title: 'Benue Rural Water', location: 'Benue', status: 'In Progress', progress: 45 },
   ]
   return (
-    <Layout>
+    <>
       <div className="min-h-screen bg-background pt-24 pb-12">
         {/* Hero Strip */}
         <section className="py-16 border-b border-white/6">
@@ -92,6 +91,6 @@ export default function ImpactPage() {
           </div>
         </section>
       </div>
-    </Layout>
+    </>
   )
 }

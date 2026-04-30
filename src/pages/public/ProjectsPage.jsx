@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import Layout from '../../components/Layout'
 
 export default function ProjectsPage() {
   const projects = [
@@ -9,7 +8,7 @@ export default function ProjectsPage() {
     { id: 4, title: 'Abuja Digital Hub', location: 'FCT', status: 'Planning', progress: 15 },
   ]
   return (
-    <Layout>
+    <>
       <div className="min-h-screen bg-background pt-24 pb-12">
         <div className="container mx-auto px-[80px] max-w-[1440px]">
           <div className="text-center mb-16">
@@ -37,6 +36,6 @@ export default function ProjectsPage() {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   )
 }

@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import Layout from '../../components/Layout'
 import { useAnalytics } from '../../analytics'
 
 export default function StoriesPage() {
@@ -10,7 +9,7 @@ export default function StoriesPage() {
     { id: 3, category: 'IMPACT', title: 'Fiber-to-Farm doubling yields in Benue', location: 'Benue' },
   ]
   return (
-    <Layout>
+    <>
       <div className="min-h-screen bg-background pt-24 pb-12">
         <div className="container mx-auto px-[80px] max-w-[1440px]">
           <div className="text-center mb-16">
@@ -41,6 +40,6 @@ export default function StoriesPage() {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   )
 }

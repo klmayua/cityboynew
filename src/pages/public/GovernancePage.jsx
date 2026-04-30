@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom'
-import Layout from '../../components/Layout'
 
 export default function GovernancePage() {
   return (
-    <Layout>
+    <>
       <div className="min-h-screen bg-background pt-24 pb-12">
         <div className="container mx-auto px-[80px] max-w-[1440px]">
           <div className="text-center mb-16">
@@ -26,6 +25,6 @@ export default function GovernancePage() {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   )
 }

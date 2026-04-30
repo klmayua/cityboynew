@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import Layout from '../../components/Layout'
 
 export default function CommunityPage() {
   const chapters = [
@@ -19,7 +18,7 @@ export default function CommunityPage() {
     { name: 'Chidi', role: 'Organizer', chapter: 'Lagos Central', pts: '7,850' },
   ]
   return (
-    <Layout>
+    <>
       <div className="min-h-screen bg-background pt-24 pb-12">
         {/* Hero Strip */}
         <section className="py-16 border-b border-white/6">
@@ -96,6 +95,6 @@ export default function CommunityPage() {
           </div>
         </section>
       </div>
-    </Layout>
+    </>
   )
 }
