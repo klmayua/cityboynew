@@ -1,8 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
-import { Bell, User } from 'lucide-react'
+import { Bell, User, ArrowRight } from 'lucide-react'
 import { useAnalytics } from '../analytics'
 import ArenaDesk from '../components/command/ArenaDesk'
-import HeroCarousel from '../components/command/HeroCarousel'
 
 export default function HomePage() {
   const location = useLocation()
@@ -20,18 +19,18 @@ export default function HomePage() {
   return (
     <>
       {/* TopAppBar */}
-      <header className="bg-[#062B49]/90 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-[rgba(212,175,55,.18)] shadow-[0_0_20px_rgba(255,191,0,0.1)] pt-[env(safe-area-inset-top)]">
+      <header className="bg-[#062B49]/90 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-[rgba(212,175,55,.18)]">
         <div className="flex justify-between items-center px-4 md:px-8 h-16 md:h-20 max-w-[1440px] mx-auto">
-          <Link to="/" className="text-xl font-black tracking-widest text-[#D4AF37] uppercase font-['Sora']">CITY BOY ARENA</Link>
-          <nav className="hidden md:flex items-center gap-8 font-['Sora'] font-bold tracking-tight" aria-label="Main navigation">
+          <Link to="/" className="text-xl font-semibold tracking-widest text-[#D4AF37] uppercase font-['Sora']">CITY BOY ARENA</Link>
+          <nav className="hidden md:flex items-center gap-6 font-['Sora'] font-medium tracking-tight" aria-label="Main navigation">
             {navLinks.map(link => (
               <Link 
                 key={link.to}
                 to={link.to}
                 aria-current={location.pathname === link.to ? 'page' : undefined}
-                className={`transition-colors ${
+                className={`text-sm transition-colors ${
                   location.pathname === link.to 
-                    ? 'text-[#D4AF37] border-b-2 border-[#D4AF37] pb-1' 
+                    ? 'text-[#D4AF37]' 
                     : 'text-slate-300 hover:text-[#D4AF37]'
                 }`}
               >
@@ -39,41 +38,69 @@ export default function HomePage() {
               </Link>
             ))}
           </nav>
-          <div className="flex items-center gap-4 md:gap-6">
-            <button aria-label="Notifications" className="p-2 text-slate-300 hover:text-[#D4AF37] transition-colors">
-              <Bell className="w-5 h-5" />
-            </button>
-            <button aria-label="Account" className="p-2 text-slate-300 hover:text-[#D4AF37] transition-colors">
-              <User className="w-5 h-5" />
-            </button>
-            <Link to="/join" className="hidden md:inline-flex bg-[#0F172A] border border-[rgba(212,175,55,.28)] text-white px-5 py-2.5 rounded-md font-label-caps hover:bg-[#D4AF37] hover:text-[#031B30] transition-all">
+          <div className="flex items-center gap-4">
+            <Link to="/join" className="bg-[#0F172A] border border-[rgba(212,175,55,.28)] text-white px-5 py-2 rounded font-label-caps text-sm hover:bg-[#D4AF37] hover:text-[#031B30] transition-all">
               Volunteer
-            </Link>
-            <Link to="/donate" className="bg-[#D4AF37] text-[#031B30] px-5 py-2.5 rounded-md font-label-caps hover:brightness-110 active:scale-[0.98] transition-all">
-              Fund Impact
             </Link>
           </div>
         </div>
       </header>
 
-      {/* Navbar Separator */}
-      <div className="fixed top-16 md:top-20 w-full h-px z-40" style={{
-        background: 'linear-gradient(90deg, transparent 0%, rgba(212,175,55,.18) 20%, rgba(212,175,55,.95) 50%, rgba(212,175,55,.18) 80%, transparent 100%)'
-      }} />
+      {/* Separator */}
+      <div className="fixed top-16 md:top-20 w-full h-px z-40 bg-[rgba(212,175,55,.18)]" />
 
-      <main className="pt-16 md:pt-20">
-        {/* Hero Carousel */}
-        <HeroCarousel />
+<main>
+        {/* Hero: Premium Static */}
+        <section className="relative h-[85vh] w-full overflow-hidden">
+          <div className="absolute inset-0">
+            <img 
+              alt="Nigerian Metropolis" 
+              className="w-full h-full object-cover" 
+              src="https://i.imgur.com/scOJueT.jpeg"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#121414] via-[#121414]/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#121414]/90 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-[#D4AF37]/[0.035] mix-blend-overlay" />
+          </div>
+          <div className="relative z-10 container mx-auto px-4 md:px-8 h-full flex items-center max-w-[1440px]">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#062B49]/60 border border-[rgba(212,175,55,.28)] backdrop-blur-sm mb-6">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#16A34A] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#16A34A]"></span>
+                </span>
+                <span className="text-xs font-label-caps text-[#D4AF37] uppercase">National Platform • Live</span>
+              </div>
+              <h1 className="font-h1 text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
+                Nigeria Rises <br/>
+                <span className="text-[#CBD5E1]">When We Build Together</span>
+              </h1>
+              <p className="text-lg md:text-xl text-[#CBD5E1] mb-8 max-w-xl">
+                A national digital arena for action — mobilizing citizens,
+                funding transparent impact projects, empowering volunteers,
+                and building a stronger Nigeria through collective effort.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/join" onClick={() => trackJoinClick('hero_primary')} className="inline-flex bg-[#D4AF37] text-[#031B30] px-8 py-4 rounded font-label-caps text-sm hover:brightness-110 transition-all items-center gap-2">
+                  Join the Arena <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link to="/donate" onClick={() => trackDonateClick('hero_secondary')} className="inline-flex bg-[#062B49]/60 border border-[rgba(212,175,55,.28)] text-white px-8 py-4 rounded font-label-caps text-sm hover:bg-[#062B49] transition-all">
+                  Fund Impact
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* National Pulse Section */}
-        <section className="pt-24 pb-24 bg-background border-y border-white/[0.06]">
-          <div className="container mx-auto px-5xl max-w-[1440px]">
+        <section className="pt-24 pb-24 bg-[#121414]">
+          <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
             {/* Header */}
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12">
               <div className="max-w-2xl">
-                <span className="text-secondary font-label-caps uppercase tracking-widest mb-4 block">National Pulse</span>
-                <h2 className="font-h2 text-5xl mb-4 text-white">A Living View Of National Momentum</h2>
-                <p className="text-[#C2C7CF] text-lg max-w-xl leading-relaxed">
+                <span className="text-[#D4AF37] font-label-caps uppercase tracking-widest mb-4 block">National Pulse</span>
+                <h2 className="font-h2 text-4xl md:text-5xl mb-4 text-white">A Living View Of National Momentum</h2>
+                <p className="text-[#94A3B8] text-lg max-w-xl leading-relaxed">
                   Transparent movement metrics — citizens mobilized,
                   projects activated, communities reached,
                   and measurable impact unfolding in real time.
