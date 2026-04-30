@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import { AnalyticsTracker } from './analytics'
+import { LoadingScreen } from './components/system/LoadingScreen'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const ProjectNigeriaPage = lazy(() => import('./pages/ProjectNigeriaPage'))
@@ -90,14 +91,7 @@ const RegisterPage = lazy(() => import('./pages/auth/RegisterPage'))
 const VerifyPage = lazy(() => import('./pages/auth/VerifyPage'))
 
 function LoadingFallback() {
-  return (
-    <div className="min-h-screen flex items-center justify-center" style={{background: '#071120'}}>
-      <div className="text-center">
-        <div className="w-8 h-8 border-2 border-secondary/30 border-t-secondary rounded-full animate-spin mb-4 mx-auto"></div>
-        <p className="text-on-surface-variant text-sm">Loading...</p>
-      </div>
-    </div>
-  )
+  return <LoadingScreen />
 }
 
 function App() {

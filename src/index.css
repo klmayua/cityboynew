@@ -425,10 +425,39 @@ HERO MOTION SYSTEM - CINEMATIC & PREMIUM
     opacity: 1;
   }
   
-  .hero-entrance {
+.hero-entrance {
     animation: none;
     opacity: 1;
   }
+}
+
+/* Loading Line Animation */
+@keyframes loadingLine {
+  0% { transform: translateX(-100%); opacity: 0; }
+  50% { transform: translateX(100%); opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+/* Hero Flag Wave - Majestic breathing motion */
+@keyframes heroFlagWave {
+  0%, 100% { 
+    transform: translateX(0) scale(1) translateY(0); 
+  }
+  25% { 
+    transform: translateX(-2px) scale(1.001) translateY(-1px); 
+  }
+  50% { 
+    transform: translateX(0) scale(1) translateY(0); 
+  }
+  75% { 
+    transform: translateX(2px) scale(0.999) translateY(1px); 
+  }
+}
+
+.hero-flag-wave {
+  animation: heroFlagWave 18s ease-in-out infinite;
+  transform-origin: center center;
+  will-change: transform;
 }
 
 /* Mobile Typography Overrides */

@@ -18,20 +18,20 @@ export default function HomePage() {
   
   return (
     <>
-      {/* TopAppBar */}
+{/* TopAppBar */}
       <header className="bg-[#062B49]/90 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-[rgba(212,175,55,.18)]">
         <div className="flex justify-between items-center px-4 md:px-8 h-16 md:h-20 max-w-[1440px] mx-auto">
-          <Link to="/" className="text-xl font-semibold tracking-widest text-[#D4AF37] uppercase font-['Sora']">CITY BOY ARENA</Link>
+          <Link to="/" className="text-xl font-semibold tracking-widest text-[#D4AF37] uppercase font-['Sora'] hover:brightness-110 hover:-translate-y-px transition-all duration-300">CITY BOY ARENA</Link>
           <nav className="hidden md:flex items-center gap-6 font-['Sora'] font-medium tracking-tight" aria-label="Main navigation">
             {navLinks.map(link => (
               <Link 
                 key={link.to}
                 to={link.to}
                 aria-current={location.pathname === link.to ? 'page' : undefined}
-                className={`text-sm transition-colors ${
+                className={`text-sm transition-all duration-300 ${
                   location.pathname === link.to 
-                    ? 'text-[#D4AF37]' 
-                    : 'text-slate-300 hover:text-[#D4AF37]'
+                    ? 'text-[#D4AF37] border-b border-[#D4AF37] pb-0.5' 
+                    : 'text-white hover:text-[#D4AF37]'
                 }`}
               >
                 {link.label}
@@ -39,7 +39,7 @@ export default function HomePage() {
             ))}
           </nav>
           <div className="flex items-center gap-4">
-            <Link to="/join" className="bg-[#0F172A] border border-[rgba(212,175,55,.28)] text-white px-5 py-2 rounded font-label-caps text-sm hover:bg-[#D4AF37] hover:text-[#031B30] transition-all">
+            <Link to="/join" className="bg-[#0A3B62]/60 border border-[rgba(212,175,55,.28)] text-[#D4AF37] px-5 py-2 rounded-[8px] font-label-caps text-sm hover:bg-[#D4AF37] hover:text-[#031B30] hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(212,175,55,.25)] transition-all duration-300">
               Volunteer
             </Link>
           </div>
@@ -47,15 +47,17 @@ export default function HomePage() {
       </header>
 
       {/* Separator */}
-      <div className="fixed top-16 md:top-20 w-full h-px z-40 bg-[rgba(212,175,55,.18)]" />
+      <div className="fixed top-16 md:top-20 w-full h-px z-40" style={{
+        background: 'linear-gradient(90deg, transparent 0%, rgba(212,175,55,.12) 15%, rgba(212,175,55,.95) 50%, rgba(212,175,55,.12) 85%, transparent 100%)'
+      }} />
 
-<main>
+      <main>
         {/* Hero: Premium Static */}
-        <section className="relative h-[85vh] w-full overflow-hidden">
+        <section className="relative h-[80vh] w-full overflow-hidden">
           <div className="absolute inset-0">
             <img 
               alt="Nigerian Metropolis" 
-              className="w-full h-full object-cover" 
+              className="hero-flag-wave w-full h-full object-cover" 
               src="https://i.imgur.com/scOJueT.jpeg"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#121414] via-[#121414]/60 to-transparent" />
@@ -63,19 +65,19 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-[#D4AF37]/[0.035] mix-blend-overlay" />
           </div>
           <div className="relative z-10 container mx-auto px-4 md:px-8 h-full flex items-center max-w-[1440px]">
-            <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#062B49]/60 border border-[rgba(212,175,55,.28)] backdrop-blur-sm mb-6">
+            <div className="max-w-2xl -mt-16 md:-mt-20">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#062B49]/60 border border-[rgba(212,175,55,.28)] backdrop-blur-sm mb-5">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#16A34A] opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#16A34A]"></span>
                 </span>
                 <span className="text-xs font-label-caps text-[#D4AF37] uppercase">National Platform • Live</span>
               </div>
-              <h1 className="font-h1 text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
+              <h1 className="font-h1 text-4xl md:text-5xl lg:text-6xl text-white mb-5 leading-tight">
                 Nigeria Rises <br/>
                 <span className="text-[#CBD5E1]">When We Build Together</span>
               </h1>
-              <p className="text-lg md:text-xl text-[#CBD5E1] mb-8 max-w-xl">
+              <p className="text-lg md:text-xl text-[#CBD5E1] mb-7 max-w-xl">
                 A national digital arena for action — mobilizing citizens,
                 funding transparent impact projects, empowering volunteers,
                 and building a stronger Nigeria through collective effort.
