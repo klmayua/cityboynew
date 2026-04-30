@@ -26,7 +26,7 @@ export default function Layout() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       {/* Main Content */}
-      <main className="flex-1" role="main">
+      <main className="flex-1 pb-20 md:pb-0" role="main">
         <Outlet />
       </main>
 
@@ -89,22 +89,22 @@ export default function Layout() {
       </footer>
 
       {/* Mobile Bottom Dock - Hidden on larger screens */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center px-4 py-3 bg-[#003153]/95 backdrop-blur-lg rounded-t-3xl border-t border-secondary/30" style={{ paddingBottom: 'env(safe-area-inset-bottom, 1rem)' }}>
-        <Link className="flex flex-col items-center justify-center text-secondary bg-secondary/10 rounded-xl px-3 py-2 min-w-[60px] shadow-[0_0_15px_rgba(255,215,0,0.3)]" to="/">
-          <span className="material-symbols-outlined text-[20px]">home</span>
-          <span className="font-h3 text-[10px] font-bold uppercase mt-0.5">Home</span>
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-[100] flex justify-around items-center px-2 py-3 bg-[#003153]/95 backdrop-blur-lg rounded-t-3xl border-t border-secondary/30 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+        <Link className="flex flex-col items-center justify-center text-secondary bg-secondary/10 rounded-xl px-2 py-2 min-w-[60px] min-h-[52px] shadow-[0_0_15px_rgba(255,215,0,0.3)]" to="/">
+          <span className="material-symbols-outlined text-[22px]">home</span>
+          <span className="text-[9px] font-bold uppercase mt-0.5">Home</span>
         </Link>
-        <Link className="flex flex-col items-center justify-center text-slate-400 px-3 py-2 min-w-[60px]" to="/project-nigeria">
-          <span className="material-symbols-outlined text-[20px]">assignment</span>
-          <span className="font-h3 text-[10px] font-bold uppercase mt-0.5">Tasks</span>
+        <Link className="flex flex-col items-center justify-center text-slate-400 px-2 py-2 min-w-[60px] min-h-[52px]" to="/project-nigeria">
+          <span className="material-symbols-outlined text-[22px]">assignment</span>
+          <span className="text-[9px] font-bold uppercase mt-0.5">Tasks</span>
         </Link>
-        <Link className="flex flex-col items-center justify-center text-slate-400 px-3 py-2 min-w-[60px]" to="/join">
-          <span className="material-symbols-outlined text-[20px]">military_tech</span>
-          <span className="font-h3 text-[10px] font-bold uppercase mt-0.5">Rewards</span>
+        <Link className="flex flex-col items-center justify-center text-slate-400 px-2 py-2 min-w-[60px] min-h-[52px]" to="/join">
+          <span className="material-symbols-outlined text-[22px]">military_tech</span>
+          <span className="text-[9px] font-bold uppercase mt-0.5">Rewards</span>
         </Link>
-        <Link className="flex flex-col items-center justify-center text-slate-400 px-3 py-2 min-w-[60px]" to="#">
-          <span className="material-symbols-outlined text-[20px]">chat</span>
-          <span className="font-h3 text-[10px] font-bold uppercase mt-0.5">Chat</span>
+        <Link className="flex flex-col items-center justify-center text-slate-400 px-2 py-2 min-w-[60px] min-h-[52px]" to="#">
+          <span className="material-symbols-outlined text-[22px]">chat</span>
+          <span className="text-[9px] font-bold uppercase mt-0.5">Chat</span>
         </Link>
       </nav>
     </div>

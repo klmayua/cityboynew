@@ -65,6 +65,13 @@
 
 * { box-sizing: border-box; }
 
+:root {
+  --sat: env(safe-area-inset-top);
+  --sab: env(safe-area-inset-bottom);
+  --sal: env(safe-area-inset-left);
+  --sar: env(safe-area-inset-right);
+}
+
 *:focus-visible {
   outline: 2px solid rgba(233, 195, 73, 0.55);
   outline-offset: 2px;
@@ -243,8 +250,22 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 1320px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
 }
 
 .text-gradient-gold {
@@ -370,6 +391,35 @@ HERO MOTION SYSTEM - CINEMATIC & PREMIUM
 @media (prefers-reduced-motion: reduce) {
   .hero-flag-wave {
     animation: none;
+  }
+  
+  .hero-headline-animate {
+    animation: none;
+    opacity: 1;
+  }
+  
+  .hero-entrance {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* Mobile Typography Overrides */
+@media (max-width: 768px) {
+  .font-h1 {
+    font-size: 36px;
+  }
+  
+  .font-h2 {
+    font-size: 28px;
+  }
+  
+  .font-h3 {
+    font-size: 22px;
+  }
+  
+  .font-stat-value {
+    font-size: 20px;
   }
   
   .hero-headline-animate {

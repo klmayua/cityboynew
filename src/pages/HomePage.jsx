@@ -7,8 +7,8 @@ export default function HomePage() {
   return (
     <>
       {/* TopAppBar */}
-      <header className="bg-[#003153]/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-amber-500/20 shadow-[0_0_20px_rgba(255,191,0,0.1)]">
-        <div className="flex justify-between items-center px-8 h-20 max-w-[1440px] mx-auto">
+      <header className="bg-[#003153]/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-amber-500/20 shadow-[0_0_20px_rgba(255,191,0,0.1)] pt-[env(safe-area-inset-top)]">
+        <div className="flex justify-between items-center px-4 md:px-8 h-16 md:h-20 max-w-[1440px] mx-auto">
           <div className="text-xl font-black tracking-widest text-amber-500 uppercase font-['Sora']">CITY BOY ARENA</div>
           <nav className="hidden md:flex items-center gap-8 font-['Sora'] font-bold tracking-tight" aria-label="Main navigation">
             <Link to="/" aria-current={location.pathname === '/' ? 'page' : undefined} className="text-amber-500 border-b-2 border-amber-500 pb-1">The Arena</Link>
