@@ -1,0 +1,73 @@
+:root{
+  --cmd-bg-default:
+    radial-gradient(circle at 20% 20%, rgba(212,175,55,.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(26,115,232,.05) 0%, transparent 50%),
+    linear-gradient(180deg,#02060d 0%,#030912 50%,#02060d 100%);
+
+  --cmd-bg-warroom:
+    radial-gradient(circle at 20% 20%, rgba(212,175,55,.08) 0%, transparent 45%),
+    radial-gradient(circle at 80% 20%, rgba(239,68,68,.06) 0%, transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(26,115,232,.06) 0%, transparent 45%),
+    linear-gradient(180deg,#02060d 0%,#020814 100%);
+
+  --cmd-bg-reports:
+    linear-gradient(180deg,#06111f 0%,#071425 100%);
+}
+
+.command-shell{
+  min-height:100vh;
+  background:var(--cmd-bg-default);
+  background-attachment:fixed;
+}
+
+.command-shell--warroom{
+  background:var(--cmd-bg-warroom);
+}
+
+.command-shell--reports{
+  background:var(--cmd-bg-reports);
+}
+
+.command-shell__inner{
+  padding:28px;
+}
+
+.command-shell__inner.dense{
+  padding:20px;
+}
+
+.command-shell__header{
+  margin-bottom:32px;
+}
+
+.command-shell__title{
+  color:white;
+  font-size:32px;
+  font-weight:600;
+  letter-spacing:-0.03em;
+  line-height:1.05;
+}
+
+.command-shell__subtitle{
+  margin-top:8px;
+  color:rgba(255,255,255,.42);
+  font-size:14px;
+}
+
+@media (max-width: 768px){
+  .command-shell__inner{
+    padding:16px;
+  }
+
+  .command-shell__title{
+    font-size:24px;
+  }
+
+  .command-shell__header{
+    margin-bottom:20px;
+  }
+
+  .command-shell__inner .grid{
+    gap:16px !important;
+  }
+}

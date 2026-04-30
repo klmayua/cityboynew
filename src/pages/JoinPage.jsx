@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, MapPin, Users, Heart, Shield, Sparkles, CheckCircle } from 'lucide-react'
+import { useAnalytics } from '../analytics'
 
 const benefits = [
   { icon: Users, title: 'Join a Community', description: 'Connect with 12,000+ ChangeMakers' },
@@ -9,9 +11,19 @@ const benefits = [
 ]
 
 export default function JoinPage() {
+  const { trackJoinSubmit } = useAnalytics()
+
+  const [currentStep, setCurrentStep] = useState(1)
+
   const handleSubmit = (e) => {
     e.preventDefault()
+    trackJoinSubmit()
     alert('Welcome to City Boy Arena! (Demo)')
+  }
+
+  const handleStepChange = (newStep) => {
+    const direction = newStep > currentStep ? 'next' : 'prev'
+    setCurrentStep(newStep)
   }
 
   return (

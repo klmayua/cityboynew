@@ -54,6 +54,9 @@
   --color-steel-muted: #5B6B7A;
   --color-graphite: #111827;
   
+  /* White */
+  --color-white: #FFFFFF;
+  
   /* Typography */
   --font-display: 'Sora', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
@@ -61,6 +64,12 @@
 }
 
 * { box-sizing: border-box; }
+
+*:focus-visible {
+  outline: 2px solid rgba(233, 195, 73, 0.55);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
 
 html { scroll-behavior: smooth; }
 
@@ -305,4 +314,71 @@ h1, h2, h3, h4, h5, h6 {
 /* Material Symbols */
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ============================================================
+HERO MOTION SYSTEM - CINEMATIC & PREMIUM
+============================================================ */
+
+/* Hero Container */
+.hero-cinematic {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle Flag Wave Animation */
+@keyframes flag-wave {
+  0%, 100% { transform: translateY(0) scale(1); }
+  25% { transform: translateY(-2px) scale(1.005); }
+  50% { transform: translateY(0) scale(1); }
+  75% { transform: translateY(2px) scale(0.995); }
+}
+
+.hero-flag-wave {
+  animation: flag-wave 12s ease-in-out infinite;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+/* Cinematic Vignette */
+.hero-vignette {
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    transparent 50%,
+    rgba(0, 20, 40, 0.4) 100%
+  );
+}
+
+/* Headline Stagger Animation */
+@keyframes headline-reveal {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.hero-headline-animate {
+  animation: headline-reveal 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Smooth Entrance */
+.hero-entrance {
+  opacity: 0;
+  animation: fade-in-up 0.8s ease-out 0.2s forwards;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .hero-flag-wave {
+    animation: none;
+  }
+  
+  .hero-headline-animate {
+    animation: none;
+    opacity: 1;
+  }
+  
+  .hero-entrance {
+    animation: none;
+    opacity: 1;
+  }
 }

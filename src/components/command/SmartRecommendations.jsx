@@ -1,0 +1,56 @@
+import { Sparkles } from 'lucide-react'
+import { useCommandStore } from '../../store/commandStore'
+import { useCommandMemory } from '../../store/commandMemory'
+import { generateRecommendations } from '../../lib/brain'
+
+export default function SmartRecommendations() {
+  const store = useCommandStore()
+  const clickRecommendation = useCommandMemory(s => s.clickRecommendation)
+  const recommendationClicks = useCommandMemory(s => s.recommendationClicks)
+
+  const recommendations = generateRecommendations(store)
+
+  const handleClick = (rec) => {
+    clickRecommendation(rec.id)
+  }
+
+  return (
+    <section className="rounded-3xl border border-gold/[0.1] bg-gold/[0.03] p-6">
+      <div className="flex items-center gap-2 mb-5">
+        <Sparkles className="w-4 h-4 text-gold" />
+        <h3 className="text-white font-semibold">Recommendations</h3>
+      </div>
+
+      <div className="space-y-3">
+        {recommendations.map((rec) => {
+          const clicked = recommendationClicks.includes(rec.id)
+          return (
+            <button
+              key={rec.id}
+              onClick={() => handleClick(rec)}
+              className={`w-full rounded-2xl border px-4 py-4 text-sm text-left transition-all ${
+                clicked 
+                  ? 'border-gold/30 bg-gold/10 text-white/60' 
+                  : 'border-white/[0.08] bg-white/[0.03] text-white/[0.85] hover:border-gold/30 hover:bg-white/[0.05]'
+              }`}
+            >
+              <div className="flex items-start justify-between gap-3">
+                <span>{rec.title}</span>
+                <span className={`text-xs px-2 py-0.5 rounded-full ${
+                  rec.severity === 'high' ? 'bg-signal-red/20 text-signal-red' :
+                  rec.severity === 'medium' ? 'bg-gold/20 text-gold' :
+                  'bg-signal-green/20 text-signal-green'
+                }`}>
+                  {rec.severity}
+                </span>
+              </div>
+              {rec.action && (
+                <div className="text-xs text-white/[0.5] mt-2">{rec.action}</div>
+              )}
+            </button>
+          )
+        })}
+      </div>
+    </section>
+  )
+}

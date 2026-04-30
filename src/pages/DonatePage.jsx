@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Heart, Shield, TrendingUp, Users, ArrowRight, CheckCircle, Sparkles, Gift } from 'lucide-react'
+import { useAnalytics } from '../analytics'
 
 const donationTiers = [
   { name: 'Bronze', amount: '₦5,000', benefits: ['Digital Badge', 'Monthly Updates'], color: 'from-orange-700 to-orange-900' },
@@ -18,6 +19,7 @@ const recentDonations = [
 
 export default function DonatePage() {
   const [amount, setAmount] = useState('')
+  const { trackDonationStart } = useAnalytics()
   const [customAmount, setCustomAmount] = useState('')
 
   const quickAmounts = ['₦1,000', '₦5,000', '₦10,000', '₦25,000', '₦50,000']
@@ -48,7 +50,7 @@ export default function DonatePage() {
                 {quickAmounts.map((amt) => (
                   <button
                     key={amt}
-                    onClick={() => setAmount(amt)}
+                    onClick={() => { setAmount(amt); trackDonationStart(amt, 'general_fund'); }}
                     className={`py-3 rounded-xl border text-center transition-all ${
                       amount === amt
                         ? 'border-gold bg-gold/10 text-gold'
