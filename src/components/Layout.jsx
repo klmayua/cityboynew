@@ -1,112 +1,148 @@
 import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet, useLocation } from 'react-router-dom'
 
 const footerLinks = {
   resources: [
-    { name: 'Impact Report', href: '#' },
-    { name: 'Privacy Policy', href: '#' },
-    { name: 'Security Ledger', href: '#' },
-    { name: 'Contact Command', href: '#' },
+    { name: 'Impact Report', href: '/impact' },
+    { name: 'Privacy Protocol', href: '#' },
+    { name: 'Trust & Transparency', href: '/trust' },
+    { name: 'Governance', href: '/governance' },
   ],
   platform: [
-    { name: 'National Hub', href: '#' },
-    { name: 'Command Centre', href: '#' },
-    { name: 'Volunteer Grid', href: '#' },
-    { name: 'Analytics', href: '#' },
+    { name: 'Arena', href: '/' },
+    { name: 'Volunteer', href: '/volunteer' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'Partners', href: '/partners' },
   ],
 }
 
 const socialLinks = [
-  { name: 'share', icon: 'share' },
-  { name: 'public', icon: 'public' },
-  { name: 'mail', icon: 'mail' },
+  { name: 'twitter', icon: 'X' },
+  { name: 'instagram', icon: 'IG' },
+  { name: 'linkedin', icon: 'IN' },
 ]
 
-export default function Layout() {
-  return (
-    <div className="min-h-screen flex flex-col bg-background">
-      {/* Main Content */}
-      <main className="flex-1 pb-20 md:pb-0" role="main">
-        <Outlet />
-      </main>
+const navLinks = [
+  { to: '/', label: 'Arena' },
+  { to: '/about', label: 'About' },
+  { to: '/initiatives', label: 'Initiatives' },
+  { to: '/leadership', label: 'Leadership' },
+  { to: '/media', label: 'Media' },
+  { to: '/community', label: 'Community' },
+]
 
-      {/* Footer */}
-      <footer className="w-full border-t border-white/10 pt-16 pb-8 bg-[#001F33] flex flex-col items-center text-center px-4" role="contentinfo">
-        <div className="max-w-[1440px] w-full grid grid-cols-1 md:grid-cols-4 gap-12 text-left mb-16 px-8">
-          <div className="md:col-span-1">
-            <div className="text-xl font-bold text-white mb-4">City Boy Arena</div>
-            <p className="font-body-md text-slate-400">
-              The premier platform for nation-building, trust-anchored infrastructure, and digital civic engagement.
+function Navbar() {
+  const location = useLocation()
+  return (
+    <>
+      <header className="bg-[#062B49]/90 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-[rgba(212,175,55,.18)]">
+        <div className="grid grid-cols-12 items-center px-4 md:px-8 h-16 md:h-20 max-w-[1440px] mx-auto gap-4">
+          <div className="col-span-2">
+            <Link to="/" className="text-xl font-semibold tracking-widest text-[#D4AF37] uppercase font-['Sora'] hover:brightness-110 hover:-translate-y-px transition-all duration-300">CITY BOY ARENA</Link>
+          </div>
+          <nav className="col-span-7 hidden md:flex items-center justify-center gap-6 font-['Sora'] font-medium tracking-tight" aria-label="Main navigation">
+            {navLinks.map(link => (
+              <Link 
+                key={link.to}
+                to={link.to}
+                aria-current={location.pathname === link.to ? 'page' : undefined}
+                className={`text-sm transition-all duration-300 ${
+                  location.pathname === link.to 
+                    ? 'text-[#D4AF37] border-b border-[#D4AF37] pb-0.5' 
+                    : 'text-white hover:text-[#D4AF37]'
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+          <div className="col-span-3 flex justify-end">
+            <Link to="/join" className="bg-[#16A34A] text-white px-5 py-2 rounded-[8px] font-label-caps text-sm hover:bg-[#22C55E] hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(22,197,74,.3)] transition-all duration-300">
+              Volunteer
+            </Link>
+          </div>
+        </div>
+      </header>
+      <div className="fixed top-16 md:top-20 w-full h-px z-40" style={{
+        background: 'linear-gradient(90deg, transparent 0%, rgba(212,175,55,.12) 15%, rgba(212,175,55,.95) 50%, rgba(212,175,55,.12) 85%, transparent 100%)'
+      }} />
+    </>
+  )
+}
+
+function Footer() {
+  return (
+    <footer className="bg-[#031B30] border-t border-[rgba(255,255,255,.08)] py-12 md:py-16 px-4 md:px-8">
+      <div className="max-w-[1440px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+          <div className="lg:col-span-1">
+            <div className="text-[#D4AF37] font-bold text-xl mb-4 font-['Sora']">CITY BOY ARENA</div>
+            <p className="text-[#94A3B8] text-sm tracking-wide mb-6 max-w-sm">
+              Nigeria's premier platform for nation-building, trust-anchored infrastructure, and digital civic engagement.
             </p>
-          </div>
-          
-          <div>
-            <h4 className="font-h3 text-body-md text-white mb-6 uppercase tracking-wider" id="footer-resources">Resources</h4>
-            <ul className="space-y-4" role="list" aria-labelledby="footer-resources">
-              {footerLinks.resources.map((link) => (
-                <li key={link.name}>
-                  <a className="font-body-md text-slate-500 hover:text-secondary transition-colors" href={link.href}>
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="font-h3 text-body-md text-white mb-6 uppercase tracking-wider" id="footer-platform">Platform</h4>
-            <ul className="space-y-4" role="list" aria-labelledby="footer-platform">
-              {footerLinks.platform.map((link) => (
-                <li key={link.name}>
-                  <a className="font-body-md text-slate-500 hover:text-secondary transition-colors" href={link.href}>
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="font-h3 text-body-md text-white mb-6 uppercase tracking-wider">Connect</h4>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
                 <div 
                   key={social.name} 
-                  className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-secondary hover:text-on-secondary transition-all cursor-pointer"
+                  className="w-10 h-10 rounded-full bg-[#0A3B62] flex items-center justify-center text-[#94A3B8] hover:bg-[#D4AF37] hover:text-[#031B30] transition-all cursor-pointer text-xs font-bold"
                 >
-                  <span className="material-symbols-outlined">{social.icon}</span>
+                  {social.icon}
                 </div>
               ))}
             </div>
           </div>
+          <div>
+            <h4 className="font-label-caps text-xs text-white uppercase mb-4">Quick Links</h4>
+            <div className="flex flex-col gap-3">
+              {footerLinks.platform.map((link) => (
+                <Link key={link.name} to={link.href} className="text-[#94A3B8] hover:text-[#D4AF37] text-sm transition-colors">
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h4 className="font-label-caps text-xs text-white uppercase mb-4">Resources</h4>
+            <div className="flex flex-col gap-3">
+              {footerLinks.resources.map((link) => (
+                <Link key={link.name} to={link.href} className="text-[#94A3B8] hover:text-[#D4AF37] text-sm transition-colors">
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h4 className="font-label-caps text-xs text-white uppercase mb-4">Contact</h4>
+            <div className="flex flex-col gap-3">
+              <a href="mailto:hello@cityboyarena.com" className="text-[#94A3B8] hover:text-[#D4AF37] text-sm transition-colors">hello@cityboyarena.com</a>
+              <a href="mailto:media@cityboyarena.com" className="text-[#94A3B8] hover:text-[#D4AF37] text-sm transition-colors">media@cityboyarena.com</a>
+            </div>
+          </div>
         </div>
-        
-        <div className="w-full border-t border-white/5 pt-8">
-          <p className="font-label-caps text-xs text-slate-500 tracking-wide">
-            © 2024 City Boy Digital Arena. A Nation-Building Initiative.
-          </p>
+        <div className="mt-12 pt-8 border-t border-[rgba(255,255,255,.08)] flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-[#94A3B8] text-xs">© 2026 City Boy Arena. National Infrastructure Command Centre.</p>
+          <div className="flex gap-6">
+            <Link to="#" className="text-[#94A3B8] hover:text-[#D4AF37] text-xs transition-colors">Privacy Protocol</Link>
+            <Link to="#" className="text-[#94A3B8] hover:text-[#D4AF37] text-xs transition-colors">Terms of Service</Link>
+            <Link to="#" className="text-[#94A3B8] hover:text-[#D4AF37] text-xs transition-colors">Cookie Policy</Link>
+          </div>
         </div>
-      </footer>
+      </div>
+    </footer>
+  )
+}
 
-      {/* Mobile Bottom Dock - Hidden on larger screens */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-[100] flex justify-around items-center px-2 py-3 bg-[#003153]/95 backdrop-blur-lg rounded-t-3xl border-t border-secondary/30 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
-        <Link className="flex flex-col items-center justify-center text-secondary bg-secondary/10 rounded-xl px-2 py-2 min-w-[60px] min-h-[52px] shadow-[0_0_15px_rgba(255,215,0,0.3)]" to="/">
-          <span className="material-symbols-outlined text-[22px]">home</span>
-          <span className="text-[9px] font-bold uppercase mt-0.5">Home</span>
-        </Link>
-        <Link className="flex flex-col items-center justify-center text-slate-400 px-2 py-2 min-w-[60px] min-h-[52px]" to="/project-nigeria">
-          <span className="material-symbols-outlined text-[22px]">assignment</span>
-          <span className="text-[9px] font-bold uppercase mt-0.5">Tasks</span>
-        </Link>
-        <Link className="flex flex-col items-center justify-center text-slate-400 px-2 py-2 min-w-[60px] min-h-[52px]" to="/join">
-          <span className="material-symbols-outlined text-[22px]">military_tech</span>
-          <span className="text-[9px] font-bold uppercase mt-0.5">Rewards</span>
-        </Link>
-        <Link className="flex flex-col items-center justify-center text-slate-400 px-2 py-2 min-w-[60px] min-h-[52px]" to="#">
-          <span className="material-symbols-outlined text-[22px]">chat</span>
-          <span className="text-[9px] font-bold uppercase mt-0.5">Chat</span>
-        </Link>
-      </nav>
+export default function Layout() {
+  const location = useLocation()
+  const isHome = location.pathname === '/'
+  
+  return (
+    <div className="min-h-screen flex flex-col bg-[#121414]">
+      <Navbar />
+      <main className="flex-1 pt-16 md:pt-20" role="main">
+        <Outlet />
+      </main>
+      <Footer />
     </div>
   )
 }

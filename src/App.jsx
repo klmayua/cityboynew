@@ -2,7 +2,7 @@ import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import { AnalyticsTracker } from './analytics'
-import { LoadingScreen } from './components/system/LoadingScreen'
+import { Preloader } from './components/system/Preloader'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const ProjectNigeriaPage = lazy(() => import('./pages/ProjectNigeriaPage'))
@@ -91,7 +91,7 @@ const RegisterPage = lazy(() => import('./pages/auth/RegisterPage'))
 const VerifyPage = lazy(() => import('./pages/auth/VerifyPage'))
 
 function LoadingFallback() {
-  return <LoadingScreen />
+  return <Preloader />
 }
 
 function App() {
