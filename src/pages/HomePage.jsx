@@ -21,32 +21,30 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-[#D4AF37]/[0.035] mix-blend-overlay" />
           </div>
           <div className="relative z-10 container mx-auto px-4 md:px-8 h-full flex items-center max-w-[1440px] -mt-24 md:-mt-32">
-            <div className="grid grid-cols-12 gap-4 w-full">
-              <div className="col-span-12 md:col-span-5 lg:col-span-4">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#062B49]/60 border border-[rgba(212,175,55,.28)] backdrop-blur-sm mb-4">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#16A34A] opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#16A34A]"></span>
-                  </span>
-                  <span className="text-xs font-label-caps text-[#D4AF37] uppercase">National Platform • Live</span>
-                </div>
-                <h1 className="font-h1 text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
-                  Nigeria Rises <br/>
-                  <span className="text-[#CBD5E1]">When We Build Together</span>
-                </h1>
-                <p className="text-lg md:text-xl text-[#CBD5E1] mb-8 max-w-[520px]">
-                  A national digital arena for action — mobilizing citizens,
-                  funding transparent impact projects, empowering volunteers,
-                  and building a stronger Nigeria through collective effort.
-                </p>
-                <div className="flex items-center gap-4">
-                  <Link to="/join" onClick={() => trackJoinClick('hero_primary')} className="inline-flex bg-[#D4AF37] text-[#031B30] px-8 py-4 rounded font-label-caps text-sm hover:brightness-110 transition-all items-center gap-2">
-                    Join the Arena <ArrowRight className="w-4 h-4" />
-                  </Link>
-                  <Link to="/donate" onClick={() => trackDonateClick('hero_secondary')} className="inline-flex bg-[#062B49]/60 border border-[rgba(212,175,55,.28)] text-white px-8 py-4 rounded font-label-caps text-sm hover:bg-[#062B49] transition-all">
-                    Fund Impact
-                  </Link>
-                </div>
+            <div className="w-full max-w-xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#062B49]/60 border border-[rgba(212,175,55,.28)] backdrop-blur-sm mb-4">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#16A34A] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#16A34A]"></span>
+                </span>
+                <span className="text-xs font-label-caps text-[#D4AF37] uppercase">National Platform • Live</span>
+              </div>
+              <h1 className="font-h1 text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
+                Nigeria Rises <br/>
+                <span className="text-[#CBD5E1]">When We Build Together</span>
+              </h1>
+              <p className="text-lg md:text-xl text-[#CBD5E1] mb-8 max-w-[520px]">
+                A national digital arena for action — mobilizing citizens,
+                funding transparent impact projects, empowering volunteers,
+                and building a stronger Nigeria through collective effort.
+              </p>
+              <div className="flex items-center gap-4">
+                <Link to="/join" onClick={() => trackJoinClick('hero_primary')} className="inline-flex bg-[#D4AF37] text-[#031B30] px-8 py-4 rounded font-label-caps text-sm hover:brightness-110 transition-all items-center gap-2">
+                  Join the Arena <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link to="/donate" onClick={() => trackDonateClick('hero_secondary')} className="inline-flex bg-[#062B49]/60 border border-[rgba(212,175,55,.28)] text-white px-8 py-4 rounded font-label-caps text-sm hover:bg-[#062B49] transition-all">
+                  Fund Impact
+                </Link>
               </div>
             </div>
           </div>
