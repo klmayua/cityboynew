@@ -20,7 +20,7 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#121414]/90 via-transparent to-transparent" />
             <div className="absolute inset-0 bg-[#D4AF37]/[0.035] mix-blend-overlay" />
           </div>
-          <div className="relative z-10 container mx-auto px-4 md:px-8 h-full flex items-center max-w-[1440px]">
+          <div className="relative z-10 container mx-auto px-4 md:px-8 h-full flex items-center max-w-[1440px] -mt-24 md:-mt-32">
             <div className="w-full max-w-xl">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#062B49]/60 border border-[rgba(212,175,55,.28)] backdrop-blur-sm mb-4">
                 <span className="relative flex h-2 w-2">
