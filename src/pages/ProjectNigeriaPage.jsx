@@ -4,24 +4,6 @@ import { Link } from 'react-router-dom'
 export default function ProjectNigeriaPage() {
   return (
     <>
-      {/* TopNavBar */}
-      <nav className="fixed top-0 w-full z-50 border-b border-white/10 bg-[#003153]/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
-        <div className="flex justify-between items-center px-8 h-20 w-full max-w-[1440px] mx-auto">
-          <div className="text-2xl font-black tracking-tighter text-amber-500 italic">City Boy Arena</div>
-          <div className="hidden md:flex items-center space-x-8">
-            <Link to="/project-nigeria" className="font-sora tracking-tight font-bold uppercase text-xs text-amber-400 border-b-2 border-amber-400 pb-1">Hub</Link>
-            <Link to="/transparency" className="font-sora tracking-tight font-bold uppercase text-xs text-slate-300 hover:text-white transition-colors">Transparency</Link>
-            <Link to="/donate" className="font-sora tracking-tight font-bold uppercase text-xs text-slate-300 hover:text-white transition-colors">Donor</Link>
-            <Link to="/volunteer" className="font-sora tracking-tight font-bold uppercase text-xs text-slate-300 hover:text-white transition-colors">Volunteer</Link>
-            <Link to="#" className="font-sora tracking-tight font-bold uppercase text-xs text-slate-300 hover:text-white transition-colors">Command</Link>
-          </div>
-          <div className="flex items-center space-x-4">
-            <button className="px-6 py-2 rounded-full font-sora font-bold text-xs uppercase bg-transparent text-white border border-white/20 hover:bg-white/5 transition-all">Donate</button>
-            <button className="px-6 py-2 rounded-full font-sora font-bold text-xs uppercase bg-secondary text-on-secondary hover:brightness-110 active:scale-95 transition-all shadow-[0_0_15px_rgba(233,195,73,0.3)]">Join Now</button>
-          </div>
-        </div>
-      </nav>
-
       <main className="pt-20">
         {/* Hero Section */}
         <section className="relative h-[921px] flex items-center overflow-hidden">
@@ -355,40 +337,6 @@ export default function ProjectNigeriaPage() {
           </div>
         </section>
       </main>
-
-      {/* Footer */}
-      <footer className="w-full border-t border-white/5 pt-16 pb-8 bg-[#001F33] flex flex-col items-center text-center px-4">
-        <div className="text-xl font-bold text-white mb-4">City Boy Arena</div>
-        <div className="flex flex-wrap justify-center gap-8 mb-12">
-          <Link to="#" className="font-sora text-xs text-slate-400 tracking-wide hover:text-amber-400 transition-colors">Impact Report</Link>
-          <Link to="#" className="font-sora text-xs text-slate-400 tracking-wide hover:text-amber-400 transition-colors">Privacy Policy</Link>
-          <Link to="#" className="font-sora text-xs text-slate-400 tracking-wide hover:text-amber-400 transition-colors">Security Ledger</Link>
-          <Link to="#" className="font-sora text-xs text-slate-400 tracking-wide hover:text-amber-400 transition-colors">Contact Command</Link>
-        </div>
-        <div className="font-sora text-xs text-slate-500 tracking-wide">
-          © 2024 City Boy Digital Arena. A Nation-Building Initiative.
-        </div>
-      </footer>
-
-      {/* Mobile Bottom NavBar */}
-      <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-4 bg-[#003153]/95 backdrop-blur-lg rounded-t-3xl border-t border-amber-500/30 shadow-[0_-10px_40px_rgba(0,0,0,0.8)]">
-        <Link to="/" className="flex flex-col items-center justify-center text-amber-400 bg-amber-500/10 rounded-xl p-2 shadow-[0_0_15px_rgba(255,215,0,0.3)]">
-          <span className="material-symbols-outlined" style={{fontVariationSettings: "'FILL' 1"}}>home</span>
-          <span className="font-sora text-[10px] font-bold uppercase mt-1">Home</span>
-        </Link>
-        <Link to="/project-nigeria" className="flex flex-col items-center justify-center text-slate-400 p-2">
-          <span className="material-symbols-outlined">assignment</span>
-          <span className="font-sora text-[10px] font-bold uppercase mt-1">Tasks</span>
-        </Link>
-        <Link to="/join" className="flex flex-col items-center justify-center text-slate-400 p-2">
-          <span className="material-symbols-outlined">military_tech</span>
-          <span className="font-sora text-[10px] font-bold uppercase mt-1">Rewards</span>
-        </Link>
-        <Link to="#" className="flex flex-col items-center justify-center text-slate-400 p-2">
-          <span className="material-symbols-outlined">chat</span>
-          <span className="font-sora text-[10px] font-bold uppercase mt-1">Chat</span>
-        </Link>
-      </nav>
     </>
   )
 }

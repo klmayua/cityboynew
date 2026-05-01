@@ -1,56 +1,13 @@
-import { Link, useLocation } from 'react-router-dom'
-import { Bell, User, ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { ArrowRight } from 'lucide-react'
 import { useAnalytics } from '../analytics'
 import ArenaDesk from '../components/command/ArenaDesk'
 
 export default function HomePage() {
-  const location = useLocation()
   const { trackJoinClick, trackDonateClick } = useAnalytics()
-  
-  const navLinks = [
-    { to: '/', label: 'Arena' },
-    { to: '/about', label: 'About' },
-    { to: '/initiatives', label: 'Initiatives' },
-    { to: '/leadership', label: 'Leadership' },
-    { to: '/media', label: 'Media' },
-    { to: '/community', label: 'Community' },
-  ]
   
   return (
     <>
-{/* TopAppBar */}
-      <header className="bg-[#062B49]/90 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-[rgba(212,175,55,.18)]">
-        <div className="flex justify-between items-center px-4 md:px-8 h-16 md:h-20 max-w-[1440px] mx-auto">
-          <Link to="/" className="text-xl font-semibold tracking-widest text-[#D4AF37] uppercase font-['Sora'] hover:brightness-110 hover:-translate-y-px transition-all duration-300">CITY BOY ARENA</Link>
-          <nav className="hidden md:flex items-center gap-6 font-['Sora'] font-medium tracking-tight" aria-label="Main navigation">
-            {navLinks.map(link => (
-              <Link 
-                key={link.to}
-                to={link.to}
-                aria-current={location.pathname === link.to ? 'page' : undefined}
-                className={`text-sm transition-all duration-300 ${
-                  location.pathname === link.to 
-                    ? 'text-[#D4AF37] border-b border-[#D4AF37] pb-0.5' 
-                    : 'text-white hover:text-[#D4AF37]'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-          <div className="flex items-center gap-4">
-            <Link to="/join" className="bg-[#0A3B62]/60 border border-[rgba(212,175,55,.28)] text-[#D4AF37] px-5 py-2 rounded-[8px] font-label-caps text-sm hover:bg-[#D4AF37] hover:text-[#031B30] hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(212,175,55,.25)] transition-all duration-300">
-              Volunteer
-            </Link>
-          </div>
-        </div>
-      </header>
-
-      {/* Separator */}
-      <div className="fixed top-16 md:top-20 w-full h-px z-40" style={{
-        background: 'linear-gradient(90deg, transparent 0%, rgba(212,175,55,.12) 15%, rgba(212,175,55,.95) 50%, rgba(212,175,55,.12) 85%, transparent 100%)'
-      }} />
-
       <main>
         {/* Hero: Premium Static */}
         <section className="relative h-[80vh] w-full overflow-hidden">
@@ -668,106 +625,8 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-        </section>
+</section>
       </main>
-
-      {/* Sticky Conversion Bar (Mobile Only) */}
-      <div className="md:hidden fixed bottom-[72px] left-0 w-full z-50 px-4 py-3" style={{background: 'rgba(7, 17, 32, 0.95)', backdropFilter: 'blur(12px)', borderTop: '1px solid rgba(255,255,255,0.06)', paddingBottom: 'env(safe-area-inset-bottom)'}}>
-        <div className="flex items-center justify-between">
-          <span className="text-white font-label-caps text-xs">Build Nigeria With Us</span>
-          <Link to="/join" onClick={() => trackJoinClick('sticky_mobile')} className="bg-secondary text-on-secondary px-5 py-2 rounded-full font-label-caps text-xs hover:brightness-110 transition-all">
-            Join
-          </Link>
-        </div>
-      </div>
-
-      {/* BottomNavBar (Mobile Only) */}
-      <nav className="md:hidden fixed bottom-0 left-0 w-full z-60 flex justify-around items-center px-[18px] py-3" aria-label="Bottom Navigation" role="navigation" style={{background: 'rgba(7, 17, 32, 0.90)', backdropFilter: 'blur(18px)', borderTop: '1px solid rgba(255,255,255,0.06)', boxShadow: '0 -4px 18px rgba(0,0,0,0.22)', borderRadius: '18px 18px 0 0', paddingBottom: 'env(safe-area-inset-bottom)'}}>
-        <Link to="/" className="flex flex-col items-center justify-center min-w-[48px] py-1">
-          <span className="material-symbols-outlined text-[23px] text-white/72">account_balance</span>
-          <span className="text-[10px] font-bold uppercase tracking-[0.08em] text-white/72">Arena</span>
-        </Link>
-        <Link to="/impact" className="flex flex-col items-center justify-center min-w-[48px] py-1">
-          <span className="material-symbols-outlined text-[23px] text-white/72">insights</span>
-          <span className="text-[10px] font-bold uppercase tracking-[0.08em] text-white/72">Pulse</span>
-        </Link>
-        <Link to="/community" className="flex flex-col items-center justify-center min-w-[48px] py-1">
-          <span className="material-symbols-outlined text-[23px] text-white/72">auto_stories</span>
-          <span className="text-[10px] font-bold uppercase tracking-[0.08em] text-white/72">Stories</span>
-        </Link>
-        <Link to="/donate" className="flex flex-col items-center justify-center min-w-[48px] py-1">
-          <span className="material-symbols-outlined text-[23px] text-white/72">security</span>
-          <span className="text-[10px] font-bold uppercase tracking-[0.08em] text-white/72">Vault</span>
-        </Link>
-      </nav>
-
-      {/* Footer */}
-      <footer className="bg-[#031B30] border-t border-[rgba(255,255,255,.08)] py-12 md:py-16 px-4 md:px-8">
-        <div className="max-w-[1440px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-            {/* Brand */}
-            <div className="lg:col-span-1">
-              <div className="text-[#D4AF37] font-bold text-xl mb-4 font-['Sora']">CITY BOY ARENA</div>
-              <p className="text-[#94A3B8] text-sm tracking-wide mb-6 max-w-sm">
-                Nigeria's premier platform for nation-building, trust-anchored infrastructure, and digital civic engagement.
-              </p>
-              <div className="flex gap-4">
-                <Link to="#" className="text-[#94A3B8] hover:text-[#D4AF37] transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.7 1.102-.483 1.984-1.248 2.391-2.162-1.03.447-2.171.772-3.382.965-.876-.759-2.123-.952-3.137-1.053-1.616.776-3.37 1.267-5.305 1.267-4.306 0-7.815-3.489-7.815-7.784 0-.612.069-1.21.202-1.784-3.363-.192-5.723-1.78-7.652-4.383-.63.955-.992 2.046-.992 3.213 0 2.697 1.742 4.956 4.142 5.698-.61-.104-1.186-.314-1.686-.583v.059c0 3.771 2.679 6.921 6.223 7.636-.654.179-1.341.343-2.058.343-.51 0-1.006-.1-1.49-.29.1.007.182.015.273.019 2.747 0 5.336-1.143 6.596-2.728 1.26-1.585 1.984-3.578 1.984-5.633 0-.095-.003-.19-.009-.283-.855-.617-1.595-1.39-2.181-2.267z"/></svg>
-                </Link>
-                <Link to="#" className="text-[#94A3B8] hover:text-[#D4AF37] transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                </Link>
-                <Link to="#" className="text-[#94A3B8] hover:text-[#D4AF37] transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.271c0-3.064 1.867-4.729 4.592-4.729 1.312 0 2.064.106 2.062.106v2.571h-1.131c-1.141 0-1.489.721-1.489 1.461v1.762h2.995l-.395 3.622h-2.6v9.294h6.592c.73 0 1.323-.593 1.323-1.325v-21.351c0-.732-.593-1.325-1.325-1.325z"/></svg>
-                </Link>
-              </div>
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h4 className="font-label-caps text-xs text-white uppercase mb-4">Quick Links</h4>
-              <div className="flex flex-col gap-3">
-                <Link to="/volunteer" className="text-[#94A3B8] hover:text-[#D4AF37] text-sm transition-colors">Volunteer</Link>
-                <Link to="/donate" className="text-[#94A3B8] hover:text-[#D4AF37] text-sm transition-colors">Donate</Link>
-                <Link to="/partners" className="text-[#94A3B8] hover:text-[#D4AF37] text-sm transition-colors">Partner With Us</Link>
-                <Link to="/projects" className="text-[#94A3B8] hover:text-[#D4AF37] text-sm transition-colors">Projects</Link>
-              </div>
-            </div>
-
-            {/* Resources */}
-            <div>
-              <h4 className="font-label-caps text-xs text-white uppercase mb-4">Resources</h4>
-              <div className="flex flex-col gap-3">
-                <Link to="/impact" className="text-[#94A3B8] hover:text-[#D4AF37] text-sm transition-colors">Impact Report</Link>
-                <Link to="/trust" className="text-[#94A3B8] hover:text-[#D4AF37] text-sm transition-colors">Trust & Transparency</Link>
-                <Link to="/governance" className="text-[#94A3B8] hover:text-[#D4AF37] text-sm transition-colors">Governance</Link>
-                <Link to="/transparency" className="text-[#94A3B8] hover:text-[#D4AF37] text-sm transition-colors">Transparency Ledger</Link>
-              </div>
-            </div>
-
-            {/* Contact */}
-            <div>
-              <h4 className="font-label-caps text-xs text-white uppercase mb-4">Contact</h4>
-              <div className="flex flex-col gap-3">
-                <a href="mailto:hello@cityboyarena.com" className="text-[#94A3B8] hover:text-[#D4AF37] text-sm transition-colors">hello@cityboyarena.com</a>
-                <a href="mailto:media@cityboyarena.com" className="text-[#94A3B8] hover:text-[#D4AF37] text-sm transition-colors">media@cityboyarena.com</a>
-                <a href="#" className="text-[#94A3B8] hover:text-[#D4AF37] text-sm transition-colors">Procurement Portal</a>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom */}
-          <div className="mt-12 pt-8 border-t border-[rgba(255,255,255,.08)] flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-[#94A3B8] text-xs">© 2026 City Boy Arena. National Infrastructure Command Centre.</p>
-            <div className="flex gap-6">
-              <Link to="#" className="text-[#94A3B8] hover:text-[#D4AF37] text-xs transition-colors">Privacy Protocol</Link>
-              <Link to="#" className="text-[#94A3B8] hover:text-[#D4AF37] text-xs transition-colors">Terms of Service</Link>
-              <Link to="#" className="text-[#94A3B8] hover:text-[#D4AF37] text-xs transition-colors">Cookie Policy</Link>
-            </div>
-          </div>
-        </div>
-      </footer>
 
       <ArenaDesk />
     </>

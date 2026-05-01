@@ -4,24 +4,6 @@ import { Link } from 'react-router-dom'
 export default function TransparencyPage() {
   return (
     <>
-      {/* TopNavBar */}
-      <header className="fixed top-0 w-full z-50 border-b border-white/10 bg-[#003153]/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
-        <nav className="flex justify-between items-center px-8 h-20 w-full max-w-[1440px] mx-auto">
-          <div className="text-2xl font-black tracking-tighter text-secondary italic">City Boy Arena</div>
-          <div className="hidden md:flex items-center gap-8">
-            <Link to="/" className="font-sora tracking-tight font-bold uppercase text-xs text-slate-300 hover:text-white transition-colors">Hub</Link>
-            <Link to="/transparency" className="font-sora tracking-tight font-bold uppercase text-xs text-secondary border-b-2 border-secondary pb-1">Transparency</Link>
-            <Link to="/donate" className="font-sora tracking-tight font-bold uppercase text-xs text-slate-300 hover:text-white transition-colors">Donor</Link>
-            <Link to="/volunteer" className="font-sora tracking-tight font-bold uppercase text-xs text-slate-300 hover:text-white transition-colors">Volunteer</Link>
-            <Link to="#" className="font-sora tracking-tight font-bold uppercase text-xs text-slate-300 hover:text-white transition-colors">Command</Link>
-          </div>
-          <div className="flex items-center gap-4">
-            <button className="font-sora tracking-tight font-bold uppercase text-xs text-slate-300 hover:text-white transition-colors px-4 py-2">Donate</button>
-            <button className="bg-secondary text-on-secondary px-6 py-2 rounded-full font-sora font-bold uppercase text-xs shadow-[0_0_15px_rgba(233,195,73,0.3)] active:scale-95 transition-transform">Join Now</button>
-          </div>
-        </nav>
-      </header>
-
       <main className="pt-20">
         {/* Hero Section */}
         <section className="relative min-h-[614px] flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-[#003153]">
@@ -345,50 +327,6 @@ export default function TransparencyPage() {
           </div>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="w-full border-t border-white/5 pt-16 pb-8 bg-[#001F33] flex flex-col items-center text-center px-4">
-        <div className="text-xl font-bold text-white mb-4 italic">City Boy Arena</div>
-        <div className="flex flex-wrap justify-center gap-8 mb-12">
-          <Link to="#" className="font-sora text-xs text-slate-400 tracking-wide hover:text-secondary transition-colors">Impact Report</Link>
-          <Link to="#" className="font-sora text-xs text-slate-400 tracking-wide hover:text-secondary transition-colors">Privacy Policy</Link>
-          <Link to="#" className="font-sora text-xs text-slate-400 tracking-wide hover:text-secondary transition-colors">Security Ledger</Link>
-          <Link to="#" className="font-sora text-xs text-slate-400 tracking-wide hover:text-secondary transition-colors">Contact Command</Link>
-        </div>
-        <div className="font-sora text-xs text-slate-500 tracking-wide">
-          © 2024 City Boy Digital Arena. A Nation-Building Initiative.
-        </div>
-      </footer>
-
-      {/* BottomNavBar (Mobile Only) */}
-      <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-4 bg-[#003153]/95 backdrop-blur-lg rounded-t-3xl border-t border-secondary/30 shadow-[0_-10px_40px_rgba(0,0,0,0.8)]">
-        <button className="flex flex-col items-center justify-center text-slate-400 p-2">
-          <span className="material-symbols-outlined">home</span>
-          <span className="font-sora text-[10px] font-bold uppercase mt-1">Home</span>
-        </button>
-        <button className="flex flex-col items-center justify-center text-secondary bg-secondary/10 rounded-xl p-2 shadow-[0_0_15px_rgba(255,215,0,0.3)]">
-          <span className="material-symbols-outlined">visibility</span>
-          <span className="font-sora text-[10px] font-bold uppercase mt-1">Audit</span>
-        </button>
-        <button className="flex flex-col items-center justify-center text-slate-400 p-2">
-          <span className="material-symbols-outlined">military_tech</span>
-          <span className="font-sora text-[10px] font-bold uppercase mt-1">Impact</span>
-        </button>
-        <button className="flex flex-col items-center justify-center text-slate-400 p-2">
-          <span className="material-symbols-outlined">chat</span>
-          <span className="font-sora text-[10px] font-bold uppercase mt-1">Report</span>
-        </button>
-      </nav>
-      <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-100%); }
-        }
-        .animate-marquee {
-          display: inline-block;
-          animation: marquee 30s linear infinite;
-        }
-      `}</style>
     </>
   )
 }

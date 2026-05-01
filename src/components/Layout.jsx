@@ -134,15 +134,32 @@ function Footer() {
 
 export default function Layout() {
   const location = useLocation()
-  const isHome = location.pathname === '/'
   
   return (
     <div className="min-h-screen flex flex-col bg-[#121414]">
       <Navbar />
-      <main className="flex-1 pt-16 md:pt-20" role="main">
+      <main className="flex-1 pt-16 md:pt-20 pb-20 md:pb-0" role="main">
         <Outlet />
       </main>
       <Footer />
+      <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-[18px] py-3" aria-label="Mobile Navigation" role="navigation" style={{background: 'rgba(7, 17, 32, 0.90)', backdropFilter: 'blur(18px)', borderTop: '1px solid rgba(255,255,255,0.06)', borderRadius: '18px 18px 0 0', paddingBottom: 'env(safe-area-inset-bottom)'}}>
+        <Link to="/" className={`flex flex-col items-center justify-center min-w-[48px] py-1 ${location.pathname === '/' ? 'text-white' : 'text-white/72'}`}>
+          <span className="material-symbols-outlined text-[23px]">account_balance</span>
+          <span className="text-[10px] font-bold uppercase tracking-[0.08em]">Arena</span>
+        </Link>
+        <Link to="/impact" className={`flex flex-col items-center justify-center min-w-[48px] py-1 ${location.pathname === '/impact' ? 'text-white' : 'text-white/72'}`}>
+          <span className="material-symbols-outlined text-[23px]">insights</span>
+          <span className="text-[10px] font-bold uppercase tracking-[0.08em]">Pulse</span>
+        </Link>
+        <Link to="/stories" className={`flex flex-col items-center justify-center min-w-[48px] py-1 ${location.pathname === '/stories' ? 'text-white' : 'text-white/72'}`}>
+          <span className="material-symbols-outlined text-[23px]">auto_stories</span>
+          <span className="text-[10px] font-bold uppercase tracking-[0.08em]">Stories</span>
+        </Link>
+        <Link to="/donate" className={`flex flex-col items-center justify-center min-w-[48px] py-1 ${location.pathname === '/donate' ? 'text-white' : 'text-white/72'}`}>
+          <span className="material-symbols-outlined text-[23px]">security</span>
+          <span className="text-[10px] font-bold uppercase tracking-[0.08em]">Vault</span>
+        </Link>
+      </nav>
     </div>
   )
 }
