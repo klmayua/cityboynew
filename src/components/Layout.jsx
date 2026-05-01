@@ -136,7 +136,7 @@ export default function Layout() {
   const location = useLocation()
   
   return (
-    <div className="min-h-screen flex flex-col bg-[#121414]">
+    <div className="min-h-screen flex flex-col bg-[#121414] overflow-x-hidden">
       <Navbar />
       <main className="flex-1 pt-16 md:pt-20 pb-20 md:pb-0" role="main">
         <Outlet />
