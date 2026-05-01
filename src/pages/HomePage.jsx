@@ -8,9 +8,8 @@ export default function HomePage() {
   
   return (
     <>
-      <main>
-        {/* Hero: Premium Static */}
-        <section className="relative min-h-[calc(80vh-80px)] w-full overflow-hidden">
+      {/* Hero: Premium Static */}
+      <section className="relative h-[80vh] w-full overflow-hidden">
           <div className="absolute inset-0">
             <img 
               alt="Nigerian Metropolis" 
@@ -21,7 +20,7 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#121414]/90 via-transparent to-transparent" />
             <div className="absolute inset-0 bg-[#D4AF37]/[0.035] mix-blend-overlay" />
           </div>
-          <div className="relative z-10 container mx-auto px-4 md:px-8 h-full flex items-center max-w-7xl">
+          <div className="relative z-10 container mx-auto px-4 md:px-8 h-full flex items-center max-w-[1440px] -mt-16 md:-mt-20">
             <div className="max-w-[620px] flex flex-col items-start justify-center">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#062B49]/60 border border-[rgba(212,175,55,.28)] backdrop-blur-sm mb-4">
                 <span className="relative flex h-2 w-2">
@@ -626,7 +625,6 @@ export default function HomePage() {
             </div>
           </div>
 </section>
-      </main>
 
       <ArenaDesk />
     </>
