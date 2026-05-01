@@ -20,8 +20,8 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#121414]/90 via-transparent to-transparent" />
             <div className="absolute inset-0 bg-[#D4AF37]/[0.035] mix-blend-overlay" />
           </div>
-          <div className="relative z-10 container mx-auto px-4 md:px-8 h-full flex items-center max-w-[1440px] -mt-32 md:-mt-40">
-            <div className="max-w-[540px] flex flex-col items-start justify-center">
+          <div className="relative z-10 container mx-auto px-4 md:px-8 h-full flex items-center max-w-[1440px] -mt-16 md:-mt-20">
+            <div className="max-w-[620px] flex flex-col items-start justify-center">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#062B49]/60 border border-[rgba(212,175,55,.28)] backdrop-blur-sm mb-4">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#16A34A] opacity-75"></span>
@@ -38,7 +38,7 @@ export default function HomePage() {
                 funding transparent impact projects, empowering volunteers,
                 and building a stronger Nigeria through collective effort.
               </p>
-              <div className="flex items-center gap-4 mt-8">
+              <div className="flex items-center gap-4">
                 <Link to="/join" onClick={() => trackJoinClick('hero_primary')} className="inline-flex bg-[#D4AF37] text-[#031B30] px-8 py-4 rounded font-label-caps text-sm hover:brightness-110 transition-all items-center gap-2">
                   Join the Arena <ArrowRight className="w-4 h-4" />
                 </Link>
