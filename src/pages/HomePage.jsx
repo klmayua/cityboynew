@@ -42,8 +42,8 @@ export default function HomePage() {
                 <Link to="/join" onClick={() => trackJoinClick('hero_primary')} className="inline-flex bg-[#D4AF37] text-[#031B30] px-8 py-4 rounded font-label-caps text-sm hover:brightness-110 transition-all items-center gap-2">
                   Join the Arena <ArrowRight className="w-4 h-4" />
                 </Link>
-                <Link to="/donate" onClick={() => trackDonateClick('hero_secondary')} className="inline-flex bg-[#062B49]/60 border border-[rgba(212,175,55,.28)] text-white px-8 py-4 rounded font-label-caps text-sm hover:bg-[#062B49] transition-all">
-                  Fund Impact
+                <Link to="/donate" onClick={() => trackDonateClick('hero_secondary')} className="inline-flex bg-[#062B49]/80 border border-[rgba(212,175,55,.35)] text-white px-8 py-4 rounded font-label-caps text-sm hover:bg-[#062B49] hover:brightness-110 transition-all items-center gap-2">
+                  Fund Impact <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
