@@ -22,7 +22,7 @@ export default function ArenaDesk() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed z-[90] bg-[#D4AF37] text-[#031B30] px-8 py-4 rounded-lg shadow-[0_0_30px_rgba(212,175,55,.4)] hover:shadow-[0_0_40px_rgba(212,175,55,.5)] transition-all flex items-center gap-2 font-label-caps arena-desk-btn md:arena-desk-btn-desktop"
-        style={{ right: '32px', bottom: '24px' }}
+        style={{ position: 'fixed', right: '32px', bottom: '24px' }}
       >
         <MessageSquare className="w-4 h-4" />
         <span className="hidden md:inline text-sm">Arena Desk</span>
