@@ -54,7 +54,7 @@ export default function HomePage() {
 
         {/* National Pulse Section */}
         <section className="pt-24 pb-24 bg-[#121414]">
-          <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
+          <div className="container mx-auto px-4 md:px-8 px-4 md:px-8 max-w-[1440px]">
             {/* Header */}
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12">
               <div className="max-w-2xl">
@@ -177,7 +177,7 @@ export default function HomePage() {
 
         {/* National Pulse: Sleek Card Band */}
         <section className="py-[120px] bg-surface-container-lowest">
-          <div className="container mx-auto px-[80px] max-w-[1440px]">
+          <div className="container mx-auto px-4 md:px-8 px-4 md:px-8 max-w-[1440px]">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16">
               <div className="max-w-2xl">
                 <span className="text-secondary font-label-caps uppercase mb-4 block">Real-Time Data</span>
@@ -243,7 +243,7 @@ export default function HomePage() {
 
         {/* Take Action: Impact Pathways */}
         <section className="py-[120px] bg-surface-container-lowest">
-          <div className="container mx-auto px-[80px] max-w-[1440px]">
+          <div className="container mx-auto px-4 md:px-8 px-4 md:px-8 max-w-[1440px]">
             <div className="text-center mb-20">
               <span className="text-secondary font-label-caps uppercase tracking-widest mb-4 block">Take Action</span>
               <h2 className="font-h2 text-[48px] text-white mb-4">Choose How You Build Nigeria</h2>
@@ -290,7 +290,7 @@ export default function HomePage() {
         {/* Impact Proof: Visible Results */}
         <section className="py-24 bg-background relative" style={{borderTop: '1px solid rgba(255,255,255,0.06)'}}>
           <div className="absolute inset-0 bg-gradient-to-b from-primary-container/20 to-transparent opacity-50"></div>
-          <div className="relative z-10 container mx-auto px-[80px] max-w-[1440px]">
+          <div className="relative z-10 container mx-auto px-4 md:px-8 max-w-[1440px]">
             <div className="text-center mb-12">
               <span className="text-secondary font-label-caps uppercase tracking-widest mb-4 block">National Impact</span>
               <h2 className="font-h2 text-[48px] text-white mb-4" style={{maxWidth: '760px'}}>Proof Of Movement. Visible To All.</h2>
@@ -381,7 +381,7 @@ export default function HomePage() {
             <img alt="Civil Engineers on Site" className="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_rcS3qgdP0Pm7RAjtjhmWegi_YFkpWioiEUGRAtY0cjIoCIR356-3MFTYpWma1Ge8McPVzOOrwUExdgyHeSO1DHrQsTCuac1OHTzvQl2OTdfKuFS7ZjJOXpTjDArS4NnMqRd33di4uD4BRxL9qJg2R-ksR_dECI9dox_1wQVcqHbNrbl0eOV5sO0ql8lo8y64Ptb3g_p8YSnv7xf90p9rjcCR7TPVJP2coHh9gxGNCJRGQ1uv_RjGUbU09qVrAri79yW4-N6yqo0"/>
             <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent"></div>
           </div>
-          <div className="relative z-10 container mx-auto px-[80px] max-w-[1440px] py-24">
+          <div className="relative z-10 container mx-auto px-4 md:px-8 max-w-[1440px] py-24">
             <div className="max-w-xl">
               <h2 className="font-h2 text-[48px] mb-8 leading-tight text-white">Project Nigeria:<br/>The Concrete Promise.</h2>
               <p className="font-body-lg text-white/80 mb-12">
@@ -414,7 +414,7 @@ export default function HomePage() {
         {/* Trust Layer: Built On Trust */}
         <section className="py-24 relative" style={{background: '#071120', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)'}}>
           <div className="absolute inset-0 bg-gradient-to-b from-primary-container/30 to-transparent opacity-50"></div>
-          <div className="relative z-10 container mx-auto px-[80px] max-w-[1440px]">
+          <div className="relative z-10 container mx-auto px-4 md:px-8 max-w-[1440px]">
             <div className="flex flex-col lg:flex-row gap-7 items-center">
               {/* Left Column */}
               <div className="lg:w-5/12">
@@ -478,7 +478,7 @@ export default function HomePage() {
 
         {/* Impact Stories: Masonry Grid */}
         <section className="py-[120px]">
-          <div className="container mx-auto px-[80px] max-w-[1440px]">
+          <div className="container mx-auto px-4 md:px-8 px-4 md:px-8 max-w-[1440px]">
             <div className="text-center mb-20">
               <span className="text-secondary font-label-caps uppercase tracking-widest mb-4 block">Faces of Change</span>
               <h2 className="font-h2 text-[48px] text-white">Impact Stories</h2>
@@ -534,7 +534,7 @@ export default function HomePage() {
         {/* Trust Standard: Clean & Ivory */}
         <section className="py-[120px] bg-on-surface text-surface relative overflow-hidden">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-surface-container-lowest/5 -skew-x-12 translate-x-1/2"></div>
-          <div className="container mx-auto px-[80px] max-w-[1440px] relative z-10">
+          <div className="container mx-auto px-4 md:px-8 max-w-[1440px] relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-[120px] items-center">
               <div>
                 <span className="text-secondary-container font-label-caps uppercase mb-4 block">Institutional Integrity</span>
@@ -574,7 +574,7 @@ export default function HomePage() {
         {/* Closing Conversion: Join The National Build */}
         <section className="py-28 relative" style={{background: '#071120', borderTop: '1px solid rgba(255,255,255,0.06)'}}>
           <div className="absolute inset-0 bg-gradient-to-b from-primary-container/30 to-transparent opacity-50"></div>
-          <div className="relative z-10 container mx-auto px-[80px] max-w-[1440px]">
+          <div className="relative z-10 container mx-auto px-4 md:px-8 max-w-[1440px]">
             <div className="text-center mb-12">
               <span className="text-secondary font-label-caps uppercase tracking-widest mb-4 block">Join The National Build</span>
               <h2 className="font-h2 text-[48px] text-white mb-5" style={{maxWidth: '820px', margin: '0 auto'}}>Every meaningful movement needs people willing to build.</h2>
