@@ -28,12 +28,12 @@ export default function ArenaDesk() {
         <span className="hidden md:inline text-sm">Arena Desk</span>
         {isOpen ? <X className="w-4 h-4 md:hidden" /> : <span className="md:hidden text-lg">+</span>}
       </button>
-      <Style>{`
+      <style>{`
         @media (max-width: 767px) {
           .arena-desk-btn { right: 16px !important; top: auto !important; bottom: calc(16px + env(safe-area-inset-bottom, 0px)) !important; }
           .arena-desk-panel { right: 16px !important; bottom: calc(100px + env(safe-area-inset-bottom, 0px)) !important; }
         }
-      `}</Style>
+      `}</style>
 
       {/* Panel */}
       {isOpen && (
