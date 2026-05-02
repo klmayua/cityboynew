@@ -11,6 +11,7 @@
     "deploy": "npm run build && npx vercel --prod"
   },
   "dependencies": {
+    "@material-symbols-svg/react": "^0.6.0",
     "lucide-react": "^1.14.0",
     "nanoid": "^5.1.9",
     "react": "^19.2.5",

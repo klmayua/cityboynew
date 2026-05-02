@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Verified, FactCheck, AccountBalance } from '@material-symbols-svg/react/outlined'
 
 export default function TrustPage() {
   return (
@@ -12,17 +13,13 @@ export default function TrustPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="glass-card rounded-3xl p-8" style={{background: 'rgba(0, 49, 83, 0.6)', border: '1px solid rgba(212, 175, 55, 0.2)'}}>
-              <span className="material-symbols-outlined text-4xl text-secondary mb-4">verified</span>
-              <h3 className="font-h3 text-xl text-white mb-3">Public Transparency</h3>
-              <p className="text-on-surface-variant">All funding flows visible on the public ledger with real-time tracking.</p>
+<Verified className="w-10 h-10 text-secondary mb-4" />
             </div>
-            <div className="glass-card rounded-3xl p-8" style={{background: 'rgba(0, 49, 83, 0.6)', border: '1px solid rgba(212, 175, 55, 0.2)'}}>
-              <span className="material-symbols-outlined text-4xl text-secondary mb-4">fact_check</span>
-              <h3 className="font-h3 text-xl text-white mb-3">Third-Party Audit</h3>
-              <p className="text-on-surface-variant">Independent audit partners verify every milestone and financial flow.</p>
+            <div className="glass-card rounded-3xl p-8" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.2)'}}>
+              <FactCheck className="w-10 h-10 text-secondary mb-4" />
             </div>
-            <div className="glass-card rounded-3xl p-8" style={{background: 'rgba(0, 49, 83, 0.6)', border: '1px solid rgba(212, 175, 55, 0.2)'}}>
-              <span className="material-symbols-outlined text-4xl text-secondary mb-4">account_balance</span>
+            <div className="glass-card rounded-3xl p-8" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.2)'}}>
+              <AccountBalance className="w-10 h-10 text-secondary mb-4" />
               <h3 className="font-h3 text-xl text-white mb-3">Governance Board</h3>
               <p className="text-on-surface-variant">Civic oversight and institutional accountability at every level.</p>
             </div>

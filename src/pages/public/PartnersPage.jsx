@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useAnalytics } from '../../analytics'
+import { Handshake, Payments, Groups } from '@material-symbols-svg/react/outlined'
 
 export default function PartnersPage() {
   const { trackPartnerClick } = useAnalytics()
@@ -14,17 +15,13 @@ export default function PartnersPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="glass-card rounded-3xl p-8 text-center" style={{background: 'rgba(0, 49, 83, 0.6)', border: '1px solid rgba(212, 175, 55, 0.2)'}}>
-              <span className="material-symbols-outlined text-5xl text-secondary mb-4">handshake</span>
-              <h3 className="font-h3 text-xl text-white mb-3">Institutional Partners</h3>
-              <p className="text-on-surface-variant">NGOs, civic bodies, and strategic collaborators.</p>
+<Handshake className="w-12 h-12 text-secondary mb-4" />
             </div>
-            <div className="glass-card rounded-3xl p-8 text-center" style={{background: 'rgba(0, 49, 83, 0.6)', border: '1px solid rgba(212, 175, 55, 0.2)'}}>
-              <span className="material-symbols-outlined text-5xl text-secondary mb-4">payments</span>
-              <h3 className="font-h3 text-xl text-white mb-3">Funding Partners</h3>
-              <p className="text-on-surface-variant">Donors, diaspora capital, and sponsors.</p>
+            <div className="glass-card rounded-3xl p-8" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.2)'}}>
+              <Payments className="w-12 h-12 text-secondary mb-4" />
             </div>
-            <div className="glass-card rounded-3xl p-8 text-center" style={{background: 'rgba(0, 49, 83, 0.6)', border: '1px solid rgba(212, 175, 55, 0.2)'}}>
-              <span className="material-symbols-outlined text-5xl text-secondary mb-4">groups</span>
+            <div className="glass-card rounded-3xl p-8" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.2)'}}>
+              <Groups className="w-12 h-12 text-secondary mb-4" />
               <h3 className="font-h3 text-xl text-white mb-3">Community Partners</h3>
               <p className="text-on-surface-variant">Local chapters and grassroots organizations.</p>
             </div>

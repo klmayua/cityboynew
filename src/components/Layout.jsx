@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
+import { VolunteerActivism, AccountBalance, Analytics, AutoStories, Security } from '@material-symbols-svg/react/outlined'
 
 const footerLinks = {
   resources: [
@@ -58,7 +59,7 @@ function Navbar() {
           </nav>
           <div className="col-span-3 flex justify-end">
             <Link to="/join" className="bg-[#16A34A] text-white px-5 py-2 rounded-[8px] font-label-caps text-sm hover:bg-[#22C55E] hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(22,197,74,.3)] transition-all duration-300 inline-flex items-center gap-2">
-              <span className="material-symbols-outlined text-lg" aria-hidden="true">volunteer_activism</span>
+              <VolunteerActivism className="w-5 h-5" />
               <span>Volunteer</span>
             </Link>
           </div>
@@ -145,19 +146,19 @@ export default function Layout() {
       <Footer />
       <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-[18px] py-3" aria-label="Mobile Navigation" role="navigation" style={{background: 'rgba(7, 17, 32, 0.90)', backdropFilter: 'blur(18px)', borderTop: '1px solid rgba(255,255,255,0.06)', borderRadius: '18px 18px 0 0', paddingBottom: 'env(safe-area-inset-bottom)'}}>
         <Link to="/" className={`flex flex-col items-center justify-center min-w-[48px] py-1 ${location.pathname === '/' ? 'text-white' : 'text-white/72'}`}>
-          <span className="material-symbols-outlined text-[23px]">account_balance</span>
+          <AccountBalance className="w-6 h-6" />
           <span className="text-[10px] font-bold uppercase tracking-[0.08em]">Arena</span>
         </Link>
         <Link to="/impact" className={`flex flex-col items-center justify-center min-w-[48px] py-1 ${location.pathname === '/impact' ? 'text-white' : 'text-white/72'}`}>
-          <span className="material-symbols-outlined text-[23px]">insights</span>
+          <Analytics className="w-6 h-6" />
           <span className="text-[10px] font-bold uppercase tracking-[0.08em]">Pulse</span>
         </Link>
         <Link to="/stories" className={`flex flex-col items-center justify-center min-w-[48px] py-1 ${location.pathname === '/stories' ? 'text-white' : 'text-white/72'}`}>
-          <span className="material-symbols-outlined text-[23px]">auto_stories</span>
+          <AutoStories className="w-6 h-6" />
           <span className="text-[10px] font-bold uppercase tracking-[0.08em]">Stories</span>
         </Link>
         <Link to="/donate" className={`flex flex-col items-center justify-center min-w-[48px] py-1 ${location.pathname === '/donate' ? 'text-white' : 'text-white/72'}`}>
-          <span className="material-symbols-outlined text-[23px]">security</span>
+          <Security className="w-6 h-6" />
           <span className="text-[10px] font-bold uppercase tracking-[0.08em]">Vault</span>
         </Link>
       </nav>

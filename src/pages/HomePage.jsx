@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { GroupAdd, Favorite, Groups, Public, AccountBalance, VolunteerActivism, Verified, ArrowForward, Map, Star, Sensors, Construction, Diversity3, PlayArrow, Description, VerifiedUser, Handshake, FormatQuote, OpenInNew, TrendingFlat } from '@material-symbols-svg/react/outlined'
 import { useAnalytics } from '../analytics'
 import ArenaDesk from '../components/command/ArenaDesk'
 
@@ -39,11 +40,11 @@ export default function HomePage() {
               </p>
               <div className="flex items-center gap-4">
                 <Link to="/join" onClick={() => trackJoinClick('hero_primary')} className="inline-flex bg-[#D4AF37] text-[#031B30] px-8 py-4 rounded font-label-caps text-sm hover:brightness-110 transition-all items-center gap-2">
-                  <span className="material-symbols-outlined" aria-hidden="true">group_add</span>
+                  <GroupAdd className="w-5 h-5" />
                   <span>Join the Arena</span>
                 </Link>
                 <Link to="/donate" onClick={() => trackDonateClick('hero_secondary')} className="inline-flex bg-[#062B49]/80 border border-[rgba(212,175,55,.35)] text-white px-8 py-4 rounded font-label-caps text-sm hover:bg-[#062B49] hover:brightness-110 transition-all items-center gap-2">
-                  <span className="material-symbols-outlined" aria-hidden="true">favorite</span>
+                  <Favorite className="w-5 h-5" />
                   <span>Fund Impact</span>
                 </Link>
               </div>
@@ -66,34 +67,34 @@ export default function HomePage() {
                 </p>
               </div>
               <Link to="/impact" className="hidden lg:flex items-center gap-2 text-secondary font-label-caps hover:gap-4 transition-all mt-8 lg:mt-0">
-                See Live Impact <span className="material-symbols-outlined">arrow_forward</span>
+                See Live Impact <ArrowForward className="w-5 h-5" />
               </Link>
             </div>
 
             {/* Metric Strip */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
               <div className="bg-surface-container/40 backdrop-blur-md border border-white/[0.06] rounded-3xl p-7 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.3)] transition-all duration-180">
-                <span className="material-symbols-outlined text-secondary text-2xl mb-4">groups</span>
+                <Groups className="w-8 h-8 text-secondary mb-4" />
                 <div className="text-3xl font-h3 text-white mb-1">18,420+</div>
                 <div className="text-sm text-[#C2C7CF]">Volunteers Active</div>
               </div>
               <div className="bg-surface-container/40 backdrop-blur-md border border-white/[0.06] rounded-3xl p-7 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.3)] transition-all duration-180">
-                <span className="material-symbols-outlined text-secondary text-2xl mb-4">public</span>
+                <Public className="w-8 h-8 text-secondary mb-4" />
                 <div className="text-3xl font-h3 text-white mb-1">31</div>
                 <div className="text-sm text-[#C2C7CF]">States Activated</div>
               </div>
               <div className="bg-surface-container/40 backdrop-blur-md border border-white/[0.06] rounded-3xl p-7 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.3)] transition-all duration-180">
-                <span className="material-symbols-outlined text-secondary text-2xl mb-4">account_balance</span>
+                <AccountBalance className="w-8 h-8 text-secondary mb-4" />
                 <div className="text-3xl font-h3 text-white mb-1">246</div>
                 <div className="text-sm text-[#C2C7CF]">Projects Live</div>
               </div>
               <div className="bg-surface-container/40 backdrop-blur-md border border-white/[0.06] rounded-3xl p-7 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.3)] transition-all duration-180">
-                <span className="material-symbols-outlined text-secondary text-2xl mb-4">volunteer_activism</span>
+                <VolunteerActivism className="w-8 h-8 text-secondary mb-4" />
                 <div className="text-3xl font-h3 text-white mb-1">₦4.2B</div>
                 <div className="text-sm text-[#C2C7CF]">Impact Funded</div>
               </div>
               <div className="bg-surface-container/40 backdrop-blur-md border border-white/[0.06] rounded-3xl p-7 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.3)] transition-all duration-180">
-                <span className="material-symbols-outlined text-secondary text-2xl mb-4">verified</span>
+                <Verified className="w-8 h-8 text-secondary mb-4" />
                 <div className="text-3xl font-h3 text-white mb-1">94%</div>
                 <div className="text-sm text-[#C2C7CF]">Trust Index</div>
               </div>
@@ -125,7 +126,7 @@ export default function HomePage() {
             {/* Map Card */}
             <div className="bg-surface-container/40 backdrop-blur-md border border-white/[0.06] rounded-3xl p-6 min-h-[280px] flex items-center justify-center">
               <div className="text-center">
-                <span className="material-symbols-outlined text-6xl text-secondary/40 mb-4">map</span>
+                <Map className="w-12 h-12 text-secondary/40 mb-4" />
                 <p className="text-[#C2C7CF]">Nigeria Activation Map</p>
                 <p className="text-sm text-[#C2C7CF]/60 mt-1">Interactive visualization coming soon</p>
               </div>
@@ -153,7 +154,7 @@ export default function HomePage() {
                 </div>
               </div>
               <Link to="/arena/chapters" className="mt-6 flex items-center justify-center gap-2 text-secondary font-label-caps hover:gap-3 transition-all w-full py-3 border border-secondary/30 rounded-full">
-                View Chapters <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                View Chapters <ArrowForward className="w-4 h-4" />
               </Link>
             </div>
           </div>
@@ -163,13 +164,13 @@ export default function HomePage() {
         <div className="bg-secondary py-3 overflow-hidden whitespace-nowrap border-y border-on-secondary/10">
           <div className="flex items-center gap-12 text-on-secondary-container font-label-caps text-xs animate-marquee">
             <span>NEW RAILWAY COMMISSIONED IN KANO</span>
-            <span className="material-symbols-outlined text-[8px]">star</span>
+            <Star className="w-3 h-3" />
             <span>LAGOS ENERGY GRID UPGRADED (+12%)</span>
-            <span className="material-symbols-outlined text-[8px]">star</span>
+            <Star className="w-3 h-3" />
             <span>FARMER-LED COOPERATIVES REACH 2M MEMBERS</span>
-            <span className="material-symbols-outlined text-[8px]">star</span>
+            <Star className="w-3 h-3" />
             <span>NATIONAL TRUST SCORE UP BY 4.2 POINTS</span>
-            <span className="material-symbols-outlined text-[8px]">star</span>
+            <Star className="w-3 h-3" />
             <span>NEW RAILWAY COMMISSIONED IN KANO</span>
           </div>
         </div>
@@ -184,7 +185,7 @@ export default function HomePage() {
                 <p className="font-body-md text-on-surface-variant">Monitoring the heartbeat of the federation through high-fidelity data streams and community sentiment indicators.</p>
               </div>
               <button className="flex items-center gap-2 text-secondary font-label-caps hover:gap-4 transition-all">
-                FULL DATA DASHBOARD <span className="material-symbols-outlined">arrow_forward</span>
+                FULL DATA DASHBOARD <ArrowForward className="w-5 h-5" />
               </button>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-[24px]">
@@ -196,7 +197,7 @@ export default function HomePage() {
                     <p className="text-on-surface-variant font-body-md">Active deployment zones across 36 states</p>
                   </div>
                   <div className="bg-on-tertiary-container/20 text-tertiary px-4 py-2 rounded-xl flex items-center gap-2">
-                    <span className="material-symbols-outlined text-sm">sensors</span>
+                    <Sensors className="w-4 h-4" />
                     <span className="font-label-caps text-[10px]">LIVE FEED</span>
                   </div>
                 </div>
@@ -252,34 +253,34 @@ export default function HomePage() {
               {/* Join the Arena */}
               <Link to="/join" className="group glass-card rounded-3xl p-8 hover:bg-surface-container-high transition-all duration-220 hover:border-secondary/30 hover:shadow-[0_8px_30px_rgba(233,195,73,0.15)] block" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.15)'}}>
                 <div className="w-16 h-16 rounded-2xl bg-secondary-container/30 flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-colors">
-                  <span className="material-symbols-outlined text-3xl text-secondary/60">volunteer_activism</span>
+                  <VolunteerActivism className="w-10 h-10 text-secondary/60" />
                 </div>
                 <h3 className="font-h3 text-xl mb-3 text-white">Join the Arena</h3>
                 <p className="text-on-surface-variant font-body-md mb-8">Volunteer skills, mobilize communities, and become part of coordinated national action.</p>
                 <div className="flex items-center gap-2 text-secondary font-label-caps">
-                  Join Now <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                  Join Now <ArrowForward className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </Link>
               {/* Project Nigeria */}
               <Link to="/project-nigeria" className="group glass-card rounded-3xl p-8 hover:bg-surface-container-high transition-all duration-220 hover:border-secondary/30 hover:shadow-[0_8px_30px_rgba(233,195,73,0.15)] block" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.15)'}}>
                 <div className="w-16 h-16 rounded-2xl bg-secondary-container/30 flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-colors">
-                  <span className="material-symbols-outlined text-3xl text-secondary/60">account_balance</span>
+                  <AccountBalance className="w-10 h-10 text-secondary/60" />
                 </div>
                 <h3 className="font-h3 text-xl mb-3 text-white">Project Nigeria</h3>
                 <p className="text-on-surface-variant font-body-md mb-8">Submit ideas, support transparent projects, and help shape visible national progress.</p>
                 <div className="flex items-center gap-2 text-secondary font-label-caps">
-                  Explore Projects <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                  Explore Projects <ArrowForward className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </Link>
               {/* Fund Impact */}
               <Link to="/donate" className="group glass-card rounded-3xl p-8 hover:bg-surface-container-high transition-all duration-220 hover:border-secondary/30 hover:shadow-[0_8px_30px_rgba(233,195,73,0.15)] block" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.15)'}}>
                 <div className="w-16 h-16 rounded-2xl bg-secondary-container/30 flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-colors">
-                  <span className="material-symbols-outlined text-3xl text-secondary/60">public</span>
+                  <Public className="w-10 h-10 text-secondary/60" />
                 </div>
                 <h3 className="font-h3 text-xl mb-3 text-white">Fund Impact</h3>
                 <p className="text-on-surface-variant font-body-md mb-8">Back verified initiatives with direct funding, diaspora capital, sponsorship, or institutional support.</p>
                 <div className="flex items-center gap-2 text-secondary font-label-caps">
-                  Fund Change <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                  Fund Change <ArrowForward className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </Link>
             </div>
@@ -299,7 +300,7 @@ export default function HomePage() {
               {/* Card 1: Projects Delivered */}
               <div className="glass-card rounded-3xl p-7 hover:bg-surface-container-high transition-all duration-220 hover:-translate-y-1" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.15)', minHeight: '320px'}}>
                 <div className="w-12 h-12 rounded-xl bg-secondary-container/30 flex items-center justify-center mb-6">
-                  <span className="material-symbols-outlined text-[32px] text-secondary">construction</span>
+                  <Construction className="w-8 h-8 text-secondary" />
                 </div>
                 <h3 className="font-h3 text-xl mb-4 text-white">Projects Delivered</h3>
                 <div className="mb-4">
@@ -314,13 +315,13 @@ export default function HomePage() {
                   <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>Digital public services</li>
                 </ul>
                 <Link to="/projects" className="flex items-center gap-2 text-secondary font-label-caps hover:text-secondary/80">
-                  View Projects <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  View Projects <ArrowForward className="w-4 h-4" />
                 </Link>
               </div>
               {/* Card 2: Transparent Funding */}
               <div className="glass-card rounded-3xl p-7 hover:bg-surface-container-high transition-all duration-220 hover:-translate-y-1" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.15)', minHeight: '320px'}}>
                 <div className="w-12 h-12 rounded-xl bg-secondary-container/30 flex items-center justify-center mb-6">
-                  <span className="material-symbols-outlined text-[32px] text-secondary">verified</span>
+                  <Verified className="w-8 h-8 text-secondary" />
                 </div>
                 <h3 className="font-h3 text-xl mb-4 text-white">Transparent Funding</h3>
                 <div className="mb-4">
@@ -334,14 +335,14 @@ export default function HomePage() {
                   <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>Public accountability</li>
                   <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>Project-level traceability</li>
                 </ul>
-                <Link to="/transparency" className="flex items-center gap-2 text-secondary font-label-caps hover:text-secondary/80">
-                  Open Ledger <span className="material-symbols-outlined text-sm">arrow_forward</span>
+<Link to="/transparency" className="flex items-center gap-2 text-secondary font-label-caps hover:text-secondary/80">
+                  Open Ledger <ArrowForward className="w-4 h-4" />
                 </Link>
               </div>
               {/* Card 3: Lives Changed */}
               <div className="glass-card rounded-3xl p-7 hover:bg-surface-container-high transition-all duration-220 hover:-translate-y-1" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.15)', minHeight: '320px'}}>
                 <div className="w-12 h-12 rounded-xl bg-secondary-container/30 flex items-center justify-center mb-6">
-                  <span className="material-symbols-outlined text-[32px] text-secondary">diversity_3</span>
+                  <Diversity3 className="w-8 h-8 text-secondary" />
                 </div>
                 <h3 className="font-h3 text-xl mb-4 text-white">Lives Changed</h3>
                 <div className="mb-4">
@@ -356,7 +357,7 @@ export default function HomePage() {
                   <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>Grassroots execution</li>
                 </ul>
                 <Link to="/stories" className="flex items-center gap-2 text-secondary font-label-caps hover:text-secondary/80">
-                  Read Stories <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  Read Stories <ArrowForward className="w-4 h-4" />
                 </Link>
               </div>
             </div>
@@ -389,7 +390,7 @@ export default function HomePage() {
               <div className="flex flex-col gap-8">
                 <div className="flex items-start gap-6 group">
                   <div className="w-12 h-12 rounded-full border border-secondary flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-black transition-all">
-                    <span className="material-symbols-outlined">play_arrow</span>
+                    <PlayArrow className="w-6 h-6" />
                   </div>
                   <div>
                     <h4 className="font-h3 text-xl mb-1 text-white">Watch: The Blueprint</h4>
@@ -398,7 +399,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex items-start gap-6 group">
                   <div className="w-12 h-12 rounded-full border border-secondary flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-black transition-all">
-                    <span className="material-symbols-outlined">description</span>
+                    <Description className="w-6 h-6" />
                   </div>
                   <div>
                     <h4 className="font-h3 text-xl mb-1 text-white">Download Manifesto</h4>
@@ -421,7 +422,7 @@ export default function HomePage() {
                 <h2 className="font-h2 text-[48px] text-white mb-5" style={{maxWidth: '560px'}}>National progress must be transparent, accountable, and worthy of belief.</h2>
                 <p className="font-body-lg text-on-surface-variant mb-8" style={{maxWidth: '540px'}}>Every contribution, every volunteer, every funded project, and every regional chapter is anchored on public visibility, verification, and measurable accountability.</p>
                 <Link to="/trust" className="bg-secondary text-on-secondary px-8 py-4 rounded-full font-label-caps hover:brightness-110 transition-all inline-flex items-center gap-2">
-                  See How Trust Works <span className="material-symbols-outlined text-lg">verified_user</span>
+                  See How Trust Works <VerifiedUser className="w-5 h-5" />
                 </Link>
               </div>
               {/* Right Column - Credibility Grid */}
@@ -429,7 +430,7 @@ export default function HomePage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div className="glass rounded-3xl p-6 hover:-translate-y-1 transition-all duration-220" style={{background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', minHeight: '180px'}}>
                     <div className="flex items-center gap-3 mb-3">
-                      <span className="material-symbols-outlined text-secondary">volunteer_activism</span>
+                      <VolunteerActivism className="w-5 h-5 text-secondary" />
                       <span className="text-on-surface-variant text-xs font-label-caps uppercase">Verified Volunteers</span>
                     </div>
                     <div className="font-stat-value text-3xl text-secondary mb-2">18,420+</div>
@@ -437,7 +438,7 @@ export default function HomePage() {
                   </div>
                   <div className="glass rounded-3xl p-6 hover:-translate-y-1 transition-all duration-220" style={{background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', minHeight: '180px'}}>
                     <div className="flex items-center gap-3 mb-3">
-                      <span className="material-symbols-outlined text-secondary">public</span>
+                      <Public className="w-5 h-5 text-secondary" />
                       <span className="text-on-surface-variant text-xs font-label-caps uppercase">National Chapters</span>
                     </div>
                     <div className="font-stat-value text-3xl text-secondary mb-2">31</div>
@@ -445,7 +446,7 @@ export default function HomePage() {
                   </div>
                   <div className="glass rounded-3xl p-6 hover:-translate-y-1 transition-all duration-220" style={{background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', minHeight: '180px'}}>
                     <div className="flex items-center gap-3 mb-3">
-                      <span className="material-symbols-outlined text-secondary">handshake</span>
+                      <Handshake className="w-5 h-5 text-secondary" />
                       <span className="text-on-surface-variant text-xs font-label-caps uppercase">Institutional Partners</span>
                     </div>
                     <div className="font-stat-value text-3xl text-secondary mb-2">84</div>
@@ -453,7 +454,7 @@ export default function HomePage() {
                   </div>
                   <div className="glass rounded-3xl p-6 hover:-translate-y-1 transition-all duration-220" style={{background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', minHeight: '180px'}}>
                     <div className="flex items-center gap-3 mb-3">
-                      <span className="material-symbols-outlined text-secondary">verified</span>
+                      <Verified className="w-5 h-5 text-secondary" />
                       <span className="text-on-surface-variant text-xs font-label-caps uppercase">Public Trust Score</span>
                     </div>
                     <div className="font-stat-value text-3xl text-secondary mb-2">94%</div>
@@ -521,10 +522,10 @@ export default function HomePage() {
               {/* Story Card 4 */}
               <div className="break-inside-avoid glass-card rounded-3xl p-8 bg-gradient-to-br from-[#003153] to-background" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.2)'}}>
                 <div className="mb-6 text-secondary">
-                  <span className="material-symbols-outlined text-4xl" style={{fontVariationSettings: "'FILL' 1"}}>format_quote</span>
+                  <FormatQuote className="w-10 h-10" style={{fill: 'currentColor'}} />
                 </div>
                 <h4 className="font-h3 text-2xl mb-4 text-white">"The Arena is more than a platform; it's a social contract signed in digital ink."</h4>
-                <button className="text-secondary font-label-caps text-xs flex items-center gap-2">READ FULL EDITORIAL <span className="material-symbols-outlined text-sm">open_in_new</span></button>
+                <button className="text-secondary font-label-caps text-xs flex items-center gap-2">READ FULL EDITORIAL <OpenInNew className="w-4 h-4" /></button>
               </div>
             </div>
           </div>
@@ -583,34 +584,34 @@ export default function HomePage() {
               {/* Citizens */}
               <div className="glass rounded-3xl p-8 hover:-translate-y-1 transition-all duration-220" style={{background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', minHeight: '260px'}}>
                 <div className="w-14 h-14 rounded-2xl bg-secondary-container/30 flex items-center justify-center mb-6">
-                  <span className="material-symbols-outlined text-3xl text-secondary">volunteer_activism</span>
+                  <VolunteerActivism className="w-10 h-10 text-secondary" />
                 </div>
                 <h3 className="font-h3 text-xl mb-4 text-white">Citizens</h3>
                 <p className="text-on-surface-variant font-body-md mb-8">Join a chapter, volunteer locally, contribute skills, and become part of practical national action.</p>
                 <Link to="/join" className="text-secondary font-label-caps flex items-center gap-2">
-                  Join Chapter <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  Join Chapter <ArrowForward className="w-4 h-4" />
                 </Link>
               </div>
               {/* Builders */}
               <div className="glass rounded-3xl p-8 hover:-translate-y-1 transition-all duration-220" style={{background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', minHeight: '260px'}}>
                 <div className="w-14 h-14 rounded-2xl bg-secondary-container/30 flex items-center justify-center mb-6">
-                  <span className="material-symbols-outlined text-3xl text-secondary">account_balance</span>
+                  <AccountBalance className="w-10 h-10 text-secondary" />
                 </div>
                 <h3 className="font-h3 text-xl mb-4 text-white">Builders</h3>
                 <p className="text-on-surface-variant font-body-md mb-8">Submit initiatives, propose projects, organize civic solutions, and help shape measurable national progress.</p>
                 <Link to="/project-nigeria" className="text-secondary font-label-caps flex items-center gap-2">
-                  Submit Project <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  Submit Project <ArrowForward className="w-4 h-4" />
                 </Link>
               </div>
               {/* Partners */}
               <div className="glass rounded-3xl p-8 hover:-translate-y-1 transition-all duration-220" style={{background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', minHeight: '260px'}}>
                 <div className="w-14 h-14 rounded-2xl bg-secondary-container/30 flex items-center justify-center mb-6">
-                  <span className="material-symbols-outlined text-3xl text-secondary">handshake</span>
+                  <Handshake className="w-10 h-10 text-secondary" />
                 </div>
                 <h3 className="font-h3 text-xl mb-4 text-white">Partners</h3>
                 <p className="text-on-surface-variant font-body-md mb-8">Institutions, donors, NGOs, and strategic partners can fund and scale meaningful impact.</p>
                 <Link to="/partners" className="text-secondary font-label-caps flex items-center gap-2">
-                  Partner With Us <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  Partner With Us <ArrowForward className="w-4 h-4" />
                 </Link>
               </div>
             </div>
@@ -621,7 +622,7 @@ export default function HomePage() {
                 <p className="text-on-surface-variant text-sm">Join the arena. Support delivery. Help build visible national progress.</p>
               </div>
               <Link to="/join" className="bg-secondary text-on-secondary px-10 py-5 rounded-full font-label-caps hover:brightness-110 transition-all inline-flex items-center gap-2 whitespace-nowrap">
-                Enter The Arena <span className="material-symbols-outlined">trending_flat</span>
+                Enter The Arena <TrendingFlat className="w-5 h-5" />
               </Link>
             </div>
           </div>

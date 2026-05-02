@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { ArrowForward, PlayCircle, ChevronLeft, ChevronRight, LocationOn, PulseAlert, MilitaryTech, ElectricBolt, Diversity3, Eco, HistoryEdu, AutoStories, AssuredWorkload, MedicalServices, TrendingFlat, Verified, Forum } from '@material-symbols-svg/react/outlined'
 
 export default function ProjectNigeriaPage() {
   return (
@@ -19,11 +20,11 @@ export default function ProjectNigeriaPage() {
               <div className="flex flex-wrap gap-4">
                 <button className="px-8 py-4 rounded-full bg-secondary text-on-secondary font-h3 text-lg flex items-center gap-3 shadow-[0_0_20px_rgba(233,195,73,0.2)]">
                   ENTER ARENA
-                  <span className="material-symbols-outlined">arrow_forward</span>
+                  <ArrowForward className="w-5 h-5" />
                 </button>
                 <button className="px-8 py-4 rounded-full border border-secondary/30 text-secondary font-h3 text-lg flex items-center gap-3 hover:bg-secondary/5 transition-all">
                   WATCH THE FILM
-                  <span className="material-symbols-outlined">play_circle</span>
+                  <PlayCircle className="w-5 h-5" />
                 </button>
               </div>
             </div>
@@ -55,10 +56,10 @@ export default function ProjectNigeriaPage() {
             </div>
             <div className="flex gap-4">
               <button className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors">
-                <span className="material-symbols-outlined">chevron_left</span>
+                <ChevronLeft className="w-5 h-5" />
               </button>
               <button className="w-12 h-12 rounded-full border border-secondary/30 flex items-center justify-center bg-secondary/10 text-secondary hover:bg-secondary/20 transition-colors">
-                <span className="material-symbols-outlined">chevron_right</span>
+                <ChevronRight className="w-5 h-5" />
               </button>
             </div>
           </div>
@@ -93,7 +94,7 @@ export default function ProjectNigeriaPage() {
                 <div className="space-y-4">
                   <div className="flex items-center gap-4 p-4 rounded-xl bg-primary-container/20 border border-white/5">
                     <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center text-secondary">
-                      <span className="material-symbols-outlined">location_on</span>
+                      <LocationOn className="w-5 h-5" />
                     </div>
                     <div>
                       <div className="font-bold text-white">Active Nodes</div>
@@ -102,7 +103,7 @@ export default function ProjectNigeriaPage() {
                   </div>
                   <div className="flex items-center gap-4 p-4 rounded-xl bg-primary-container/20 border border-white/5">
                     <div className="w-10 h-10 rounded-full bg-tertiary/20 flex items-center justify-center text-tertiary">
-                      <span className="material-symbols-outlined">pulse_alert</span>
+                      <PulseAlert className="w-5 h-5" />
                     </div>
                     <div>
                       <div className="font-bold text-white">Citizen Engagement</div>
@@ -137,10 +138,10 @@ export default function ProjectNigeriaPage() {
             {/* Card 1 */}
             <div className="p-6 rounded-2xl border border-white/5 bg-surface-container relative group overflow-hidden">
               <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                <span className="material-symbols-outlined text-6xl">military_tech</span>
+                <MilitaryTech className="w-16 h-16" />
               </div>
               <div className="mb-6 w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
-                <span className="material-symbols-outlined">electric_bolt</span>
+                <ElectricBolt className="w-6 h-6" />
               </div>
               <h3 className="font-h3 text-xl mb-2 text-white">Power Pioneers</h3>
               <p className="text-sm text-on-surface-variant mb-6">Support the rollout of solar micro-grids in underserved coastal communities.</p>
@@ -155,10 +156,10 @@ export default function ProjectNigeriaPage() {
             {/* Card 2 */}
             <div className="p-6 rounded-2xl border border-white/5 bg-surface-container relative group overflow-hidden">
               <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                <span className="material-symbols-outlined text-6xl">diversity_3</span>
+                <Diversity3 className="w-16 h-16" />
               </div>
               <div className="mb-6 w-12 h-12 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary">
-                <span className="material-symbols-outlined">eco</span>
+                <Eco className="w-6 h-6" />
               </div>
               <h3 className="font-h3 text-xl mb-2 text-white">Green Belt Hub</h3>
               <p className="text-sm text-on-surface-variant mb-6">Urban reforestation project targeting the top 10 most congested cities.</p>
@@ -173,10 +174,10 @@ export default function ProjectNigeriaPage() {
             {/* Card 3 */}
             <div className="p-6 rounded-2xl border border-white/5 bg-surface-container relative group overflow-hidden">
               <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                <span className="material-symbols-outlined text-6xl">history_edu</span>
+                <HistoryEdu className="w-16 h-16" />
               </div>
               <div className="mb-6 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-                <span className="material-symbols-outlined">auto_stories</span>
+                <AutoStories className="w-6 h-6" />
               </div>
               <h3 className="font-h3 text-xl mb-2 text-white">Linguistic Archive</h3>
               <p className="text-sm text-on-surface-variant mb-6">Preserving 500+ indigenous languages through digital vocal mapping.</p>
@@ -191,10 +192,10 @@ export default function ProjectNigeriaPage() {
             {/* Card 4 */}
             <div className="p-6 rounded-2xl border border-white/5 bg-surface-container relative group overflow-hidden">
               <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                <span className="material-symbols-outlined text-6xl">assured_workload</span>
+                <AssuredWorkload className="w-16 h-16" />
               </div>
               <div className="mb-6 w-12 h-12 rounded-lg bg-error/10 flex items-center justify-center text-error">
-                <span className="material-symbols-outlined">medical_services</span>
+                <MedicalServices className="w-6 h-6" />
               </div>
               <h3 className="font-h3 text-xl mb-2 text-white">Health Ledger</h3>
               <p className="text-sm text-on-surface-variant mb-6">Building blockchain-backed health records for nomadic populations.</p>
@@ -216,7 +217,7 @@ export default function ProjectNigeriaPage() {
               <h2 className="font-h2 text-white">The Storytellers</h2>
               <Link to="#" className="text-secondary font-bold flex items-center gap-2 group">
                 VIEW ALL CREATORS
-                <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">trending_flat</span>
+                <TrendingFlat className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
             <div className="flex space-x-8 overflow-x-auto pb-12">
@@ -318,14 +319,14 @@ export default function ProjectNigeriaPage() {
               <div className="p-6">
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-secondary-fixed">LIVE WORKSPACE</span>
-                  <span className="material-symbols-outlined text-secondary text-sm" style={{fontVariationSettings: "'FILL' 1"}}>verified</span>
+                  <Verified className="w-5 h-5 text-secondary" />
                 </div>
               </div>
             </div>
             <div className="break-inside-avoid rounded-2xl overflow-hidden border border-white/5 bg-surface-container hover:border-secondary/30 transition-colors p-6">
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center text-secondary">
-                  <span className="material-symbols-outlined">forum</span>
+                  <Forum className="w-6 h-6" />
                 </div>
                 <div className="font-h3 text-lg text-white">Hub Consensus Reached</div>
               </div>

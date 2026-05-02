@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { TrendingUp, Add, Remove, MyLocation, ReceiptLong, ArrowRightAlt, PictureAsPdf, Analytics } from '@material-symbols-svg/react/outlined'
 
 export default function TransparencyPage() {
   return (
@@ -25,7 +26,7 @@ export default function TransparencyPage() {
               <p className="font-label-caps text-secondary mb-4">Total Funds Raised</p>
               <h2 className="font-h2 text-white tabular-nums">₦482.9B</h2>
               <div className="mt-6 flex items-center gap-2 text-tertiary">
-                <span className="material-symbols-outlined text-sm">trending_up</span>
+                <TrendingUp className="w-4 h-4" />
                 <span className="text-sm font-bold">12.4% Increase</span>
                 <span className="text-slate-500 text-xs ml-auto">Last 30 Days</span>
               </div>
@@ -102,13 +103,13 @@ export default function TransparencyPage() {
             </div>
             <div className="absolute top-10 right-10 flex flex-col gap-2">
               <button className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center text-white hover:bg-secondary hover:text-on-secondary transition-colors">
-                <span className="material-symbols-outlined">add</span>
+                <Add className="w-5 h-5" />
               </button>
               <button className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center text-white hover:bg-secondary hover:text-on-secondary transition-colors">
-                <span className="material-symbols-outlined">remove</span>
+                <Remove className="w-5 h-5" />
               </button>
               <button className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center text-white hover:bg-secondary hover:text-on-secondary transition-colors">
-                <span className="material-symbols-outlined">my_location</span>
+                <MyLocation className="w-5 h-5" />
               </button>
             </div>
           </div>
@@ -140,7 +141,7 @@ export default function TransparencyPage() {
                     <td className="p-6 text-secondary font-bold">42,500,000</td>
                     <td className="p-6"><span className="px-3 py-1 bg-tertiary/10 text-tertiary rounded-full text-xs font-bold border border-tertiary/20">Verified</span></td>
                     <td className="p-6 text-slate-500 font-mono text-xs">0x88f2...b4c1</td>
-                    <td className="p-6"><button className="text-secondary hover:underline flex items-center gap-1 font-bold"><span className="material-symbols-outlined text-sm">receipt_long</span> View PDF</button></td>
+                    <td className="p-6"><button className="text-secondary hover:underline flex items-center gap-1 font-bold"><ReceiptLong className="w-4 h-4" /> View PDF</button></td>
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
                     <td className="p-6 text-white font-mono">TXN-7742-L0</td>
@@ -148,7 +149,7 @@ export default function TransparencyPage() {
                     <td className="p-6 text-secondary font-bold">12,000,000</td>
                     <td className="p-6"><span className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs font-bold border border-secondary/20">Processing</span></td>
                     <td className="p-6 text-slate-500 font-mono text-xs">0x44d1...a22f</td>
-                    <td className="p-6"><button className="text-secondary hover:underline flex items-center gap-1 font-bold"><span className="material-symbols-outlined text-sm">receipt_long</span> View Receipt</button></td>
+                    <td className="p-6"><button className="text-secondary hover:underline flex items-center gap-1 font-bold"><ReceiptLong className="w-4 h-4" /> View Receipt</button></td>
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
                     <td className="p-6 text-white font-mono">TXN-1139-Z4</td>
@@ -156,7 +157,7 @@ export default function TransparencyPage() {
                     <td className="p-6 text-secondary font-bold">156,000,000</td>
                     <td className="p-6"><span className="px-3 py-1 bg-tertiary/10 text-tertiary rounded-full text-xs font-bold border border-tertiary/20">Verified</span></td>
                     <td className="p-6 text-slate-500 font-mono text-xs">0x99e5...f031</td>
-                    <td className="p-6"><button className="text-secondary hover:underline flex items-center gap-1 font-bold"><span className="material-symbols-outlined text-sm">receipt_long</span> View Evidence</button></td>
+                    <td className="p-6"><button className="text-secondary hover:underline flex items-center gap-1 font-bold"><ReceiptLong className="w-4 h-4" /> View Evidence</button></td>
                   </tr>
                 </tbody>
               </table>
@@ -169,7 +170,7 @@ export default function TransparencyPage() {
           <div className="flex justify-between items-center mb-12">
             <h2 className="font-h2 text-white">Project Spotlight</h2>
             <button className="text-secondary font-bold flex items-center gap-2 hover:translate-x-1 transition-transform">
-              View All Projects <span className="material-symbols-outlined">arrow_right_alt</span>
+              View All Projects <ArrowRightAlt className="w-5 h-5" />
             </button>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -281,12 +282,12 @@ export default function TransparencyPage() {
               <p className="font-body-lg text-on-surface-variant mt-6">Download our quarterly and annual transparency reports, certified by international third-party audit firms. Our financial records are fully public and immutable.</p>
               <div className="mt-12 grid grid-cols-2 gap-4">
                 <div className="p-6 rounded-2xl border border-white/10 hover:border-secondary transition-colors group cursor-pointer" style={{background: 'rgba(0, 49, 83, 0.4)', backdropFilter: 'blur(12px)', border: '1px solid rgba(233, 195, 73, 0.1)'}}>
-                  <span className="material-symbols-outlined text-secondary text-4xl mb-4 group-hover:scale-110 transition-transform">picture_as_pdf</span>
+                  <PictureAsPdf className="w-10 h-10 text-secondary mb-4 group-hover:scale-110 transition-transform" />
                   <h5 className="font-bold text-white">Q3 Impact Report</h5>
                   <p className="text-xs text-slate-500 mt-2">FY 2024 • 12.4MB</p>
                 </div>
                 <div className="p-6 rounded-2xl border border-white/10 hover:border-secondary transition-colors group cursor-pointer" style={{background: 'rgba(0, 49, 83, 0.4)', backdropFilter: 'blur(12px)', border: '1px solid rgba(233, 195, 73, 0.1)'}}>
-                  <span className="material-symbols-outlined text-secondary text-4xl mb-4 group-hover:scale-110 transition-transform">analytics</span>
+                  <Analytics className="w-10 h-10 text-secondary mb-4 group-hover:scale-110 transition-transform" />
                   <h5 className="font-bold text-white">Financial Audit</h5>
                   <p className="text-xs text-slate-500 mt-2">Verified PDF • 8.1MB</p>
                 </div>
