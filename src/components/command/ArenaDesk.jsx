@@ -19,15 +19,16 @@ export default function ArenaDesk() {
   return (
     <>
       {/* Floating Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed z-[90] bg-[#D4AF37] text-[#031B30] px-8 py-4 rounded-lg shadow-[0_0_30px_rgba(212,175,55,.4)] hover:shadow-[0_0_40px_rgba(212,175,55,.5)] transition-all flex items-center gap-2 font-label-caps arena-desk-btn md:arena-desk-btn-desktop"
-        style={{ position: 'fixed', right: '32px', bottom: '24px' }}
-      >
-        <MessageSquare className="w-4 h-4" />
-        <span className="hidden md:inline text-sm">Arena Desk</span>
-        {isOpen ? <X className="w-4 h-4 md:hidden" /> : <span className="md:hidden text-lg">+</span>}
-      </button>
+      <div style={{ position: 'fixed', bottom: '24px', right: '8px', zIndex: 9999 }}>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="bg-[#D4AF37] text-[#031B30] px-8 py-4 rounded-lg shadow-lg flex items-center gap-2 font-bold"
+          >
+            <MessageSquare className="w-4 h-4" />
+            <span className="hidden md:inline text-sm">Arena Desk</span>
+            {isOpen ? <X className="w-4 h-4 md:hidden" /> : <span className="md:hidden text-lg">+</span>}
+          </button>
+        </div>
       <style>{`
         @media (max-width: 767px) {
           .arena-desk-btn { right: 16px !important; top: auto !important; bottom: calc(16px + env(safe-area-inset-bottom, 0px)) !important; }
