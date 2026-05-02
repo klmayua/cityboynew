@@ -58,7 +58,7 @@ function Navbar() {
             ))}
           </nav>
           <div className="col-span-3 flex justify-end">
-            <Link to="/join" className="bg-[#16A34A] text-white px-5 py-2 rounded-[8px] font-label-caps text-sm hover:bg-[#22C55E] hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(22,197,74,.3)] transition-all duration-300 inline-flex items-center gap-2">
+            <Link to="/join" className="bg-[#16A34A] text-white px-8 py-4 rounded font-label-caps text-sm hover:brightness-110 transition-all inline-flex items-center gap-2">
               <VolunteerActivism className="w-5 h-5" />
               <span>Volunteer</span>
             </Link>
