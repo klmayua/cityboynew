@@ -39,12 +39,12 @@ export default function HomePage() {
               </p>
               <div className="flex items-center gap-4">
                 <Link to="/join" onClick={() => trackJoinClick('hero_primary')} className="inline-flex bg-[#D4AF37] text-[#031B30] px-8 py-4 rounded font-label-caps text-sm hover:brightness-110 transition-all items-center gap-2">
-                  <i className="material-symbols-outlined">group_add</i>
-                  Join the Arena
+                  <span className="material-symbols-outlined" aria-hidden="true">group_add</span>
+                  <span>Join the Arena</span>
                 </Link>
                 <Link to="/donate" onClick={() => trackDonateClick('hero_secondary')} className="inline-flex bg-[#062B49]/80 border border-[rgba(212,175,55,.35)] text-white px-8 py-4 rounded font-label-caps text-sm hover:bg-[#062B49] hover:brightness-110 transition-all items-center gap-2">
-                  <i className="material-symbols-outlined">favorite</i>
-                  Fund Impact
+                  <span className="material-symbols-outlined" aria-hidden="true">favorite</span>
+                  <span>Fund Impact</span>
                 </Link>
               </div>
             </div>

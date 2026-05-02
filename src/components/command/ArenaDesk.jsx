@@ -21,16 +21,25 @@ export default function ArenaDesk() {
       {/* Floating Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-24 md:bottom-8 right-4 md:right-8 z-[90] bg-[#D4AF37] text-[#031B30] px-5 py-3 rounded-lg shadow-[0_0_30px_rgba(212,175,55,.4)] hover:shadow-[0_0_40px_rgba(212,175,55,.5)] transition-all flex items-center gap-2 font-label-caps"
+        className="fixed z-[90] bg-[#D4AF37] text-[#031B30] px-5 py-3 rounded-lg shadow-[0_0_30px_rgba(212,175,55,.4)] hover:shadow-[0_0_40px_rgba(212,175,55,.5)] transition-all flex items-center gap-2 font-label-caps arena-desk-btn md:arena-desk-btn-desktop"
+        style={{ right: '32px', bottom: '32px' }}
       >
         <MessageSquare className="w-5 h-5" />
         <span className="hidden md:inline">Arena Desk</span>
         {isOpen ? <X className="w-4 h-4 md:hidden" /> : <span className="md:hidden text-lg">+</span>}
       </button>
+      <style>{`
+        @media (max-width: 767px) {
+          .arena-desk-btn { right: 16px !important; bottom: calc(16px + env(safe-area-inset-bottom, 0px)) !important; }
+          .arena-desk-panel { right: 16px !important; bottom: calc(100px + env(safe-area-inset-bottom, 0px)) !important; }
+        }
+      `}</style>
 
       {/* Panel */}
       {isOpen && (
-        <div className="fixed bottom-36 md:bottom-24 right-4 md:right-8 z-[90] w-[calc(100vw-2rem)] md:w-96 bg-[#0A3B62] border border-[rgba(212,175,55,.28)] rounded-xl shadow-2xl overflow-hidden">
+        <div className="fixed z-[90] w-[calc(100vw-2rem)] md:w-96 bg-[#0A3B62] border border-[rgba(212,175,55,.28)] rounded-xl shadow-2xl overflow-hidden flex flex-col arena-desk-panel md:arena-desk-panel-desktop"
+          style={{ right: '32px', bottom: 'calc(100px + env(safe-area-inset-bottom, 0px))' }}
+        >
           {/* Header */}
           <div className="bg-[#062B49] px-4 py-3 flex items-center justify-between border-b border-[rgba(255,255,255,.08)]">
             <span className="font-label-caps text-sm text-white">Arena Desk</span>
