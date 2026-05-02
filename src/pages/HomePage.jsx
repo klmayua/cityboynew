@@ -121,45 +121,41 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-        </div>
-        </section>
+          {/* Micro Map Panel */}
+          <div className="mt-9 grid grid-cols-1 lg:grid-cols-[7fr_3fr] gap-6">
+            {/* Map Card */}
+            <div className="bg-surface-container/40 backdrop-blur-md border border-white/[0.06] rounded-3xl p-6 min-h-[280px] flex items-center justify-center">
+              <div className="text-center">
+                <Map className="w-12 h-12 text-secondary/40 mb-4" />
+                <p className="text-[#C2C7CF]">Nigeria Activation Map</p>
+                <p className="text-sm text-[#C2C7CF]/60 mt-1">Interactive visualization coming soon</p>
+              </div>
+            </div>
 
-        {/* Regional Summary - Map Panel */}
-        <section className="pb-16 bg-[#121414]">
-          <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
-            <div className="grid grid-cols-1 lg:grid-cols-[7fr_3fr] gap-6">
-              <div className="bg-surface-container/40 backdrop-blur-md border border-white/[0.06] rounded-3xl p-6 min-h-[280px] flex items-center justify-center">
-                <div className="text-center">
-                  <Map className="w-12 h-12 text-secondary/40 mb-4" />
-                  <p className="text-[#C2C7CF]">Nigeria Activation Map</p>
-                  <p className="text-sm text-[#C2C7CF]/60 mt-1">Interactive visualization coming soon</p>
+            {/* Regional Summary Card */}
+            <div className="bg-surface-container/40 backdrop-blur-md border border-white/[0.06] rounded-3xl p-6">
+              <h4 className="font-h3 text-xl text-white mb-6">Regional Activation</h4>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center py-3 border-b border-white/[0.06]">
+                  <span className="text-[#C2C7CF]">North</span>
+                  <span className="text-secondary font-label-caps">Strong</span>
+                </div>
+                <div className="flex justify-between items-center py-3 border-b border-white/[0.06]">
+                  <span className="text-[#C2C7CF]">West</span>
+                  <span className="text-secondary font-label-caps">Very Strong</span>
+                </div>
+                <div className="flex justify-between items-center py-3 border-b border-white/[0.06]">
+                  <span className="text-[#C2C7CF]">East</span>
+                  <span className="text-tertiary font-label-caps">Growing</span>
+                </div>
+                <div className="flex justify-between items-center py-3 border-b border-white/[0.06]">
+                  <span className="text-[#C2C7CF]">South</span>
+                  <span className="text-secondary font-label-caps">Strong</span>
                 </div>
               </div>
-
-              <div className="bg-surface-container/40 backdrop-blur-md border border-white/[0.06] rounded-3xl p-6">
-                <h4 className="font-h3 text-xl text-white mb-6">Regional Activation</h4>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center py-3 border-b border-white/[0.06]">
-                    <span className="text-[#C2C7CF]">North</span>
-                    <span className="text-secondary font-label-caps">Strong</span>
-                  </div>
-                  <div className="flex justify-between items-center py-3 border-b border-white/[0.06]">
-                    <span className="text-[#C2C7CF]">West</span>
-                    <span className="text-secondary font-label-caps">Very Strong</span>
-                  </div>
-                  <div className="flex justify-between items-center py-3 border-b border-white/[0.06]">
-                    <span className="text-[#C2C7CF]">East</span>
-                    <span className="text-tertiary font-label-caps">Growing</span>
-                  </div>
-                  <div className="flex justify-between items-center py-3 border-b border-white/[0.06]">
-                    <span className="text-[#C2C7CF]">South</span>
-                    <span className="text-secondary font-label-caps">Strong</span>
-                  </div>
-                </div>
-                <Link to="/arena/chapters" className="mt-6 flex items-center justify-center gap-2 text-secondary font-label-caps hover:gap-3 transition-all w-full py-3 border border-secondary/30 rounded-full">
-                  View Chapters <ArrowForward className="w-4 h-4" />
-                </Link>
-              </div>
+              <Link to="/arena/chapters" className="mt-6 flex items-center justify-center gap-2 text-secondary font-label-caps hover:gap-3 transition-all w-full py-3 border border-secondary/30 rounded-full">
+                View Chapters <ArrowForward className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         </section>
