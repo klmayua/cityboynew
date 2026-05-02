@@ -54,7 +54,7 @@ export default function HomePage() {
 
         {/* National Pulse Section */}
         <section className="pt-24 pb-24 bg-[#121414]">
-          <div className="container mx-auto px-4 md:px-8 px-4 md:px-8 max-w-[1440px]">
+          <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
             {/* Header */}
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12">
               <div className="max-w-2xl">
@@ -177,7 +177,7 @@ export default function HomePage() {
 
         {/* National Pulse: Sleek Card Band */}
         <section className="py-[120px] bg-surface-container-lowest">
-          <div className="container mx-auto px-4 md:px-8 px-4 md:px-8 max-w-[1440px]">
+          <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16">
               <div className="max-w-2xl">
                 <span className="text-secondary font-label-caps uppercase mb-4 block">Real-Time Data</span>
@@ -243,7 +243,7 @@ export default function HomePage() {
 
         {/* Take Action: Impact Pathways */}
         <section className="py-[120px] bg-surface-container-lowest">
-          <div className="container mx-auto px-4 md:px-8 px-4 md:px-8 max-w-[1440px]">
+          <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
             <div className="text-center mb-20">
               <span className="text-secondary font-label-caps uppercase tracking-widest mb-4 block">Take Action</span>
               <h2 className="font-h2 text-[48px] text-white mb-4">Choose How You Build Nigeria</h2>
@@ -478,7 +478,7 @@ export default function HomePage() {
 
         {/* Impact Stories: Masonry Grid */}
         <section className="py-[120px]">
-          <div className="container mx-auto px-4 md:px-8 px-4 md:px-8 max-w-[1440px]">
+          <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
             <div className="text-center mb-20">
               <span className="text-secondary font-label-caps uppercase tracking-widest mb-4 block">Faces of Change</span>
               <h2 className="font-h2 text-[48px] text-white">Impact Stories</h2>
