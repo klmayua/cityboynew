@@ -52,8 +52,17 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Transition Band */}
+        <div className="h-21 bg-[#0F1419] border-y border-white/[0.06]">
+          <div className="container mx-auto px-4 md:px-8 max-w-[1440px] h-full flex flex-col items-center justify-center">
+            <span className="text-[#D4AF37] font-label-caps uppercase tracking-widest text-xs mb-2">National Pulse</span>
+            <div className="text-xs text-[#94A3B8] font-body-sm tracking-wide">Live metrics • Visible action • Measurable impact</div>
+            <div className="w-32 h-px mt-3 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-60"></div>
+          </div>
+        </div>
+
         {/* National Pulse Section */}
-        <section className="pt-24 pb-24 bg-[#121414]">
+        <section className="pt-24 pb-24 bg-[#0F1419]">
           <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
             {/* Header */}
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12">
