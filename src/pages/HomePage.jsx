@@ -53,7 +53,7 @@ export default function HomePage() {
         </section>
 
 {/* National Pulse Section - Momentum metrics */}
-        <section className="pt-24 pb-24 bg-[#e8ecef]">
+        <section className="pt-24 pb-[120px] bg-[#e8ecef]">
           <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
             {/* Header */}
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12">
@@ -227,91 +227,80 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* National Impact Ticker */}
-        <div className="bg-secondary py-3 overflow-hidden whitespace-nowrap border-y border-on-secondary/10">
-          <div className="flex items-center gap-12 text-on-secondary-container font-label-caps text-xs animate-marquee">
-            <span>NEW RAILWAY COMMISSIONED IN KANO</span>
-            <Star className="w-3 h-3" />
-            <span>LAGOS ENERGY GRID UPGRADED (+12%)</span>
-            <Star className="w-3 h-3" />
-            <span>FARMER-LED COOPERATIVES REACH 2M MEMBERS</span>
-            <Star className="w-3 h-3" />
-            <span>NATIONAL TRUST SCORE UP BY 4.2 POINTS</span>
-            <Star className="w-3 h-3" />
-            <span>NEW RAILWAY COMMISSIONED IN KANO</span>
-          </div>
-        </div>
-
         {/* National Pulse: Sleek Card Band - Data visualization */}
-        <section className="py-[120px] bg-[#f4f1e8]">
+        <section className="pt-[120px] pb-[140px] bg-[#F4F6F3]">
           <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16">
               <div className="max-w-2xl">
-                <span className="text-[#16A34A] font-bold uppercase tracking-[0.12em] text-[13px] mb-4 block">Real-Time Data</span>
-                <h2 className="font-h2 text-[64px] text-[#082F49] mb-4 leading-[1.02] tracking-[-0.03em] font-extrabold">National Pulse</h2>
-                <p className="font-body-md text-[#475569] text-[22px] leading-[1.7] max-w-[760px]">Monitoring the heartbeat of the federation through high-fidelity data streams and community sentiment indicators.</p>
+                <span className="text-[#16A34A] font-bold uppercase tracking-[0.18em] text-[13px] mb-5 block">Real-Time Data</span>
+                <h2 className="font-h2 text-[clamp(56px,6vw,84px)] text-[#0B2D4D] mb-7 leading-[0.95] tracking-[-0.03em] font-extrabold">National Pulse</h2>
+                <p className="font-body-md text-[#526273] text-[22px] leading-[1.7] max-w-[720px] mb-[72px]">Monitoring the heartbeat of the federation through high-fidelity data streams and community sentiment indicators.</p>
               </div>
-              <button className="flex items-center gap-2 text-[#082F49] font-bold hover:text-[#16A34A] transition-all group">
-                FULL DATA DASHBOARD <ArrowForward className="w-5 h-5 text-[#16A34A] group-hover:translate-x-1" />
-              </button>
+              <Link to="/impact" className="group flex items-center gap-3 text-[#0B2D4D] font-bold uppercase tracking-[0.14em] text-[14px] hover:translate-x-[6px] transition-all">
+                Full Data Dashboard <ArrowForward className="w-5 h-5 text-[#16A34A]" />
+              </Link>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-[24px]">
-              {/* LEFT PRIMARY CARD - White solid */}
-              <div className="lg:col-span-2 bg-white rounded-[28px] p-[34px]" style={{border: '1px solid rgba(8,47,73,0.08)', boxShadow: '0 20px 50px rgba(2,8,23,0.08)'}}>
+            <div className="grid grid-cols-1 lg:grid-cols-10 gap-[36px]">
+              {/* LEFT PRIMARY CARD - Deep Executive Navy */}
+              <div className="lg:col-span-7 bg-[#0B2D4D] rounded-[28px] p-[36px]" style={{border: '1px solid rgba(255,255,255,0.06)', boxShadow: '0 30px 80px rgba(3,18,31,0.18)', height: '620px'}}>
                 <div className="flex justify-between items-start mb-8">
                   <div>
-                    <h3 className="font-h3 text-[42px] text-[#082F49] mb-1 font-extrabold">Infrastructure Health</h3>
-                    <p className="text-[#64748B] text-[18px]">Active deployment zones across 36 states</p>
+                    <h3 className="font-h3 text-[40px] text-white mb-1 font-extrabold">Infrastructure Health</h3>
+                    <p className="text-[18px] text-white/70">Active deployment zones across 36 states</p>
                   </div>
-                  <div className="bg-[rgba(22,163,74,0.12)] text-[#16A34A] px-4 py-2 rounded-[999px] flex items-center gap-2 font-bold border border-[rgba(22,163,74,0.18)]">
+                  <div className="bg-[rgba(22,163,74,0.16)] text-[#22C55E] px-[18px] py-[10px] rounded-[999px] flex items-center gap-2 font-bold border border-[rgba(22,163,74,0.28)]">
                     <Sensors className="w-4 h-4" />
                     <span className="text-[13px] font-bold tracking-wider">LIVE</span>
                   </div>
                 </div>
-                <div className="h-[400px] w-full bg-[#F8FAFC] rounded-[20px] flex items-center justify-center relative overflow-hidden border border-[rgba(8,47,73,0.06)]" style={{backgroundImage: 'radial-gradient(circle, rgba(8,47,73,0.18) 1px, transparent 1px)', backgroundSize: '20px 20px'}}>
+                <div className="h-[460px] w-full rounded-[22px] flex items-center justify-center relative overflow-hidden" style={{background: 'linear-gradient(180deg, #123D63 0%, #0B2D4D 100%)'}}>
+                  <div className="absolute inset-0" style={{background: 'radial-gradient(circle at 50% 50%, rgba(212,175,55,0.12) 0%, transparent 60%)'}}></div>
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-56 h-56 rounded-full border-2 border-[rgba(8,47,73,0.12)] flex items-center justify-center">
-                      <div className="w-36 h-36 rounded-full border border-[rgba(8,47,73,0.08)] flex items-center justify-center">
-                        <span className="text-[10px] text-[#64748B] font-medium tracking-widest">NIGERIA</span>
+                    <div className="w-56 h-56 rounded-full border-2 border-white/20 flex items-center justify-center">
+                      <div className="w-36 h-36 rounded-full border border-white/15 flex items-center justify-center">
+                        <span className="text-[10px] text-white/40 font-medium tracking-widest">NIGERIA</span>
                       </div>
                     </div>
                   </div>
                   <div className="absolute top-1/3 left-1/3 w-3 h-3 bg-[#16A34A] rounded-full shadow-[0_0_12px_rgba(22,163,74,0.6)]"></div>
-                  <div className="absolute top-1/2 left-1/2 w-3 h-3 bg-[#16A34A] rounded-full shadow-[0_0_12px_rgba(22,163,74,0.6)]"></div>
+                  <div className="absolute top-1/2 left-1/2 w-3 h-3 bg-[#D4AF37] rounded-full shadow-[0_0_12px_rgba(212,175,55,0.6)]"></div>
                   <div className="absolute bottom-1/3 right-1/3 w-3 h-3 bg-[#16A34A] rounded-full shadow-[0_0_12px_rgba(22,163,74,0.6)]"></div>
+                  <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{opacity: 0.14}}>
+                    <line x1="33%" y1="33%" x2="50%" y2="50%" stroke="white" strokeWidth="0.5" strokeDasharray="2,2" />
+                    <line x1="50%" y1="50%" x2="67%" y2="67%" stroke="white" strokeWidth="0.5" strokeDasharray="2,2" />
+                    <line x1="50%" y1="50%" x2="33%" y2="60%" stroke="#D4AF37" strokeWidth="0.5" strokeDasharray="2,2" />
+                  </svg>
                 </div>
               </div>
 
               {/* RIGHT STACK CARDS */}
-              <div className="space-y-[24px]">
-                {/* TRUST SCORE CARD */}
-                <div className="bg-white rounded-[24px] p-[28px]" style={{border: '1px solid rgba(8,47,73,0.08)'}}>
+              <div className="lg:col-span-3 space-y-[24px]">
+                {/* TRUST SCORE CARD - White */}
+                <div className="bg-white rounded-[24px] p-[30px]" style={{border: '1px solid rgba(8,47,73,0.08)'}}>
                   <span className="text-[#64748B] text-[12px] font-bold uppercase tracking-[0.08em] mb-4 block">Trust Score</span>
                   <div className="flex items-baseline gap-2 mb-4">
-                    <span className="text-[42px] text-[#082F49] font-extrabold">78.4</span>
-                    <span className="text-[#16A34A] font-bold">+1.2% this month</span>
+                    <span className="text-[42px] text-[#0B2D4D] font-extrabold">78.4</span>
+                    <span className="text-[#16A34A] font-bold">+1.2%</span>
                   </div>
-                  <div className="h-[10px] w-full bg-[#E2E8F0] rounded-[999px] overflow-hidden">
-                    <div className="h-full bg-[#16A34A] w-[78%]"></div>
+                  <div className="h-[10px] w-full bg-[#E7EDF3] rounded-[999px] overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-[#16A34A] to-[#D4AF37] w-[78%]"></div>
                   </div>
                 </div>
 
-                {/* JOB CREATION CARD - White */}
-                <div className="bg-white rounded-[24px] p-[28px]" style={{border: '1px solid rgba(8,47,73,0.08)'}}>
+                {/* JOB CREATION CARD - Green tint with accent */}
+                <div className="bg-[#EAF7EE] rounded-[24px] p-[30px]" style={{border: '1px solid rgba(22,163,74,0.10)', borderLeft: '4px solid #16A34A'}}>
                   <span className="text-[#64748B] text-[12px] font-bold uppercase tracking-[0.08em] mb-4 block">Job Creation</span>
-                  <div className="text-[42px] text-[#082F49] font-extrabold mb-2">420,000+</div>
+                  <div className="text-[42px] text-[#0B2D4D] font-extrabold mb-2">420,000+</div>
                   <p className="text-[#64748B] text-[16px]">Direct & indirect artisanal roles filled in Q3 2024.</p>
                 </div>
 
-                {/* ACTIVE PROJECTS CARD - Green tint */}
-                <div className="bg-[#F0FDF4] rounded-[24px] p-[28px]" style={{border: '1px solid rgba(22,163,74,0.10)'}}>
+                {/* ACTIVE PROJECTS CARD - Gold tint */}
+                <div className="bg-[#FFF9E8] rounded-[24px] p-[30px]" style={{border: '1px solid rgba(212,175,55,0.15)'}}>
                   <span className="text-[#64748B] text-[12px] font-bold uppercase tracking-[0.08em] mb-4 block">Active Projects</span>
-                  <div className="text-[42px] text-[#082F49] font-extrabold mb-2">1,248</div>
-                  <div className="flex -space-x-2">
-                    <div className="w-8 h-8 rounded-full bg-[#082F49]"></div>
-                    <div className="w-8 h-8 rounded-full bg-[#082F49]"></div>
-                    <div className="w-8 h-8 rounded-full bg-[#082F49]"></div>
-                    <div className="w-8 h-8 rounded-full bg-[#16A34A] flex items-center justify-center text-[10px] text-white">+12</div>
+                  <div className="text-[42px] text-[#0B2D4D] font-extrabold mb-2">1,248</div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#16A34A]"></span>
+                    <span className="text-[14px] text-[#16A34A] font-medium">On Track</span>
                   </div>
                 </div>
               </div>
