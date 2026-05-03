@@ -470,55 +470,63 @@ export default function HomePage() {
         </section>
 
         {/* Impact Stories: Masonry Grid */}
-        <section className="py-[120px] bg-[#EEF1F4]">
-          <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
-            <div className="text-center mb-20">
-              <span className="text-secondary font-label-caps uppercase tracking-widest mb-4 block">Faces of Change</span>
-              <h2 className="font-h2 text-[48px] text-white">Impact Stories</h2>
+        <section className="pt-[140px] pb-[150px] bg-[#F3F5F4] relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-[420px] h-[420px] rounded-full pointer-events-none" style={{background: 'rgba(212,175,55,0.045)', filter: 'blur(110px)'}}></div>
+          <div className="absolute bottom-0 left-0 w-[340px] h-[340px] rounded-full pointer-events-none" style={{background: 'rgba(22,163,74,0.035)', filter: 'blur(90px)'}}></div>
+          <div className="container mx-auto px-4 md:px-8 max-w-[1440px] relative z-10">
+            <div className="text-center mb-[90px]" style={{maxWidth: '900px', marginInline: 'auto'}}>
+              <span className="text-[#16A34A] font-bold uppercase tracking-[0.18em] text-[13px] mb-[20px] block">Faces of Change</span>
+              <h2 className="font-h2 text-[clamp(58px,7vw,88px)] text-[#0B2D4D] mb-[28px] leading-[0.95] tracking-[-0.035em] font-extrabold" style={{textShadow: '0 3px 12px rgba(11,45,77,0.05)'}}>Impact Stories</h2>
+              <div className="w-[90px] h-1 mx-auto rounded-[999px] bg-gradient-to-r from-[#16A34A] to-[#D4AF37]" style={{marginTop: '12px'}}></div>
             </div>
-            <div className="columns-1 md:columns-2 lg:columns-3 gap-[24px] space-y-[24px]">
-              {/* Story Card 1 */}
-              <div className="break-inside-avoid glass-card rounded-3xl overflow-hidden group" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.2)'}}>
-                <div className="relative aspect-[4/5] overflow-hidden">
-                  <img alt="Tech Innovator" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiIBVlGvfThlcrXFRyQSXwVLPOzlY9LL_3hm21gDVI1MlX-bCmE3zmhbKjkppyqIl2KigmLTGiOQqxfT9QmHsV4bvHLP-1j2LstePMNMPAVxD6NG5pS6i7XH6nP4kwgAPtRJ-XhpKgOZTVOYtONW5aj7ffKDuzMaWCGiVz4pTFbpll56eIqpj2FYB3aEqXW700LgBM1X2bIRpGiTIuHGWCN6Y6WjdLdynPsRXU9MtHHd6vDigq1JXCOvlJKzMGk72KBQEHUMBfdiM"/>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <span className="bg-secondary text-on-secondary px-3 py-1 rounded text-[10px] font-label-caps mb-3 inline-block">TECH & INNOVATION</span>
-                    <h4 className="font-h3 text-xl text-white">How Fiber-to-Farm is doubling yields in Benue.</h4>
+            <div className="max-w-[1380px] mx-auto p-[48px] rounded-[40px] bg-white/46 backdrop-blur-[10px]" style={{border: '1px solid rgba(255,255,255,0.65)', boxShadow: '0 35px 100px rgba(12,31,51,0.08)'}}>
+              <div className="columns-1 md:columns-2 lg:columns-3 gap-[28px] space-y-[28px]">
+                {/* Story Card 1 */}
+                <div className="break-inside-avoid rounded-[28px] overflow-hidden group transition-all duration-280 hover:translate-y-[-8px]" style={{boxShadow: '0 18px 50px rgba(8,24,38,0.18)'}}>
+                  <div className="relative aspect-[4/5] overflow-hidden">
+                    <img alt="Tech Innovator" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiIBVlGvfThlcrXFRyQSXwVLPOzlY9LL_3hm21gDVI1MlX-bCmE3zmhbKjkppyqIl2KigmLTGiOQqxfT9QmHsV4bvHLP-1j2LstePMNMPAVxD6NG5pS6i7XH6nP4kwgAPtRJ-XhpKgOZTVOYtONW5aj7ffKDuzMaWCGiVz4pTFbpll56eIqpj2FYB3aEqXW700LgBM1X2bIRpGiTIuHGWCN6Y6WjdLdynPsRXU9MtHHd6vDigq1JXCOvlJKzMGk72KBQEHUMBfdiM"/>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <span className="inline-flex items-center h-[34px] px-4 rounded-[999px] bg-[rgba(22,163,74,0.14)] text-[12px] font-bold uppercase tracking-[0.14em] text-[#16A34A]" style={{border: '1px solid rgba(22,163,74,0.24)'}}>Tech & Innovation</span>
+                      <h4 className="font-h3 text-[26px] text-white mt-3 leading-[1.15] font-extrabold">How Fiber-to-Farm is doubling yields in Benue.</h4>
+                    </div>
                   </div>
                 </div>
-              </div>
-              {/* Story Card 2 */}
-              <div className="break-inside-avoid glass-card rounded-3xl p-8 border-t-4 border-t-secondary" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.2)'}}>
-                <p className="font-body-lg italic text-on-surface mb-8">"For the first time in thirty years, our market has 24-hour power. The Arena didn't just promise; they delivered the grid."</p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-surface-container-high overflow-hidden">
-                    <img alt="Market Trader" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqmekQ72PB4tzotiFQwlQ5YMpGrGB6txGv_fcyCzswZwYtq7h7iaAkOSvWDtxiN3xpWTfxam__RcEu3jvSYOdcJexMtxcJuCIfZYmv_lSO962LCfzM-dqFJiQsNighVY_EUWiXOnJ2SZQ-qVNTd27bsP2RRXfdbDD8Zsyk77EXsJiHJf0nK7clj0stHdku7PxCYFKDGr7WoPbTKkAy2NqdPbOPeqcvswLL5BYBeZetDaQxcUKNdO5ZbzR6u2P8genMgo3S9zcsHjE"/>
-                  </div>
-                  <div>
-                    <h5 className="font-label-caps text-sm text-white">Alhaji Musa S.</h5>
-                    <p className="text-on-surface-variant text-xs">Market Union Leader, Kaduna</p>
-                  </div>
-                </div>
-              </div>
-              {/* Story Card 3 */}
-              <div className="break-inside-avoid glass-card rounded-3xl overflow-hidden group" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.2)'}}>
-                <div className="relative aspect-square overflow-hidden">
-                  <img alt="Artisanal Work" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0oSbKhDzhqApPSSOWSyosoahZ7u_gR6DjB4TDW3woJgmX3_jK4L4si7Rm7pHYaq4JxP7_xbokvfrbHVqMLiK6papqFwBgjBaP4rkpPj-VVEInDatvItApBDYdcBBhCNHGdV9u4Oe7x-4oMdlpnAljnwbCpER0gsd9b0crACS2MXQR9wUt_1XJg2lVG2ilk6-z9RC4dbEeyob-7P7Gd0q922lsQcX31P9pCoj8R1YE5RjnX79ou5kV_yh3cesh-RgZGkuJTof97v4"/>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <span className="bg-tertiary text-on-tertiary px-3 py-1 rounded text-[10px] font-label-caps mb-3 inline-block">CULTURAL WEALTH</span>
-                    <h4 className="font-h3 text-xl text-white">Artisans of the Arena: Restoring National Pride.</h4>
+                {/* Story Card 2 */}
+                <div className="break-inside-avoid rounded-[28px] p-8 transition-all duration-280 hover:translate-y-[-8px]" style={{background: 'linear-gradient(180deg, #123D63 0%, #0B2D4D 100%)', boxShadow: '0 26px 60px rgba(10,28,46,0.16)'}}>
+                  <FormatQuote className="w-10 h-10 mb-6" style={{color: '#D4AF37'}} />
+                  <p className="font-body-lg italic text-white mb-8 leading-[1.75]">"For the first time in thirty years, our market has 24-hour power. The Arena didn't just promise; they delivered the grid."</p>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-surface-container-high overflow-hidden border-2 border-[#16A34A]">
+                      <img alt="Market Trader" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqmekQ72PB4tzotiFQwlQ5YMpGrGB6txGv_fcyCzswZwYtq7h7iaAkOSvWDtxiN3xpWTfxam__RcEu3jvSYOdcJexMtxcJuCIfZYmv_lSO962LCfzM-dqFJiQsNighVY_EUWiXOnJ2SZQ-qVNTd27bsP2RRXfdbDD8Zsyk77EXsJiHJf0nK7clj0stHdku7PxCYFKDGr7WoPbTKkAy2NqdPbOPeqcvswLL5BYBeZetDaQxcUKNdO5ZbzR6u2P8genMgo3S9zcsHjE"/>
+                    </div>
+                    <div>
+                      <h5 className="font-bold text-sm text-white">Alhaji Musa S.</h5>
+                      <p className="text-[12px]" style={{color: 'rgba(255,255,255,0.72)'}}>Market Union Leader, Kaduna</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              {/* Story Card 4 */}
-              <div className="break-inside-avoid glass-card rounded-3xl p-8 bg-gradient-to-br from-[#003153] to-background" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.2)'}}>
-                <div className="mb-6 text-secondary">
-                  <FormatQuote className="w-10 h-10" style={{fill: 'currentColor'}} />
+                {/* Story Card 3 */}
+                <div className="break-inside-avoid rounded-[28px] overflow-hidden group transition-all duration-280 hover:translate-y-[-8px]" style={{boxShadow: '0 18px 50px rgba(8,24,38,0.18)'}}>
+                  <div className="relative aspect-square overflow-hidden">
+                    <img alt="Artisanal Work" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0oSbKhDzhqApPSSOWSyosoahZ7u_gR6DjB4TDW3woJgmX3_jK4L4si7Rm7pHYaq4JxP7_xbokvfrbHVqMLiK6papqFwBgjBaP4rkpPj-VVEInDatvItApBDYdcBBhCNHGdV9u4Oe7x-4oMdlpnAljnwbCpER0gsd9b0crACS2MXQR9wUt_1XJg2lVG2ilk6-z9RC4dbEeyob-7P7Gd0q922lsQcX31P9pCoj8R1YE5RjnX79ou5kV_yh3cesh-RgZGkuJTof97v4"/>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <span className="inline-flex items-center h-[34px] px-4 rounded-[999px] bg-[rgba(22,163,74,0.14)] text-[12px] font-bold uppercase tracking-[0.14em] text-[#16A34A]" style={{border: '1px solid rgba(22,163,74,0.24)'}}>Cultural Wealth</span>
+                      <h4 className="font-h3 text-[26px] text-white mt-3 leading-[1.15] font-extrabold">Artisans of the Arena: Restoring National Pride.</h4>
+                    </div>
+                  </div>
                 </div>
-                <h4 className="font-h3 text-2xl mb-4 text-white">"The Arena is more than a platform; it's a social contract signed in digital ink."</h4>
-                <button className="text-secondary font-label-caps text-xs flex items-center gap-2">READ FULL EDITORIAL <OpenInNew className="w-4 h-4" /></button>
+                {/* Story Card 4 */}
+                <div className="break-inside-avoid rounded-[28px] p-8 transition-all duration-280 hover:translate-y-[-8px]" style={{background: 'linear-gradient(135deg, #123D63 0%, #0B2D4D 100%)', boxShadow: '0 26px 60px rgba(10,28,46,0.16)', borderTop: '3px solid #16A34A'}}>
+                  <div className="mb-6" style={{color: '#D4AF37'}}>
+                    <FormatQuote className="w-10 h-10" style={{fill: 'currentColor'}} />
+                  </div>
+                  <h4 className="font-h3 text-2xl mb-4 text-white leading-[1.2]">"The Arena is more than a platform; it's a social contract signed in digital ink."</h4>
+                  <button className="text-white font-bold uppercase tracking-[0.14em] text-[14px] flex items-center gap-3 group">
+                    READ FULL EDITORIAL <OpenInNew className="w-4 h-4 text-[#16A34A]" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
