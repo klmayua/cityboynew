@@ -19,8 +19,8 @@ export default function ArenaDesk() {
   return (
     <>
       {/* Floating Button */}
-      <div className="fixed z-[90] bottom-6 right-8">
-        <div className="max-w-[1440px] mx-auto" style={{ paddingLeft: '32px', paddingRight: '32px' }}>
+      <div className="fixed z-[90] bottom-6">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-8">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="bg-[#D4AF37] text-[#031B30] px-8 py-4 rounded-lg shadow-lg flex items-center gap-2 font-bold ml-auto"
