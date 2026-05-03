@@ -1,100 +1,143 @@
 import { Link } from 'react-router-dom'
+import { MapPin, Users, Calendar, ArrowRight, Heart, Clock, Shield } from 'lucide-react'
+
+const chapters = [
+  { name: 'Lagos Central', members: '2,400+', leads: 'Amina, Chidi', state: 'Lagos' },
+  { name: 'Abuja Metro', members: '1,850+', leads: 'Tunde, Bola', state: 'FCT' },
+  { name: 'Kano North', members: '1,200+', leads: 'Yusuf', state: 'Kano' },
+  { name: 'Enugu East', members: '980', leads: 'Adaora', state: 'Enugu' },
+]
+
+const events = [
+  { title: 'National Volunteer Summit', date: 'June 15, 2026', location: 'Abuja', spots: 500 },
+  { title: 'Lagos Chapter Gala', date: 'June 22, 2026', location: 'Lagos', spots: 200 },
+  { title: 'Kano Community Build', date: 'July 1, 2026', location: 'Kano', spots: 150 },
+]
 
 export default function CommunityPage() {
-  const chapters = [
-    { name: 'Lagos Central', members: '2,400+', leads: 'Amina, Chidi', status: 'Active' },
-    { name: 'Abuja Metro', members: '1,850+', leads: 'Tunde, Bola', status: 'Active' },
-    { name: 'Kano North', members: '1,200+', leads: 'Yusuf', status: 'Active' },
-    { name: 'Enugu East', members: '980', leads: 'Adaora', status: 'Active' },
-  ]
-  const events = [
-    { title: 'National Volunteer Summit', date: 'June 15, 2026', location: 'Abuja', spots: 500 },
-    { title: 'Lagos Chapter Gala', date: 'June 22, 2026', location: 'Lagos', spots: 200 },
-    { title: 'Kano Community Build', date: 'July 1, 2026', location: 'Kano', spots: 150 },
-  ]
-  const members = [
-    { name: 'Amina', role: 'Chapter Lead', chapter: 'Lagos Central', pts: '12,400' },
-    { name: 'Tunde', role: 'Volunteer', chapter: 'Abuja Metro', pts: '8,200' },
-    { name: 'Chidi', role: 'Organizer', chapter: 'Lagos Central', pts: '7,850' },
-  ]
   return (
-    <>
-      <div className="min-h-screen bg-background pt-24 pb-12">
-        {/* Hero Strip */}
-        <section className="py-16 border-b border-white/6">
-          <div className="container mx-auto px-[80px]">
-            <span className="text-secondary font-label-caps uppercase tracking-widest">Citizen Network</span>
-            <h1 className="font-h1 text-5xl text-white mt-4 mb-6">The Arena Community</h1>
-            <p className="font-body-lg text-on-surface-variant max-w-2xl">18,420+ citizens organizing locally, volunteering nationally, and building visible progress together.</p>
-          </div>
-        </section>
-
-        {/* Chapter Directory */}
-        <section className="py-12">
-          <div className="container mx-auto px-[80px]">
-            <div className="flex justify-between items-center mb-8">
-              <h2 className="font-h2 text-2xl text-white">Regional Chapters</h2>
-              <Link to="/arena/chapters" className="text-secondary font-label-caps">View All</Link>
+    <div className="bg-[#07141f] min-h-screen">
+      {/* HERO - Compact */}
+      <section className="h-[260px]" style={{background: 'linear-gradient(135deg, #031B30 0%, #07141f 100%)'}}>
+        <div className="container mx-auto px-4 md:px-8 max-w-[1440px] h-full flex items-center">
+          <div className="max-w-[1180px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-[56px] items-center">
+            <div>
+              <h1 className="text-white text-[56px] font-extrabold leading-[1.05] mb-[20px]">The Arena Community</h1>
+              <p className="text-white/78 text-[22px] leading-[1.5] max-w-[560px]">
+                18,420+ citizens organizing locally, volunteering nationally, and building visible progress together.
+              </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {chapters.map(c => (
-                <div key={c.name} className="glass-card rounded-2xl p-5" style={{background: 'rgba(0, 49, 83, 0.6)', border: '1px solid rgba(212, 175, 55, 0.2)'}}>
-                  <h3 className="font-h3 text-base text-white mb-2">{c.name}</h3>
-                  <p className="text-on-surface-variant text-sm mb-1">{c.members} members</p>
-                  <p className="text-on-surface-variant text-xs mb-2">Leads: {c.leads}</p>
-                  <span className="text-tertiary font-label-caps text-xs uppercase">{c.status}</span>
-                </div>
+            {/* Right Stats */}
+            <div className="grid grid-cols-3 gap-[28px]">
+              <div className="text-center">
+                <div className="text-[#D4AF37] text-[42px] font-extrabold">18K+</div>
+                <div className="text-white/58 text-[12px] uppercase tracking-[2px]">Members</div>
+              </div>
+              <div className="text-center">
+                <div className="text-[#D4AF37] text-[42px] font-extrabold">36</div>
+                <div className="text-white/58 text-[12px] uppercase tracking-[2px]">Chapters</div>
+              </div>
+              <div className="text-center">
+                <div className="text-[#D4AF37] text-[42px] font-extrabold">124K</div>
+                <div className="text-white/58 text-[12px] uppercase tracking-[2px]">Hours</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* REGIONAL CHAPTERS - Expanded Card Hierarchy */}
+      <section className="pt-[56px] pb-[56px] bg-[#07141f]">
+        <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
+          <div className="max-w-[1180px] mx-auto">
+            <div className="flex justify-between items-end mb-[28px]">
+              <span className="text-[#D4AF37] text-[12px] font-bold uppercase tracking-[2px]">Regional Chapters</span>
+              <Link to="/arena/chapters" className="text-white/58 text-[14px] hover:text-white">View All</Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[20px]">
+              {chapters.map((chapter, i) => (
+                <Link key={i} to={`/chapters/${chapter.name.toLowerCase().replace(' ', '-')}`} className="group rounded-[24px] p-[28px] transition-all duration-250 hover:-translate-y-[3px]" style={{background: 'rgba(255,255,255,.03)', border: '1px solid rgba(255,255,255,.06)'}}>
+                  <div className="flex items-center gap-2 mb-[14px]">
+                    <MapPin className="w-4 h-4 text-[#18A34A]" />
+                    <span className="text-[#18A34A] text-[11px] uppercase tracking-[2px]">Active</span>
+                  </div>
+                  <h3 className="text-white text-[20px] font-bold mb-[10px]">{chapter.name}</h3>
+                  <p className="text-white/58 text-[14px] mb-[6px]">{chapter.members} members</p>
+                  <p className="text-white/48 text-[13px]">Leads: {chapter.leads}</p>
+                </Link>
               ))}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Volunteer Tracks & Spotlight */}
-        <section className="py-12 border-t border-white/6">
-          <div className="container mx-auto px-[80px]">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Volunteer Tracks */}
-              <div>
-                <h2 className="font-h2 text-2xl text-white mb-6">Volunteer Tracks</h2>
-                <div className="space-y-4">
-                  {members.map(m => (
-                    <div key={m.name} className="flex items-center justify-between p-4 rounded-xl" style={{background: 'rgba(0, 49, 83, 0.4)', border: '1px solid rgba(255,255,255,0.06)'}}>
-                      <div>
-                        <p className="text-white font-bold">{m.name}</p>
-                        <p className="text-on-surface-variant text-sm">{m.role} • {m.chapter}</p>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-secondary font-bold">{m.pts} pts</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+      {/* VOLUNTEER + EVENTS - 2 Column */}
+      <section className="pt-[28px] pb-[56px] bg-[#0b1d2b]">
+        <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
+          <div className="max-w-[1180px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-[42px]">
+            {/* Left: Volunteer Tracks */}
+            <div className="rounded-[28px] p-[36px]" style={{background: 'linear-gradient(145deg, #0b2234, #102d43)', border: '1px solid rgba(255,255,255,.08)'}}>
+              <div className="flex items-center gap-3 mb-[28px]">
+                <Heart className="w-6 h-6 text-[#D4AF37]" />
+                <span className="text-white text-[20px] font-bold">Volunteer Tracks</span>
               </div>
-              {/* Upcoming Events */}
-              <div>
-                <h2 className="font-h2 text-2xl text-white mb-6">Upcoming Events</h2>
-                <div className="space-y-4">
-                  {events.map(e => (
-                    <div key={e.title} className="p-4 rounded-xl" style={{background: 'rgba(0, 49, 83, 0.4)', border: '1px solid rgba(255,255,255,0.06)'}}>
-                      <p className="text-white font-bold">{e.title}</p>
-                      <p className="text-on-surface-variant text-sm">{e.date} • {e.location}</p>
-                      <p className="text-on-surface-variant text-xs">{e.spots} spots available</p>
+              <div className="space-y-[16px]">
+                {[
+                  { name: 'Amina', role: 'Chapter Lead', chapter: 'Lagos Central', pts: '12,400', hours: '840' },
+                  { name: 'Tunde', role: 'Volunteer', chapter: 'Abuja Metro', pts: '8,200', hours: '520' },
+                  { name: 'Chidi', role: 'Organizer', chapter: 'Lagos Central', pts: '7,850', hours: '412' },
+                ].map((member, i) => (
+                  <div key={i} className="flex items-center justify-between p-[20px] rounded-[16px]" style={{background: 'rgba(255,255,255,.03)'}}>
+                    <div>
+                      <p className="text-white text-[16px] font-bold">{member.name}</p>
+                      <p className="text-white/48 text-[13px]">{member.role} • {member.chapter}</p>
                     </div>
-                  ))}
-                </div>
+                    <div className="text-right">
+                      <p className="text-[#D4AF37] text-[18px] font-bold">{member.pts}</p>
+                      <p className="text-white/48 text-[11px]">points</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right: Upcoming Events */}
+            <div className="rounded-[28px] p-[36px]" style={{background: 'linear-gradient(145deg, #0b2234, #102d43)', border: '1px solid rgba(255,255,255,.08)'}}>
+              <div className="flex items-center gap-3 mb-[28px]">
+                <Calendar className="w-6 h-6 text-[#D4AF37]" />
+                <span className="text-white text-[20px] font-bold">Upcoming Events</span>
+              </div>
+              <div className="space-y-[16px]">
+                {events.map((event, i) => (
+                  <div key={i} className="p-[20px] rounded-[16px]" style={{background: 'rgba(255,255,255,.03)'}}>
+                    <div className="flex items-center justify-between mb-[8px]">
+                      <h4 className="text-white text-[16px] font-bold">{event.title}</h4>
+                      <span className="text-[#18A34A] text-[11px] uppercase tracking-[2px]">Open</span>
+                    </div>
+                    <p className="text-white/58 text-[13px]">{event.date} • {event.location}</p>
+                    <p className="text-white/48 text-[12px]">{event.spots} spots available</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* CTA */}
-        <section className="py-16">
-          <div className="container mx-auto px-[80px] text-center">
-            <p className="text-on-surface-variant mb-6">Join a chapter. Contribute skills. Build Nigeria.</p>
-            <Link to="/join" className="bg-secondary text-on-secondary px-8 py-4 rounded-full font-label-caps hover:brightness-110 transition-all">Join Community</Link>
+      {/* CTA */}
+      <section className="pt-[56px] pb-[72px] bg-[#07141f]">
+        <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
+          <div className="max-w-[1180px] mx-auto text-center">
+            <h2 className="text-white text-[38px] font-extrabold mb-[20px]">Join the Movement</h2>
+            <p className="text-white/72 text-[18px] leading-[1.55] mb-[32px] max-w-[560px] mx-auto">
+              Join a chapter. Contribute skills. Build Nigeria.
+            </p>
+            <Link to="/join" className="inline-flex items-center gap-3 bg-[#D4AF37] text-[#031B30] px-[32px] py-[16px] rounded-[999px] font-bold uppercase tracking-[2px] text-[14px]">
+              Join Community
+            </Link>
           </div>
-        </section>
-      </div>
-    </>
+        </div>
+      </section>
+    </div>
   )
 }
