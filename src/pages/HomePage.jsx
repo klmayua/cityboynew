@@ -58,104 +58,114 @@ export default function HomePage() {
             {/* Header */}
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12">
               <div className="max-w-2xl">
-                <span className="text-[#D4AF37] font-label-caps uppercase tracking-widest mb-4 block">National Pulse</span>
-                <h2 className="font-h2 text-4xl md:text-5xl mb-4 text-[#072D4A]">A Living View Of National Momentum</h2>
-                <p className="text-[#4a5568] text-lg max-w-xl leading-relaxed">
+                <span className="text-[#18a957] font-label-caps uppercase tracking-widest mb-4 block">National Pulse</span>
+                <h2 className="font-h2 text-4xl md:text-5xl mb-4 text-[#08263a]">A Living View Of National Momentum</h2>
+                <p className="text-[#526273] text-lg max-w-xl leading-relaxed">
                   Transparent movement metrics — citizens mobilized,
                   projects activated, communities reached,
                   and measurable impact unfolding in real time.
                 </p>
               </div>
-              <Link to="/impact" className="hidden lg:flex items-center gap-2 text-secondary font-label-caps hover:gap-4 transition-all mt-8 lg:mt-0">
+              <Link to="/impact" className="hidden lg:flex items-center gap-2 text-[#18a957] font-label-caps hover:gap-4 transition-all mt-8 lg:mt-0">
                 See Live Impact <ArrowForward className="w-5 h-5" />
               </Link>
             </div>
 
             {/* Metric Strip */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
-              <div className="bg-white border border-gray-200/50 rounded-3xl p-7 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.1)] transition-all duration-180">
-                <Groups className="w-8 h-8 text-[#D4AF37] mb-4" />
-                <div className="text-3xl font-h3 text-[#072D4A] mb-1">18,420+</div>
-                <div className="text-sm text-[#64748b]">Volunteers Active</div>
+              <div className="bg-[#f8f8f5] rounded-[22px] p-7 hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(8,38,58,0.12)] transition-all duration-200" style={{background: 'linear-gradient(145deg, #f8f8f5 0%, #f5f5f2 100%)', border: '1px solid rgba(8,38,58,0.06)'}}>
+                <div className="w-12 h-12 rounded-full bg-[#18a957]/10 flex items-center justify-center mb-4">
+                  <Groups className="w-6 h-6 text-[#18a957]" />
+                </div>
+                <div className="text-3xl font-h3 text-[#08263a] mb-1">18,420+</div>
+                <div className="text-sm text-[#526273]">Volunteers Active</div>
               </div>
-              <div className="bg-white border border-gray-200/50 rounded-3xl p-7 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.1)] transition-all duration-180">
-                <Public className="w-8 h-8 text-[#D4AF37] mb-4" />
-                <div className="text-3xl font-h3 text-[#072D4A] mb-1">31</div>
-                <div className="text-sm text-[#64748b]">States Activated</div>
+              <div className="bg-[#f8f8f5] rounded-[22px] p-7 hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(8,38,58,0.12)] transition-all duration-200" style={{background: 'linear-gradient(145deg, #f8f8f5 0%, #f5f5f2 100%)', border: '1px solid rgba(8,38,58,0.06)'}}>
+                <div className="w-12 h-12 rounded-full bg-[#18a957]/10 flex items-center justify-center mb-4">
+                  <Public className="w-6 h-6 text-[#18a957]" />
+                </div>
+                <div className="text-3xl font-h3 text-[#08263a] mb-1">31</div>
+                <div className="text-sm text-[#526273]">States Activated</div>
               </div>
-              <div className="bg-white border border-gray-200/50 rounded-3xl p-7 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.1)] transition-all duration-180">
-                <AccountBalance className="w-8 h-8 text-[#D4AF37] mb-4" />
-                <div className="text-3xl font-h3 text-[#072D4A] mb-1">246</div>
-                <div className="text-sm text-[#64748b]">Projects Live</div>
+              <div className="bg-[#f8f8f5] rounded-[22px] p-7 hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(8,38,58,0.12)] transition-all duration-200" style={{background: 'linear-gradient(145deg, #f8f8f5 0%, #f5f5f2 100%)', border: '1px solid rgba(8,38,58,0.06)'}}>
+                <div className="w-12 h-12 rounded-full bg-[#18a957]/10 flex items-center justify-center mb-4">
+                  <AccountBalance className="w-6 h-6 text-[#18a957]" />
+                </div>
+                <div className="text-3xl font-h3 text-[#08263a] mb-1">246</div>
+                <div className="text-sm text-[#526273]">Projects Live</div>
               </div>
-              <div className="bg-white border border-gray-200/50 rounded-3xl p-7 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.1)] transition-all duration-180">
-                <VolunteerActivism className="w-8 h-8 text-[#D4AF37] mb-4" />
-                <div className="text-3xl font-h3 text-[#072D4A] mb-1">₦4.2B</div>
-                <div className="text-sm text-[#64748b]">Impact Funded</div>
+              <div className="bg-[#f8f8f5] rounded-[22px] p-7 hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(8,38,58,0.12)] transition-all duration-200" style={{background: 'linear-gradient(145deg, #f8f8f5 0%, #f5f5f2 100%)', border: '1px solid rgba(8,38,58,0.06)'}}>
+                <div className="w-12 h-12 rounded-full bg-[#18a957]/10 flex items-center justify-center mb-4">
+                  <VolunteerActivism className="w-6 h-6 text-[#18a957]" />
+                </div>
+                <div className="text-3xl font-h3 text-[#08263a] mb-1">₦4.2B</div>
+                <div className="text-sm text-[#526273]">Impact Funded</div>
               </div>
-              <div className="bg-white border border-gray-200/50 rounded-3xl p-7 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.1)] transition-all duration-180">
-                <Verified className="w-8 h-8 text-[#D4AF37] mb-4" />
-                <div className="text-3xl font-h3 text-[#072D4A] mb-1">94%</div>
-                <div className="text-sm text-[#64748b]">Trust Index</div>
+              <div className="bg-[#f8f8f5] rounded-[22px] p-7 hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(8,38,58,0.12)] transition-all duration-200" style={{background: 'linear-gradient(145deg, #f8f8f5 0%, #f5f5f2 100%)', border: '1px solid rgba(8,38,58,0.06)'}}>
+                <div className="w-12 h-12 rounded-full bg-[#18a957]/10 flex items-center justify-center mb-4">
+                  <Verified className="w-6 h-6 text-[#18a957]" />
+                </div>
+                <div className="text-3xl font-h3 text-[#08263a] mb-1">94%</div>
+                <div className="text-sm text-[#526273]">Trust Index</div>
               </div>
             </div>
 
             {/* Live Ticker */}
-            <div className="mt-7 bg-[#ffffff]/80 backdrop-blur-lg border border-gray-200 rounded-full px-6 py-4 flex items-center gap-6 overflow-hidden">
-              <div className="flex-shrink-0 bg-[#D4AF37]/15 text-[#D4AF37] px-4 py-1.5 rounded-full text-xs font-label-caps">LIVE</div>
+            <div className="mt-7 bg-white/60 backdrop-blur-md border border-[#08263a]/8 rounded-full px-6 py-4 flex items-center gap-6 overflow-hidden" style={{background: 'rgba(255,255,255,0.7)'}}>
+              <div className="flex-shrink-0 bg-[#18a957]/10 text-[#18a957] px-4 py-1.5 rounded-full text-xs font-label-caps">LIVE</div>
               <div className="flex-1 overflow-hidden">
-                <div className="flex items-center gap-12 text-sm text-[#4a5568] animate-marquee">
+                <div className="flex items-center gap-12 text-sm text-[#08263a] animate-marquee">
                   <span>Kaduna clean water initiative milestone reached</span>
-                  <span className="text-secondary">●</span>
+                  <span className="text-[#18a957]">●</span>
                   <span>2,430 new volunteers onboarded this week</span>
-                  <span className="text-secondary">●</span>
+                  <span className="text-[#18a957]">●</span>
                   <span>Lagos youth enterprise fund opened</span>
-                  <span className="text-secondary">●</span>
+                  <span className="text-[#18a957]">●</span>
                   <span>Plateau agriculture pilot now active</span>
-                  <span className="text-secondary">●</span>
+                  <span className="text-[#18a957]">●</span>
                   <span>Abuja transparency ledger updated</span>
                 </div>
               </div>
-              <Link to="/impact" className="lg:hidden flex-shrink-0 text-secondary font-label-caps text-sm">
+              <Link to="/impact" className="lg:hidden flex-shrink-0 text-[#18a957] font-label-caps text-sm">
                 See All
               </Link>
             </div>
 
             {/* Micro Map Panel */}
           <div className="mt-9 grid grid-cols-1 lg:grid-cols-[7fr_3fr] gap-6">
-            {/* Map Card */}
-            <div className="bg-surface-container/40 backdrop-blur-md border border-white/[0.06] rounded-3xl p-6 min-h-[280px] flex items-center justify-center">
+            {/* Map Card - Muted slate/blue premium surface */}
+            <div className="bg-[#e3e8ed] rounded-[22px] p-6 min-h-[280px] flex items-center justify-center" style={{background: 'linear-gradient(145deg, #e3e8ed 0%, #dde1e6 100%)', border: '1px solid rgba(8,38,58,0.06)'}}>
               <div className="text-center">
-                <Map className="w-12 h-12 text-secondary/40 mb-4" />
-                <p className="text-[#C2C7CF]">Nigeria Activation Map</p>
-                <p className="text-sm text-[#C2C7CF]/60 mt-1">Interactive visualization coming soon</p>
+                <Map className="w-12 h-12 text-[#08263a]/30 mb-4" />
+                <p className="text-[#08263a]/70">Nigeria Activation Map</p>
+                <p className="text-sm text-[#526273]/60 mt-1">Interactive visualization coming soon</p>
               </div>
             </div>
 
-            {/* Regional Summary Card */}
-            <div className="bg-surface-container/40 backdrop-blur-md border border-white/[0.06] rounded-3xl p-6">
-              <h4 className="font-h3 text-xl text-white mb-6">Regional Activation</h4>
+            {/* Regional Summary Card - Warm ivory premium card */}
+            <div className="bg-[#f8f8f5] rounded-[22px] p-6" style={{background: 'linear-gradient(145deg, #f8f8f5 0%, #f5f5f2 100%)', border: '1px solid rgba(8,38,58,0.06)'}}>
+              <h4 className="font-h3 text-xl text-[#08263a] mb-6">Regional Activation</h4>
               <div className="space-y-4">
-                <div className="flex justify-between items-center py-3 border-b border-white/[0.06]">
-                  <span className="text-[#C2C7CF]">North</span>
-                  <span className="text-secondary font-label-caps">Strong</span>
+                <div className="flex justify-between items-center py-3 border-b border-[#08263a]/8">
+                  <span className="text-[#526273]">North</span>
+                  <span className="text-[#18a957] font-label-caps">Strong</span>
                 </div>
-                <div className="flex justify-between items-center py-3 border-b border-white/[0.06]">
-                  <span className="text-[#C2C7CF]">West</span>
-                  <span className="text-secondary font-label-caps">Very Strong</span>
+                <div className="flex justify-between items-center py-3 border-b border-[#08263a]/8">
+                  <span className="text-[#526273]">West</span>
+                  <span className="text-[#18a957] font-label-caps">Very Strong</span>
                 </div>
-                <div className="flex justify-between items-center py-3 border-b border-white/[0.06]">
-                  <span className="text-[#C2C7CF]">East</span>
-                  <span className="text-tertiary font-label-caps">Growing</span>
+                <div className="flex justify-between items-center py-3 border-b border-[#08263a]/8">
+                  <span className="text-[#526273]">East</span>
+                  <span className="text-[#08263a]/60 font-label-caps">Growing</span>
                 </div>
-                <div className="flex justify-between items-center py-3 border-b border-white/[0.06]">
-                  <span className="text-[#C2C7CF]">South</span>
-                  <span className="text-secondary font-label-caps">Strong</span>
+                <div className="flex justify-between items-center py-3 border-b border-[#08263a]/8">
+                  <span className="text-[#526273]">South</span>
+                  <span className="text-[#18a957] font-label-caps">Strong</span>
                 </div>
               </div>
-              <Link to="/arena/chapters" className="mt-6 flex items-center justify-center gap-2 text-secondary font-label-caps hover:gap-3 transition-all w-full py-3 border border-secondary/30 rounded-full">
-                View Chapters <ArrowForward className="w-4 h-4" />
-              </Link>
+<Link to="/arena/chapters" className="mt-6 flex items-center justify-center gap-2 text-[#18a957] font-label-caps hover:gap-3 transition-all w-full py-3 border border-[#18a957]/20 rounded-full">
+                  View Chapters <ArrowForward className="w-4 h-4" />
+                </Link>
             </div>
           </div>
         </div>
