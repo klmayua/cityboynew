@@ -52,15 +52,15 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* National Pulse Section */}
-        <section className="pt-24 pb-24 bg-[#091821]">
+        {/* National Pulse Section - Momentum metrics */}
+        <section className="pt-24 pb-24 bg-[#e8ecef]">
           <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
             {/* Header */}
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12">
               <div className="max-w-2xl">
                 <span className="text-[#D4AF37] font-label-caps uppercase tracking-widest mb-4 block">National Pulse</span>
-                <h2 className="font-h2 text-4xl md:text-5xl mb-4 text-white">A Living View Of National Momentum</h2>
-                <p className="text-[#94A3B8] text-lg max-w-xl leading-relaxed">
+                <h2 className="font-h2 text-4xl md:text-5xl mb-4 text-[#072D4A]">A Living View Of National Momentum</h2>
+                <p className="text-[#4a5568] text-lg max-w-xl leading-relaxed">
                   Transparent movement metrics — citizens mobilized,
                   projects activated, communities reached,
                   and measurable impact unfolding in real time.
@@ -73,38 +73,38 @@ export default function HomePage() {
 
             {/* Metric Strip */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
-              <div className="bg-surface-container/40 backdrop-blur-md border border-white/[0.06] rounded-3xl p-7 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.3)] transition-all duration-180">
-                <Groups className="w-8 h-8 text-secondary mb-4" />
-                <div className="text-3xl font-h3 text-white mb-1">18,420+</div>
-                <div className="text-sm text-[#C2C7CF]">Volunteers Active</div>
+              <div className="bg-white border border-gray-200/50 rounded-3xl p-7 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.1)] transition-all duration-180">
+                <Groups className="w-8 h-8 text-[#D4AF37] mb-4" />
+                <div className="text-3xl font-h3 text-[#072D4A] mb-1">18,420+</div>
+                <div className="text-sm text-[#64748b]">Volunteers Active</div>
               </div>
-              <div className="bg-surface-container/40 backdrop-blur-md border border-white/[0.06] rounded-3xl p-7 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.3)] transition-all duration-180">
-                <Public className="w-8 h-8 text-secondary mb-4" />
-                <div className="text-3xl font-h3 text-white mb-1">31</div>
-                <div className="text-sm text-[#C2C7CF]">States Activated</div>
+              <div className="bg-white border border-gray-200/50 rounded-3xl p-7 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.1)] transition-all duration-180">
+                <Public className="w-8 h-8 text-[#D4AF37] mb-4" />
+                <div className="text-3xl font-h3 text-[#072D4A] mb-1">31</div>
+                <div className="text-sm text-[#64748b]">States Activated</div>
               </div>
-              <div className="bg-surface-container/40 backdrop-blur-md border border-white/[0.06] rounded-3xl p-7 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.3)] transition-all duration-180">
-                <AccountBalance className="w-8 h-8 text-secondary mb-4" />
-                <div className="text-3xl font-h3 text-white mb-1">246</div>
-                <div className="text-sm text-[#C2C7CF]">Projects Live</div>
+              <div className="bg-white border border-gray-200/50 rounded-3xl p-7 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.1)] transition-all duration-180">
+                <AccountBalance className="w-8 h-8 text-[#D4AF37] mb-4" />
+                <div className="text-3xl font-h3 text-[#072D4A] mb-1">246</div>
+                <div className="text-sm text-[#64748b]">Projects Live</div>
               </div>
-              <div className="bg-surface-container/40 backdrop-blur-md border border-white/[0.06] rounded-3xl p-7 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.3)] transition-all duration-180">
-                <VolunteerActivism className="w-8 h-8 text-secondary mb-4" />
-                <div className="text-3xl font-h3 text-white mb-1">₦4.2B</div>
-                <div className="text-sm text-[#C2C7CF]">Impact Funded</div>
+              <div className="bg-white border border-gray-200/50 rounded-3xl p-7 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.1)] transition-all duration-180">
+                <VolunteerActivism className="w-8 h-8 text-[#D4AF37] mb-4" />
+                <div className="text-3xl font-h3 text-[#072D4A] mb-1">₦4.2B</div>
+                <div className="text-sm text-[#64748b]">Impact Funded</div>
               </div>
-              <div className="bg-surface-container/40 backdrop-blur-md border border-white/[0.06] rounded-3xl p-7 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.3)] transition-all duration-180">
-                <Verified className="w-8 h-8 text-secondary mb-4" />
-                <div className="text-3xl font-h3 text-white mb-1">94%</div>
-                <div className="text-sm text-[#C2C7CF]">Trust Index</div>
+              <div className="bg-white border border-gray-200/50 rounded-3xl p-7 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.1)] transition-all duration-180">
+                <Verified className="w-8 h-8 text-[#D4AF37] mb-4" />
+                <div className="text-3xl font-h3 text-[#072D4A] mb-1">94%</div>
+                <div className="text-sm text-[#64748b]">Trust Index</div>
               </div>
             </div>
 
             {/* Live Ticker */}
-            <div className="mt-7 bg-[#0a0c0e]/80 backdrop-blur-lg border border-white/[0.06] rounded-full px-6 py-4 flex items-center gap-6 overflow-hidden">
+            <div className="mt-7 bg-[#ffffff]/80 backdrop-blur-lg border border-gray-200 rounded-full px-6 py-4 flex items-center gap-6 overflow-hidden">
               <div className="flex-shrink-0 bg-[#D4AF37]/15 text-[#D4AF37] px-4 py-1.5 rounded-full text-xs font-label-caps">LIVE</div>
               <div className="flex-1 overflow-hidden">
-                <div className="flex items-center gap-12 text-sm text-[#C2C7CF] animate-marquee">
+                <div className="flex items-center gap-12 text-sm text-[#4a5568] animate-marquee">
                   <span>Kaduna clean water initiative milestone reached</span>
                   <span className="text-secondary">●</span>
                   <span>2,430 new volunteers onboarded this week</span>
@@ -176,8 +176,8 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* National Pulse: Sleek Card Band */}
-        <section className="py-[120px] bg-[#EEF1F4]">
+        {/* National Pulse: Sleek Card Band - Data visualization */}
+        <section className="py-[120px] bg-[#f4f1e8]">
           <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16">
               <div className="max-w-2xl">
@@ -242,8 +242,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Take Action: Impact Pathways */}
-        <section className="py-[120px] bg-[#091821]">
+        {/* Take Action: Impact Pathways - Community */}
+        <section className="py-[120px] bg-[#101418]">
           <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
             <div className="text-center mb-20">
               <span className="text-secondary font-label-caps uppercase tracking-widest mb-4 block">Take Action</span>
@@ -288,8 +288,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Impact Proof: Visible Results */}
-        <section className="py-24 bg-[#EEF1F4]" style={{borderTop: '1px solid rgba(255,255,255,0.06)'}}>
+        {/* Impact Proof: Visible Results - Funding */}
+        <section className="py-24 bg-[#dfe7df]" style={{borderTop: '1px solid rgba(255,255,255,0.06)'}}>
           <div className="absolute inset-0 bg-gradient-to-b from-primary-container/20 to-transparent opacity-50"></div>
           <div className="relative z-10 container mx-auto px-4 md:px-8 max-w-[1440px]">
             <div className="text-center mb-12">
@@ -412,8 +412,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Trust Layer: Built On Trust */}
-        <section className="py-24 relative bg-[#091821]" style={{borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)'}}>
+        {/* Trust Layer: Built On Trust - Governance */}
+        <section className="py-24 relative bg-[#08263a]" style={{borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)'}}>
           <div className="absolute inset-0 bg-gradient-to-b from-primary-container/30 to-transparent opacity-50"></div>
           <div className="relative z-10 container mx-auto px-4 md:px-8 max-w-[1440px]">
             <div className="flex flex-col lg:flex-row gap-7 items-center">
@@ -572,8 +572,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Closing Conversion: Join The National Build */}
-        <section className="py-28 relative" style={{background: '#071120', borderTop: '1px solid rgba(255,255,255,0.06)'}}>
+        {/* Closing Conversion: Join The National Build - Footer */}
+        <section className="py-28 relative bg-[#04101a]" style={{borderTop: '1px solid rgba(255,255,255,0.06)'}}>
           <div className="absolute inset-0 bg-gradient-to-b from-primary-container/30 to-transparent opacity-50"></div>
           <div className="relative z-10 container mx-auto px-4 md:px-8 max-w-[1440px]">
             <div className="text-center mb-12">
