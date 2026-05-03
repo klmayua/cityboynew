@@ -1,7 +1,12 @@
 import React from 'react'
-import { Link, Outlet, useLocation } from 'react-router-dom'
-import { VolunteerActivism, AccountBalance, Analytics, AutoStories, Security } from '@material-symbols-svg/react/outlined'
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom'
+import { VolunteerActivism, AccountBalance, Analytics, AutoStories, Security, LogOut } from '@material-symbols-svg/react/outlined'
 import BottomNav from './system/BottomNav'
+
+export const logout = () => {
+  localStorage.removeItem('cityboy_auth')
+  window.location.href = '/login'
+}
 
 const footerLinks = {
   resources: [

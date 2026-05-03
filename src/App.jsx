@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import { AnalyticsTracker } from './analytics'
 import { Preloader } from './components/system/Preloader'
+import ProtectedRoute from './components/ProtectedRoute'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const ProjectNigeriaPage = lazy(() => import('./pages/ProjectNigeriaPage'))

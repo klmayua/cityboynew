@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { Link, useNavigate, useLocation } from 'react-router-dom'
-import { ArrowRight, Users, Heart, Shield, Briefcase, Wallet, Cpu, Lock, Check, User, Building2, FileText, Users as ChapterIcon, Menu } from 'lucide-react'
+import { Link, useNavigate } from 'react-router-dom'
+import { ArrowRight, Heart, Shield, Wallet, Cpu, Lock, Building2, Users as ChapterIcon } from 'lucide-react'
 
 const roles = [
   { id: 'volunteer', label: 'Volunteer', icon: Heart },
@@ -60,12 +60,33 @@ export default function LoginPage() {
     }
   }, [navigate])
 
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return re.test(email)
+  }
+
   const handleDemo = (role) => {
+    setSelectedRole(role)
+    setEmail(`demo.${role}@cityboyarena.org`)
+    setPassword('demo123')
     setLoading(true)
   }
 
   const handleLogin = (e) => {
     e.preventDefault()
+    
+    if (!email) {
+      alert('Please enter your email')
+      return
+    }
+    if (!password) {
+      alert('Please enter your password')
+      return
+    }
+    if (!validateEmail(email)) {
+      alert('Please enter a valid email address')
+      return
+    }
     setLoading(true)
   }
 
@@ -89,21 +110,10 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex" style={{ background: 'linear-gradient(180deg, #07111A 0%, #0D2234 100%)' }}>
-      {/* Desktop Header - Same as public site */}
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-8 h-[72px]" style={{ background: 'rgba(3,27,48,0.95)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(212,175,55,0.15)' }}>
-        <div className="flex items-center gap-4">
-          <Link to="/" className="text-[20px] font-bold tracking-[0.08em] text-[#D4AF37]">CITY BOY ARENA</Link>
-          <span className="hidden md:block text-white/40 text-[14px]">OS</span>
-        </div>
-        <div className="flex items-center gap-4">
-          <Link to="/arena" className="hidden md:block text-white/70 hover:text-white text-[14px] font-medium">Arena</Link>
-          <Link to="/about" className="hidden md:block text-white/70 hover:text-white text-[14px] font-medium">About</Link>
-          <Link to="/initiatives" className="hidden md:block text-white/70 hover:text-white text-[14px] font-medium">Initiatives</Link>
-          <Link to="/community" className="hidden md:block text-white/70 hover:text-white text-[14px] font-medium">Community</Link>
-          <button onClick={() => setShowMore(!showMore)} className="p-2 md:hidden">
-            <Menu className="w-6 h-6 text-white" />
-          </button>
-        </div>
+      {/* Login Header - Minimal */}
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 h-[72px]" style={{ background: 'rgba(3,27,48,0.98)', borderBottom: '1px solid rgba(212,175,55,0.15)' }}>
+        <Link to="/" className="text-[20px] font-bold tracking-[0.08em] text-[#D4AF37]">CITY BOY ARENA</Link>
+        <Link to="/" className="text-white/70 hover:text-white text-[14px] font-medium">Return Home</Link>
       </header>
 
       {/* Desktop Layout */}
@@ -308,29 +318,6 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
-
-      {/* Mobile Bottom Nav Spacer */}
-      <div className="lg:hidden h-[78px]"></div>
-
-      {/* More Panel */}
-      {showMore && (
-        <div className="fixed inset-0 z-[100] lg:hidden">
-          <div className="absolute inset-0 bg-black/60" onClick={() => setShowMore(false)}></div>
-          <div className="absolute bottom-0 left-0 right-0 animate-slide-up" style={{ background: 'linear-gradient(180deg, #031B30 0%, #07141f 100%)', borderTopLeftRadius: '24px', borderTopRightRadius: '24px', paddingBottom: 'env(safe-area-inset-bottom, 24px)' }}>
-            <div className="flex justify-center pt-4 pb-2">
-              <div className="w-10 h-1 rounded-full bg-white/20"></div>
-            </div>
-            <div className="px-6 py-4 space-y-2">
-              {[{ label: 'About', path: '/about' }, { label: 'Initiatives', path: '/initiatives' }, { label: 'Leadership', path: '/leadership' }, { label: 'Media', path: '/media' }, { label: 'Community', path: '/community' }, { label: 'Login', path: '/login' }].map((item) => (
-                <Link key={item.label} to={item.path} onClick={() => setShowMore(false)} className="flex items-center justify-between p-4 rounded-[16px] hover:bg-white/5" style={{ border: '1px solid rgba(255,255,255,0.06)' }}>
-                  <span className="text-white text-[17px]">{item.label}</span>
-                  <ArrowRight className="w-5 h-5 text-white/40" />
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   )
 }
