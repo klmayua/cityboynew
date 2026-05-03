@@ -533,39 +533,54 @@ export default function HomePage() {
         </section>
 
         {/* Trust Standard: Clean & Ivory */}
-        <section className="py-[120px] bg-on-surface text-surface relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-1/3 h-full bg-surface-container-lowest/5 -skew-x-12 translate-x-1/2"></div>
-          <div className="container mx-auto px-4 md:px-8 max-w-[1440px] relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-[120px] items-center">
-              <div>
-                <span className="text-secondary-container font-label-caps uppercase mb-4 block">Institutional Integrity</span>
-                <h2 className="font-h2 text-[48px] text-primary-container mb-8">The Trust Standard</h2>
-                <p className="font-body-lg text-primary-container/70 mb-10">
+        <section className="pt-[140px] pb-[140px] bg-[#F3F5F7]">
+          <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-[90px] items-center">
+              <div className="lg:w-[46%]">
+                <span className="text-[#16A34A] font-bold uppercase tracking-[0.18em] text-[12px] mb-[24px] block">Institutional Integrity</span>
+                <h2 className="font-h2 text-[64px] text-[#082F49] mb-[28px] leading-[1.02] tracking-[-0.03em] font-extrabold" style={{maxWidth: '620px'}}>The Trust Standard</h2>
+                <p className="font-body-lg text-[#475569] text-[24px] leading-[1.7] font-medium mb-[60px]" style={{maxWidth: '720px'}}>
                   Transparency is our baseline. Every naira tracked, every milestone audited by third-party institutional partners. No shadows, just results.
                 </p>
-                <div className="grid grid-cols-2 gap-8">
+                <div className="flex gap-[80px] items-center">
                   <div>
-                    <div className="text-3xl font-h3 text-primary-container mb-2">100%</div>
-                    <div className="font-label-caps text-[10px] uppercase text-primary-container/50">Audit Transparency</div>
+                    <div className="w-[48px] h-1 rounded-[999px] bg-[#16A34A] mb-[18px]"></div>
+                    <div className="text-[68px] text-[#082F49] font-extrabold leading-none">100%</div>
+                    <div className="text-[#64748B] text-[13px] font-bold uppercase tracking-[0.16em] mt-[12px]">Audit Transparency</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-h3 text-primary-container mb-2">94%</div>
-                    <div className="font-label-caps text-[10px] uppercase text-primary-container/50">Project Delivery Rate</div>
+                    <div className="w-[48px] h-1 rounded-[999px] bg-[#16A34A] mb-[18px]"></div>
+                    <div className="text-[68px] text-[#082F49] font-extrabold leading-none">94%</div>
+                    <div className="text-[#64748B] text-[13px] font-bold uppercase tracking-[0.16em] mt-[12px]">Project Delivery Rate</div>
                   </div>
                 </div>
               </div>
-              <div className="bg-white p-12 rounded-[40px] shadow-xl border border-primary-container/5">
-                <h4 className="font-label-caps text-primary-container/40 text-center mb-10">GLOBAL COMPLIANCE PARTNERS</h4>
-                <div className="grid grid-cols-2 gap-12 items-center opacity-60">
-                  <div className="h-12 bg-primary-container/10 rounded flex items-center justify-center font-black tracking-tighter text-primary-container/30">AUDIT_X</div>
-                  <div className="h-12 bg-primary-container/10 rounded flex items-center justify-center font-black tracking-tighter text-primary-container/30">GLOBE_TRUST</div>
-                  <div className="h-12 bg-primary-container/10 rounded flex items-center justify-center font-black tracking-tighter text-primary-container/30">STAND_CERT</div>
-                  <div className="h-12 bg-primary-container/10 rounded flex items-center justify-center font-black tracking-tighter text-primary-container/30">NIG_PULSE</div>
-                </div>
-                <div className="mt-12 pt-8 border-t border-primary-container/10 flex justify-center">
-                  <button className="bg-primary-container text-white px-8 py-3 rounded-full font-label-caps hover:bg-black transition-all">
-                    VIEW AUDIT REPORTS
-                  </button>
+              <div className="lg:w-[54%]" style={{width: '640px'}}>
+                <div className="bg-white rounded-[28px] p-[52px] shadow-[0_20px_60px_rgba(8,47,73,0.08)]" style={{border: '1px solid #E2E8F0'}}>
+                  <h4 className="text-[#082F49]/40 text-[13px] font-bold uppercase tracking-[0.14em] text-center mb-10">Global Compliance Partners</h4>
+                  <div className="grid grid-cols-2 gap-[22px]">
+                    <div className="h-[86px] rounded-[18px] flex items-center gap-3 px-6 transition-all duration-200 hover:border-[#16A34A] hover:bg-[#F0FDF4]" style={{border: '1px solid #DCE4EA', background: '#F8FAFC'}}>
+                      <span className="w-[10px] h-[10px] rounded-full bg-[#16A34A]"></span>
+                      <span className="text-[#082F49] font-bold text-[16px]">AUDIT_X</span>
+                    </div>
+                    <div className="h-[86px] rounded-[18px] flex items-center gap-3 px-6 transition-all duration-200 hover:border-[#16A34A] hover:bg-[#F0FDF4]" style={{border: '1px solid #DCE4EA', background: '#F8FAFC'}}>
+                      <span className="w-[10px] h-[10px] rounded-full bg-[#16A34A]"></span>
+                      <span className="text-[#082F49] font-bold text-[16px]">GLOBE_TRUST</span>
+                    </div>
+                    <div className="h-[86px] rounded-[18px] flex items-center gap-3 px-6 transition-all duration-200 hover:border-[#16A34A] hover:bg-[#F0FDF4]" style={{border: '1px solid #DCE4EA', background: '#F8FAFC'}}>
+                      <span className="w-[10px] h-[10px] rounded-full bg-[#16A34A]"></span>
+                      <span className="text-[#082F49] font-bold text-[16px]">STAND_CERT</span>
+                    </div>
+                    <div className="h-[86px] rounded-[18px] flex items-center gap-3 px-6 transition-all duration-200 hover:border-[#16A34A] hover:bg-[#F0FDF4]" style={{border: '1px solid #DCE4EA', background: '#F8FAFC'}}>
+                      <span className="w-[10px] h-[10px] rounded-full bg-[#16A34A]"></span>
+                      <span className="text-[#082F49] font-bold text-[16px]">NIG_PULSE</span>
+                    </div>
+                  </div>
+                  <div className="mt-9 pt-9 flex justify-center" style={{borderTop: '1px solid #E2E8F0'}}>
+                    <button className="h-[64px] w-[280px] bg-[#082F49] text-white rounded-[999px] font-bold text-[15px] uppercase tracking-[0.08em] hover:bg-[#0B3D5C] hover:translate-y-[-2px] transition-all" style={{boxShadow: '0 12px 30px rgba(8,47,73,0.18)'}}>
+                      View Audit Reports
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
