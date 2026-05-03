@@ -53,13 +53,13 @@ export default function HomePage() {
         </section>
 
 {/* National Pulse Section - Momentum metrics */}
-        <section className="pt-24 pb-[120px] bg-[#e8ecef]">
+        <section className="pt-[72px] pb-[88px] md:pt-[56px] lg:pt-[72px] bg-[#e8ecef]">
           <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
             {/* Header */}
-            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12">
+            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-[34px]">
               <div className="max-w-2xl">
-                <span className="text-[#18a957] font-label-caps uppercase tracking-widest mb-4 block">National Pulse</span>
-                <h2 className="font-h2 text-4xl md:text-5xl mb-4 text-[#08263a]">A Living View Of National Momentum</h2>
+                <span className="text-[#18a957] font-label-caps uppercase tracking-widest mb-[14px] block">National Pulse</span>
+                <h2 className="font-h2 text-4xl md:text-5xl mb-[18px] text-[#08263a]">A Living View Of National Momentum</h2>
                 <p className="text-[#526273] text-lg max-w-xl leading-relaxed">
                   Transparent movement metrics — citizens mobilized,
                   projects activated, communities reached,
@@ -274,11 +274,11 @@ export default function HomePage() {
         </section>
 
         {/* Impact Proof: Visible Results - Funding */}
-        <section className="pt-[130px] pb-[130px] bg-[#EEF3EC]">
+        <section className="pt-[72px] pb-[88px] md:pt-[68px] md:pb-[68px] lg:pt-[72px] lg:pb-[88px] bg-[#EEF3EC]">
           <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
-            <div className="text-center mb-[90px]">
-              <span className="text-[#16A34A] font-bold uppercase tracking-[0.18em] text-[13px] mb-[22px] block">National Impact</span>
-              <h2 className="font-h2 text-[clamp(60px,7vw,92px)] text-[#0B2D4D] mb-[34px] leading-[0.94] tracking-[-0.04em] font-extrabold" style={{maxWidth: '860px', marginInline: 'auto'}}>Proof Of Movement. Visible To All.</h2>
+            <div className="text-center mb-[34px]">
+              <span className="text-[#16A34A] font-bold uppercase tracking-[0.18em] text-[13px] mb-[14px] block">National Impact</span>
+              <h2 className="font-h2 text-[clamp(60px,7vw,92px)] text-[#0B2D4D] mb-[18px] leading-[0.94] tracking-[-0.04em] font-extrabold" style={{maxWidth: '860px', marginInline: 'auto'}}>Proof Of Movement. Visible To All.</h2>
               <p className="font-body-lg text-[#5D6A76] text-[22px] leading-[1.7]" style={{maxWidth: '760px', marginInline: 'auto'}}>Transparent execution. Measurable delivery. Real communities changed through collective national action.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[34px]">
@@ -470,13 +470,13 @@ export default function HomePage() {
         </section>
 
         {/* Impact Stories: Masonry Grid */}
-        <section className="pt-[140px] pb-[150px] bg-[#F3F5F4] relative overflow-hidden">
+        <section className="pt-[72px] pb-[88px] md:pt-[68px] md:pb-[68px] lg:pt-[72px] lg:pb-[88px] bg-[#F3F5F4] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-[420px] h-[420px] rounded-full pointer-events-none" style={{background: 'rgba(212,175,55,0.045)', filter: 'blur(110px)'}}></div>
           <div className="absolute bottom-0 left-0 w-[340px] h-[340px] rounded-full pointer-events-none" style={{background: 'rgba(22,163,74,0.035)', filter: 'blur(90px)'}}></div>
           <div className="container mx-auto px-4 md:px-8 max-w-[1440px] relative z-10">
-            <div className="text-center mb-[90px]" style={{maxWidth: '900px', marginInline: 'auto'}}>
-              <span className="text-[#16A34A] font-bold uppercase tracking-[0.18em] text-[13px] mb-[20px] block">Faces of Change</span>
-              <h2 className="font-h2 text-[clamp(58px,7vw,88px)] text-[#0B2D4D] mb-[28px] leading-[0.95] tracking-[-0.035em] font-extrabold" style={{textShadow: '0 3px 12px rgba(11,45,77,0.05)'}}>Impact Stories</h2>
+            <div className="text-center mb-[34px]" style={{maxWidth: '900px', marginInline: 'auto'}}>
+              <span className="text-[#16A34A] font-bold uppercase tracking-[0.18em] text-[13px] mb-[14px] block">Faces of Change</span>
+              <h2 className="font-h2 text-[clamp(58px,7vw,88px)] text-[#0B2D4D] mb-[18px] leading-[0.95] tracking-[-0.035em] font-extrabold" style={{textShadow: '0 3px 12px rgba(11,45,77,0.05)'}}>Impact Stories</h2>
               <div className="w-[90px] h-1 mx-auto rounded-[999px] bg-gradient-to-r from-[#16A34A] to-[#D4AF37]" style={{marginTop: '12px'}}></div>
             </div>
             <div className="max-w-[1380px] mx-auto p-[48px] rounded-[40px] bg-white/46 backdrop-blur-[10px]" style={{border: '1px solid rgba(255,255,255,0.65)', boxShadow: '0 35px 100px rgba(12,31,51,0.08)'}}>
@@ -533,7 +533,7 @@ export default function HomePage() {
         </section>
 
         {/* Trust Standard: Clean & Ivory */}
-        <section className="pt-[140px] pb-[140px]" style={{background: 'linear-gradient(90deg, #082F49 0%, #0B3D5C 100%)'}}>
+        <section className="pt-[72px] pb-[88px] md:pt-[68px] md:pb-[68px] lg:pt-[72px] lg:pb-[88px]" style={{background: 'linear-gradient(90deg, #082F49 0%, #0B3D5C 100%)'}}>
           <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-[90px] items-center">
               <div className="lg:w-[46%]">
