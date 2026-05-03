@@ -187,40 +187,40 @@ export default function HomePage() {
               </div>
 
               {/* Regional Command Board */}
-              <div className="bg-[#f8f8f5]/90 backdrop-blur-sm rounded-[20px] p-6" style={{border: '1px solid rgba(8,38,58,0.1)', boxShadow: '0 8px 32px rgba(8,38,58,0.08)'}}>
-                <h4 className="font-h3 text-lg text-[#08263a] mb-5">Regional Command</h4>
+              <div className="bg-white rounded-[28px] p-6" style={{border: '1px solid rgba(8,47,73,0.08)', borderLeft: '5px solid #D4AF37', boxShadow: '0 8px 32px rgba(8,38,58,0.08)'}}>
+                <h4 className="font-h3 text-[48px] text-[#082F49] mb-5 font-extrabold">Regional Command</h4>
                 <div className="space-y-0">
-                  <div className="flex justify-between items-center py-3 border-b border-[#08263a]/8">
+                  <div className="flex justify-between items-center py-4 border-b border-[#08263a]/8">
                     <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 rounded-full bg-[#18a957]"></span>
-                      <span className="text-[#08263a]">North</span>
+                      <span className="w-3 h-3 rounded-full bg-[#16A34A]"></span>
+                      <span className="text-[#082F49] text-lg font-semibold">North</span>
                     </div>
-                    <span className="text-xs text-[#18a957] font-medium tracking-wide">STRONG</span>
+                    <span className="text-sm text-[#16A34A] font-bold tracking-wide">STRONG</span>
                   </div>
-                  <div className="flex justify-between items-center py-3 border-b border-[#08263a]/8">
+                  <div className="flex justify-between items-center py-4 border-b border-[#08263a]/8">
                     <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 rounded-full bg-[#18a957]"></span>
-                      <span className="text-[#08263a]">West</span>
+                      <span className="w-3 h-3 rounded-full bg-[#16A34A]"></span>
+                      <span className="text-[#082F49] text-lg font-semibold">West</span>
                     </div>
-                    <span className="text-xs text-[#18a957] font-medium tracking-wide">VERY STRONG</span>
+                    <span className="text-sm text-[#16A34A] font-bold tracking-wide">VERY STRONG</span>
                   </div>
-                  <div className="flex justify-between items-center py-3 border-b border-[#08263a]/8">
+                  <div className="flex justify-between items-center py-4 border-b border-[#08263a]/8">
                     <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 rounded-full bg-[#D4AF37]"></span>
-                      <span className="text-[#08263a]">East</span>
+                      <span className="w-3 h-3 rounded-full bg-[#D4AF37]"></span>
+                      <span className="text-[#082F49] text-lg font-semibold">East</span>
                     </div>
-                    <span className="text-xs text-[#526273] font-medium tracking-wide">GROWING</span>
+                    <span className="text-sm text-[#D4AF37] font-bold tracking-wide">GROWING</span>
                   </div>
-                  <div className="flex justify-between items-center py-3 border-b border-[#08263a]/8">
+                  <div className="flex justify-between items-center py-4 border-b border-[#08263a]/8">
                     <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 rounded-full bg-[#18a957]"></span>
-                      <span className="text-[#08263a]">South</span>
+                      <span className="w-3 h-3 rounded-full bg-[#16A34A]"></span>
+                      <span className="text-[#082F49] text-lg font-semibold">South</span>
                     </div>
-                    <span className="text-xs text-[#18a957] font-medium tracking-wide">STRONG</span>
+                    <span className="text-sm text-[#16A34A] font-bold tracking-wide">STRONG</span>
                   </div>
                 </div>
-                <Link to="/arena/chapters" className="mt-6 w-full py-3 bg-[#08263a] text-white rounded-lg font-medium text-sm flex items-center justify-center gap-2 hover:bg-[#08263a]/90 transition-all">
-                  View Regional Chapters <ArrowForward className="w-4 h-4" />
+                <Link to="/arena/chapters" className="mt-6 w-full py-4 bg-[#D4AF37] text-white rounded-xl font-semibold text-base flex items-center justify-center gap-2 hover:bg-[#c9a030] transition-all">
+                  View Regional Chapters <ArrowForward className="w-5 h-5" />
                 </Link>
               </div>
             </div>
