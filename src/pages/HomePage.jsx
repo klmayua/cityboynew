@@ -247,64 +247,71 @@ export default function HomePage() {
           <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16">
               <div className="max-w-2xl">
-                <span className="text-[#18a957] font-label-caps uppercase mb-4 block">Real-Time Data</span>
-                <h2 className="font-h2 text-[48px] mb-4 text-[#08263a]">National Pulse</h2>
-                <p className="font-body-md text-[#526273]">Monitoring the heartbeat of the federation through high-fidelity data streams and community sentiment indicators.</p>
+                <span className="text-[#16A34A] font-bold uppercase tracking-[0.12em] text-[13px] mb-4 block">Real-Time Data</span>
+                <h2 className="font-h2 text-[64px] text-[#082F49] mb-4 leading-[1.02] tracking-[-0.03em] font-extrabold">National Pulse</h2>
+                <p className="font-body-md text-[#475569] text-[22px] leading-[1.7] max-w-[760px]">Monitoring the heartbeat of the federation through high-fidelity data streams and community sentiment indicators.</p>
               </div>
-              <button className="flex items-center gap-2 text-[#08263a] font-label-caps hover:gap-4 transition-all">
-                FULL DATA DASHBOARD <ArrowForward className="w-5 h-5" />
+              <button className="flex items-center gap-2 text-[#082F49] font-bold hover:text-[#16A34A] transition-all group">
+                FULL DATA DASHBOARD <ArrowForward className="w-5 h-5 text-[#16A34A] group-hover:translate-x-1" />
               </button>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-[24px]">
-              {/* Map Card - Premium civic blue gradient */}
-              <div className="lg:col-span-2 rounded-[24px] p-8 relative overflow-hidden group" style={{background: 'linear-gradient(145deg, #6f8798 0%, #617a8d 100%)', border: '1px solid rgba(255,255,255,0.15)', boxShadow: '0 24px 64px rgba(8,38,58,0.2)'}}>
-                <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
-                <div className="flex justify-between items-start mb-8 relative z-10">
+              {/* LEFT PRIMARY CARD - White solid */}
+              <div className="lg:col-span-2 bg-white rounded-[28px] p-[34px]" style={{border: '1px solid rgba(8,47,73,0.08)', boxShadow: '0 20px 50px rgba(2,8,23,0.08)'}}>
+                <div className="flex justify-between items-start mb-8">
                   <div>
-                    <h3 className="font-h3 text-[32px] mb-1 text-white">Infrastructure Health</h3>
-                    <p className="text-white/70 font-body-md">Active deployment zones across 36 states</p>
+                    <h3 className="font-h3 text-[42px] text-[#082F49] mb-1 font-extrabold">Infrastructure Health</h3>
+                    <p className="text-[#64748B] text-[18px]">Active deployment zones across 36 states</p>
                   </div>
-                  <div className="bg-[#18a957] text-white px-4 py-2 rounded-xl flex items-center gap-2 shadow-lg" style={{boxShadow: '0 0 20px rgba(24,169,87,0.4)'}}>
+                  <div className="bg-[rgba(22,163,74,0.12)] text-[#16A34A] px-4 py-2 rounded-[999px] flex items-center gap-2 font-bold border border-[rgba(22,163,74,0.18)]">
                     <Sensors className="w-4 h-4" />
-                    <span className="font-label-caps text-[10px]">LIVE FEED</span>
+                    <span className="text-[13px] font-bold tracking-wider">LIVE</span>
                   </div>
                 </div>
-                <div className="h-[400px] w-full bg-[#08263a]/30 rounded-2xl flex items-center justify-center relative overflow-hidden">
-                  <img alt="Map of Nigeria Data Overlay" className="opacity-20 absolute inset-0 w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVlNIo8vNjbia3QJgZ7ign0d6hEoqE8HhmChsJEjqQcG2dgsuAXQIrb-M1jYmghMYWusHslmK87F88r14VrcE-0Z18pYy9TFMtc3lu2q6trLIswEHyRwoClXhcBSxNOvdMWSk0ia2vntt3UDP49l_kSGRXfsK2r94OLgXG7gT4bAcnTld8k8errVY1q0ugo83yshI_ZkW-P0GRCUME1zrc8LDXihdW6LsY8YECiw_smKTxjQRNxIhFO0zg2Rr1V3uMZKhUdjNmJSw"/>
-                  {/* Heat Map Pulse Points - Subtle network glow */}
-                  <div className="absolute top-1/4 left-1/2 w-4 h-4 bg-[#18a957] rounded-full animate-ping" style={{animationDuration: '3s'}}></div>
-                  <div className="absolute bottom-1/3 left-1/3 w-3 h-3 bg-[#18a957] rounded-full animate-ping opacity-75" style={{animationDuration: '4s'}}></div>
-                  <div className="absolute top-1/2 right-1/4 w-5 h-5 bg-[#18a957] rounded-full animate-ping opacity-50" style={{animationDuration: '5s'}}></div>
+                <div className="h-[400px] w-full bg-[#F8FAFC] rounded-[20px] flex items-center justify-center relative overflow-hidden border border-[rgba(8,47,73,0.06)]" style={{backgroundImage: 'radial-gradient(circle, rgba(8,47,73,0.18) 1px, transparent 1px)', backgroundSize: '20px 20px'}}>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-56 h-56 rounded-full border-2 border-[rgba(8,47,73,0.12)] flex items-center justify-center">
+                      <div className="w-36 h-36 rounded-full border border-[rgba(8,47,73,0.08)] flex items-center justify-center">
+                        <span className="text-[10px] text-[#64748B] font-medium tracking-widest">NIGERIA</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute top-1/3 left-1/3 w-3 h-3 bg-[#16A34A] rounded-full shadow-[0_0_12px_rgba(22,163,74,0.6)]"></div>
+                  <div className="absolute top-1/2 left-1/2 w-3 h-3 bg-[#16A34A] rounded-full shadow-[0_0_12px_rgba(22,163,74,0.6)]"></div>
+                  <div className="absolute bottom-1/3 right-1/3 w-3 h-3 bg-[#16A34A] rounded-full shadow-[0_0_12px_rgba(22,163,74,0.6)]"></div>
                 </div>
               </div>
-              {/* Metrics Stack */}
+
+              {/* RIGHT STACK CARDS */}
               <div className="space-y-[24px]">
-                {/* Trust Score - Ivory inset */}
-                <div className="bg-[#f8f8f5] rounded-[20px] p-8 hover:-translate-y-1 transition-all" style={{border: '1px solid rgba(8,38,58,0.08)', boxShadow: '0 8px 24px rgba(8,38,58,0.08)'}}>
-                  <span className="text-[#526273] font-label-caps uppercase text-[10px] mb-4 block">Trust Score</span>
+                {/* TRUST SCORE CARD */}
+                <div className="bg-white rounded-[24px] p-[28px]" style={{border: '1px solid rgba(8,47,73,0.08)'}}>
+                  <span className="text-[#64748B] text-[12px] font-bold uppercase tracking-[0.08em] mb-4 block">Trust Score</span>
                   <div className="flex items-baseline gap-2 mb-4">
-                    <span className="font-stat-value text-4xl text-[#08263a]">78.4</span>
-                    <span className="text-[#18a957] font-label-caps text-xs">+1.2% this month</span>
+                    <span className="text-[42px] text-[#082F49] font-extrabold">78.4</span>
+                    <span className="text-[#16A34A] font-bold">+1.2% this month</span>
                   </div>
-                  <div className="h-2 w-full bg-[#e3e8ed] rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-[#18a957] to-[#0d8f4a] w-[78%]"></div>
+                  <div className="h-[10px] w-full bg-[#E2E8F0] rounded-[999px] overflow-hidden">
+                    <div className="h-full bg-[#16A34A] w-[78%]"></div>
                   </div>
                 </div>
-                {/* Job Creation - Muted warm panel */}
-                <div className="bg-[#e8e6df] rounded-[20px] p-8 hover:-translate-y-1 transition-all" style={{border: '1px solid rgba(8,38,58,0.06)', boxShadow: '0 8px 24px rgba(8,38,58,0.06)'}}>
-                  <span className="text-[#526273] font-label-caps uppercase text-[10px] mb-4 block">Job Creation</span>
-                  <div className="font-stat-value text-4xl mb-2 text-[#08263a]">420,000+</div>
-                  <p className="text-[#526273] text-sm">Direct & indirect artisanal roles filled in Q3 2024.</p>
+
+                {/* JOB CREATION CARD - White */}
+                <div className="bg-white rounded-[24px] p-[28px]" style={{border: '1px solid rgba(8,47,73,0.08)'}}>
+                  <span className="text-[#64748B] text-[12px] font-bold uppercase tracking-[0.08em] mb-4 block">Job Creation</span>
+                  <div className="text-[42px] text-[#082F49] font-extrabold mb-2">420,000+</div>
+                  <p className="text-[#64748B] text-[16px]">Direct & indirect artisanal roles filled in Q3 2024.</p>
                 </div>
-                {/* Active Projects - Green activity markers */}
-                <div className="bg-[#ddeddf] rounded-[20px] p-8 hover:-translate-y-1 transition-all" style={{border: '1px solid rgba(24,169,87,0.1)', boxShadow: '0 8px 24px rgba(8,38,58,0.05)'}}>
-                  <span className="text-[#526273] font-label-caps uppercase text-[10px] mb-4 block">Active Projects</span>
-                  <div className="font-stat-value text-4xl mb-2 text-[#08263a]">1,248</div>
+
+                {/* ACTIVE PROJECTS CARD - Green tint */}
+                <div className="bg-[#F0FDF4] rounded-[24px] p-[28px]" style={{border: '1px solid rgba(22,163,74,0.10)'}}>
+                  <span className="text-[#64748B] text-[12px] font-bold uppercase tracking-[0.08em] mb-4 block">Active Projects</span>
+                  <div className="text-[42px] text-[#082F49] font-extrabold mb-2">1,248</div>
                   <div className="flex -space-x-2">
-                    <div className="w-8 h-8 rounded-full border-2 border-[#f4f1e8] bg-[#08263a]"></div>
-                    <div className="w-8 h-8 rounded-full border-2 border-[#f4f1e8] bg-[#08263a]"></div>
-                    <div className="w-8 h-8 rounded-full border-2 border-[#f4f1e8] bg-[#08263a]"></div>
-                    <div className="w-8 h-8 rounded-full border-2 border-[#f4f1e8] bg-[#18a957] flex items-center justify-center text-[10px] text-white">+12</div>
+                    <div className="w-8 h-8 rounded-full bg-[#082F49]"></div>
+                    <div className="w-8 h-8 rounded-full bg-[#082F49]"></div>
+                    <div className="w-8 h-8 rounded-full bg-[#082F49]"></div>
+                    <div className="w-8 h-8 rounded-full bg-[#16A34A] flex items-center justify-center text-[10px] text-white">+12</div>
                   </div>
                 </div>
               </div>
