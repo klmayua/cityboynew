@@ -110,25 +110,25 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Live Ticker - Slim intelligence ribbon */}
-            <div className="mt-6 bg-[#08263a]/85 backdrop-blur-md rounded-full px-6 py-3 flex items-center gap-5 overflow-hidden" style={{maxHeight: '44px'}}>
+            {/* Live Ticker */}
+            <div className="mt-6 backdrop-blur-md rounded-[999px] px-6 py-3 flex items-center gap-5 overflow-hidden border border-[rgba(212,175,55,0.18)]" style={{maxHeight: '44px', background: 'linear-gradient(90deg, #082F49 0%, #103A59 100%)'}}>
               <div className="flex-shrink-0 flex items-center gap-2">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#18a957] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#18a957]"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#16A34A] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#16A34A]"></span>
                 </span>
                 <span className="text-white text-xs font-semibold tracking-widest">LIVE</span>
               </div>
               <div className="flex-1 overflow-hidden">
-                <div className="flex items-center gap-8 text-sm text-white/80 animate-marquee">
+                <div className="flex items-center gap-8 text-sm text-white/92 animate-marquee">
                   <span>Kaduna clean water initiative milestone reached</span>
-                  <span className="text-[#18a957]">●</span>
+                  <span className="text-[#D4AF37]">●</span>
                   <span>2,430 new volunteers onboarded this week</span>
-                  <span className="text-[#18a957]">●</span>
+                  <span className="text-[#D4AF37]">●</span>
                   <span>Lagos youth enterprise fund opened</span>
-                  <span className="text-[#18a957]">●</span>
+                  <span className="text-[#D4AF37]">●</span>
                   <span>Plateau agriculture pilot now active</span>
-                  <span className="text-[#18a957]">●</span>
+                  <span className="text-[#D4AF37]">●</span>
                   <span>Abuja transparency ledger updated</span>
                 </div>
               </div>
