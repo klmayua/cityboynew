@@ -52,17 +52,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Transition Band */}
-        <div className="h-21 bg-[#0F1419] border-y border-white/[0.06]">
-          <div className="container mx-auto px-4 md:px-8 max-w-[1440px] h-full flex flex-col items-center justify-center">
-            <span className="text-[#D4AF37] font-label-caps uppercase tracking-widest text-xs mb-2">National Pulse</span>
-            <div className="text-xs text-[#94A3B8] font-body-sm tracking-wide">Live metrics • Visible action • Measurable impact</div>
-            <div className="w-32 h-px mt-3 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-60"></div>
-          </div>
-        </div>
-
         {/* National Pulse Section */}
-        <section className="pt-24 pb-24 bg-[#0F1419]">
+        <section className="pt-24 pb-24 bg-[#091821]">
           <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
             {/* Header */}
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12">
@@ -186,7 +177,7 @@ export default function HomePage() {
         </div>
 
         {/* National Pulse: Sleek Card Band */}
-        <section className="py-[120px] bg-surface-container-lowest">
+        <section className="py-[120px] bg-[#EEF1F4]">
           <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16">
               <div className="max-w-2xl">
@@ -252,7 +243,7 @@ export default function HomePage() {
         </section>
 
         {/* Take Action: Impact Pathways */}
-        <section className="py-[120px] bg-surface-container-lowest">
+        <section className="py-[120px] bg-[#091821]">
           <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
             <div className="text-center mb-20">
               <span className="text-secondary font-label-caps uppercase tracking-widest mb-4 block">Take Action</span>
@@ -298,7 +289,7 @@ export default function HomePage() {
         </section>
 
         {/* Impact Proof: Visible Results */}
-        <section className="py-24 bg-background relative" style={{borderTop: '1px solid rgba(255,255,255,0.06)'}}>
+        <section className="py-24 bg-[#EEF1F4]" style={{borderTop: '1px solid rgba(255,255,255,0.06)'}}>
           <div className="absolute inset-0 bg-gradient-to-b from-primary-container/20 to-transparent opacity-50"></div>
           <div className="relative z-10 container mx-auto px-4 md:px-8 max-w-[1440px]">
             <div className="text-center mb-12">
@@ -422,7 +413,7 @@ export default function HomePage() {
         </section>
 
         {/* Trust Layer: Built On Trust */}
-        <section className="py-24 relative" style={{background: '#071120', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)'}}>
+        <section className="py-24 relative bg-[#091821]" style={{borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)'}}>
           <div className="absolute inset-0 bg-gradient-to-b from-primary-container/30 to-transparent opacity-50"></div>
           <div className="relative z-10 container mx-auto px-4 md:px-8 max-w-[1440px]">
             <div className="flex flex-col lg:flex-row gap-7 items-center">
@@ -487,7 +478,7 @@ export default function HomePage() {
         </section>
 
         {/* Impact Stories: Masonry Grid */}
-        <section className="py-[120px]">
+        <section className="py-[120px] bg-[#EEF1F4]">
           <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
             <div className="text-center mb-20">
               <span className="text-secondary font-label-caps uppercase tracking-widest mb-4 block">Faces of Change</span>
