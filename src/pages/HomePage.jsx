@@ -274,87 +274,94 @@ export default function HomePage() {
         </section>
 
         {/* Impact Proof: Visible Results - Funding */}
-        <section className="py-24 bg-[#dfe7df]" style={{borderTop: '1px solid rgba(255,255,255,0.06)'}}>
-          <div className="absolute inset-0 bg-gradient-to-b from-primary-container/20 to-transparent opacity-50"></div>
-          <div className="relative z-10 container mx-auto px-4 md:px-8 max-w-[1440px]">
-            <div className="text-center mb-12">
-              <span className="text-secondary font-label-caps uppercase tracking-widest mb-4 block">National Impact</span>
-              <h2 className="font-h2 text-[48px] text-white mb-4" style={{maxWidth: '760px'}}>Proof Of Movement. Visible To All.</h2>
-              <p className="font-body-lg text-on-surface-variant" style={{maxWidth: '720px', marginTop: '18px'}}>Transparent execution. Measurable delivery. Real communities changed through collective national action.</p>
+        <section className="pt-[130px] pb-[130px] bg-[#EEF3EC]">
+          <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
+            <div className="text-center mb-[90px]">
+              <span className="text-[#16A34A] font-bold uppercase tracking-[0.18em] text-[13px] mb-[22px] block">National Impact</span>
+              <h2 className="font-h2 text-[clamp(60px,7vw,92px)] text-[#0B2D4D] mb-[34px] leading-[0.94] tracking-[-0.04em] font-extrabold" style={{maxWidth: '860px', marginInline: 'auto'}}>Proof Of Movement. Visible To All.</h2>
+              <p className="font-body-lg text-[#5D6A76] text-[22px] leading-[1.7]" style={{maxWidth: '760px', marginInline: 'auto'}}>Transparent execution. Measurable delivery. Real communities changed through collective national action.</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px] mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[34px]">
               {/* Card 1: Projects Delivered */}
-              <div className="glass-card rounded-3xl p-7 hover:bg-surface-container-high transition-all duration-220 hover:-translate-y-1" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.15)', minHeight: '320px'}}>
-                <div className="w-12 h-12 rounded-xl bg-secondary-container/30 flex items-center justify-center mb-6">
-                  <Construction className="w-8 h-8 text-secondary" />
+              <div className="rounded-[30px] p-[38px] flex flex-col" style={{background: 'linear-gradient(180deg, #0B2D4D 0%, #123D63 100%)', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 28px 80px rgba(5,22,38,0.20)', minHeight: '520px', position: 'relative', overflow: 'hidden'}}>
+                <div className="absolute top-0 right-0 w-64 h-64 rounded-full" style={{background: 'radial-gradient(circle, rgba(212,175,55,0.10) 0%, transparent 70%)', filter: 'blur(40px)'}}></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 rounded-[18px] bg-white/[0.08] flex items-center justify-center mb-[34px]" style={{border: '1px solid rgba(255,255,255,0.12)'}}>
+                    <Construction className="w-7 h-7 text-[#D4AF37]" />
+                  </div>
+                  <h3 className="font-h3 text-[42px] text-white mb-[26px] leading-[1.05] tracking-[-0.02em] font-extrabold">Projects Delivered</h3>
+                  <div className="mb-[18px]">
+                    <span className="text-[54px] text-[#D4AF37] font-extrabold leading-none">246</span>
+                  </div>
+                  <p className="text-[17px] text-white/70 leading-[1.7] mb-[30px]">Completed national initiatives</p>
+                  <ul className="space-y-[10px] text-[16px] text-white/86 leading-[1.95] font-medium mb-8">
+                    <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-[#22C55E]"></span>Roads & transport</li>
+                    <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-[#22C55E]"></span>Education upgrades</li>
+                    <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-[#22C55E]"></span>Energy access</li>
+                    <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-[#22C55E]"></span>Water infrastructure</li>
+                    <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-[#22C55E]"></span>Digital public services</li>
+                  </ul>
                 </div>
-                <h3 className="font-h3 text-xl mb-4 text-white">Projects Delivered</h3>
-                <div className="mb-4">
-                  <span className="font-stat-value text-4xl text-secondary">246</span>
-                </div>
-                <p className="text-on-surface-variant text-sm mb-6">Completed national initiatives</p>
-                <ul className="space-y-2 text-on-surface-variant text-sm mb-8">
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>Roads & transport</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>Education upgrades</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>Energy access</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>Water infrastructure</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>Digital public services</li>
-                </ul>
-                <Link to="/projects" className="flex items-center gap-2 text-secondary font-label-caps hover:text-secondary/80">
-                  View Projects <ArrowForward className="w-4 h-4" />
+                <Link to="/projects" className="mt-auto flex items-center gap-3 text-white font-bold uppercase tracking-[0.14em] text-[14px] group">
+                  View Projects <ArrowForward className="w-4 h-4 text-[#22C55E] group-hover:translate-x-[6px] transition-all" />
                 </Link>
               </div>
               {/* Card 2: Transparent Funding */}
-              <div className="glass-card rounded-3xl p-7 hover:bg-surface-container-high transition-all duration-220 hover:-translate-y-1" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.15)', minHeight: '320px'}}>
-                <div className="w-12 h-12 rounded-xl bg-secondary-container/30 flex items-center justify-center mb-6">
-                  <Verified className="w-8 h-8 text-secondary" />
+              <div className="rounded-[30px] p-[38px] flex flex-col" style={{background: 'linear-gradient(180deg, #0B2D4D 0%, #123D63 100%)', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 28px 80px rgba(5,22,38,0.20)', minHeight: '520px', position: 'relative', overflow: 'hidden'}}>
+                <div className="absolute top-0 right-0 w-64 h-64 rounded-full" style={{background: 'radial-gradient(circle, rgba(212,175,55,0.10) 0%, transparent 70%)', filter: 'blur(40px)'}}></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 rounded-[18px] bg-white/[0.08] flex items-center justify-center mb-[34px]" style={{border: '1px solid rgba(255,255,255,0.12)'}}>
+                    <Verified className="w-7 h-7 text-[#D4AF37]" />
+                  </div>
+                  <h3 className="font-h3 text-[42px] text-white mb-[26px] leading-[1.05] tracking-[-0.02em] font-extrabold">Transparent Funding</h3>
+                  <div className="mb-[18px]">
+                    <span className="text-[54px] text-[#D4AF37] font-extrabold leading-none">₦4.2B</span>
+                  </div>
+                  <p className="text-[17px] text-white/70 leading-[1.7] mb-[30px]">Publicly visible impact funding</p>
+                  <ul className="space-y-[10px] text-[16px] text-white/86 leading-[1.95] font-medium mb-8">
+                    <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-[#22C55E]"></span>Allocation visibility</li>
+                    <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-[#22C55E]"></span>Audit-ready records</li>
+                    <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-[#22C55E]"></span>Live contribution ledger</li>
+                    <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-[#22C55E]"></span>Public accountability</li>
+                    <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-[#22C55E]"></span>Project-level traceability</li>
+                  </ul>
                 </div>
-                <h3 className="font-h3 text-xl mb-4 text-white">Transparent Funding</h3>
-                <div className="mb-4">
-                  <span className="font-stat-value text-4xl text-secondary">₦4.2B</span>
-                </div>
-                <p className="text-on-surface-variant text-sm mb-6">Publicly visible impact funding</p>
-                <ul className="space-y-2 text-on-surface-variant text-sm mb-8">
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>Allocation visibility</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>Audit-ready records</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>Live contribution ledger</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>Public accountability</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>Project-level traceability</li>
-                </ul>
-<Link to="/transparency" className="flex items-center gap-2 text-secondary font-label-caps hover:text-secondary/80">
-                  Open Ledger <ArrowForward className="w-4 h-4" />
+                <Link to="/transparency" className="mt-auto flex items-center gap-3 text-white font-bold uppercase tracking-[0.14em] text-[14px] group">
+                  Open Ledger <ArrowForward className="w-4 h-4 text-[#22C55E] group-hover:translate-x-[6px] transition-all" />
                 </Link>
               </div>
               {/* Card 3: Lives Changed */}
-              <div className="glass-card rounded-3xl p-7 hover:bg-surface-container-high transition-all duration-220 hover:-translate-y-1" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.15)', minHeight: '320px'}}>
-                <div className="w-12 h-12 rounded-xl bg-secondary-container/30 flex items-center justify-center mb-6">
-                  <Diversity3 className="w-8 h-8 text-secondary" />
+              <div className="rounded-[30px] p-[38px] flex flex-col" style={{background: 'linear-gradient(180deg, #0B2D4D 0%, #123D63 100%)', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 28px 80px rgba(5,22,38,0.20)', minHeight: '520px', position: 'relative', overflow: 'hidden'}}>
+                <div className="absolute top-0 right-0 w-64 h-64 rounded-full" style={{background: 'radial-gradient(circle, rgba(212,175,55,0.10) 0%, transparent 70%)', filter: 'blur(40px)'}}></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 rounded-[18px] bg-white/[0.08] flex items-center justify-center mb-[34px]" style={{border: '1px solid rgba(255,255,255,0.12)'}}>
+                    <Diversity3 className="w-7 h-7 text-[#D4AF37]" />
+                  </div>
+                  <h3 className="font-h3 text-[42px] text-white mb-[26px] leading-[1.05] tracking-[-0.02em] font-extrabold">Lives Changed</h3>
+                  <div className="mb-[18px]">
+                    <span className="text-[54px] text-[#D4AF37] font-extrabold leading-none">18,420+</span>
+                  </div>
+                  <p className="text-[17px] text-white/70 leading-[1.7] mb-[30px]">Citizens actively participating</p>
+                  <ul className="space-y-[10px] text-[16px] text-white/86 leading-[1.95] font-medium mb-8">
+                    <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-[#22C55E]"></span>Volunteer stories</li>
+                    <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-[#22C55E]"></span>Community wins</li>
+                    <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-[#22C55E]"></span>Local chapter impact</li>
+                    <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-[#22C55E]"></span>Before / after snapshots</li>
+                    <li className="flex items-center gap-3"><span className="w-2 h-2 rounded-full bg-[#22C55E]"></span>Grassroots execution</li>
+                  </ul>
                 </div>
-                <h3 className="font-h3 text-xl mb-4 text-white">Lives Changed</h3>
-                <div className="mb-4">
-                  <span className="font-stat-value text-4xl text-secondary">18,420+</span>
-                </div>
-                <p className="text-on-surface-variant text-sm mb-6">Citizens actively participating</p>
-                <ul className="space-y-2 text-on-surface-variant text-sm mb-8">
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>Volunteer stories</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>Community wins</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>Local chapter impact</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>Before / after snapshots</li>
-                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>Grassroots execution</li>
-                </ul>
-                <Link to="/stories" className="flex items-center gap-2 text-secondary font-label-caps hover:text-secondary/80">
-                  Read Stories <ArrowForward className="w-4 h-4" />
+                <Link to="/stories" className="mt-auto flex items-center gap-3 text-white font-bold uppercase tracking-[0.14em] text-[14px] group">
+                  Read Stories <ArrowForward className="w-4 h-4 text-[#22C55E] group-hover:translate-x-[6px] transition-all" />
                 </Link>
               </div>
             </div>
-            {/* Lower Feature Strip */}
-            <div className="mt-8 glass-card rounded-3xl p-7 flex flex-col md:flex-row items-center justify-between gap-8" style={{background: 'rgba(0, 49, 83, 0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(212, 175, 55, 0.15)'}}>
-              <div className="flex-1">
-                <span className="text-secondary font-label-caps uppercase tracking-widest mb-2 block">National Signal</span>
-                <h3 className="font-h3 text-xl text-white mb-2">A movement measured in action — not noise.</h3>
-                <p className="text-on-surface-variant text-sm">Every project, every volunteer, every contribution, and every community result is visible, accountable, and tied to measurable national progress.</p>
+            <div className="mt-[52px] rounded-[34px] p-[52px] flex flex-col md:flex-row items-center justify-between gap-[40px]" style={{background: '#0B2D4D', boxShadow: '0 24px 70px rgba(7,22,37,0.18)'}}>
+              <div className="flex-1 mr-[40px]">
+                <span className="text-[#16A34A] font-bold uppercase tracking-[0.18em] text-[13px] mb-[18px] block">National Signal</span>
+                <h3 className="font-h3 text-[48px] text-white mb-[18px] leading-[1.08] font-extrabold">A movement measured in action — not noise.</h3>
+                <p className="text-[19px] text-white/70 leading-[1.75]" style={{maxWidth: '760px'}}>Every project, every volunteer, every contribution, and every community result is visible, accountable, and tied to measurable national progress.</p>
               </div>
-              <Link to="/impact" className="bg-secondary text-on-secondary px-8 py-4 rounded-full font-label-caps hover:brightness-110 transition-all whitespace-nowrap">
+              <Link to="/impact" className="bg-[#D4AF37] text-[#0B2D4D] px-[34px] py-[18px] rounded-[999px] font-bold uppercase tracking-[0.12em] text-[14px] hover:bg-[#E7BE45] hover:translate-y-[-2px] transition-all whitespace-nowrap" style={{boxShadow: '0 12px 28px rgba(212,175,55,0.28)'}}>
                 See National Impact
               </Link>
             </div>
