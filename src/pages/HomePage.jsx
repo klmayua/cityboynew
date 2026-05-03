@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero: Premium Static */}
-      <section className="relative h-[80vh] w-full overflow-hidden">
+      <section className="relative min-h-screen w-full overflow-hidden">
           <div className="absolute inset-0">
             <img 
               alt="Nigerian Metropolis" 
