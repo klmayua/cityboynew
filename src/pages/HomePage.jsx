@@ -556,29 +556,29 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="lg:w-[54%]" style={{width: '640px'}}>
-                <div className="bg-white rounded-[28px] p-[52px]" style={{border: '1px solid rgba(255,255,255,0.06)', boxShadow: '0 30px 80px rgba(0,0,0,0.18)'}}>
-                  <h4 className="text-[#082F49]/40 text-[13px] font-bold uppercase tracking-[0.14em] text-center mb-10">Global Compliance Partners</h4>
+                <div className="rounded-[32px] p-[48px]" style={{background: 'rgba(255,255,255,0.97)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.55)', boxShadow: '0 30px 80px rgba(0,0,0,0.12)'}}>
+                  <h4 className="text-[#7C93A8] text-[12px] font-bold uppercase tracking-[0.18em] text-center mb-[34px]">Independent Verification Framework</h4>
                   <div className="grid grid-cols-2 gap-[22px]">
-                    <div className="h-[86px] rounded-[18px] flex items-center gap-3 px-6 transition-all duration-200 hover:border-[#22C55E] hover:bg-[#F0FDF4]" style={{border: '1px solid #E2E8F0', background: '#F8FAFC'}}>
-                      <span className="w-[10px] h-[10px] rounded-full bg-[#22C55E]"></span>
-                      <span className="text-[#082F49] font-bold text-[16px]">AUDIT_X</span>
+                    <div className="min-h-[78px] rounded-[16px] flex items-center gap-3 px-6 transition-all duration-200 hover:-translate-y-[2px] hover:border-[rgba(22,163,74,0.28)]" style={{background: '#F7F9FB', border: '1px solid rgba(11,46,79,0.08)', boxShadow: '0 10px 28px rgba(0,0,0,0.06)'}}>
+                      <span className="w-2 h-2 rounded-full bg-[#16A34A]" style={{boxShadow: '0 0 12px rgba(22,163,74,0.35)'}}></span>
+                      <span className="text-[#0B2E4F] text-[15px] font-semibold tracking-[-0.01em]">Independent Audit Oversight</span>
                     </div>
-                    <div className="h-[86px] rounded-[18px] flex items-center gap-3 px-6 transition-all duration-200 hover:border-[#22C55E] hover:bg-[#F0FDF4]" style={{border: '1px solid #E2E8F0', background: '#F8FAFC'}}>
-                      <span className="w-[10px] h-[10px] rounded-full bg-[#22C55E]"></span>
-                      <span className="text-[#082F49] font-bold text-[16px]">GLOBE_TRUST</span>
+                    <div className="min-h-[78px] rounded-[16px] flex items-center gap-3 px-6 transition-all duration-200 hover:-translate-y-[2px] hover:border-[rgba(22,163,74,0.28)]" style={{background: '#F7F9FB', border: '1px solid rgba(11,46,79,0.08)', boxShadow: '0 10px 28px rgba(0,0,0,0.06)'}}>
+                      <span className="w-2 h-2 rounded-full bg-[#16A34A]" style={{boxShadow: '0 0 12px rgba(22,163,74,0.35)'}}></span>
+                      <span className="text-[#0B2E4F] text-[15px] font-semibold tracking-[-0.01em]">Public Accountability Ledger</span>
                     </div>
-                    <div className="h-[86px] rounded-[18px] flex items-center gap-3 px-6 transition-all duration-200 hover:border-[#22C55E] hover:bg-[#F0FDF4]" style={{border: '1px solid #E2E8F0', background: '#F8FAFC'}}>
-                      <span className="w-[10px] h-[10px] rounded-full bg-[#22C55E]"></span>
-                      <span className="text-[#082F49] font-bold text-[16px]">STAND_CERT</span>
+                    <div className="min-h-[78px] rounded-[16px] flex items-center gap-3 px-6 transition-all duration-200 hover:-translate-y-[2px] hover:border-[rgba(22,163,74,0.28)]" style={{background: '#F7F9FB', border: '1px solid rgba(11,46,79,0.08)', boxShadow: '0 10px 28px rgba(0,0,0,0.06)'}}>
+                      <span className="w-2 h-2 rounded-full bg-[#16A34A]" style={{boxShadow: '0 0 12px rgba(22,163,74,0.35)'}}></span>
+                      <span className="text-[#0B2E4F] text-[15px] font-semibold tracking-[-0.01em]">Third-Party Compliance Review</span>
                     </div>
-                    <div className="h-[86px] rounded-[18px] flex items-center gap-3 px-6 transition-all duration-200 hover:border-[#22C55E] hover:bg-[#F0FDF4]" style={{border: '1px solid #E2E8F0', background: '#F8FAFC'}}>
-                      <span className="w-[10px] h-[10px] rounded-full bg-[#22C55E]"></span>
-                      <span className="text-[#082F49] font-bold text-[16px]">NIG_PULSE</span>
+                    <div className="min-h-[78px] rounded-[16px] flex items-center gap-3 px-6 transition-all duration-200 hover:-translate-y-[2px] hover:border-[rgba(22,163,74,0.28)]" style={{background: '#F7F9FB', border: '1px solid rgba(11,46,79,0.08)', boxShadow: '0 10px 28px rgba(0,0,0,0.06)'}}>
+                      <span className="w-2 h-2 rounded-full bg-[#16A34A]" style={{boxShadow: '0 0 12px rgba(22,163,74,0.35)'}}></span>
+                      <span className="text-[#0B2E4F] text-[15px] font-semibold tracking-[-0.01em]">National Transparency Standard</span>
                     </div>
                   </div>
                   <div className="mt-9 pt-9 flex justify-center" style={{borderTop: '1px solid #E2E8F0'}}>
-                    <button className="h-[64px] w-[280px] bg-[#D4AF37] text-[#082F49] rounded-[999px] font-bold text-[15px] uppercase tracking-[0.08em] hover:bg-[#E6C55A] hover:translate-y-[-2px] transition-all" style={{boxShadow: '0 12px 30px rgba(212,175,55,0.28)'}}>
-                      View Audit Reports
+                    <button className="py-[18px] px-[42px] rounded-[999px] font-bold text-[15px] transition-all hover:-translate-y-[2px]" style={{background: 'linear-gradient(135deg,#D4AF37,#C89B2C)', color: '#0B2E4F', boxShadow: '0 12px 30px rgba(212,175,55,0.22)'}}>
+                      View Transparency Reports
                     </button>
                   </div>
                 </div>
