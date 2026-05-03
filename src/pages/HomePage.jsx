@@ -73,40 +73,40 @@ export default function HomePage() {
 
             {/* Metric Strip - Executive tiles */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-              <div className="bg-[#f8f8f5]/80 backdrop-blur-sm rounded-[18px] p-6 transition-all duration-200" style={{border: '1px solid rgba(8,38,58,0.1)', boxShadow: '0 4px 20px rgba(8,38,58,0.06)'}}>
-                <div className="w-10 h-10 rounded-lg bg-[#08263a]/8 flex items-center justify-center mb-4">
-                  <Groups className="w-5 h-5 text-[#08263a]" />
+              <div className="bg-[#082F49] rounded-[24px] p-6" style={{boxShadow: '0 18px 44px rgba(8,47,73,0.18)', border: '1px solid rgba(255,255,255,0.08)'}}>
+                <div className="w-[52px] h-[52px] rounded-[16px] bg-[rgba(212,175,55,0.14)] border border-[rgba(212,175,55,0.25)] flex items-center justify-center mb-4">
+                  <Groups className="w-6 h-6 text-[#D4AF37]" />
                 </div>
-                <div className="text-3xl font-h3 text-[#08263a] font-semibold mb-1">18,420+</div>
-                <div className="text-sm text-[#6b7a8a] tracking-wide">Volunteers Active</div>
+                <div className="text-[42px] text-white font-extrabold mb-1">18,420+</div>
+                <div className="text-[16px] text-white/72">Volunteers Active</div>
               </div>
-              <div className="bg-[#f8f8f5]/80 backdrop-blur-sm rounded-[18px] p-6 transition-all duration-200" style={{border: '1px solid rgba(8,38,58,0.1)', boxShadow: '0 4px 20px rgba(8,38,58,0.06)'}}>
-                <div className="w-10 h-10 rounded-lg bg-[#08263a]/8 flex items-center justify-center mb-4">
-                  <Public className="w-5 h-5 text-[#08263a]" />
+              <div className="bg-[#082F49] rounded-[24px] p-6" style={{boxShadow: '0 18px 44px rgba(8,47,73,0.18)', border: '1px solid rgba(255,255,255,0.08)'}}>
+                <div className="w-[52px] h-[52px] rounded-[16px] bg-[rgba(212,175,55,0.14)] border border-[rgba(212,175,55,0.25)] flex items-center justify-center mb-4">
+                  <Public className="w-6 h-6 text-[#D4AF37]" />
                 </div>
-                <div className="text-3xl font-h3 text-[#08263a] font-semibold mb-1">31</div>
-                <div className="text-sm text-[#6b7a8a] tracking-wide">States Activated</div>
+                <div className="text-[42px] text-white font-extrabold mb-1">31</div>
+                <div className="text-[16px] text-white/72">States Activated</div>
               </div>
-              <div className="bg-[#f8f8f5]/80 backdrop-blur-sm rounded-[18px] p-6 transition-all duration-200" style={{border: '1px solid rgba(8,38,58,0.1)', boxShadow: '0 4px 20px rgba(8,38,58,0.06)'}}>
-                <div className="w-10 h-10 rounded-lg bg-[#08263a]/8 flex items-center justify-center mb-4">
-                  <AccountBalance className="w-5 h-5 text-[#08263a]" />
+              <div className="bg-[#082F49] rounded-[24px] p-6" style={{boxShadow: '0 18px 44px rgba(8,47,73,0.18)', border: '1px solid rgba(255,255,255,0.08)'}}>
+                <div className="w-[52px] h-[52px] rounded-[16px] bg-[rgba(212,175,55,0.14)] border border-[rgba(212,175,55,0.25)] flex items-center justify-center mb-4">
+                  <AccountBalance className="w-6 h-6 text-[#D4AF37]" />
                 </div>
-                <div className="text-3xl font-h3 text-[#08263a] font-semibold mb-1">246</div>
-                <div className="text-sm text-[#6b7a8a] tracking-wide">Projects Live</div>
+                <div className="text-[42px] text-white font-extrabold mb-1">246</div>
+                <div className="text-[16px] text-white/72">Projects Live</div>
               </div>
-              <div className="bg-[#f8f8f5]/80 backdrop-blur-sm rounded-[18px] p-6 transition-all duration-200" style={{border: '1px solid rgba(8,38,58,0.1)', boxShadow: '0 4px 20px rgba(8,38,58,0.06)'}}>
-                <div className="w-10 h-10 rounded-lg bg-[#08263a]/8 flex items-center justify-center mb-4">
-                  <VolunteerActivism className="w-5 h-5 text-[#08263a]" />
+              <div className="bg-[#082F49] rounded-[24px] p-6" style={{boxShadow: '0 18px 44px rgba(8,47,73,0.18)', border: '1px solid rgba(255,255,255,0.08)'}}>
+                <div className="w-[52px] h-[52px] rounded-[16px] bg-[rgba(212,175,55,0.14)] border border-[rgba(212,175,55,0.25)] flex items-center justify-center mb-4">
+                  <VolunteerActivism className="w-6 h-6 text-[#D4AF37]" />
                 </div>
-                <div className="text-3xl font-h3 text-[#08263a] font-semibold mb-1">₦4.2B</div>
-                <div className="text-sm text-[#6b7a8a] tracking-wide">Impact Funded</div>
+                <div className="text-[42px] text-white font-extrabold mb-1">₦4.2B</div>
+                <div className="text-[16px] text-white/72">Impact Funded</div>
               </div>
-              <div className="bg-[#f8f8f5]/80 backdrop-blur-sm rounded-[18px] p-6 transition-all duration-200" style={{border: '1px solid rgba(8,38,58,0.1)', boxShadow: '0 4px 20px rgba(8,38,58,0.06)'}}>
-                <div className="w-10 h-10 rounded-lg bg-[#08263a]/8 flex items-center justify-center mb-4">
-                  <Verified className="w-5 h-5 text-[#08263a]" />
+              <div className="bg-[#082F49] rounded-[24px] p-6" style={{boxShadow: '0 18px 44px rgba(8,47,73,0.18)', border: '1px solid rgba(255,255,255,0.08)'}}>
+                <div className="w-[52px] h-[52px] rounded-[16px] bg-[rgba(212,175,55,0.14)] border border-[rgba(212,175,55,0.25)] flex items-center justify-center mb-4">
+                  <Verified className="w-6 h-6 text-[#D4AF37]" />
                 </div>
-                <div className="text-3xl font-h3 text-[#08263a] font-semibold mb-1">94%</div>
-                <div className="text-sm text-[#6b7a8a] tracking-wide">Trust Index</div>
+                <div className="text-[42px] text-white font-extrabold mb-1">94%</div>
+                <div className="text-[16px] text-white/72">Trust Index</div>
               </div>
             </div>
 
