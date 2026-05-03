@@ -120,8 +120,8 @@ export default function HomePage() {
                 See All
               </Link>
             </div>
-          </div>
-          {/* Micro Map Panel */}
+
+            {/* Micro Map Panel */}
           <div className="mt-9 grid grid-cols-1 lg:grid-cols-[7fr_3fr] gap-6">
             {/* Map Card */}
             <div className="bg-surface-container/40 backdrop-blur-md border border-white/[0.06] rounded-3xl p-6 min-h-[280px] flex items-center justify-center">
@@ -158,7 +158,8 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* National Impact Ticker */}
         <div className="bg-secondary py-3 overflow-hidden whitespace-nowrap border-y border-on-secondary/10">
