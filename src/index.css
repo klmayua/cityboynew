@@ -480,4 +480,23 @@ HERO MOTION SYSTEM - CINEMATIC & PREMIUM
     animation: none;
     opacity: 1;
   }
+  
+  /* Mobile Navigation Animations */
+  @keyframes slide-up {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 250ms ease-out forwards;
+  }
+  
+  /* Safe area padding for notched phones */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import { VolunteerActivism, AccountBalance, Analytics, AutoStories, Security } from '@material-symbols-svg/react/outlined'
+import BottomNav from './system/BottomNav'
 
 const footerLinks = {
   resources: [
@@ -140,28 +141,11 @@ export default function Layout() {
   return (
     <div className="min-h-screen flex flex-col bg-[#121414] overflow-x-hidden">
       <Navbar />
-      <main className="flex-1 pt-16 md:pt-20 pb-20 md:pb-0" role="main">
+<main className="flex-1 pt-16 md:pt-20 pb-0" role="main">
         <Outlet />
       </main>
       <Footer />
-      <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-[18px] py-3" aria-label="Mobile Navigation" role="navigation" style={{background: 'rgba(7, 17, 32, 0.90)', backdropFilter: 'blur(18px)', borderTop: '1px solid rgba(255,255,255,0.06)', borderRadius: '18px 18px 0 0', paddingBottom: 'env(safe-area-inset-bottom)'}}>
-        <Link to="/" className={`flex flex-col items-center justify-center min-w-[48px] py-1 ${location.pathname === '/' ? 'text-white' : 'text-white/72'}`}>
-          <AccountBalance className="w-6 h-6" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.08em]">Arena</span>
-        </Link>
-        <Link to="/impact" className={`flex flex-col items-center justify-center min-w-[48px] py-1 ${location.pathname === '/impact' ? 'text-white' : 'text-white/72'}`}>
-          <Analytics className="w-6 h-6" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.08em]">Pulse</span>
-        </Link>
-        <Link to="/stories" className={`flex flex-col items-center justify-center min-w-[48px] py-1 ${location.pathname === '/stories' ? 'text-white' : 'text-white/72'}`}>
-          <AutoStories className="w-6 h-6" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.08em]">Stories</span>
-        </Link>
-        <Link to="/donate" className={`flex flex-col items-center justify-center min-w-[48px] py-1 ${location.pathname === '/donate' ? 'text-white' : 'text-white/72'}`}>
-          <Security className="w-6 h-6" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.08em]">Vault</span>
-        </Link>
-      </nav>
+      <BottomNav />
     </div>
   )
 }
