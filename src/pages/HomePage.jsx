@@ -230,16 +230,6 @@ export default function HomePage() {
         {/* National Pulse: Sleek Card Band - Data visualization */}
         <section className="pt-[120px] pb-[140px] bg-[#F4F6F3]">
           <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-16">
-              <div className="max-w-2xl">
-                <span className="text-[#16A34A] font-bold uppercase tracking-[0.18em] text-[13px] mb-5 block">Real-Time Data</span>
-                <h2 className="font-h2 text-[clamp(56px,6vw,84px)] text-[#0B2D4D] mb-7 leading-[0.95] tracking-[-0.03em] font-extrabold">National Pulse</h2>
-                <p className="font-body-md text-[#526273] text-[22px] leading-[1.7] max-w-[720px] mb-[72px]">Monitoring the heartbeat of the federation through high-fidelity data streams and community sentiment indicators.</p>
-              </div>
-              <Link to="/impact" className="group flex items-center gap-3 text-[#0B2D4D] font-bold uppercase tracking-[0.14em] text-[14px] hover:translate-x-[6px] transition-all">
-                Full Data Dashboard <ArrowForward className="w-5 h-5 text-[#16A34A]" />
-              </Link>
-            </div>
             <div className="grid grid-cols-1 lg:grid-cols-10 gap-[36px]">
               {/* LEFT PRIMARY CARD - Deep Executive Navy */}
               <div className="lg:col-span-7 bg-[#0B2D4D] rounded-[28px] p-[36px]" style={{border: '1px solid rgba(255,255,255,0.06)', boxShadow: '0 30px 80px rgba(3,18,31,0.18)', height: '620px'}}>
