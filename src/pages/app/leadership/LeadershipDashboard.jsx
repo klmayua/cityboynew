@@ -75,7 +75,7 @@ function NigeriaMap() {
               <p className="text-white font-semibold">{selectedState}</p>
               <p className="text-gray-400 text-sm">{chapters.find(c => c.state === selectedState)?.members || 0} members</p>
             </div>
-            <button className="px-3 py-1.5 bg-[#D4AF37] text-black text-sm font-medium rounded-lg">
+            <button className="cursor-pointer px-3 py-1.5 bg-[#D4AF37] text-black text-sm font-medium rounded-lg">
               View Chapter
             </button>
           </div>
@@ -98,19 +98,13 @@ function ExecutiveDecisionPanel() {
         Executive Actions
       </h3>
       <div className="grid grid-cols-2 gap-3">
-        <button className="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/30 hover:bg-emerald-500/20 text-emerald-400 text-sm">
-          <DollarSign className="w-4 h-4 mb-1" />
-          Approve Funding
-        </button>
-        <button className="p-3 rounded-lg bg-blue-500/10 border border-blue-500/30 hover:bg-blue-500/20 text-blue-400 text-sm">
-          <Target className="w-4 h-4 mb-1" />
-          Launch Campaign
-        </button>
-        <button className="p-3 rounded-lg bg-purple-500/10 border border-purple-500/30 hover:bg-purple-500/20 text-purple-400 text-sm">
-          <MessageCircle className="w-4 h-4 mb-1" />
-          Issue Directive
-        </button>
-        <button className="p-3 rounded-lg bg-red-500/10 border border-red-500/30 hover:bg-red-500/20 text-red-400 text-sm">
+<button className="cursor-pointer p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/30 hover:bg-emerald-500/20 text-emerald-400 text-sm">
+          </button>
+          <button className="cursor-pointer p-3 rounded-lg bg-blue-500/10 border border-blue-500/30 hover:bg-blue-500/20 text-blue-400 text-sm">
+          </button>
+          <button className="cursor-pointer p-3 rounded-lg bg-purple-500/10 border border-purple-500/30 hover:bg-purple-500/20 text-purple-400 text-sm">
+          </button>
+          <button className="cursor-pointer p-3 rounded-lg bg-red-500/10 border border-red-500/30 hover:bg-red-500/20 text-red-400 text-sm">
           <Zap className="w-4 h-4 mb-1" />
           Emergency Mobilize
         </button>
@@ -147,7 +141,7 @@ function WarRoomScenarios() {
                 <p className="text-gray-500 text-xs capitalize">{scenario.status}</p>
               </div>
             </div>
-            <button className="px-3 py-1.5 bg-white/10 hover:bg-white/20 text-white text-xs rounded-lg">
+            <button className="cursor-pointer px-3 py-1.5 bg-white/10 hover:bg-white/20 text-white text-xs rounded-lg">
               Simulate
             </button>
           </div>

@@ -246,7 +246,7 @@ function LeftSidebar({ currentRole }) {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all ${
+                    className={`cursor-pointer flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all ${
                       isActive
                         ? 'bg-[#D4AF37]/10 text-[#D4AF37] border border-[#D4AF37]/30'
                         : 'text-gray-400 hover:text-white hover:bg-white/5'
@@ -305,7 +305,7 @@ function GlobalSearch() {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search missions, chapters, volunteers..."
-        className="w-80 pl-10 pr-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:border-[#D4AF37]/50"
+        className="cursor-text w-80 pl-10 pr-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:border-[#D4AF37]/50"
       />
     </div>
   )
@@ -330,7 +330,7 @@ function WorkspaceSwitcher({ currentRole }) {
     <div className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-2 px-3 py-2 bg-white/5 hover:bg-white/10 rounded-lg border border-white/10"
+        className="cursor-pointer flex items-center gap-2 px-3 py-2 bg-white/5 hover:bg-white/10 rounded-lg border border-white/10"
       >
         <config.icon className={`w-4 h-4 ${config.color}`} />
         <span className="text-white text-sm">{config.label}</span>
@@ -347,7 +347,7 @@ function WorkspaceSwitcher({ currentRole }) {
                 <button
                   key={role}
                   onClick={() => switchRole(role)}
-                  className={`w-full px-4 py-2.5 text-left flex items-center gap-2 hover:bg-white/5 ${role === currentRole ? 'bg-white/5' : ''}`}
+                  className={`cursor-pointer w-full px-4 py-2.5 text-left flex items-center gap-2 hover:bg-white/5 ${role === currentRole ? 'bg-white/5' : ''}`}
                 >
                   <RoleIcon className={`w-4 h-4 ${cfg.color}`} />
                   <span className="text-white text-sm">{cfg.label}</span>
@@ -485,7 +485,7 @@ function TopBar({ currentRole, title, sidebarOpen, setSidebarOpen }) {
           <button
             key={tab.path}
             onClick={() => navigate(tab.path)}
-            className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-white/5 rounded-md transition-all"
+            className="cursor-pointer px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-white/5 rounded-md transition-all"
           >
             {tab.label}
           </button>
