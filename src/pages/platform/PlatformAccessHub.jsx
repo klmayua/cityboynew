@@ -5,14 +5,14 @@ import { useIntelStore } from '../../store/intelStore'
 import { useCapitalStore } from '../../store/capitalStore'
 import { useMissionStore } from '../../store/missionStore'
 import { usePeopleStore } from '../../store/peopleStore'
-import { Cpu, Shield, Users, Heart, Wallet as WalletIcon, Building2, Eye, Lock, Zap, Activity, TrendingUp, Bell, Wallet } from 'lucide-react'
+import { Cpu, Shield, Users, Heart, Wallet as WalletIcon, Building2, Eye, Lock, Zap, Activity, TrendingUp, Bell } from 'lucide-react'
 
 const roles = [
   { id: 'leadership', label: 'Leadership', icon: Cpu, color: 'text-[#D4AF37]', desc: 'National Command' },
   { id: 'executive', label: 'Executive', icon: Shield, color: 'text-blue-400', desc: 'Strategic Ops' },
   { id: 'chapter', label: 'Chapter', icon: Users, color: 'text-emerald-400', desc: 'Local Lead' },
   { id: 'volunteer', label: 'Volunteer', icon: Heart, color: 'text-rose-400', desc: 'Field Force' },
-  { id: 'donor', label: 'Donor', icon: Wallet, color: 'text-green-400', desc: 'Funders' },
+  { id: 'donor', label: 'Donor', icon: WalletIcon, color: 'text-green-400', desc: 'Funders' },
   { id: 'partner', label: 'Partner', icon: Building2, color: 'text-purple-400', desc: 'Allies' },
   { id: 'intelligence', label: 'Intelligence', icon: Eye, color: 'text-cyan-400', desc: 'Analytics' },
   { id: 'admin', label: 'Admin', icon: Lock, color: 'text-red-400', desc: 'System' },
@@ -120,33 +120,21 @@ export default function PlatformAccessHub() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-5 gap-8 mb-12">
             <div className="md:col-span-3">
-              <div className="flex items-center gap-2 mb-3">
+              <div className="flex items-center gap-2 mb-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                 <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-medium">National Civic Execution Infrastructure</span>
               </div>
-              <h1 className="font-h1 text-4xl md:text-5xl text-white mb-2 tracking-tight">
+              <h1 className="font-h1 text-3xl md:text-4xl text-white mb-1 tracking-tight font-bold">
                 CITYBOY Command Center
               </h1>
-              <p className="text-lg text-gray-400 mb-3">
-                Nigeria's Civic Operating System
-              </p>
-              <p className="text-sm text-gray-500 mb-6">Command • Capital • Execution</p>
-              <p className="text-gray-300 mb-6 max-w-md">
-                Built for leadership, chapters, partners, intelligence and field force coordination.
-              </p>
-              <div className="flex flex-wrap gap-5 mb-6">
-                <div className="flex items-center gap-2 text-gray-400">
-                  <Zap className="w-4 h-4 text-emerald-400" />
-                  <span className="text-sm">Real-time mission coordination</span>
-                </div>
-                <div className="flex items-center gap-2 text-gray-400">
-                  <WalletIcon className="w-4 h-4 text-[#D4AF37]" />
-                  <span className="text-sm">Capital routing infrastructure</span>
-                </div>
-                <div className="flex items-center gap-2 text-gray-400">
-                  <Eye className="w-4 h-4 text-cyan-400" />
-                  <span className="text-sm">National execution intelligence</span>
-                </div>
+              <p className="text-base text-gray-400 mb-2">National civic coordination OS</p>
+              <p className="text-sm text-gray-500 font-medium mb-4">Command • Capital • Execution</p>
+              <div className="flex flex-wrap gap-3 mb-6">
+                <span className="text-sm text-gray-300">⚡ Mission Control</span>
+                <span className="text-sm text-gray-500">|</span>
+                <span className="text-sm text-gray-300">◉ Capital Routing</span>
+                <span className="text-sm text-gray-500">|</span>
+                <span className="text-sm text-gray-300">◉ Execution Intelligence</span>
               </div>
               <div className="flex items-center gap-4">
                 <button className="px-6 py-3 bg-[#D4AF37] hover:bg-[#B8962E] text-black font-semibold rounded-lg transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-[#D4AF37]/20">
