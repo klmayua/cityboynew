@@ -7,8 +7,8 @@ import {
   Zap
 } from 'lucide-react'
 import { useCallback } from 'react'
-import { useGlobalCommandBus } from '../../store/globalCommandBus'
-import { useExecutionEngine } from '../../store/executionEngineStore'
+import { useSystemStore } from '../../store/systemStore'
+import { useCapitalStore } from '../../store/capitalStore'
 
 const actions = [
   {title:'Broadcast Order',icon:Send,type:'broadcast'},
@@ -20,13 +20,18 @@ const actions = [
 ]
 
 export default function QuickActionGrid(){
-  const execute = useGlobalCommandBus(s=>s.execute)
-  const enqueue = useExecutionEngine(s=>s.enqueue)
+  const notify = useSystemStore(s => s.notify)
+  const pushActivity = useSystemStore(s => s.pushActivity)
+  const allocateCapital = useCapitalStore(s => s.allocateCapital)
 
   const handleAction = useCallback((item) => {
-    execute(item)
-    enqueue({ title: item.title, type: item.type, priority: 'normal' })
-  }, [execute, enqueue])
+    notify('info', item.title + ' executed')
+    pushActivity(item.type, 'Command', item.title)
+    
+    if (item.type === 'capital') {
+      allocateCapital('New Allocation', '₦100M')
+    }
+  }, [notify, pushActivity, allocateCapital])
 
   return (
     <section className="rounded-3xl border border-white/10 bg-white/[0.03] p-4 md:p-6 backdrop-blur-xl">

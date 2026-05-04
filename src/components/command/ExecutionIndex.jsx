@@ -1,8 +1,12 @@
 import { Zap } from 'lucide-react'
-import { useOpsStore } from '../../store/opsStore'
+import { useMissionStore } from '../../store/missionStore'
 
 export default function ExecutionIndex(){
-  const rate = useOpsStore(s=>s.executionRate)
+  const missions = useMissionStore(s => s.missions)
+  const getMissionStats = useMissionStore(s => s.getMissionStats)
+  const stats = getMissionStats()
+  
+  const activeRate = stats.total > 0 ? Math.round((stats.active / stats.total) * 100) : 0
 
   return (
     <section className="rounded-3xl border border-violet-400/10 bg-violet-400/[0.03] p-6 min-h-[340px] backdrop-blur-xl">
@@ -11,7 +15,7 @@ export default function ExecutionIndex(){
         <h3 className="text-white font-semibold">Execution Index</h3>
       </div>
 
-      <div className="text-5xl font-bold text-white">{rate}%</div>
+      <div className="text-5xl font-bold text-white">{activeRate}%</div>
       <div className="text-white/50 mt-2">Operational Velocity</div>
     </section>
   )

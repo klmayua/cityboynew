@@ -10,22 +10,28 @@ import {
   Settings
 } from 'lucide-react'
 import { useRouterStore } from '../../store/routerStore'
-
-const items = [
-  {id:'overview',icon:LayoutDashboard,label:'Overview'},
-  {id:'capital',icon:Landmark,label:'Capital'},
-  {id:'operations',icon:Shield,label:'Operations'},
-  {id:'citizens',icon:Users,label:'Citizens'},
-  {id:'media',icon:Radio,label:'Media'},
-  {id:'oracle',icon:Brain,label:'Oracle'},
-  {id:'automation',icon:Bot,label:'Automation'},
-  {id:'execution',icon:Play,label:'Execution'},
-  {id:'admin',icon:Settings,label:'Admin'}
-]
+import { useSystemStore } from '../../store/systemStore'
+import { useCapitalStore } from '../../store/capitalStore'
+import { useMissionStore } from '../../store/missionStore'
 
 export default function CommandDock(){
   const active = useRouterStore(s=>s.activeSpace)
   const go = useRouterStore(s=>s.go)
+  const notifications = useSystemStore(s => s.notifications.length)
+  const allocations = useCapitalStore(s => s.allocations.length)
+  const missions = useMissionStore(s => s.missions.length)
+
+  const items = [
+    {id:'overview',icon:LayoutDashboard,label:'Overview', count: null},
+    {id:'capital',icon:Landmark,label:'Capital', count: allocations},
+    {id:'operations',icon:Shield,label:'Operations', count: missions},
+    {id:'citizens',icon:Users,label:'Citizens', count: null},
+    {id:'media',icon:Radio,label:'Media', count: null},
+    {id:'oracle',icon:Brain,label:'Oracle', count: notifications},
+    {id:'automation',icon:Bot,label:'Automation', count: null},
+    {id:'execution',icon:Play,label:'Execution', count: null},
+    {id:'admin',icon:Settings,label:'Admin', count: null}
+  ]
 
   return (
     <aside className="sticky top-4 h-fit rounded-3xl border border-white/10 bg-white/[0.03] p-3 backdrop-blur-xl">
@@ -47,6 +53,9 @@ export default function CommandDock(){
             >
               <Icon size={18}/>
               <span>{item.label}</span>
+              {item.count !== null && item.count > 0 && (
+                <span className="ml-auto text-xs bg-gold/20 text-gold px-1.5 py-0.5 rounded">{item.count}</span>
+              )}
             </button>
           )
         })}

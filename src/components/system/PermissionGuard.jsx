@@ -1,12 +1,12 @@
-import { useAccessStore } from '../../store/accessStore'
+import { useAuthStore } from '../../store/authStore'
 
 export default function PermissionGuard({
   permission,
   fallback=null,
   children
 }){
-  const can=useAccessStore(s=>s.can)
-  return can(permission)
+  const hasPermission = useAuthStore(s => s.hasPermission)
+  return hasPermission(permission)
     ? children
     : fallback
 }

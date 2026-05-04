@@ -1,17 +1,20 @@
 import { useEffect, useState } from 'react'
-import { Activity, Heart, Users, Droplets, TrendingUp, Radio } from 'lucide-react'
+import { Activity, Heart, Users, Droplets, TrendingUp, Radio, DollarSign, Target } from 'lucide-react'
+import { useSystemStore } from '../../store/systemStore'
 
-const tickerItems = [
-  { icon: Heart, label: 'New Volunteer', value: '+42 Lagos', type: 'positive' },
-  { icon: Droplets, label: 'Donation', value: '₦500K anonymous', type: 'neutral' },
-  { icon: Users, label: 'Chapter Active', value: 'Abuja Metro', type: 'positive' },
-  { icon: TrendingUp, label: 'Project Milestone', value: 'Clean Water 90%', type: 'positive' },
-  { icon: Activity, label: 'Alerts', value: '2 new', type: 'warning' },
-  { icon: Radio, label: 'Signal', value: 'All systems nominal', type: 'positive' },
-]
+const iconMap = {
+  donation_received: DollarSign,
+  mission_completed: Target,
+  volunteer_assigned: Users,
+  funding_approved: DollarSign,
+  notification: Activity,
+  default: Activity
+}
 
 export default function WarTicker({ variant = 'default' }) {
   const [activeIndex, setActiveIndex] = useState(0)
+  const activityFeed = useSystemStore(s => s.activityFeed)
+  const notifications = useSystemStore(s => s.notifications)
 
   const variantStyles = {
     default: { blur: 'blur(18px)', height: 'h-12' },
@@ -21,14 +24,36 @@ export default function WarTicker({ variant = 'default' }) {
 
   const styles = variantStyles[variant] || variantStyles.default
 
+  const allItems = [
+    ...notifications.filter(n => !n.read).map(n => ({
+      icon: Activity,
+      label: 'Alert',
+      value: n.message?.slice(0, 30),
+      type: n.type === 'warning' ? 'warning' : 'positive'
+    })),
+    ...activityFeed.slice(0, 5).map(a => {
+      const Icon = iconMap[a.action] || iconMap.default
+      return {
+        icon: Icon,
+        label: a.action.replace('_', ' '),
+        value: a.target || a.actor,
+        type: a.action.includes('completed') ? 'positive' : 'neutral'
+      }
+    })
+  ]
+
+  const displayItems = allItems.length > 0 ? allItems : [
+    { icon: Activity, label: 'Systems', value: 'Nominal', type: 'positive' }
+  ]
+
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % tickerItems.length)
+      setActiveIndex((prev) => (prev + 1) % displayItems.length)
     }, variant === 'warroom' ? 2500 : 3500)
     return () => clearInterval(interval)
-  }, [variant])
+  }, [variant, displayItems.length])
 
-  const item = tickerItems[activeIndex]
+  const item = displayItems[activeIndex]
 
   return (
     <div className="sticky top-0 z-[60] border-b border-white/8">
@@ -78,7 +103,7 @@ export default function WarTicker({ variant = 'default' }) {
         </div>
 
         <div className="hidden md:flex items-center gap-2">
-          {tickerItems.slice(0, 5).map((_, i) => (
+          {displayItems.slice(0, 5).map((_, i) => (
             <div 
               key={i} 
               className={`h-1.5 rounded-full transition-all duration-300 ${

@@ -1,8 +1,8 @@
 import { BarChart3 } from 'lucide-react'
-import { useOracleStore } from '../../store/oracleStore'
+import { useIntelStore } from '../../store/intelStore'
 
 export default function PredictionGrid(){
-  const scenarios = useOracleStore(s=>s.scenarios)
+  const forecasts = useIntelStore(s => s.forecasts)
 
   return (
     <section className="rounded-3xl border border-blue-300/10 bg-blue-300/[0.03] p-6 min-h-[320px] backdrop-blur-xl">
@@ -11,7 +11,7 @@ export default function PredictionGrid(){
         <h3 className="text-white font-semibold">Prediction Grid</h3>
       </div>
 
-      <div className="text-5xl font-bold text-white">{scenarios}</div>
+      <div className="text-5xl font-bold text-white">{forecasts.length}</div>
       <div className="text-white/50 mt-2">Live Scenarios</div>
     </section>
   )

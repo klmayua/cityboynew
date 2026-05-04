@@ -1,17 +1,36 @@
 import { Sparkles } from 'lucide-react'
-import { useCommandStore } from '../../store/commandStore'
-import { useCommandMemory } from '../../store/commandMemory'
-import { generateRecommendations } from '../../lib/brain'
+import { useIntelStore } from '../../store/intelStore'
+import { useSystemStore } from '../../store/systemStore'
 
 export default function SmartRecommendations() {
-  const store = useCommandStore()
-  const clickRecommendation = useCommandMemory(s => s.clickRecommendation)
-  const recommendationClicks = useCommandMemory(s => s.recommendationClicks)
+  const alerts = useIntelStore(s => s.alerts)
+  const forecasts = useIntelStore(s => s.forecasts)
+  const trends = useIntelStore(s => s.trends)
+  const notify = useSystemStore(s => s.notify)
 
-  const recommendations = generateRecommendations(store)
+  const recommendations = [
+    ...alerts.filter(a => a.type === 'critical').map(a => ({
+      id: 'alert-' + a.id,
+      title: a.title,
+      severity: 'high',
+      action: a.message
+    })),
+    ...forecasts.filter(f => f.confidence < 75).map(f => ({
+      id: 'forecast-' + f.metric,
+      title: f.metric + ' uncertain',
+      severity: 'medium',
+      action: 'Confidence: ' + f.confidence + '%'
+    })),
+    ...trends.filter(t => t.sentiment > 80).map(t => ({
+      id: 'trend-' + t.topic,
+      title: 'Opportunity: ' + t.topic,
+      severity: 'low',
+      action: 'Sentiment: ' + t.sentiment + '%'
+    }))
+  ].slice(0, 5)
 
   const handleClick = (rec) => {
-    clickRecommendation(rec.id)
+    notify('info', 'Recommendation: ' + rec.title)
   }
 
   return (
@@ -22,20 +41,17 @@ export default function SmartRecommendations() {
       </div>
 
       <div className="space-y-3">
-        {recommendations.map((rec) => {
-          const clicked = recommendationClicks.includes(rec.id)
-          return (
+        {recommendations.length === 0 ? (
+          <div className="text-white/50 text-sm py-4">No recommendations</div>
+        ) : (
+          recommendations.map((rec) => (
             <button
               key={rec.id}
               onClick={() => handleClick(rec)}
-              className={`w-full rounded-2xl border px-4 py-4 text-sm text-left transition-all ${
-                clicked 
-                  ? 'border-gold/30 bg-gold/10 text-white/60' 
-                  : 'border-white/[0.08] bg-white/[0.03] text-white/[0.85] hover:border-gold/30 hover:bg-white/[0.05]'
-              }`}
+              className="w-full rounded-2xl border border-white/[0.08] bg-white/[0.03] px-4 py-4 text-sm text-left transition-all hover:border-gold/30 hover:bg-white/[0.05]"
             >
               <div className="flex items-start justify-between gap-3">
-                <span>{rec.title}</span>
+                <span className="text-white/[0.85]">{rec.title}</span>
                 <span className={`text-xs px-2 py-0.5 rounded-full ${
                   rec.severity === 'high' ? 'bg-signal-red/20 text-signal-red' :
                   rec.severity === 'medium' ? 'bg-gold/20 text-gold' :
@@ -48,8 +64,8 @@ export default function SmartRecommendations() {
                 <div className="text-xs text-white/[0.5] mt-2">{rec.action}</div>
               )}
             </button>
-          )
-        })}
+          ))
+        )}
       </div>
     </section>
   )

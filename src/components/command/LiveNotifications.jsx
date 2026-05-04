@@ -1,5 +1,5 @@
 import { Bell, AlertCircle, CheckCircle, Info, AlertTriangle } from 'lucide-react'
-import { useGlobalCommandBus } from '../../store/globalCommandBus'
+import { useSystemStore } from '../../store/systemStore'
 
 const typeConfig = {
   success: { icon: CheckCircle, color: 'text-capital-green', bg: 'bg-capital-green/10' },
@@ -9,7 +9,7 @@ const typeConfig = {
 }
 
 export default function LiveNotifications(){
-  const notifications = useGlobalCommandBus(s=>s.notifications)
+  const notifications = useSystemStore(s => s.notifications)
 
   return (
     <section className="rounded-3xl border border-amber-300/10 bg-amber-300/[0.03] p-4 md:p-6 backdrop-blur-xl">
@@ -26,7 +26,7 @@ export default function LiveNotifications(){
       </div>
 
       <div className="space-y-2 max-h-[280px] overflow-y-auto pr-1">
-        {(notifications.length ? notifications : [{title:'No alerts', type:'info'}]).slice(0, 8).map((n,i)=>{
+        {(notifications.length ? notifications : [{message:'No alerts', type:'info'}]).slice(0, 8).map((n,i)=>{
           const config = typeConfig[n.type] || typeConfig.info
           const Icon = config.icon
           return (
@@ -37,10 +37,10 @@ export default function LiveNotifications(){
               <Icon className={`w-3.5 h-3.5 ${config.color} mt-0.5 flex-shrink-0`} />
               <div>
                 <div className="text-white text-xs font-medium leading-tight">
-                  {n.title}
+                  {n.message}
                 </div>
                 <div className="text-white/40 text-[10px] mt-1">
-                  {n.time}
+                  {n.timestamp?.slice(11, 16)}
                 </div>
               </div>
             </div>

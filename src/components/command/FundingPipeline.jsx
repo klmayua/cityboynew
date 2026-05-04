@@ -1,4 +1,4 @@
-const stages = ['Prospect', 'Warm', 'Active', 'Committed', 'Closed', 'Stewardship']
+import { useCapitalStore } from '../../store/capitalStore'
 
 const stageColors = {
   Prospect: 'border-white/20 text-white/60',
@@ -10,11 +10,22 @@ const stageColors = {
 }
 
 export default function FundingPipeline({ funding }) {
+  const allocations = useCapitalStore(s => s.allocations)
+  const transactions = useCapitalStore(s => s.transactions)
+
+  const pipelineItems = allocations.map(a => ({
+    id: a.id,
+    donor: a.mission,
+    amount: parseFloat(a.allocated.replace(/₦/g, '').replace(/M/g, '')) * 1000000,
+    stage: a.status === 'disbursed' ? 'Committed' : a.status === 'partial' ? 'Active' : 'Prospect',
+    probability: a.status === 'disbursed' ? 100 : a.status === 'partial' ? 75 : 25
+  }))
+
   return (
     <div className="bg-surface border border-white/8 rounded-3xl p-6">
       <h3 className="text-white font-semibold mb-4">Funding Pipeline</h3>
       <div className="space-y-3">
-        {funding.map((item) => (
+        {pipelineItems.map((item) => (
           <div
             key={item.id}
             className={`bg-surface-2 rounded-xl p-4 border-l-4 ${stageColors[item.stage]}`}

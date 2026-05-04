@@ -1,5 +1,5 @@
 import { Target, Users, Clock, MapPin, AlertCircle } from 'lucide-react'
-import { useOpsStore } from '../../store/opsStore'
+import { useMissionStore } from '../../store/missionStore'
 
 const priorityConfig = {
   critical: { color: 'text-signal-red', bg: 'bg-signal-red/10', label: 'CRITICAL' },
@@ -14,7 +14,9 @@ const statusConfig = {
 }
 
 export default function MissionControl(){
-  const { missions, activeUnits, completionRate, responseTime, volunteers } = useOpsStore()
+  const missions = useMissionStore(s => s.missions)
+  const getMissionStats = useMissionStore(s => s.getMissionStats)
+  const stats = getMissionStats()
   
   return (
     <section className="rounded-3xl border border-red-400/10 bg-gradient-to-br from-red-400/[0.04] to-red-400/[0.01] p-4 md:p-6 backdrop-blur-xl">
@@ -30,22 +32,22 @@ export default function MissionControl(){
       <div className="grid grid-cols-3 gap-2 md:gap-3 mb-4">
         <div className="rounded-xl bg-red-300/[0.06] border border-red-300/10 p-2 md:p-3 text-center">
           <div className="text-white/50 text-[10px]">Deployments</div>
-          <div className="text-white text-lg md:text-xl font-bold">{activeUnits}</div>
+          <div className="text-white text-lg md:text-xl font-bold">{stats.totalVolunteers}</div>
         </div>
         <div className="rounded-xl bg-red-300/[0.06] border border-red-300/10 p-2 md:p-3 text-center">
           <div className="text-white/50 text-[10px]">Success</div>
-          <div className="text-capital-green text-lg md:text-xl font-bold">{completionRate}%</div>
+          <div className="text-capital-green text-lg md:text-xl font-bold">{stats.completed}</div>
         </div>
         <div className="rounded-xl bg-red-300/[0.06] border border-red-300/10 p-2 md:p-3 text-center">
           <div className="text-white/50 text-[10px]">Response</div>
-          <div className="text-white text-lg md:text-xl font-bold">{responseTime}</div>
+          <div className="text-white text-lg md:text-xl font-bold">{stats.active}</div>
         </div>
       </div>
 
       <div className="space-y-2 max-h-[320px] overflow-y-auto pr-1">
         {missions.slice(0, 8).map(m => {
-          const priority = priorityConfig[m.priority] || priorityConfig.medium
           const status = statusConfig[m.status] || statusConfig.pending
+          const priority = m.category === 'Infrastructure' ? priorityConfig.high : priorityConfig.medium
           return (
             <div key={m.id} className="rounded-xl bg-white/[0.02] border border-white/5 p-3">
               <div className="flex items-start justify-between mb-2">
@@ -60,7 +62,7 @@ export default function MissionControl(){
               <div className="grid grid-cols-4 gap-2 text-[10px]">
                 <div className="flex items-center gap-1">
                   <MapPin className="w-3 h-3 text-white/40" />
-                  <span className="text-white/60">{m.state}</span>
+                  <span className="text-white/60">{m.states?.[0]}</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <Users className="w-3 h-3 text-white/40" />
@@ -68,7 +70,7 @@ export default function MissionControl(){
                 </div>
                 <div className="flex items-center gap-1">
                   <Clock className="w-3 h-3 text-white/40" />
-                  <span className="text-white/60">{m.due}</span>
+                  <span className="text-white/60">{m.endDate?.slice(5)}</span>
                 </div>
                 <div className="text-right">
                   <span className="text-command-blue">{m.progress}%</span>

@@ -28,6 +28,8 @@ const InitiativesPage = lazy(() => import('./pages/public/InitiativesPage'))
 const LeadershipPage = lazy(() => import('./pages/public/LeadershipPage'))
 const MediaPage = lazy(() => import('./pages/public/MediaPage'))
 
+const PlatformAccessHub = lazy(() => import('./pages/platform/PlatformAccessHub'))
+
 const AppVolunteerDashboard = lazy(() => import('./pages/app/volunteer/AppVolunteerDashboard'))
 const AppVolunteerTasks = lazy(() => import('./pages/app/volunteer/AppVolunteerTasks'))
 const AppVolunteerCommunity = lazy(() => import('./pages/app/volunteer/AppVolunteerCommunity'))
@@ -87,6 +89,8 @@ const AdminProjects = lazy(() => import('./pages/app/admin/AdminProjects'))
 const AdminPayments = lazy(() => import('./pages/app/admin/AdminPayments'))
 const AdminCompliance = lazy(() => import('./pages/app/admin/AdminCompliance'))
 
+const LeadershipDashboard = lazy(() => import('./pages/app/leadership/LeadershipDashboard'))
+
 const LoginPage = lazy(() => import('./pages/auth/LoginPage'))
 const RegisterPage = lazy(() => import('./pages/auth/RegisterPage'))
 const VerifyPage = lazy(() => import('./pages/auth/VerifyPage'))
@@ -125,8 +129,10 @@ function App() {
             <Route path="login" element={<LoginPage />} />
             <Route path="register" element={<RegisterPage />} />
             <Route path="verify" element={<VerifyPage />} />
+            <Route path="platform" element={<PlatformAccessHub />} />
+            <Route path="app/leadership" element={<LeadershipDashboard />} />
+            <Route path="app/leadership/:tab" element={<LeadershipDashboard />} />
             <Route path="app/volunteer" element={<AppVolunteerDashboard />} />
-            <Route path="app/volunteer/tasks" element={<AppVolunteerTasks />} />
             <Route path="app/volunteer/community" element={<AppVolunteerCommunity />} />
             <Route path="app/volunteer/rewards" element={<AppVolunteerRewards />} />
             <Route path="app/volunteer/training" element={<AppVolunteerTraining />} />
@@ -174,6 +180,12 @@ function App() {
             <Route path="app/admin/projects" element={<AdminProjects />} />
             <Route path="app/admin/payments" element={<AdminPayments />} />
             <Route path="app/admin/compliance" element={<AdminCompliance />} />
+            <Route path="app/leadership/kpis" element={<LeadershipDashboard />} />
+            <Route path="app/leadership/missions" element={<LeadershipDashboard />} />
+            <Route path="app/leadership/capital" element={<LeadershipDashboard />} />
+            <Route path="app/leadership/intel" element={<LeadershipDashboard />} />
+            <Route path="app/leadership/alerts" element={<LeadershipDashboard />} />
+            <Route path="app/leadership/sentiment" element={<LeadershipDashboard />} />
           </Route>
         </Routes>
       </Suspense>

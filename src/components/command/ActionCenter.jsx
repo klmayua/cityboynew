@@ -1,34 +1,30 @@
 import { Send, Shield, CheckCircle2 } from 'lucide-react'
-import { useActionStore } from '../../store/actionStore'
-import { useCommandMemory } from '../../store/commandMemory'
+import { useCapitalStore } from '../../store/capitalStore'
+import { useSystemStore } from '../../store/systemStore'
 
 export default function ActionCenter(){
-  const approveFunding =
-    useActionStore(s=>s.approveFunding)
-
-  const broadcast =
-    useActionStore(s=>s.broadcast)
-
-  const escalate =
-    useActionStore(s=>s.escalate)
-
-  const logAction =
-    useCommandMemory(s=>s.logAction)
+  const approveFunding = useCapitalStore(s => s.approveFunding)
+  const allocations = useCapitalStore(s => s.allocations)
+  const notify = useSystemStore(s => s.notify)
+  const logCommand = useSystemStore(s => s.logCommand)
 
   function run(type){
-    const payload = {
-      id: Date.now(),
-      ts: new Date().toISOString()
+    if(type==='approve') {
+      const pending = allocations.find(a => a.status === 'pending')
+      if (pending) {
+        approveFunding(pending.id)
+      } else {
+        notify('info', 'No pending allocations to approve')
+      }
+    }
+    if(type==='broadcast') {
+      notify('info', 'Broadcast command executed')
+    }
+    if(type==='escalate') {
+      notify('warning', 'Escalation command executed')
     }
 
-    if(type==='approve') approveFunding(payload)
-    if(type==='broadcast') broadcast(payload)
-    if(type==='escalate') escalate(payload)
-
-    logAction({
-      title:`Executed ${type} command`,
-      type:'command'
-    })
+    logCommand('Executed ' + type + ' command')
   }
 
   return (

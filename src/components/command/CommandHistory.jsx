@@ -1,5 +1,5 @@
 import { History, Play, CheckCircle, XCircle, Clock } from 'lucide-react'
-import { useGlobalCommandBus } from '../../store/globalCommandBus'
+import { useSystemStore } from '../../store/systemStore'
 
 const statusConfig = {
   running: { icon: Play, color: 'text-signal-orange', bg: 'bg-signal-orange/10', label: 'Running' },
@@ -9,14 +9,10 @@ const statusConfig = {
 }
 
 export default function CommandHistory(){
-  const logs = useGlobalCommandBus(s=>s.logs)
+  const commandHistory = useSystemStore(s => s.commandHistory)
 
   const formatTime = (timestamp) => {
-    const diff = Date.now() - timestamp
-    if (diff < 60000) return 'Just now'
-    if (diff < 3600000) return Math.floor(diff / 60000) + 'm ago'
-    if (diff < 86400000) return Math.floor(diff / 3600000) + 'h ago'
-    return Math.floor(diff / 86400000) + 'd ago'
+    return new Date(timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
   }
 
   return (
@@ -26,32 +22,30 @@ export default function CommandHistory(){
         <h3 className="text-white font-semibold text-sm md:text-base">
           Command Queue
         </h3>
-        {logs.length > 0 && (
+        {commandHistory.length > 0 && (
           <span className="ml-auto text-[10px] bg-cyan-300/20 text-cyan-200 px-2 py-0.5 rounded-full">
-            {logs.length} total
+            {commandHistory.length} total
           </span>
         )}
       </div>
 
       <div className="space-y-2 max-h-[280px] overflow-y-auto pr-1">
-        {(logs.length ? logs : [{title:'No executions', status:'queued'}]).slice(0, 10).map((log,i)=>{
-          const config = statusConfig[log.status] || statusConfig.queued
-          const Icon = config.icon
+        {(commandHistory.length ? commandHistory : [{command:'No executions', timestamp:Date.now()}]).slice(0, 10).map((log,i)=>{
           return (
             <div
               key={log.id || i}
               className="rounded-xl bg-white/[0.02] border border-white/5 px-3 py-2 flex items-center gap-2"
             >
-              <div className={`${config.color} flex-shrink-0`}>
-                <Icon className="w-3.5 h-3.5" />
+              <div className="text-command-blue flex-shrink-0">
+                <Play className="w-3.5 h-3.5" />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="text-white text-xs font-medium truncate">
-                  {log.title}
+                  {log.command}
                 </div>
               </div>
-              <div className={`text-[10px] ${config.color} flex-shrink-0`}>
-                {formatTime(log.at)}
+              <div className="text-[10px] text-white/50 flex-shrink-0">
+                {formatTime(log.timestamp)}
               </div>
             </div>
           )

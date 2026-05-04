@@ -1,5 +1,5 @@
 import { CheckCircle2, AlertTriangle, Info, Bell } from 'lucide-react'
-import { useCommandMemory } from '../../store/commandMemory'
+import { useSystemStore } from '../../store/systemStore'
 
 const iconMap = {
   success: CheckCircle2,
@@ -8,10 +8,9 @@ const iconMap = {
 }
 
 export default function NotificationCenter() {
-  const notifications = useCommandMemory(s => s.notifications)
-  const unreadCount = useCommandMemory(s => s.unreadCount)
-  const markNotificationRead = useCommandMemory(s => s.markNotificationRead)
-  const clearNotifications = useCommandMemory(s => s.clearNotifications)
+  const notifications = useSystemStore(s => s.notifications)
+  const markNotificationRead = useSystemStore(s => s.markNotificationRead)
+  const clearNotifications = useSystemStore(s => s.clearNotifications)
 
   const unread = notifications.filter(n => !n.read).length
 
@@ -49,8 +48,8 @@ export default function NotificationCenter() {
                 <div className="flex gap-3">
                   <Icon className="w-4 h-4 mt-0.5 text-gold flex-shrink-0" />
                   <div>
-                    <div className={`text-sm ${n.read ? 'text-white/[0.7]' : 'text-white'}`}>{n.title}</div>
-                    <div className="text-xs text-white/[0.35] mt-1">{n.time}</div>
+                    <div className={`text-sm ${n.read ? 'text-white/[0.7]' : 'text-white'}`}>{n.message}</div>
+                    <div className="text-xs text-white/[0.35] mt-1">{n.timestamp?.slice(11, 16)}</div>
                   </div>
                 </div>
               </button>

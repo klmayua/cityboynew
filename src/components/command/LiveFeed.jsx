@@ -1,9 +1,8 @@
 import { Radio } from 'lucide-react'
-import { useCommandMemory } from '../../store/commandMemory'
+import { useSystemStore } from '../../store/systemStore'
 
 export default function LiveFeed(){
-  const recent =
-    useCommandMemory(s=>s.recentActions)
+  const activityFeed = useSystemStore(s => s.activityFeed)
 
   return (
     <section className="rounded-3xl border border-red-500/10 bg-red-500/[0.03] p-6 min-h-[280px] sm:min-h-[320px] backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,.25)] transition-all duration-300 hover:border-gold/20">
@@ -15,13 +14,13 @@ export default function LiveFeed(){
       </div>
 
       <div className="space-y-3">
-        {recent.slice(0,6).map(item=>(
+        {activityFeed.slice(0,6).map(item=>(
           <div
             key={item.id}
             className="rounded-2xl bg-white/[0.03] px-4 py-3"
           >
             <div className="text-sm text-white">
-              {item.title}
+              {item.action.replace('_', ' ')}: {item.target}
             </div>
           </div>
         ))}
