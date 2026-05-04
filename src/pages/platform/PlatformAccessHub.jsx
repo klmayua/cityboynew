@@ -117,54 +117,101 @@ export default function PlatformAccessHub() {
   return (
     <div className="min-h-screen" style={{ background: 'linear-gradient(180deg, #07111A 0%, #0D2234 100%)' }}>
       <div className="container mx-auto px-4 py-12">
-        <div className="max-w-5xl mx-auto">
-          <div className="relative mb-16">
-            <div className="absolute inset-0 bg-[#D4AF37]/5 rounded-3xl blur-3xl"></div>
-            <div className="relative pt-20 pb-16 text-center">
-              <div className="flex items-center justify-center gap-2 mb-6">
-                <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse"></span>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-5 gap-8 mb-12">
+            <div className="md:col-span-3 pt-8">
+              <div className="flex items-center gap-2 mb-4">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                 <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-medium">National Civic Execution Infrastructure</span>
               </div>
-              <h1 className="font-h1 text-5xl md:text-6xl text-white mb-6 tracking-tight">
-                Enter CityBoy OS
+              <h1 className="font-h1 text-4xl md:text-5xl text-white mb-3 tracking-tight">
+                Nigeria's Civic Operating System
               </h1>
-              <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed mb-10">
-                The command layer connecting leadership, capital, chapters, partners, intelligence, and field execution in one operating system.
+              <p className="text-lg text-gray-400 mb-6">
+                Command • Capital • Execution
               </p>
-              <div className="flex items-center justify-center gap-8 mb-8">
+              <p className="text-gray-300 mb-8 max-w-md">
+                Built for leadership, chapters, partners, intelligence and field force coordination.
+              </p>
+              <div className="flex flex-wrap gap-6 mb-8">
                 <div className="flex items-center gap-2 text-gray-400">
                   <Zap className="w-4 h-4 text-emerald-400" />
                   <span className="text-sm">Real-time mission coordination</span>
                 </div>
-                <div className="w-px h-4 bg-white/20"></div>
                 <div className="flex items-center gap-2 text-gray-400">
-                  <Wallet className="w-4 h-4 text-[#D4AF37]" />
-                  <span className="text-sm">Treasury and capital routing</span>
+                  <WalletIcon className="w-4 h-4 text-[#D4AF37]" />
+                  <span className="text-sm">Capital routing infrastructure</span>
                 </div>
-                <div className="w-px h-4 bg-white/20"></div>
                 <div className="flex items-center gap-2 text-gray-400">
                   <Eye className="w-4 h-4 text-cyan-400" />
                   <span className="text-sm">National execution intelligence</span>
                 </div>
               </div>
-              <div className="flex items-center justify-center gap-4">
-                <button className="px-8 py-3 bg-[#D4AF37] hover:bg-[#B8962E] text-black font-semibold rounded-lg transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-[#D4AF37]/20">
+              <div className="flex items-center gap-4">
+                <button className="px-6 py-3 bg-[#D4AF37] hover:bg-[#B8962E] text-black font-semibold rounded-lg transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-[#D4AF37]/20">
                   ENTER COMMAND DEMO
                 </button>
-                <button className="px-8 py-3 bg-white/5 hover:bg-white/10 border border-white/20 text-white font-medium rounded-lg transition-all hover:bg-white/10">
+                <button className="px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/20 text-white font-medium rounded-lg transition-all hover:bg-white/10">
                   VIEW IMPACT MODEL
                 </button>
               </div>
             </div>
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/50 to-transparent"></div>
+
+            <div className="md:col-span-2">
+              <div className="glass-dark rounded-xl p-5 border border-[#D4AF37]/20 mb-4">
+                <h3 className="text-[#D4AF37] font-semibold mb-4 flex items-center gap-2">
+                  <Activity className="w-4 h-4" />
+                  National Operating Index
+                </h3>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="text-center p-3 rounded-lg bg-white/5">
+                    <div className="text-xl font-bold text-[#D4AF37]">₦12.8B</div>
+                    <div className="text-xs text-gray-400">Routed Capital</div>
+                  </div>
+                  <div className="text-center p-3 rounded-lg bg-white/5">
+                    <div className="text-xl font-bold text-emerald-400">128</div>
+                    <div className="text-xs text-gray-400">Active Missions</div>
+                  </div>
+                  <div className="text-center p-3 rounded-lg bg-white/5">
+                    <div className="text-xl font-bold text-blue-400">36</div>
+                    <div className="text-xs text-gray-400">Chapters</div>
+                  </div>
+                  <div className="text-center p-3 rounded-lg bg-white/5">
+                    <div className="text-xl font-bold text-cyan-400">8,240</div>
+                    <div className="text-xs text-gray-400">Field Volunteers</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="glass-dark rounded-xl p-4 border border-[#D4AF37]/20">
+                <h4 className="text-emerald-400 text-xs uppercase tracking-wider mb-3 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  LIVE NOW
+                </h4>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-sm text-gray-300">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400/60"></span>
+                    Kaduna water initiative active
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-300">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400/60"></span>
+                    MTN partnership onboarding
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-300">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400/60"></span>
+                    Kano chapter mobilization
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mt-12">
+<div className="grid md:grid-cols-3 gap-6">
             <div className="md:col-span-2">
-              <div className="glass-dark rounded-xl p-6 border border-[#D4AF37]/20 mb-6">
+              <div className="glass-dark rounded-xl p-6 border border-[#D4AF37]/20">
                 <h3 className="text-[#D4AF37] font-semibold mb-4 flex items-center gap-2">
                   <Zap className="w-4 h-4" />
-                  Quick Demo Access
+                  Explore Operating Layers
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   {demoUsers.map(user => {
@@ -187,7 +234,7 @@ export default function PlatformAccessHub() {
               <div className="glass-dark rounded-xl p-6 border border-[#D4AF37]/20">
                 <h3 className="text-[#D4AF37] font-semibold mb-4 flex items-center gap-2">
                   <Users className="w-4 h-4" />
-                  Select Role Access
+                  Launch Operational Workspace
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   {roles.map(role => {
