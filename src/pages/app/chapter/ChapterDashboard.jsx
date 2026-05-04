@@ -1,204 +1,135 @@
+import { useState } from 'react'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import CityBoyOSShell from '../../../layouts/CityBoyOSShell'
-import { useAuthStore } from '../../../store/authStore'
 import { usePeopleStore } from '../../../store/peopleStore'
 import { useMissionStore } from '../../../store/missionStore'
 import { useCapitalStore } from '../../../store/capitalStore'
 import { deriveKPIs } from '../../../lib/deriveKPIs'
-import {
-  Users, Map, Wallet, FileText, MessageCircle, Heart, UserPlus,
-  Calendar, Shield, Globe, ArrowRight, Filter, Plus
+import { 
+  Users, MapPin, TrendingUp, Target, Calendar, Clock,
+  Award, ChevronRight, Filter, Search, Plus,
+  Globe, Building2, Heart, MessageCircle, Settings, DollarSign
 } from 'lucide-react'
 
-function LocalKPIs() {
-  const chapters = usePeopleStore(s => s.chapters) || []
-  const volunteers = usePeopleStore(s => s.volunteers) || []
-
+function StatCard({ label, value, subtitle, icon: Icon, color }) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <div className="glass-dark rounded-xl p-4 border border-white/10">
-        <p className="text-gray-400 text-xs">Members</p>
-        <p className="text-2xl font-bold text-white">{chapters.reduce((sum, c) => sum + (c.members || 0), 0)}</p>
+    <div className="glass-dark rounded-xl p-4 border border-white/10">
+      <div className="flex items-center justify-between mb-2">
+        <p className="text-gray-400 text-xs">{label}</p>
+        <Icon className={`w-4 h-4 ${color}`} />
       </div>
-      <div className="glass-dark rounded-xl p-4 border border-white/10">
-        <p className="text-gray-400 text-xs">Active Volunteers</p>
-        <p className="text-2xl font-bold text-emerald-400">{volunteers.filter(v => v.status === 'active').length}</p>
-      </div>
-      <div className="glass-dark rounded-xl p-4 border border-white/10">
-        <p className="text-gray-400 text-xs">Pending Tasks</p>
-        <p className="text-2xl font-bold text-yellow-400">{12}</p>
-      </div>
-      <div className="glass-dark rounded-xl p-4 border border-white/10">
-        <p className="text-gray-400 text-xs">Budget Requests</p>
-        <p className="text-2xl font-bold text-[#D4AF37]">{5}</p>
-      </div>
+      <p className="text-xl font-bold text-white">{value}</p>
+      {subtitle && <p className="text-gray-500 text-xs mt-1">{subtitle}</p>}
     </div>
   )
 }
 
-function VolunteerRoster() {
-  const volunteers = usePeopleStore(s => s.volunteers) || []
-  const active = volunteers.filter(v => v.status === 'active').slice(0, 8)
+function ChapterCard({ chapter }) {
+  const navigate = useNavigate()
+  const statusColors = {
+    active: 'bg-emerald-500',
+    inactive: 'bg-gray-500',
+    suspended: 'bg-red-500',
+  }
 
   return (
-    <div className="glass-dark rounded-xl p-5 border border-white/10">
-      <h3 className="text-white font-semibold mb-4 flex items-center gap-2">
-        <Users className="w-4 h-4 text-[#D4AF37]" />
-        Volunteer Roster
-      </h3>
-      <div className="grid grid-cols-2 gap-3">
-        {active.map(v => (
-          <div key={v.id} className="flex items-center gap-3 p-2 rounded-lg bg-white/5">
-            <div className="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-semibold">
-              {v.name?.[0] || 'V'}
-            </div>
-            <div className="flex-1">
-              <p className="text-white text-sm">{v.name}</p>
-              <p className="text-gray-400 text-xs">{v.role}</p>
-            </div>
+    <button
+      onClick={() => navigate(`/app/chapter?state=${chapter.state}`)}
+      className="cursor-pointer w-full text-left p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-[#D4AF37]/30 transition-all"
+    >
+      <div className="flex items-start justify-between">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-full bg-[#D4AF37]/20 flex items-center justify-center">
+            <Globe className="w-5 h-5 text-[#D4AF37]" />
           </div>
-        ))}
-        {active.length === 0 && (
-          <p className="text-gray-500 col-span-2 text-center py-4">No volunteers</p>
-        )}
-      </div>
-    </div>
-  )
-}
-
-function MissionsBoard() {
-  const missions = useMissionStore(s => s.missions) || []
-  const active = missions.filter(m => m.status === 'active').slice(0, 4)
-
-  return (
-    <div className="glass-dark rounded-xl p-5 border border-white/10">
-      <h3 className="text-white font-semibold mb-4 flex items-center gap-2">
-        <Map className="w-4 h-4 text-emerald-400" />
-        Local Missions
-      </h3>
-      <div className="space-y-3">
-        {active.map(m => (
-          <div key={m.id} className="p-3 rounded-lg bg-white/5">
-            <div className="flex justify-between">
-              <p className="text-white text-sm">{m.title}</p>
-              <span className="text-emerald-400 text-xs">{m.progress}%</span>
-            </div>
-            <div className="w-full h-1.5 bg-white/10 rounded-full mt-2">
-              <div className="h-full bg-emerald-400 rounded-full" style={{ width: `${m.progress}%` }} />
-            </div>
+          <div>
+            <p className="text-white font-medium">{chapter.name}</p>
+            <p className="text-gray-400 text-sm">{chapter.state}</p>
           </div>
-        ))}
-        {active.length === 0 && (
-          <p className="text-gray-500 text-center py-4">No missions</p>
-        )}
-      </div>
-    </div>
-  )
-}
-
-function LocalTreasury() {
-  const allocations = useCapitalStore(s => s.allocations) || []
-
-  return (
-    <div className="glass-dark rounded-xl p-5 border border-white/10">
-      <h3 className="text-white font-semibold mb-4 flex items-center gap-2">
-        <Wallet className="w-4 h-4 text-[#D4AF37]" />
-        Local Treasury
-      </h3>
-      <div className="grid grid-cols-2 gap-4">
-        <div className="text-center p-4 rounded-lg bg-white/5">
-          <p className="text-gray-400 text-xs">Received</p>
-          <p className="text-xl font-bold text-white">₦24.5M</p>
         </div>
-        <div className="text-center p-4 rounded-lg bg-white/5">
-          <p className="text-gray-400 text-xs">Deployed</p>
-          <p className="text-xl font-bold text-emerald-400">₦18.2M</p>
+        <ChevronRight className="w-5 h-5 text-gray-500" />
+      </div>
+      <div className="flex items-center gap-4 mt-4">
+        <div className="flex items-center gap-1">
+          <Users className="w-3 h-3 text-gray-400" />
+          <span className="text-gray-400 text-xs">{chapter.members}</span>
         </div>
-      </div>
-      <div className="mt-4">
-        <p className="text-gray-400 text-xs mb-2">Pending Requests</p>
-        <div className="space-y-2">
-          {allocations.filter(a => a.status === 'pending').slice(0, 2).map(a => (
-            <div key={a.id} className="flex items-center justify-between p-2 rounded-lg bg-white/5">
-              <span className="text-white text-sm">{a.mission}</span>
-              <span className="text-yellow-400 text-sm">{a.allocated}</span>
-            </div>
-          ))}
+        <div className="flex items-center gap-1">
+          <MapPin className="w-3 h-3 text-gray-400" />
+          <span className="text-gray-400 text-xs">{chapter.leads?.length || 0} leads</span>
         </div>
+        <span className={`ml-auto px-2 py-0.5 rounded text-xs ${statusColors[chapter.status]}`}>
+          {chapter.status}
+        </span>
       </div>
-    </div>
+    </button>
   )
 }
 
-function EventsCalendar() {
-  const events = [
-    { title: 'Chapter Meeting', date: 'Tomorrow, 6PM' },
-    { title: 'Volunteer Training', date: 'Sat, 10AM' },
-    { title: 'Town Hall', date: 'Sun, 2PM' },
-  ]
+function ChapterDashboard() {
+  const navigate = useNavigate()
+  const { chapters, members } = usePeopleStore()
+  const kpis = deriveKPIs()
+  const [search, setSearch] = useState('')
 
-  return (
-    <div className="glass-dark rounded-xl p-5 border border-white/10">
-      <h3 className="text-white font-semibold mb-4 flex items-center gap-2">
-        <Calendar className="w-4 h-4 text-[#D4AF37]" />
-        Events Calendar
-      </h3>
-      <div className="space-y-3">
-        {events.map((e, i) => (
-          <div key={i} className="flex items-center gap-3 p-2 rounded-lg bg-white/5">
-            <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
-            <div>
-              <p className="text-white text-sm">{e.title}</p>
-              <p className="text-gray-400 text-xs">{e.date}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
+  const filteredChapters = chapters.filter(c => 
+    search ? c.name.toLowerCase().includes(search.toLowerCase()) || 
+          c.state.toLowerCase().includes(search.toLowerCase()) : true
   )
-}
 
-function QuickActions() {
-  return (
-    <div className="grid grid-cols-4 gap-3">
-      <button className="p-3 rounded-lg bg-white/5 border border-white/10 hover:border-[#D4AF37]/50 text-center">
-        <UserPlus className="w-5 h-5 text-emerald-400 mx-auto mb-1" />
-        <span className="text-white text-xs">Recruit</span>
-      </button>
-      <button className="p-3 rounded-lg bg-white/5 border border-white/10 hover:border-[#D4AF37]/50 text-center">
-        <Map className="w-5 h-5 text-purple-400 mx-auto mb-1" />
-        <span className="text-white text-xs">Mission</span>
-      </button>
-      <button className="p-3 rounded-lg bg-white/5 border border-white/10 hover:border-[#D4AF37]/50 text-center">
-        <Wallet className="w-5 h-5 text-[#D4AF37] mx-auto mb-1" />
-        <span className="text-white text-xs">Budget</span>
-      </button>
-      <button className="p-3 rounded-lg bg-white/5 border border-white/10 hover:border-[#D4AF37]/50 text-center">
-        <FileText className="w-5 h-5 text-blue-400 mx-auto mb-1" />
-        <span className="text-white text-xs">Report</span>
-      </button>
-    </div>
-  )
-}
-
-export default function LocalOperations() {
-  const { user } = useAuthStore()
+  const totalMembers = chapters.reduce((sum, c) => sum + c.members, 0)
+  const activeChapters = chapters.filter(c => c.status === 'active').length
 
   return (
-    <CityBoyOSShell role="chapter" title="Local Operations">
+    <CityBoyOSShell role="leadership" title="Chapters">
       <div className="mb-6">
-        <h1 className="text-2xl text-white font-semibold">Chapter Dashboard</h1>
-        <p className="text-gray-400">Welcome, {user?.name || 'Chapter Lead'}</p>
+        <h1 className="text-2xl text-white font-semibold">Chapter Network</h1>
+        <p className="text-gray-400">Manage chapters across Nigeria</p>
       </div>
 
-      <LocalKPIs />
-      <QuickActions />
-
-      <div className="grid md:grid-cols-2 gap-6 mt-6">
-        <VolunteerRoster />
-        <MissionsBoard />
-        <LocalTreasury />
-        <EventsCalendar />
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <StatCard label="Total Chapters" value={chapters.length} icon={Globe} color="text-[#D4AF37]" />
+        <StatCard label="Active Chapters" value={activeChapters} icon={Target} color="text-emerald-400" />
+        <StatCard label="Total Members" value={totalMembers.toLocaleString()} icon={Users} color="text-blue-400" />
+        <StatCard label="Chapters Lead" value={members.filter(m => m.role === 'Chapter Lead').length} icon={Award} color="text-purple-400" />
       </div>
+
+      <div className="glass-dark rounded-xl border border-white/10 p-4 mb-6">
+        <div className="flex items-center gap-4">
+          <div className="relative flex-1">
+            <Search className="w-4 h-4 text-gray-500 absolute left-3 top-1/2 -translate-y-1/2" />
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Search chapters by name or state..."
+              className="w-full cursor-text pl-10 pr-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white text-sm placeholder-gray-500"
+            />
+          </div>
+          <button 
+            onClick={() => navigate('/app/chapter?new=true')}
+            className="cursor-pointer flex items-center gap-2 px-4 py-2 bg-[#D4AF37] hover:bg-[#B8962E] text-black text-sm font-medium rounded-lg"
+          >
+            <Plus className="w-4 h-4" />
+            New Chapter
+          </button>
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {filteredChapters.map(chapter => (
+          <ChapterCard key={chapter.id} chapter={chapter} />
+        ))}
+      </div>
+
+      {filteredChapters.length === 0 && (
+        <div className="text-center py-12">
+          <Globe className="w-12 h-12 text-gray-600 mx-auto mb-4" />
+          <p className="text-gray-400">No chapters found</p>
+        </div>
+      )}
     </CityBoyOSShell>
   )
 }
+
+export default ChapterDashboard
