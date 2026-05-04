@@ -189,6 +189,19 @@ function App() {
           <Route path="app/leadership/intel" element={<LeadershipDashboard />} />
           <Route path="app/leadership/alerts" element={<LeadershipDashboard />} />
           <Route path="app/leadership/sentiment" element={<LeadershipDashboard />} />
+          <Route path="app/leadership/operations" element={<LeadershipDashboard />} />
+          <Route path="app/leadership/analytics" element={<LeadershipDashboard />} />
+          <Route path="app/leadership/people" element={<LeadershipDashboard />} />
+          <Route path="app/leadership/chapters" element={<ChapterDashboard />} />
+          <Route path="app/leadership/partners" element={<PartnerDashboard />} />
+          <Route path="app/leadership/community" element={<AppVolunteerCommunity />} />
+          <Route path="app/leadership/treasury" element={<WalletOverview />} />
+          <Route path="app/leadership/funding" element={<ExecutiveFunding />} />
+          <Route path="app/leadership/reports" element={<LeadershipDashboard />} />
+          <Route path="app/leadership/monitoring" element={<IntelligenceOSINT />} />
+          <Route path="app/leadership/documents" element={<LeadershipDashboard />} />
+          <Route path="app/leadership/messages" element={<CommsChats />} />
+          <Route path="app/leadership/settings" element={<AdminDashboard />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
