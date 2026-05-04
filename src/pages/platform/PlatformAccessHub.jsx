@@ -119,21 +119,22 @@ export default function PlatformAccessHub() {
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-5 gap-8 mb-12">
-            <div className="md:col-span-3 pt-8">
-              <div className="flex items-center gap-2 mb-4">
+            <div className="md:col-span-3">
+              <div className="flex items-center gap-2 mb-3">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                 <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-medium">National Civic Execution Infrastructure</span>
               </div>
-              <h1 className="font-h1 text-4xl md:text-5xl text-white mb-3 tracking-tight">
-                Nigeria's Civic Operating System
+              <h1 className="font-h1 text-4xl md:text-5xl text-white mb-2 tracking-tight">
+                CITYBOY Command Center
               </h1>
-              <p className="text-lg text-gray-400 mb-6">
-                Command • Capital • Execution
+              <p className="text-lg text-gray-400 mb-3">
+                Nigeria's Civic Operating System
               </p>
-              <p className="text-gray-300 mb-8 max-w-md">
+              <p className="text-sm text-gray-500 mb-6">Command • Capital • Execution</p>
+              <p className="text-gray-300 mb-6 max-w-md">
                 Built for leadership, chapters, partners, intelligence and field force coordination.
               </p>
-              <div className="flex flex-wrap gap-6 mb-8">
+              <div className="flex flex-wrap gap-5 mb-6">
                 <div className="flex items-center gap-2 text-gray-400">
                   <Zap className="w-4 h-4 text-emerald-400" />
                   <span className="text-sm">Real-time mission coordination</span>
