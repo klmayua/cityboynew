@@ -143,6 +143,38 @@ export default function PlatformAccessHub() {
                   VIEW IMPACT MODEL
                 </button>
               </div>
+
+              <div className="mt-6 grid grid-cols-4 gap-2">
+                <div className="text-center p-2 rounded-lg bg-white/[0.04] border border-white/5">
+                  <div className="text-base font-bold text-[#D4AF37]">₦12.8B</div>
+                  <div className="text-[10px] text-gray-500 uppercase tracking-wide">Capital</div>
+                </div>
+                <div className="text-center p-2 rounded-lg bg-white/[0.04] border border-white/5">
+                  <div className="text-base font-bold text-emerald-400">36h</div>
+                  <div className="text-[10px] text-gray-500 uppercase tracking-wide">Velocity</div>
+                </div>
+                <div className="text-center p-2 rounded-lg bg-white/[0.04] border border-white/5">
+                  <div className="text-base font-bold text-blue-400">36</div>
+                  <div className="text-[10px] text-gray-500 uppercase tracking-wide">Chapters</div>
+                </div>
+                <div className="text-center p-2 rounded-lg bg-white/[0.04] border border-white/5">
+                  <div className="text-base font-bold text-cyan-400">8,240</div>
+                  <div className="text-[10px] text-gray-500 uppercase tracking-wide">Force</div>
+                </div>
+              </div>
+
+              <div className="mt-4 bg-[#0A1520]/60 rounded-lg p-4 border border-[#D4AF37]/15">
+                <p className="text-sm text-white font-medium mb-1">Power national execution</p>
+                <p className="text-xs text-gray-500 mb-3">Partner capital, infrastructure, or chapter deployment with CITYBOY.</p>
+                <div className="flex items-center gap-3">
+                  <button className="px-4 py-2 bg-[#D4AF37] hover:bg-[#B8962E] text-black text-xs font-semibold rounded transition-all">
+                    Become a Partner
+                  </button>
+                  <button className="px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white text-xs font-medium rounded transition-all">
+                    Download Brief
+                  </button>
+                </div>
+              </div>
             </div>
 
             <div className="md:col-span-2">
