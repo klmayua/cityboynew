@@ -156,39 +156,39 @@ export default function PlatformAccessHub() {
             </div>
 
             <div className="md:col-span-2 space-y-[18px]">
-              <div className="bg-[#0A1520]/80 backdrop-blur-sm rounded-xl p-4 border border-[#D4AF37]/30 shadow-lg shadow-black/20">
+              <div className="bg-[#0D1A25] rounded-xl p-4 border border-[#D4AF37]/25">
                 <h3 className="text-[#D4AF37] font-semibold mb-3 flex items-center gap-2 text-sm">
                   <Activity className="w-4 h-4" />
                   National Operating Index
                 </h3>
                 <div className="grid grid-cols-2 gap-2">
-                  <div className="text-center p-2.5 rounded-lg bg-white/[0.06] border border-white/5">
-                    <div className="text-lg font-bold text-[#D4AF37]">₦12.8B</div>
-                    <div className="text-xs text-gray-500">Routed Capital</div>
+                  <div className="text-center p-2.5 rounded-lg bg-[#08161E]">
+                    <div className="text-xl font-extrabold text-[#D4AF37] tracking-tight">₦12.8B</div>
+                    <div className="text-[10px] text-gray-400 uppercase tracking-wider">Routed Capital</div>
                   </div>
-                  <div className="text-center p-2.5 rounded-lg bg-white/[0.06] border border-white/5">
-                    <div className="text-lg font-bold text-emerald-400">128</div>
-                    <div className="text-xs text-gray-500">Active Missions</div>
+                  <div className="text-center p-2.5 rounded-lg bg-[#08161E]">
+                    <div className="text-xl font-extrabold text-emerald-400 tracking-tight">128</div>
+                    <div className="text-[10px] text-gray-400 uppercase tracking-wider">Active Missions</div>
                   </div>
-                  <div className="text-center p-2.5 rounded-lg bg-white/[0.06] border border-white/5">
-                    <div className="text-lg font-bold text-blue-400">36</div>
-                    <div className="text-xs text-gray-500">Chapters</div>
+                  <div className="text-center p-2.5 rounded-lg bg-[#08161E]">
+                    <div className="text-xl font-extrabold text-blue-400 tracking-tight">36</div>
+                    <div className="text-[10px] text-gray-400 uppercase tracking-wider">Chapters</div>
                   </div>
-                  <div className="text-center p-2.5 rounded-lg bg-white/[0.06] border border-white/5">
-                    <div className="text-lg font-bold text-cyan-400">8,240</div>
-                    <div className="text-xs text-gray-500">Field Volunteers</div>
+                  <div className="text-center p-2.5 rounded-lg bg-[#08161E]">
+                    <div className="text-xl font-extrabold text-cyan-400 tracking-tight">8,240</div>
+                    <div className="text-[10px] text-gray-400 uppercase tracking-wider">Field Volunteers</div>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-[#0A1520]/80 backdrop-blur-sm rounded-xl p-4 border border-[#D4AF37]/20 shadow-lg shadow-black/10">
+              <div className="bg-[#0D1A25] rounded-xl p-4 border border-[#D4AF37]/15">
                 <h4 className="text-emerald-400 text-xs uppercase tracking-wider mb-2 flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                   LIVE NOW
                 </h4>
                 <div className="space-y-1.5">
                   <div className="flex items-center gap-2 text-sm text-gray-300">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400/60"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400/70"></span>
                     Kaduna water initiative active
                   </div>
                   <div className="flex items-center gap-2 text-sm text-gray-300">
