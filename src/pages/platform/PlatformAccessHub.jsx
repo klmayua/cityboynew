@@ -132,10 +132,10 @@ export default function PlatformAccessHub() {
                 <span>Command</span><span>•</span><span>Capital</span><span>•</span><span>Execution</span>
               </div>
               <div className="flex items-center gap-3 mb-4">
-                <button className="px-5 py-2.5 bg-[#D4AF37] hover:bg-[#B8962E] text-black font-semibold rounded-lg transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-[#D4AF37]/20">
+                <button onClick={() => navigate('/app/leadership')} className="cursor-pointer px-5 py-2.5 bg-[#D4AF37] hover:bg-[#B8962E] text-black font-semibold rounded-lg transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-[#D4AF37]/20">
                   ENTER COMMAND DEMO
                 </button>
-                <button className="px-5 py-2.5 bg-white/5 hover:bg-white/10 border border-white/20 text-white font-medium rounded-lg transition-all hover:bg-white/10">
+                <button onClick={() => navigate('/impact')} className="cursor-pointer px-5 py-2.5 bg-white/5 hover:bg-white/10 border border-white/20 text-white font-medium rounded-lg transition-all hover:bg-white/10">
                   VIEW IMPACT MODEL
                 </button>
               </div>
@@ -218,7 +218,7 @@ export default function PlatformAccessHub() {
                       <button
                         key={user.email}
                         onClick={() => handleDemoLogin(user.email, user.role)}
-                        className="p-2 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/5 hover:border-[#D4AF37]/40 transition-all text-left"
+                        className="cursor-pointer p-2 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/5 hover:border-[#D4AF37]/40 transition-all text-left"
                       >
                         <RoleIcon className="w-5 h-5 text-[#D4AF37] mb-1" />
                         <div className="text-white text-sm font-medium">{user.name}</div>
@@ -241,7 +241,7 @@ export default function PlatformAccessHub() {
                       <button
                         key={role.id}
                         onClick={() => handleRoleSelect(role.id)}
-                        className="p-2.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/5 hover:border-[#D4AF37]/40 transition-all text-center"
+                        className="cursor-pointer p-2.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/5 hover:border-[#D4AF37]/40 transition-all text-center"
                       >
                         <RoleIcon className={`w-5 h-5 ${role.color} mx-auto mb-1.5`} />
                         <div className="text-white text-sm font-medium">{role.label}</div>
