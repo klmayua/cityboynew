@@ -124,17 +124,16 @@ export default function PlatformAccessHub() {
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                 <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-medium">National Civic Execution Infrastructure</span>
               </div>
-              <h1 className="font-h1 text-2xl md:text-3xl text-white mb-1 tracking-tight font-bold">
-                <span className="text-[#D4AF37]">CITYBOY</span> <span className="text-white">Command Center</span>
+              <h1 className="font-h1 text-xl md:text-2xl text-white mb-1 tracking-tight font-bold">
+                <span className="text-[#D4AF37]">CITYBOY</span> OS
               </h1>
-              <p className="text-base text-gray-400 mb-2">National civic coordination OS</p>
-              <p className="text-sm text-gray-500 font-medium mb-4">Command • Capital • Execution</p>
-              <div className="flex flex-wrap gap-3 mb-6">
-                <span className="text-sm text-gray-300">⚡ Mission Control</span>
-                <span className="text-sm text-gray-500">|</span>
-                <span className="text-sm text-gray-300">◉ Capital Routing</span>
-                <span className="text-sm text-gray-500">|</span>
-                <span className="text-sm text-gray-300">◉ Execution Intelligence</span>
+              <p className="text-sm text-gray-400 mb-3">National civic operating system</p>
+              <div className="flex items-center gap-3 mb-4 text-xs text-gray-500">
+                <span>Command</span>
+                <span>•</span>
+                <span>Capital</span>
+                <span>•</span>
+                <span>Execution</span>
               </div>
               <div className="flex items-center gap-4">
                 <button className="px-6 py-3 bg-[#D4AF37] hover:bg-[#B8962E] text-black font-semibold rounded-lg transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-[#D4AF37]/20">
