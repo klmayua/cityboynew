@@ -92,6 +92,15 @@ function NigeriaMap() {
 }
 
 function ExecutiveDecisionPanel() {
+  const navigate = useNavigate()
+  
+  const actions = [
+    { id: 'approve', label: 'Approve Funding', icon: '✓', color: 'emerald', route: '/app/leadership/funding' },
+    { id: 'launch', label: 'Launch Campaign', icon: '▶', color: 'blue', route: '/app/command' },
+    { id: 'directive', label: 'Issue Directive', icon: '↗', color: 'purple', route: '/app/command/war-room' },
+    { id: 'emergency', label: 'Emergency Mobilize', icon: '⚡', color: 'red', route: '/app/command/mobilization' },
+  ]
+
   return (
     <div className="glass-dark rounded-xl p-5 border border-white/10">
       <h3 className="text-white font-semibold mb-4 flex items-center gap-2">
@@ -99,27 +108,28 @@ function ExecutiveDecisionPanel() {
         Executive Actions
       </h3>
       <div className="grid grid-cols-2 gap-3">
-<button className="cursor-pointer p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/30 hover:bg-emerald-500/20 text-emerald-400 text-sm">
+        {actions.map(action => (
+          <button 
+            key={action.id}
+            onClick={() => navigate(action.route)}
+            className={`cursor-pointer p-3 rounded-lg bg-${action.color}-500/10 border border-${action.color}-500/30 hover:bg-${action.color}-500/20 text-${action.color}-400 text-sm text-left flex flex-col gap-1`}
+          >
+            <span className="text-lg">{action.icon}</span>
+            <span>{action.label}</span>
           </button>
-          <button className="cursor-pointer p-3 rounded-lg bg-blue-500/10 border border-blue-500/30 hover:bg-blue-500/20 text-blue-400 text-sm">
-          </button>
-          <button className="cursor-pointer p-3 rounded-lg bg-purple-500/10 border border-purple-500/30 hover:bg-purple-500/20 text-purple-400 text-sm">
-          </button>
-          <button className="cursor-pointer p-3 rounded-lg bg-red-500/10 border border-red-500/30 hover:bg-red-500/20 text-red-400 text-sm">
-          <Zap className="w-4 h-4 mb-1" />
-          Emergency Mobilize
-        </button>
+        ))}
       </div>
     </div>
   )
 }
 
 function WarRoomScenarios() {
+  const navigate = useNavigate()
   const scenarios = [
-    { id: 1, name: 'Flood Response', status: 'ready', priority: 'high' },
-    { id: 2, name: 'Civil Unrest', status: 'standby', priority: 'critical' },
-    { id: 3, name: 'Election Support', status: 'planning', priority: 'medium' },
-    { id: 4, name: 'Health Campaign', status: 'active', priority: 'high' },
+    { id: 1, name: 'Flood Response', status: 'ready', priority: 'high', route: '/app/command/war-room' },
+    { id: 2, name: 'Civil Unrest', status: 'standby', priority: 'critical', route: '/app/command/war-room' },
+    { id: 3, name: 'Election Support', status: 'planning', priority: 'medium', route: '/app/command/war-room' },
+    { id: 4, name: 'Health Campaign', status: 'active', priority: 'high', route: '/app/command/war-room' },
   ]
 
   return (
@@ -142,7 +152,7 @@ function WarRoomScenarios() {
                 <p className="text-gray-500 text-xs capitalize">{scenario.status}</p>
               </div>
             </div>
-            <button className="cursor-pointer px-3 py-1.5 bg-white/10 hover:bg-white/20 text-white text-xs rounded-lg">
+            <button onClick={() => navigate(scenario.route)} className="cursor-pointer px-3 py-1.5 bg-white/10 hover:bg-white/20 text-white text-xs rounded-lg">
               Simulate
             </button>
           </div>
@@ -153,6 +163,7 @@ function WarRoomScenarios() {
 }
 
 function LiveNationalFeed() {
+  const navigate = useNavigate()
   const activity = useSystemStore(s => s.activityFeed) || []
   const recent = activity.slice(0, 8)
 
@@ -164,7 +175,11 @@ function LiveNationalFeed() {
       </h3>
       <div className="space-y-3 max-h-64 overflow-y-auto">
         {recent.map(item => (
-          <div key={item.id} className="flex items-start gap-3 p-2 rounded-lg hover:bg-white/5">
+          <div 
+            key={item.id} 
+            onClick={() => navigate('/app/command')}
+            className="cursor-pointer flex items-start gap-3 p-2 rounded-lg hover:bg-white/5"
+          >
             <div className="w-2 h-2 rounded-full bg-emerald-400 mt-1.5"></div>
             <div className="flex-1">
               <p className="text-white text-sm capitalize">{item.action?.replace(/_/g, ' ')}</p>
@@ -182,6 +197,10 @@ function LiveNationalFeed() {
 }
 
 function BoardReports() {
+  const handleDownload = (reportName) => {
+    alert(`Downloading: ${reportName}`)
+  }
+  
   const reports = [
     { id: 1, name: 'Weekly Executive Summary', format: 'PDF' },
     { id: 2, name: 'Treasury Position', format: 'XLS' },
@@ -197,7 +216,11 @@ function BoardReports() {
       </h3>
       <div className="space-y-2">
         {reports.map(report => (
-          <button key={report.id} className="w-full flex items-center justify-between p-3 rounded-lg bg-white/5 hover:bg-white/10 text-left">
+          <button 
+            key={report.id} 
+            onClick={() => handleDownload(report.name)}
+            className="cursor-pointer w-full flex items-center justify-between p-3 rounded-lg bg-white/5 hover:bg-white/10 text-left"
+          >
             <span className="text-white text-sm">{report.name}</span>
             <div className="flex items-center gap-2">
               <span className="text-gray-500 text-xs bg-white/10 px-2 py-0.5 rounded">{report.format}</span>
@@ -211,8 +234,24 @@ function BoardReports() {
 }
 
 function ApprovalQueue() {
-  const allocations = useCapitalStore(s => s.allocations) || []
-  const pending = allocations.filter(a => a.status === 'pending').slice(0, 4)
+  const navigate = useNavigate()
+  const { allocations, approveFunding } = useCapitalStore()
+  const setAllocations = useCapitalStore(s => s.setAllocations)
+
+  const pending = (allocations || []).filter(a => a.status === 'pending').slice(0, 4)
+
+  const handleApprove = (id) => {
+    const allocation = allocations.find(a => a.id === id)
+    if (allocation) {
+      approveFunding(id)
+    }
+  }
+
+  const handleDecline = (id) => {
+    setAllocations(allocations.map(a => 
+      a.id === id ? { ...a, status: 'declined' } : a
+    ))
+  }
 
   return (
     <div className="glass-dark rounded-xl p-5 border border-white/10">
@@ -228,10 +267,10 @@ function ApprovalQueue() {
               <span className="text-[#D4AF37] text-sm">{a.allocated}</span>
             </div>
             <div className="flex gap-2">
-              <button className="flex-1 py-1.5 bg-emerald-500/20 text-emerald-400 text-xs rounded hover:bg-emerald-500/30">
+              <button onClick={() => handleApprove(a.id)} className="cursor-pointer flex-1 py-1.5 bg-emerald-500/20 text-emerald-400 text-xs rounded hover:bg-emerald-500/30">
                 Approve
               </button>
-              <button className="flex-1 py-1.5 bg-red-500/20 text-red-400 text-xs rounded hover:bg-red-500/30">
+              <button onClick={() => handleDecline(a.id)} className="cursor-pointer flex-1 py-1.5 bg-red-500/20 text-red-400 text-xs rounded hover:bg-red-500/30">
                 Decline
               </button>
             </div>
@@ -246,8 +285,15 @@ function ApprovalQueue() {
 }
 
 function AlertRail() {
+  const navigate = useNavigate()
   const alerts = useIntelStore(s => s.alerts) || []
+  const markAlertRead = useIntelStore(s => s.markAlertRead)
   const critical = alerts.filter(a => a.type === 'critical' && !a.read).slice(0, 4)
+
+  const handleAlertClick = (alertId) => {
+    markAlertRead(alertId)
+    navigate('/app/intel?alert=' + alertId)
+  }
 
   return (
     <div className="glass-dark rounded-xl p-5 border border-white/10">
@@ -257,10 +303,14 @@ function AlertRail() {
       </h3>
       <div className="space-y-3">
         {critical.map(alert => (
-          <div key={alert.id} className="p-3 rounded-lg bg-red-500/10 border border-red-500/20">
+          <button 
+            key={alert.id} 
+            onClick={() => handleAlertClick(alert.id)}
+            className="cursor-pointer w-full text-left p-3 rounded-lg bg-red-500/10 border border-red-500/20 hover:bg-red-500/20"
+          >
             <p className="text-white text-sm">{alert.title}</p>
             <p className="text-gray-400 text-xs">{alert.message}</p>
-          </div>
+          </button>
         ))}
         {critical.length === 0 && (
           <p className="text-emerald-500 text-center py-4">No critical alerts</p>

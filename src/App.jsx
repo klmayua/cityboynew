@@ -91,6 +91,9 @@ const AdminPayments = lazy(() => import('./pages/app/admin/AdminPayments'))
 const AdminCompliance = lazy(() => import('./pages/app/admin/AdminCompliance'))
 
 const LeadershipDashboard = lazy(() => import('./pages/app/leadership/LeadershipDashboard'))
+const PeopleDirectory = lazy(() => import('./pages/app/leadership/PeopleDirectory'))
+const LeadershipSentiment = lazy(() => import('./pages/app/leadership/LeadershipSentiment'))
+const LeadershipFunding = lazy(() => import('./pages/app/leadership/LeadershipFunding'))
 
 const LoginPage = lazy(() => import('./pages/auth/LoginPage'))
 const RegisterPage = lazy(() => import('./pages/auth/RegisterPage'))
@@ -183,23 +186,20 @@ function App() {
           <Route path="app/admin/projects" element={<AdminProjects />} />
           <Route path="app/admin/payments" element={<AdminPayments />} />
           <Route path="app/admin/compliance" element={<AdminCompliance />} />
-          <Route path="app/leadership/kpis" element={<LeadershipDashboard />} />
-          <Route path="app/leadership/missions" element={<LeadershipDashboard />} />
-          <Route path="app/leadership/capital" element={<LeadershipDashboard />} />
-          <Route path="app/leadership/intel" element={<LeadershipDashboard />} />
-          <Route path="app/leadership/alerts" element={<LeadershipDashboard />} />
-          <Route path="app/leadership/sentiment" element={<LeadershipDashboard />} />
-          <Route path="app/leadership/operations" element={<LeadershipDashboard />} />
-          <Route path="app/leadership/analytics" element={<LeadershipDashboard />} />
-          <Route path="app/leadership/people" element={<LeadershipDashboard />} />
+          <Route path="app/leadership/kpis" element={<CommandNationalPulse />} />
+          <Route path="app/leadership/missions" element={<CommandProjects />} />
+          <Route path="app/leadership/operations" element={<CommandOverview />} />
+          <Route path="app/leadership/analytics" element={<CommandReports />} />
+          <Route path="app/leadership/people" element={<PeopleDirectory />} />
           <Route path="app/leadership/chapters" element={<ChapterDashboard />} />
           <Route path="app/leadership/partners" element={<PartnerDashboard />} />
           <Route path="app/leadership/community" element={<AppVolunteerCommunity />} />
           <Route path="app/leadership/treasury" element={<WalletOverview />} />
-          <Route path="app/leadership/funding" element={<ExecutiveFunding />} />
-          <Route path="app/leadership/reports" element={<LeadershipDashboard />} />
+          <Route path="app/leadership/funding" element={<LeadershipFunding />} />
+          <Route path="app/leadership/reports" element={<CommandReports />} />
           <Route path="app/leadership/monitoring" element={<IntelligenceOSINT />} />
-          <Route path="app/leadership/documents" element={<LeadershipDashboard />} />
+          <Route path="app/leadership/sentiment" element={<LeadershipSentiment />} />
+          <Route path="app/leadership/documents" element={<AdminDashboard />} />
           <Route path="app/leadership/messages" element={<CommsChats />} />
           <Route path="app/leadership/settings" element={<AdminDashboard />} />
         </Routes>
