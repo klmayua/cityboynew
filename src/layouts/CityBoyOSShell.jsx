@@ -361,7 +361,7 @@ function WorkspaceSwitcher({ currentRole }) {
   )
 }
 
-function TopBar({ currentRole, title }) {
+function TopBar({ currentRole, title, sidebarOpen, setSidebarOpen }) {
   const { user, logout } = useAuthStore()
   const navigate = useNavigate()
   const config = roleConfig[currentRole]
@@ -371,37 +371,125 @@ function TopBar({ currentRole, title }) {
     navigate('/platform')
   }
 
+  const roleTabs = {
+    leadership: [
+      { label: 'Dashboard', path: '/app/leadership' },
+      { label: 'Treasury', path: '/app/leadership/treasury' },
+      { label: 'Missions', path: '/app/leadership/missions' },
+      { label: 'Intel', path: '/app/leadership/alerts' },
+      { label: 'Volunteers', path: '/app/leadership/people' },
+      { label: 'Reports', path: '/app/leadership/reports' },
+      { label: 'War Room', path: '/app/leadership/operations' },
+    ],
+    executive: [
+      { label: 'Operations', path: '/app/executive' },
+      { label: 'Funding', path: '/app/executive/funding' },
+      { label: 'Chapters', path: '/app/chapter' },
+      { label: 'Calendar', path: '/app/command' },
+      { label: 'Procurement', path: '/app/executive/approvals' },
+      { label: 'Compliance', path: '/app/executive/compliance' },
+    ],
+    volunteer: [
+      { label: 'My Missions', path: '/app/volunteer' },
+      { label: 'Wallet', path: '/app/volunteer/wallet' },
+      { label: 'Rewards', path: '/app/volunteer/rewards' },
+      { label: 'Training', path: '/app/volunteer/training' },
+      { label: 'Community', path: '/app/volunteer/community' },
+    ],
+    donor: [
+      { label: 'Portfolio', path: '/app/donor' },
+      { label: 'Impact', path: '/app/donor/projects' },
+      { label: 'Reports', path: '/app/donor/reports' },
+      { label: 'Governance', path: '/app/donor/statements' },
+    ],
+    partner: [
+      { label: 'Campaigns', path: '/app/partner' },
+      { label: 'Sponsorship', path: '/app/partner/sponsorships' },
+      { label: 'Reach', path: '/app/partner/campaigns' },
+      { label: 'Analytics', path: '/app/partner/roi' },
+    ],
+    chapter: [
+      { label: 'Dashboard', path: '/app/chapter' },
+      { label: 'Members', path: '/app/chapter/members' },
+      { label: 'Volunteers', path: '/app/chapter/volunteers' },
+      { label: 'Projects', path: '/app/chapter/projects' },
+      { label: 'Events', path: '/app/chapter/events' },
+      { label: 'Finance', path: '/app/chapter/finance' },
+    ],
+    intelligence: [
+      { label: 'Dashboard', path: '/app/intelligence' },
+      { label: 'OSINT', path: '/app/intelligence/osint' },
+      { label: 'Sentiment', path: '/app/intelligence/sentiment' },
+      { label: 'Alerts', path: '/app/intelligence/alerts' },
+      { label: 'Briefs', path: '/app/intelligence/briefs' },
+    ],
+    admin: [
+      { label: 'Dashboard', path: '/app/admin' },
+      { label: 'Users', path: '/app/admin/users' },
+      { label: 'Roles', path: '/app/admin/roles' },
+      { label: 'Audit', path: '/app/admin/audit' },
+      { label: 'Runtime', path: '/app/admin/runtime' },
+    ],
+  }
+
+  const tabs = roleTabs[currentRole] || roleTabs.volunteer
+
   return (
-    <div className="h-16 bg-[#07111A] border-b border-white/5 flex items-center justify-between px-6">
-      <div className="flex items-center gap-6">
-        <LeftSidebar currentRole={currentRole} />
-        <GlobalSearch />
+    <div className="flex flex-col w-full">
+      <div className="h-16 bg-[#07111A] border-b border-white/5 flex items-center justify-between px-4">
+        <div className="flex items-center gap-4">
+          <button onClick={() => setSidebarOpen(!sidebarOpen)} className="p-2 hover:bg-white/5 rounded-lg">
+            <Menu className="w-5 h-5 text-gray-400" />
+          </button>
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-[#D4AF37] flex items-center justify-center">
+              <Cpu className="w-6 h-6 text-black" />
+            </div>
+            <div>
+              <div className="text-white font-semibold text-lg">CITYBOY OS</div>
+              <div className="flex items-center gap-1.5 text-xs text-gray-500">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                {config.label} • LIVE
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex-1 max-w-md mx-8">
+          <GlobalSearch />
+        </div>
+
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 px-3 py-1.5 bg-emerald-500/10 rounded-full">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span className="text-emerald-400 text-xs">System Live</span>
+          </div>
+          
+          <NotificationBell />
+          
+          <WorkspaceSwitcher currentRole={currentRole} />
+          
+          <div className="flex items-center gap-2 pl-3 border-l border-white/10">
+            <div className="w-9 h-9 rounded-full bg-[#D4AF37] flex items-center justify-center text-black font-semibold">
+              {user?.name?.[0] || 'U'}
+            </div>
+            <button onClick={handleLogout} className="p-2 hover:bg-white/5 rounded-lg" title="Logout">
+              <LogOut className="w-4 h-4 text-gray-400" />
+            </button>
+          </div>
+        </div>
       </div>
 
-      <div className="flex items-center gap-4">
-        <div className="flex items-center gap-2 px-3 py-1.5 bg-emerald-500/10 rounded-full">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span className="text-emerald-400 text-xs">System Online</span>
-        </div>
-        
-        <div className="w-px h-6 bg-white/10"></div>
-        
-        <NotificationBell />
-        
-        <button className="p-2 hover:bg-white/5 rounded-lg">
-          <MessageCircle className="w-5 h-5 text-gray-400" />
-        </button>
-        
-        <WorkspaceSwitcher currentRole={currentRole} />
-        
-        <div className="flex items-center gap-2 pl-4 border-l border-white/10">
-          <div className="w-9 h-9 rounded-full bg-[#D4AF37] flex items-center justify-center text-black font-semibold">
-            {user?.name?.[0] || 'U'}
-          </div>
-          <button onClick={handleLogout} className="p-2 hover:bg-white/5 rounded-lg" title="Logout">
-            <LogOut className="w-4 h-4 text-gray-400" />
+      <div className="h-12 bg-[#0D1821] border-b border-white/5 flex items-center px-4 gap-1">
+        {tabs.map((tab) => (
+          <button
+            key={tab.path}
+            onClick={() => navigate(tab.path)}
+            className="px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-white/5 rounded-md transition-all"
+          >
+            {tab.label}
           </button>
-        </div>
+        ))}
       </div>
     </div>
   )
@@ -412,6 +500,7 @@ export default function CityBoyOSShell({ children, role, title }) {
   const navigate = useNavigate()
   const location = useLocation()
   const currentRole = role || user?.role || 'volunteer'
+  const [sidebarOpen, setSidebarOpen] = useState(true)
 
   useEffect(() => {
     if (!isAuthenticated && location.pathname !== '/platform') {
@@ -423,12 +512,15 @@ export default function CityBoyOSShell({ children, role, title }) {
 
   return (
     <div className="min-h-screen bg-[#0A1421] flex">
-      <TopBar currentRole={currentRole} title={title} />
-      <main className="flex-1 p-6 overflow-y-auto">
-        <div className="max-w-[1600px] mx-auto">
-          {children}
-        </div>
-      </main>
+      {sidebarOpen && <LeftSidebar currentRole={currentRole} />}
+      <div className="flex-1 flex flex-col">
+        <TopBar currentRole={currentRole} title={title} sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+        <main className="flex-1 p-6 overflow-y-auto">
+          <div className="max-w-[1600px] mx-auto">
+            {children}
+          </div>
+        </main>
+      </div>
     </div>
   )
 }
