@@ -68,6 +68,11 @@ const CommsBroadcast = lazy(() => import('./pages/app/comms/CommsBroadcast'))
 const ExecutiveDashboard = lazy(() => import('./pages/app/executive/ExecutiveDashboard'))
 const ExecutiveReports = lazy(() => import('./pages/app/executive/ExecutiveReports'))
 const ExecutiveFunding = lazy(() => import('./pages/app/executive/ExecutiveFunding'))
+const ExecutivePriorities = lazy(() => import('./pages/app/executive/ExecutivePriorities'))
+const ExecutiveApprovals = lazy(() => import('./pages/app/executive/ExecutiveApprovals'))
+const ExecutiveMissions = lazy(() => import('./pages/app/executive/ExecutiveMissions'))
+const ExecutiveBudgets = lazy(() => import('./pages/app/executive/ExecutiveBudgets'))
+const ExecutiveCompliance = lazy(() => import('./pages/app/executive/ExecutiveCompliance'))
 
 const CommandNationalPulse = lazy(() => import('./pages/app/command/CommandNationalPulse'))
 const CommandProjects = lazy(() => import('./pages/app/command/CommandProjects'))
@@ -168,6 +173,11 @@ function App() {
           <Route path="app/executive" element={<ExecutiveDashboard />} />
           <Route path="app/executive/reports" element={<ExecutiveReports />} />
           <Route path="app/executive/funding" element={<ExecutiveFunding />} />
+          <Route path="app/executive/priorities" element={<ExecutivePriorities />} />
+          <Route path="app/executive/approvals" element={<ExecutiveApprovals />} />
+          <Route path="app/executive/missions" element={<ExecutiveMissions />} />
+          <Route path="app/executive/budgets" element={<ExecutiveBudgets />} />
+          <Route path="app/executive/compliance" element={<ExecutiveCompliance />} />
           <Route path="app/command" element={<CommandOverview />} />
           <Route path="app/command/pulse" element={<CommandNationalPulse />} />
           <Route path="app/command/mobilization" element={<CommandMobilization />} />
@@ -202,6 +212,41 @@ function App() {
           <Route path="app/leadership/documents" element={<AdminDashboard />} />
           <Route path="app/leadership/messages" element={<CommsChats />} />
           <Route path="app/leadership/settings" element={<AdminDashboard />} />
+          <Route path="app/leadership/alerts" element={<IntelligenceAlerts />} />
+          <Route path="app/volunteer/opportunities" element={<AppVolunteerCommunity />} />
+          <Route path="app/volunteer/badges" element={<AppVolunteerRewards />} />
+          <Route path="app/volunteer/academy" element={<AppVolunteerTraining />} />
+          <Route path="app/chapter/missions" element={<ChapterProjects />} />
+          <Route path="app/chapter/reports" element={<CommandReports />} />
+          <Route path="app/chapter/recruit" element={<ChapterVolunteers />} />
+          <Route path="app/chapter/treasury" element={<ChapterFinance />} />
+          <Route path="app/chapter/funding" element={<LeadershipFunding />} />
+          <Route path="app/chapter/inbox" element={<CommsChats />} />
+          <Route path="app/chapter/settings" element={<AdminDashboard />} />
+          <Route path="app/intelligence/osint" element={<IntelligenceOSINT />} />
+          <Route path="app/intelligence/trends" element={<IntelligenceSentiment />} />
+          <Route path="app/intelligence/threats" element={<IntelligenceAlerts />} />
+          <Route path="app/intelligence/narratives" element={<IntelligenceSentiment />} />
+          <Route path="app/intelligence/briefs" element={<CommandReports />} />
+          <Route path="app/intelligence/escalations" element={<IntelligenceAlerts />} />
+          <Route path="app/admin/audit" element={<AdminDashboard />} />
+          <Route path="app/admin/health" element={<AdminDashboard />} />
+          <Route path="app/admin/runtime" element={<AdminDashboard />} />
+          <Route path="app/admin/seed" element={<AdminDashboard />} />
+          <Route path="app/admin/config" element={<AdminDashboard />} />
+          <Route path="app/admin/exports" element={<AdminDashboard />} />
+          <Route path="app/admin/logs" element={<AdminDashboard />} />
+          <Route path="app/donor/allocations" element={<DonorPortfolio />} />
+          <Route path="app/donor/statements" element={<DonorPortfolio />} />
+          <Route path="app/donor/concierge" element={<CommsChats />} />
+          <Route path="app/donor/settings" element={<AdminDashboard />} />
+          <Route path="app/donor/missions" element={<DonorProjects />} />
+          <Route path="app/partner/roi" element={<PartnerDashboard />} />
+          <Route path="app/partner/reports" element={<CommandReports />} />
+          <Route path="app/partner/messages" element={<CommsChats />} />
+          <Route path="app/partner/settings" element={<AdminDashboard />} />
+          <Route path="app/executive/messages" element={<CommsChats />} />
+          <Route path="app/executive/settings" element={<AdminDashboard />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
