@@ -5,7 +5,7 @@ import { useIntelStore } from '../../store/intelStore'
 import { useCapitalStore } from '../../store/capitalStore'
 import { useMissionStore } from '../../store/missionStore'
 import { usePeopleStore } from '../../store/peopleStore'
-import { Cpu, Shield, Users, Heart, Wallet, Building2, Eye, Lock, Zap, Activity, TrendingUp, Bell } from 'lucide-react'
+import { Cpu, Shield, Users, Heart, Wallet as WalletIcon, Building2, Eye, Lock, Zap, Activity, TrendingUp, Bell, Wallet } from 'lucide-react'
 
 const roles = [
   { id: 'leadership', label: 'Leadership', icon: Cpu, color: 'text-[#D4AF37]', desc: 'National Command' },
@@ -118,14 +118,48 @@ export default function PlatformAccessHub() {
     <div className="min-h-screen" style={{ background: 'linear-gradient(180deg, #07111A 0%, #0D2234 100%)' }}>
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="font-h1 text-4xl md:text-5xl text-white mb-4">
-              Enter CityBoy OS
-            </h1>
-            <p className="text-on-surface-variant text-lg">Nigeria's Civic Command Operating System</p>
+          <div className="relative mb-16">
+            <div className="absolute inset-0 bg-[#D4AF37]/5 rounded-3xl blur-3xl"></div>
+            <div className="relative pt-20 pb-16 text-center">
+              <div className="flex items-center justify-center gap-2 mb-6">
+                <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse"></span>
+                <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-medium">National Civic Execution Infrastructure</span>
+              </div>
+              <h1 className="font-h1 text-5xl md:text-6xl text-white mb-6 tracking-tight">
+                Enter CityBoy OS
+              </h1>
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed mb-10">
+                The command layer connecting leadership, capital, chapters, partners, intelligence, and field execution in one operating system.
+              </p>
+              <div className="flex items-center justify-center gap-8 mb-8">
+                <div className="flex items-center gap-2 text-gray-400">
+                  <Zap className="w-4 h-4 text-emerald-400" />
+                  <span className="text-sm">Real-time mission coordination</span>
+                </div>
+                <div className="w-px h-4 bg-white/20"></div>
+                <div className="flex items-center gap-2 text-gray-400">
+                  <Wallet className="w-4 h-4 text-[#D4AF37]" />
+                  <span className="text-sm">Treasury and capital routing</span>
+                </div>
+                <div className="w-px h-4 bg-white/20"></div>
+                <div className="flex items-center gap-2 text-gray-400">
+                  <Eye className="w-4 h-4 text-cyan-400" />
+                  <span className="text-sm">National execution intelligence</span>
+                </div>
+              </div>
+              <div className="flex items-center justify-center gap-4">
+                <button className="px-8 py-3 bg-[#D4AF37] hover:bg-[#B8962E] text-black font-semibold rounded-lg transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-[#D4AF37]/20">
+                  ENTER COMMAND DEMO
+                </button>
+                <button className="px-8 py-3 bg-white/5 hover:bg-white/10 border border-white/20 text-white font-medium rounded-lg transition-all hover:bg-white/10">
+                  VIEW IMPACT MODEL
+                </button>
+              </div>
+            </div>
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/50 to-transparent"></div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-3 gap-6 mt-12">
             <div className="md:col-span-2">
               <div className="glass-dark rounded-xl p-6 border border-[#D4AF37]/20 mb-6">
                 <h3 className="text-[#D4AF37] font-semibold mb-4 flex items-center gap-2">
