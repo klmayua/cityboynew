@@ -1,192 +1,274 @@
-import OperatingSystemShell from '../../../layouts/OperatingSystemShell'
+import CityBoyOSShell from '../../../layouts/CityBoyOSShell'
 import { useAuthStore } from '../../../store/authStore'
 import { useCapitalStore } from '../../../store/capitalStore'
 import { useMissionStore } from '../../../store/missionStore'
 import { useSystemStore } from '../../../store/systemStore'
 import { usePeopleStore } from '../../../store/peopleStore'
 import { deriveKPIs } from '../../../lib/deriveKPIs'
-import { Cpu, CheckSquare, FileText, TrendingUp, AlertCircle, MessageSquare } from 'lucide-react'
+import {
+  Shield, Target, CheckCircle, DollarSign, FileText, TrendingUp, AlertTriangle,
+  Users, Globe, Building2, Calendar, MessageCircle, Settings, ArrowRight,
+  ArrowUpRight, ArrowDownRight, Clock, Filter, Download, Plus
+} from 'lucide-react'
 
-function BoardBriefing() {
-  const kpis = deriveKPIs()
-
+function KPICard({ label, value, change, changeType, icon: Icon, color }) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <div className="glass-dark rounded-xl p-4 border border-white/10">
-        <p className="text-gray-400 text-xs">Treasury</p>
-        <p className="text-xl font-bold text-[#D4AF37]">{kpis?.treasuryTotal}</p>
+    <div className="glass-dark rounded-xl p-4 border border-white/10">
+      <div className="flex items-center justify-between mb-2">
+        <p className="text-gray-400 text-xs">{label}</p>
+        <Icon className={`w-4 h-4 ${color || 'text-gray-400'}`} />
       </div>
-      <div className="glass-dark rounded-xl p-4 border border-white/10">
-        <p className="text-gray-400 text-xs">Active Missions</p>
-        <p className="text-xl font-bold text-emerald-400">{kpis?.activeMissionCount}</p>
-      </div>
-      <div className="glass-dark rounded-xl p-4 border border-white/10">
-        <p className="text-gray-400 text-xs">Volunteers</p>
-        <p className="text-xl font-bold text-blue-400">{kpis?.activeVolunteerCount}</p>
-      </div>
-      <div className="glass-dark rounded-xl p-4 border border-white/10">
-        <p className="text-gray-400 text-xs">Sentiment</p>
-        <p className="text-xl font-bold text-cyan-400">{kpis?.sentimentScore}%</p>
-      </div>
+      <p className="text-xl font-bold text-white">{value}</p>
+      {change && (
+        <div className={`flex items-center gap-1 text-xs ${changeType === 'up' ? 'text-emerald-400' : 'text-red-400'}`}>
+          {changeType === 'up' ? <ArrowUpRight className="w-3 h-3" /> : <ArrowDownRight className="w-3 h-3" />}
+          {change}
+        </div>
+      )}
     </div>
   )
 }
 
-function ApprovalsQueue() {
+function ApprovalQueue() {
   const allocations = useCapitalStore(s => s.allocations) || []
   const pending = allocations.filter(a => a.status === 'pending').slice(0, 5)
 
   return (
     <div className="glass-dark rounded-xl p-5 border border-white/10">
       <h3 className="text-white font-semibold mb-4 flex items-center gap-2">
-        <CheckSquare className="w-4 h-4 text-[#D4AF37]" />
-        Approvals Queue
+        <CheckCircle className="w-4 h-4 text-yellow-400" />
+        Approval Queue
       </h3>
       <div className="space-y-3">
         {pending.map(a => (
-          <div key={a.id} className="flex items-center justify-between p-3 rounded-lg bg-white/5">
-            <div>
-              <p className="text-white text-sm">{a.mission}</p>
-              <p className="text-gray-400 text-xs">{a.allocated}</p>
+          <div key={a.id} className="p-3 rounded-lg bg-white/5">
+            <div className="flex justify-between items-start mb-2">
+              <div>
+                <p className="text-white text-sm">{a.mission}</p>
+                <p className="text-gray-500 text-xs">Requested: {a.date || 'Today'}</p>
+              </div>
+              <span className="text-[#D4AF37] font-semibold">{a.allocated}</span>
             </div>
-            <div className="flex gap-2">
-              <button className="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs rounded">Approve</button>
-              <button className="px-3 py-1 bg-red-500/20 text-red-400 text-xs rounded">Decline</button>
+            <div className="flex gap-2 mt-2">
+              <button className="flex-1 py-2 bg-emerald-500/20 text-emerald-400 text-sm rounded-lg hover:bg-emerald-500/30 flex items-center justify-center gap-1">
+                <CheckCircle className="w-4 h-4" /> Approve
+              </button>
+              <button className="flex-1 py-2 bg-red-500/20 text-red-400 text-sm rounded-lg hover:bg-red-500/30">
+                Decline
+              </button>
             </div>
           </div>
         ))}
         {pending.length === 0 && (
-          <p className="text-gray-500 text-center py-4">No pending approvals</p>
+          <p className="text-emerald-500 text-center py-4">All caught up! No pending approvals.</p>
         )}
       </div>
     </div>
   )
 }
 
-function InitiativesTracker() {
-  const missions = useMissionStore(s => s.missions) || []
-  const active = missions.filter(m => m.status === 'active').slice(0, 5)
+function StrategicPriorities() {
+  const priorities = [
+    { id: 1, title: 'Q2 Revenue Target', progress: 72, status: 'on-track' },
+    { id: 2, title: 'Chapter Expansion', progress: 45, status: 'at-risk' },
+    { id: 3, title: 'Partner Onboarding', progress: 88, status: 'on-track' },
+    { id: 4, title: 'Volunteer Training', progress: 60, status: 'on-track' },
+  ]
 
   return (
     <div className="glass-dark rounded-xl p-5 border border-white/10">
       <h3 className="text-white font-semibold mb-4 flex items-center gap-2">
-        <FileText className="w-4 h-4 text-blue-400" />
-        Initiatives Tracker
+        <Target className="w-4 h-4 text-[#D4AF37]" />
+        Strategic Priorities
       </h3>
-      <div className="space-y-3">
-        {active.map(m => (
-          <div key={m.id} className="flex items-center justify-between p-3 rounded-lg bg-white/5">
-            <div>
-              <p className="text-white text-sm">{m.title}</p>
-              <p className="text-gray-400 text-xs">{m.category}</p>
+      <div className="space-y-4">
+        {priorities.map(p => (
+          <div key={p.id}>
+            <div className="flex justify-between items-center mb-1">
+              <span className="text-white text-sm">{p.title}</span>
+              <span className={`text-xs px-2 py-0.5 rounded ${
+                p.status === 'on-track' ? 'bg-emerald-500/20 text-emerald-400' :
+                p.status === 'at-risk' ? 'bg-red-500/20 text-red-400' : 'bg-yellow-500/20 text-yellow-400'
+              }`}>
+                {p.status.replace('-', ' ')}
+              </span>
             </div>
-            <span className="text-emerald-400">{m.progress}%</span>
+            <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+              <div className={`h-full rounded-full ${
+                p.status === 'on-track' ? 'bg-emerald-400' :
+                p.status === 'at-risk' ? 'bg-red-400' : 'bg-yellow-400'
+              }`} style={{ width: `${p.progress}%` }} />
+            </div>
+            <span className="text-gray-500 text-xs">{p.progress}%</span>
           </div>
         ))}
-        {active.length === 0 && (
-          <p className="text-gray-500 text-center py-4">No active missions</p>
-        )}
       </div>
     </div>
   )
 }
 
-function ExecutionHealth() {
-  const kpis = deriveKPIs()
-  const readiness = kpis?.operationalReadiness || 0
+function RegionalBlockers() {
+  const issues = [
+    { region: 'North East', issue: 'Volunteer shortage', severity: 'high' },
+    { region: 'South West', issue: 'Funding delay', severity: 'medium' },
+    { region: 'North West', issue: 'Partner compliance', severity: 'low' },
+  ]
 
   return (
     <div className="glass-dark rounded-xl p-5 border border-white/10">
       <h3 className="text-white font-semibold mb-4 flex items-center gap-2">
-        <TrendingUp className="w-4 h-4 text-emerald-400" />
-        Execution Health
-      </h3>
-      <div className="text-center">
-        <div className="relative w-32 h-32 mx-auto mb-4">
-          <svg className="w-32 h-32 transform -rotate-90">
-            <circle cx="64" cy="64" r="56" stroke="currentColor" strokeWidth="8" fill="none" className="text-white/10" />
-            <circle cx="64" cy="64" r="56" stroke="currentColor" strokeWidth="8" fill="none" className="text-emerald-400"
-              strokeDasharray={352}
-              strokeDashoffset={352 - (352 * readiness / 100)}
-            />
-          </svg>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-2xl font-bold text-white">{readiness}%</span>
-          </div>
-        </div>
-        <p className="text-gray-400 text-sm">Operational Readiness</p>
-      </div>
-    </div>
-  )
-}
-
-function EscalationFeed() {
-  const alerts = useSystemStore(s => s.notifications) || []
-  const recent = alerts.slice(0, 5)
-
-  return (
-    <div className="glass-dark rounded-xl p-5 border border-white/10">
-      <h3 className="text-white font-semibold mb-4 flex items-center gap-2">
-        <AlertCircle className="w-4 h-4 text-red-400" />
-        Escalation Feed
+        <AlertTriangle className="w-4 h-4 text-red-400" />
+        Regional Blockers
       </h3>
       <div className="space-y-3">
-        {recent.map(n => (
-          <div key={n.id} className="p-3 rounded-lg bg-white/5">
-            <p className="text-white text-sm">{n.title || n.message}</p>
-            <p className="text-gray-400 text-xs">{n.timestamp}</p>
+        {issues.map((issue, i) => (
+          <div key={i} className={`p-3 rounded-lg ${
+            issue.severity === 'high' ? 'bg-red-500/10 border border-red-500/20' :
+            issue.severity === 'medium' ? 'bg-yellow-500/10 border border-yellow-500/20' :
+            'bg-white/5'
+          }`}>
+            <div className="flex justify-between">
+              <p className="text-white text-sm">{issue.region}</p>
+              <span className={`text-xs ${
+                issue.severity === 'high' ? 'text-red-400' :
+                issue.severity === 'medium' ? 'text-yellow-400' : 'text-gray-400'
+              }`}>{issue.severity}</span>
+            </div>
+            <p className="text-gray-400 text-xs">{issue.issue}</p>
           </div>
         ))}
-        {recent.length === 0 && (
-          <p className="text-gray-500 text-center py-4">No escalations</p>
-        )}
       </div>
     </div>
   )
 }
 
-function QuickActions() {
+function ExecutiveCalendar() {
+  const events = [
+    { id: 1, title: 'Board Meeting', time: '10:00 AM', today: true },
+    { id: 2, title: 'Partner Review', time: '2:00 PM', today: true },
+    { id: 3, title: 'Chapter Sync', time: '4:30 PM', today: false },
+  ]
+
   return (
-    <div className="grid grid-cols-4 gap-4">
-      <button className="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#D4AF37]/50">
-        <Cpu className="w-5 h-5 text-[#D4AF37] mx-auto mb-1" />
-        <span className="text-white text-xs">Briefing</span>
-      </button>
-      <button className="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#D4AF37]/50">
-        <CheckSquare className="w-5 h-5 text-emerald-400 mx-auto mb-1" />
-        <span className="text-white text-xs">Approvals</span>
-      </button>
-      <button className="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#D4AF37]/50">
-        <FileText className="w-5 h-5 text-blue-400 mx-auto mb-1" />
-        <span className="text-white text-xs">Reports</span>
-      </button>
-      <button className="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#D4AF37]/50">
-        <MessageSquare className="w-5 h-5 text-cyan-400 mx-auto mb-1" />
-        <span className="text-white text-xs">Comms</span>
-      </button>
+    <div className="glass-dark rounded-xl p-5 border border-white/10">
+      <h3 className="text-white font-semibold mb-4 flex items-center gap-2">
+        <Calendar className="w-4 h-4 text-[#D4AF37]" />
+        Executive Calendar
+      </h3>
+      <div className="space-y-3">
+        {events.map(e => (
+          <div key={e.id} className="flex items-center justify-between p-2 rounded-lg bg-white/5">
+            <div className="flex items-center gap-3">
+              <div className={`w-2 h-2 rounded-full ${e.today ? 'bg-emerald-400' : 'bg-gray-400'}`}></div>
+              <span className="text-white text-sm">{e.title}</span>
+            </div>
+            <span className="text-gray-400 text-xs">{e.time}</span>
+          </div>
+        ))}
+        <button className="w-full py-2 border border-dashed border-white/20 text-gray-400 text-sm rounded-lg hover:border-[#D4AF37] hover:text-[#D4AF37] flex items-center justify-center gap-1">
+          <Plus className="w-4 h-4" /> Add Event
+        </button>
+      </div>
     </div>
   )
 }
 
-export default function ExecutiveDashboard() {
-  const { user } = useAuthStore()
+function ComplianceStatus() {
+  const items = [
+    { name: 'Financial Audit', status: 'compliant' },
+    { name: 'Data Protection', status: 'compliant' },
+    { name: 'Partner Due Diligence', status: 'pending' },
+    { name: 'Volunteer Backgrounds', status: 'compliant' },
+  ]
 
   return (
-    <OperatingSystemShell role="executive">
+    <div className="glass-dark rounded-xl p-5 border border-white/10">
+      <h3 className="text-white font-semibold mb-4 flex items-center gap-2">
+        <Shield className="w-4 h-4 text-emerald-400" />
+        Compliance Status
+      </h3>
+      <div className="space-y-2">
+        {items.map(item => (
+          <div key={item.name} className="flex items-center justify-between p-2 rounded-lg bg-white/5">
+            <span className="text-white text-sm">{item.name}</span>
+            <span className={`text-xs px-2 py-0.5 rounded ${
+              item.status === 'compliant' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-yellow-500/20 text-yellow-400'
+            }`}>
+              {item.status}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function ProcurementPipeline() {
+  const items = [
+    { vendor: 'Tech Solutions Ltd', amount: '₦2.4M', status: 'approved' },
+    { vendor: 'Event Services', amount: '₦890K', status: 'pending' },
+    { vendor: 'Print Media Co', amount: '₦450K', status: 'review' },
+  ]
+
+  return (
+    <div className="glass-dark rounded-xl p-5 border border-white/10">
+      <h3 className="text-white font-semibold mb-4 flex items-center gap-2">
+        <DollarSign className="w-4 h-4 text-[#D4AF37]" />
+        Procurement
+      </h3>
+      <div className="space-y-3">
+        {items.map((item, i) => (
+          <div key={i} className="flex items-center justify-between p-2 rounded-lg bg-white/5">
+            <div>
+              <p className="text-white text-sm">{item.vendor}</p>
+              <p className="text-gray-400 text-xs">{item.amount}</p>
+            </div>
+            <span className={`text-xs px-2 py-0.5 rounded ${
+              item.status === 'approved' ? 'bg-emerald-500/20 text-emerald-400' :
+              item.status === 'pending' ? 'bg-yellow-500/20 text-yellow-400' : 'bg-blue-500/20 text-blue-400'
+            }`}>
+              {item.status}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+export default function OperationalCommand() {
+  const { user } = useAuthStore()
+  const kpis = deriveKPIs()
+
+  return (
+    <CityBoyOSShell role="executive" title="Operational Command">
       <div className="mb-6">
-        <h1 className="text-2xl text-white font-semibold">Executive Dashboard</h1>
+        <h1 className="text-2xl text-white font-semibold">Operational Command</h1>
         <p className="text-gray-400">Welcome, {user?.name || 'Executive'}</p>
       </div>
 
-      <BoardBriefing />
-      <QuickActions />
-
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-        <ApprovalsQueue />
-        <InitiativesTracker />
-        <ExecutionHealth />
-        <EscalationFeed />
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <KPICard label="Treasury" value={kpis?.treasuryTotal || '₦0'} icon={DollarSign} color="text-[#D4AF37]" />
+        <KPICard label="Active Missions" value={kpis?.activeMissionCount || 0} icon={Target} color="text-emerald-400" />
+        <KPICard label="Chapters" value={36} icon={Globe} color="text-blue-400" />
+        <KPICard label="Partners" value={40} icon={Building2} color="text-purple-400" />
       </div>
-    </OperatingSystemShell>
+
+      <div className="grid lg:grid-cols-3 gap-6">
+        <div className="lg:col-span-2 space-y-6">
+          <ApprovalQueue />
+          <StrategicPriorities />
+          <div className="grid grid-cols-2 gap-4">
+            <RegionalBlockers />
+            <ComplianceStatus />
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          <ExecutiveCalendar />
+          <ProcurementPipeline />
+        </div>
+      </div>
+    </CityBoyOSShell>
   )
 }

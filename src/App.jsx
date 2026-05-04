@@ -29,6 +29,7 @@ const LeadershipPage = lazy(() => import('./pages/public/LeadershipPage'))
 const MediaPage = lazy(() => import('./pages/public/MediaPage'))
 
 const PlatformAccessHub = lazy(() => import('./pages/platform/PlatformAccessHub'))
+const CityBoyOSShell = lazy(() => import('./layouts/CityBoyOSShell'))
 
 const AppVolunteerDashboard = lazy(() => import('./pages/app/volunteer/AppVolunteerDashboard'))
 const AppVolunteerTasks = lazy(() => import('./pages/app/volunteer/AppVolunteerTasks'))
