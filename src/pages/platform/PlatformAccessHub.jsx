@@ -40,27 +40,27 @@ function PlatformHealthCard() {
   const activeVolunteers = volunteers?.filter(v => v.status === 'active').length || 0
 
   return (
-    <div className="glass-dark rounded-xl p-5 border border-[#D4AF37]/20">
-      <h3 className="text-[#D4AF37] font-semibold mb-4 flex items-center gap-2">
+    <div className="bg-[#0A1520]/80 backdrop-blur-sm rounded-xl p-4 border border-[#D4AF37]/20 shadow-lg shadow-black/10">
+      <h3 className="text-[#D4AF37] font-semibold mb-3 flex items-center gap-2 text-sm">
         <Zap className="w-4 h-4" />
         Platform Health
       </h3>
-      <div className="grid grid-cols-2 gap-4">
-        <div className="text-center p-3 rounded-lg bg-white/5">
-          <div className="text-2xl font-bold text-emerald-400">{activeMissions}</div>
-          <div className="text-xs text-gray-400">Active Missions</div>
+      <div className="grid grid-cols-2 gap-2">
+        <div className="text-center p-2 rounded-lg bg-white/[0.04] border border-white/5">
+          <div className="text-lg font-bold text-emerald-400">{activeMissions}</div>
+          <div className="text-xs text-gray-500">Active Missions</div>
         </div>
-        <div className="text-center p-3 rounded-lg bg-white/5">
-          <div className="text-2xl font-bold text-blue-400">{activeVolunteers}</div>
-          <div className="text-xs text-gray-400">Active Volunteers</div>
+        <div className="text-center p-2 rounded-lg bg-white/[0.04] border border-white/5">
+          <div className="text-lg font-bold text-blue-400">{activeVolunteers}</div>
+          <div className="text-xs text-gray-500">Active Volunteers</div>
         </div>
-        <div className="text-center p-3 rounded-lg bg-white/5">
-          <div className="text-2xl font-bold text-[#D4AF37]">{treasury?.total || '₦0'}</div>
-          <div className="text-xs text-gray-400">Treasury</div>
+        <div className="text-center p-2 rounded-lg bg-white/[0.04] border border-white/5">
+          <div className="text-lg font-bold text-[#D4AF37]">{treasury?.total || '₦0'}</div>
+          <div className="text-xs text-gray-500">Treasury</div>
         </div>
-        <div className="text-center p-3 rounded-lg bg-white/5">
-          <div className={`text-2xl font-bold ${activeAlerts > 0 ? 'text-red-400' : 'text-emerald-400'}`}>{activeAlerts}</div>
-          <div className="text-xs text-gray-400">Critical Alerts</div>
+        <div className="text-center p-2 rounded-lg bg-white/[0.04] border border-white/5">
+          <div className={`text-lg font-bold ${activeAlerts > 0 ? 'text-red-400' : 'text-emerald-400'}`}>{activeAlerts}</div>
+          <div className="text-xs text-gray-500">Critical Alerts</div>
         </div>
       </div>
     </div>
@@ -75,12 +75,12 @@ function RecentActivityStrip() {
   const recent = activity.slice(0, 5)
 
   return (
-    <div className="glass-dark rounded-xl p-5 border border-[#D4AF37]/20">
-      <h3 className="text-[#D4AF37] font-semibold mb-4 flex items-center gap-2">
+    <div className="bg-[#0A1520]/80 backdrop-blur-sm rounded-xl p-4 border border-[#D4AF37]/20 shadow-lg shadow-black/10">
+      <h3 className="text-[#D4AF37] font-semibold mb-3 flex items-center gap-2 text-sm">
         <Activity className="w-4 h-4" />
         Recent Activity
       </h3>
-      <div className="space-y-3">
+      <div className="space-y-2">
         {recent.map(item => (
           <div key={item.id} className="flex items-center justify-between text-sm">
             <div className="flex items-center gap-2">
@@ -124,8 +124,8 @@ export default function PlatformAccessHub() {
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                 <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-medium">National Civic Execution Infrastructure</span>
               </div>
-              <h1 className="font-h1 text-3xl md:text-4xl text-white mb-1 tracking-tight font-bold">
-                CITYBOY Command Center
+              <h1 className="font-h1 text-2xl md:text-3xl text-white mb-1 tracking-tight font-bold">
+                <span className="text-[#D4AF37]">CITYBOY</span> <span className="text-white">Command Center</span>
               </h1>
               <p className="text-base text-gray-400 mb-2">National civic coordination OS</p>
               <p className="text-sm text-gray-500 font-medium mb-4">Command • Capital • Execution</p>
@@ -147,37 +147,37 @@ export default function PlatformAccessHub() {
             </div>
 
             <div className="md:col-span-2">
-              <div className="glass-dark rounded-xl p-5 border border-[#D4AF37]/20 mb-4">
-                <h3 className="text-[#D4AF37] font-semibold mb-4 flex items-center gap-2">
+              <div className="bg-[#0A1520]/80 backdrop-blur-sm rounded-xl p-4 border border-[#D4AF37]/30 shadow-lg shadow-black/20 mb-4">
+                <h3 className="text-[#D4AF37] font-semibold mb-3 flex items-center gap-2 text-sm">
                   <Activity className="w-4 h-4" />
                   National Operating Index
                 </h3>
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="text-center p-3 rounded-lg bg-white/5">
-                    <div className="text-xl font-bold text-[#D4AF37]">₦12.8B</div>
-                    <div className="text-xs text-gray-400">Routed Capital</div>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="text-center p-2.5 rounded-lg bg-white/[0.06] border border-white/5">
+                    <div className="text-lg font-bold text-[#D4AF37]">₦12.8B</div>
+                    <div className="text-xs text-gray-500">Routed Capital</div>
                   </div>
-                  <div className="text-center p-3 rounded-lg bg-white/5">
-                    <div className="text-xl font-bold text-emerald-400">128</div>
-                    <div className="text-xs text-gray-400">Active Missions</div>
+                  <div className="text-center p-2.5 rounded-lg bg-white/[0.06] border border-white/5">
+                    <div className="text-lg font-bold text-emerald-400">128</div>
+                    <div className="text-xs text-gray-500">Active Missions</div>
                   </div>
-                  <div className="text-center p-3 rounded-lg bg-white/5">
-                    <div className="text-xl font-bold text-blue-400">36</div>
-                    <div className="text-xs text-gray-400">Chapters</div>
+                  <div className="text-center p-2.5 rounded-lg bg-white/[0.06] border border-white/5">
+                    <div className="text-lg font-bold text-blue-400">36</div>
+                    <div className="text-xs text-gray-500">Chapters</div>
                   </div>
-                  <div className="text-center p-3 rounded-lg bg-white/5">
-                    <div className="text-xl font-bold text-cyan-400">8,240</div>
-                    <div className="text-xs text-gray-400">Field Volunteers</div>
+                  <div className="text-center p-2.5 rounded-lg bg-white/[0.06] border border-white/5">
+                    <div className="text-lg font-bold text-cyan-400">8,240</div>
+                    <div className="text-xs text-gray-500">Field Volunteers</div>
                   </div>
                 </div>
               </div>
 
-              <div className="glass-dark rounded-xl p-4 border border-[#D4AF37]/20">
-                <h4 className="text-emerald-400 text-xs uppercase tracking-wider mb-3 flex items-center gap-2">
+              <div className="bg-[#0A1520]/80 backdrop-blur-sm rounded-xl p-3.5 border border-[#D4AF37]/20 shadow-lg shadow-black/10">
+                <h4 className="text-emerald-400 text-xs uppercase tracking-wider mb-2 flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                   LIVE NOW
                 </h4>
-                <div className="space-y-2">
+                <div className="space-y-1.5">
                   <div className="flex items-center gap-2 text-sm text-gray-300">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400/60"></span>
                     Kaduna water initiative active
@@ -197,21 +197,21 @@ export default function PlatformAccessHub() {
 
 <div className="grid md:grid-cols-3 gap-6">
             <div className="md:col-span-2">
-              <div className="glass-dark rounded-xl p-6 border border-[#D4AF37]/20">
-                <h3 className="text-[#D4AF37] font-semibold mb-4 flex items-center gap-2">
+              <div className="bg-[#0A1520]/80 backdrop-blur-sm rounded-xl p-5 border border-[#D4AF37]/20 shadow-lg shadow-black/10 mb-6">
+                <h3 className="text-[#D4AF37] font-semibold mb-3 flex items-center gap-2 text-sm">
                   <Zap className="w-4 h-4" />
                   Explore Operating Layers
                 </h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5">
                   {demoUsers.map(user => {
                     const RoleIcon = roles.find(r => r.id === user.role)?.icon || Cpu
                     return (
                       <button
                         key={user.email}
                         onClick={() => handleDemoLogin(user.email, user.role)}
-                        className="p-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#D4AF37]/30 transition-all text-left"
+                        className="p-2.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/5 hover:border-[#D4AF37]/40 transition-all text-left"
                       >
-                        <RoleIcon className="w-5 h-5 text-[#D4AF37] mb-2" />
+                        <RoleIcon className="w-5 h-5 text-[#D4AF37] mb-1.5" />
                         <div className="text-white text-sm font-medium">{user.name}</div>
                         <div className="text-gray-500 text-xs capitalize">{user.role}</div>
                       </button>
@@ -220,21 +220,21 @@ export default function PlatformAccessHub() {
                 </div>
               </div>
 
-              <div className="glass-dark rounded-xl p-6 border border-[#D4AF37]/20">
-                <h3 className="text-[#D4AF37] font-semibold mb-4 flex items-center gap-2">
+              <div className="bg-[#0A1520]/80 backdrop-blur-sm rounded-xl p-5 border border-[#D4AF37]/20 shadow-lg shadow-black/10">
+                <h3 className="text-[#D4AF37] font-semibold mb-3 flex items-center gap-2 text-sm">
                   <Users className="w-4 h-4" />
                   Launch Operational Workspace
                 </h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5">
                   {roles.map(role => {
                     const RoleIcon = role.icon
                     return (
                       <button
                         key={role.id}
                         onClick={() => handleRoleSelect(role.id)}
-                        className="p-4 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#D4AF37]/30 transition-all text-center"
+                        className="p-3 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/5 hover:border-[#D4AF37]/40 transition-all text-center"
                       >
-                        <RoleIcon className={`w-6 h-6 ${role.color} mx-auto mb-2`} />
+                        <RoleIcon className={`w-5 h-5 ${role.color} mx-auto mb-1.5`} />
                         <div className="text-white text-sm font-medium">{role.label}</div>
                         <div className="text-gray-500 text-xs">{role.desc}</div>
                       </button>
