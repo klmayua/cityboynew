@@ -116,51 +116,47 @@ export default function PlatformAccessHub() {
 
   return (
     <div className="min-h-screen" style={{ background: 'linear-gradient(180deg, #07111A 0%, #0D2234 100%)' }}>
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-8">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-5 gap-8 mb-12">
+          <div className="grid md:grid-cols-5 gap-7">
             <div className="md:col-span-3">
-              <div className="flex items-center gap-2 mb-2">
+              <div className="flex items-center gap-2 mb-1.5">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                 <span className="text-[#D4AF37] text-xs uppercase tracking-[0.3em] font-medium">National Civic Execution Infrastructure</span>
               </div>
               <h1 className="font-h1 text-xl md:text-2xl text-white mb-1 tracking-tight font-bold">
                 <span className="text-[#D4AF37]">CITYBOY</span> OS
               </h1>
-              <p className="text-sm text-gray-400 mb-3">National civic operating system</p>
-              <div className="flex items-center gap-3 mb-4 text-xs text-gray-500">
-                <span>Command</span>
-                <span>•</span>
-                <span>Capital</span>
-                <span>•</span>
-                <span>Execution</span>
+              <p className="text-sm text-gray-400 mb-2.5">National civic operating system</p>
+              <div className="flex items-center gap-3 mb-3 text-xs text-gray-500">
+                <span>Command</span><span>•</span><span>Capital</span><span>•</span><span>Execution</span>
               </div>
-              <div className="flex items-center gap-4">
-                <button className="px-6 py-3 bg-[#D4AF37] hover:bg-[#B8962E] text-black font-semibold rounded-lg transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-[#D4AF37]/20">
+              <div className="flex items-center gap-3 mb-4">
+                <button className="px-5 py-2.5 bg-[#D4AF37] hover:bg-[#B8962E] text-black font-semibold rounded-lg transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-[#D4AF37]/20">
                   ENTER COMMAND DEMO
                 </button>
-                <button className="px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/20 text-white font-medium rounded-lg transition-all hover:bg-white/10">
+                <button className="px-5 py-2.5 bg-white/5 hover:bg-white/10 border border-white/20 text-white font-medium rounded-lg transition-all hover:bg-white/10">
                   VIEW IMPACT MODEL
                 </button>
               </div>
 
-              <div className="mt-6 h-20 rounded-[10px] bg-[#0A1520]/60 px-[18px] py-3 border border-[#D4AF37]/18 flex items-center gap-2 overflow-hidden">
-                <span className="text-[10px] text-[#D4AF37] uppercase tracking-widest shrink-0">Active Operations</span>
-                <div className="w-px h-4 bg-white/10"></div>
-                <div className="flex items-center gap-3 overflow-hidden">
-                  <span className="text-xs text-emerald-400 shrink-0">Kaduna Water</span>
+              <div className="h-14 rounded-[10px] bg-[#0A1520]/60 px-4 py-0 border border-[#D4AF37]/18 flex items-center">
+                <span className="text-[10px] text-[#D4AF37] uppercase tracking-widest shrink-0 w-32">FEDERAL STATUS</span>
+                <div className="w-px h-5 bg-white/10"></div>
+                <div className="flex items-center gap-4 text-xs">
+                  <span className="text-emerald-400">ACTIVE</span>
                   <span className="text-gray-600">•</span>
-                  <span className="text-xs text-cyan-400 shrink-0">MTN Partnership</span>
+                  <span className="text-white">36 CHAPTERS ONLINE</span>
                   <span className="text-gray-600">•</span>
-                  <span className="text-xs text-amber-400 shrink-0">Kano Mobilization</span>
+                  <span className="text-emerald-400">128 MISSIONS LIVE</span>
                   <span className="text-gray-600">•</span>
-                  <span className="text-xs text-[#D4AF37] shrink-0">Treasury Route</span>
+                  <span className="text-[#D4AF37]">TREASURY ROUTING CLEAR</span>
                 </div>
               </div>
             </div>
 
-            <div className="md:col-span-2">
-              <div className="bg-[#0A1520]/80 backdrop-blur-sm rounded-xl p-4 border border-[#D4AF37]/30 shadow-lg shadow-black/20 mb-4">
+            <div className="md:col-span-2 space-y-[18px]">
+              <div className="bg-[#0A1520]/80 backdrop-blur-sm rounded-xl p-4 border border-[#D4AF37]/30 shadow-lg shadow-black/20">
                 <h3 className="text-[#D4AF37] font-semibold mb-3 flex items-center gap-2 text-sm">
                   <Activity className="w-4 h-4" />
                   National Operating Index
@@ -185,7 +181,7 @@ export default function PlatformAccessHub() {
                 </div>
               </div>
 
-              <div className="bg-[#0A1520]/80 backdrop-blur-sm rounded-xl p-3.5 border border-[#D4AF37]/20 shadow-lg shadow-black/10">
+              <div className="bg-[#0A1520]/80 backdrop-blur-sm rounded-xl p-4 border border-[#D4AF37]/20 shadow-lg shadow-black/10">
                 <h4 className="text-emerald-400 text-xs uppercase tracking-wider mb-2 flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                   LIVE NOW
@@ -208,23 +204,23 @@ export default function PlatformAccessHub() {
             </div>
           </div>
 
-<div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-[18px]">
             <div className="md:col-span-2">
-              <div className="bg-[#0A1520]/80 backdrop-blur-sm rounded-xl p-5 border border-[#D4AF37]/20 shadow-lg shadow-black/10 mb-6">
+              <div className="bg-[#0A1520]/80 backdrop-blur-sm rounded-xl p-4 border border-[#D4AF37]/20 shadow-lg shadow-black/10 mb-[18px]">
                 <h3 className="text-[#D4AF37] font-semibold mb-3 flex items-center gap-2 text-sm">
                   <Zap className="w-4 h-4" />
                   Explore Operating Layers
                 </h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                   {demoUsers.map(user => {
                     const RoleIcon = roles.find(r => r.id === user.role)?.icon || Cpu
                     return (
                       <button
                         key={user.email}
                         onClick={() => handleDemoLogin(user.email, user.role)}
-                        className="p-2.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/5 hover:border-[#D4AF37]/40 transition-all text-left"
+                        className="p-2 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/5 hover:border-[#D4AF37]/40 transition-all text-left"
                       >
-                        <RoleIcon className="w-5 h-5 text-[#D4AF37] mb-1.5" />
+                        <RoleIcon className="w-5 h-5 text-[#D4AF37] mb-1" />
                         <div className="text-white text-sm font-medium">{user.name}</div>
                         <div className="text-gray-500 text-xs capitalize">{user.role}</div>
                       </button>
@@ -233,19 +229,19 @@ export default function PlatformAccessHub() {
                 </div>
               </div>
 
-              <div className="bg-[#0A1520]/80 backdrop-blur-sm rounded-xl p-5 border border-[#D4AF37]/20 shadow-lg shadow-black/10">
+              <div className="bg-[#0A1520]/80 backdrop-blur-sm rounded-xl p-4 border border-[#D4AF37]/20 shadow-lg shadow-black/10">
                 <h3 className="text-[#D4AF37] font-semibold mb-3 flex items-center gap-2 text-sm">
                   <Users className="w-4 h-4" />
                   Launch Operational Workspace
                 </h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                   {roles.map(role => {
                     const RoleIcon = role.icon
                     return (
                       <button
                         key={role.id}
                         onClick={() => handleRoleSelect(role.id)}
-                        className="p-3 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/5 hover:border-[#D4AF37]/40 transition-all text-center"
+                        className="p-2.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/5 hover:border-[#D4AF37]/40 transition-all text-center"
                       >
                         <RoleIcon className={`w-5 h-5 ${role.color} mx-auto mb-1.5`} />
                         <div className="text-white text-sm font-medium">{role.label}</div>
@@ -257,7 +253,7 @@ export default function PlatformAccessHub() {
               </div>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-[18px]">
               <PlatformHealthCard />
               <RecentActivityStrip />
             </div>
