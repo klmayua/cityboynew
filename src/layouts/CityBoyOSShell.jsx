@@ -438,21 +438,9 @@ function TopBar({ currentRole, title, sidebarOpen, setSidebarOpen }) {
     <div className="flex flex-col w-full">
       <div className="h-16 bg-[#07111A] border-b border-white/5 flex items-center justify-between px-4">
         <div className="flex items-center gap-4">
-          <button onClick={() => setSidebarOpen(!sidebarOpen)} className="p-2 hover:bg-white/5 rounded-lg">
+          <button onClick={() => setSidebarOpen(!sidebarOpen)} className="cursor-pointer p-2 hover:bg-white/5 rounded-lg">
             <Menu className="w-5 h-5 text-gray-400" />
           </button>
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#D4AF37] flex items-center justify-center">
-              <Cpu className="w-6 h-6 text-black" />
-            </div>
-            <div>
-              <div className="text-white font-semibold text-lg">CITYBOY OS</div>
-              <div className="flex items-center gap-1.5 text-xs text-gray-500">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                {config.label} • LIVE
-              </div>
-            </div>
-          </div>
         </div>
 
         <div className="flex-1 max-w-md mx-8">
@@ -473,7 +461,7 @@ function TopBar({ currentRole, title, sidebarOpen, setSidebarOpen }) {
             <div className="w-9 h-9 rounded-full bg-[#D4AF37] flex items-center justify-center text-black font-semibold">
               {user?.name?.[0] || 'U'}
             </div>
-            <button onClick={handleLogout} className="p-2 hover:bg-white/5 rounded-lg" title="Logout">
+            <button onClick={handleLogout} className="cursor-pointer p-2 hover:bg-white/5 rounded-lg" title="Logout">
               <LogOut className="w-4 h-4 text-gray-400" />
             </button>
           </div>

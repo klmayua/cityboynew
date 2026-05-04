@@ -12,6 +12,7 @@ import {
   ArrowUpRight, ArrowDownRight, Bell, Download, Search, Filter
 } from 'lucide-react'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const nigerianStates = [
   'Abia', 'Adamawa', 'Akwa Ibom', 'Anambra', 'Bauchi', 'Bayelsa', 'Benue', 'Borno',
@@ -60,7 +61,7 @@ function NigeriaMap() {
           <button
             key={state}
             onClick={() => setSelectedState(state === selectedState ? null : state)}
-            className={`p-2 rounded-lg text-xs text-center transition-all ${
+            className={`cursor-pointer p-2 rounded-lg text-xs text-center transition-all ${
               selectedState === state ? 'ring-2 ring-[#D4AF37]' : ''
             } ${getStateColor(state)} text-white hover:opacity-80`}
           >
@@ -75,7 +76,7 @@ function NigeriaMap() {
               <p className="text-white font-semibold">{selectedState}</p>
               <p className="text-gray-400 text-sm">{chapters.find(c => c.state === selectedState)?.members || 0} members</p>
             </div>
-            <button className="cursor-pointer px-3 py-1.5 bg-[#D4AF37] text-black text-sm font-medium rounded-lg">
+            <button onClick={() => handleViewChapter(selectedState)} className="cursor-pointer px-3 py-1.5 bg-[#D4AF37] text-black text-sm font-medium rounded-lg">
               View Chapter
             </button>
           </div>
@@ -271,8 +272,13 @@ function AlertRail() {
 
 export default function NationalCommandCenter() {
   const { user } = useAuthStore()
+  const navigate = useNavigate()
   const kpis = deriveKPIs()
   const chapters = usePeopleStore(s => s.chapters) || []
+
+  const handleViewChapter = (state) => {
+    navigate(`/app/chapter?state=${state}`)
+  }
 
   return (
     <CityBoyOSShell role="leadership" title="National Command Center">
