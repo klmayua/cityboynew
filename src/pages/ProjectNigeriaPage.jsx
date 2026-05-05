@@ -215,7 +215,7 @@ export default function ProjectNigeriaPage() {
           <div className="max-w-[1440px] mx-auto px-8">
             <div className="flex items-center justify-between mb-16">
               <h2 className="font-h2 text-white">The Storytellers</h2>
-              <Link to="#" className="text-secondary font-bold flex items-center gap-2 group">
+              <Link to="/stories" className="text-secondary font-bold flex items-center gap-2 group">
                 VIEW ALL CREATORS
                 <TrendingFlat className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>

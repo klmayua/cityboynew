@@ -17,10 +17,10 @@ export default function ArenaPage() {
             <Link to="/arena/chapters" className="bg-secondary text-on-secondary px-6 py-3 rounded-full">
               Chapters
             </Link>
-            <Link to="/arena/leadership" className="bg-secondary text-on-secondary px-6 py-3 rounded-full">
+            <Link to="/leadership" className="bg-secondary text-on-secondary px-6 py-3 rounded-full">
               Leadership
             </Link>
-            <Link to="/arena/partners" className="bg-secondary text-on-secondary px-6 py-3 rounded-full">
+            <Link to="/partners" className="bg-secondary text-on-secondary px-6 py-3 rounded-full">
               Partners
             </Link>
           </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { Heart, Menu, X } from 'lucide-react'
 import BottomNav from './system/BottomNav'
@@ -42,6 +42,17 @@ function Navbar() {
   const location = useLocation()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [mobileMenuOpen])
+
   return (
     <>
       <header className="bg-[#062B49]/90 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-[rgba(212,175,55,.18)]">
@@ -67,13 +78,13 @@ function Navbar() {
               </Link>
             ))}
           </nav>
-          <div className="col-span-3 flex justify-end">
+          <div className="col-span-10 flex justify-end items-center">
             <Link to="/join" className="hidden md:inline-flex bg-[#16A34A] text-white px-6 md:px-8 py-3 md:py-4 rounded font-label-caps text-sm hover:brightness-110 transition-all items-center gap-2">
               <Heart className="w-5 h-5" />
               <span>Volunteer</span>
             </Link>
             <button 
-              className="md:hidden p-2 text-white"
+              className="md:hidden w-12 h-12 flex items-center justify-center text-white hover:bg-white/10 rounded-lg transition-colors"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
               aria-expanded={mobileMenuOpen}
@@ -175,9 +186,9 @@ function Footer() {
         <div className="mt-10 pt-6 border-t border-[rgba(255,255,255,.08)] flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[#94A3B8] text-xs text-center md:text-left">© 2026 City Boy Arena. National Infrastructure Command Centre.</p>
           <div className="flex flex-wrap gap-4 justify-center md:justify-end">
-            <Link to="#" className="text-[#94A3B8] hover:text-[#D4AF37] text-xs transition-colors">Privacy Protocol</Link>
-            <Link to="#" className="text-[#94A3B8] hover:text-[#D4AF37] text-xs transition-colors">Terms of Service</Link>
-            <Link to="#" className="text-[#94A3B8] hover:text-[#D4AF37] text-xs transition-colors">Cookie Policy</Link>
+            <Link to="/trust" className="text-[#94A3B8] hover:text-[#D4AF37] text-xs transition-colors">Privacy Protocol</Link>
+            <Link to="/governance" className="text-[#94A3B8] hover:text-[#D4AF37] text-xs transition-colors">Terms of Service</Link>
+            <Link to="/impact" className="text-[#94A3B8] hover:text-[#D4AF37] text-xs transition-colors">Cookie Policy</Link>
           </div>
         </div>
       </div>

@@ -153,8 +153,8 @@ export default function JoinPage() {
 
               <p className="text-xs text-center text-soft-ivory/50 mt-4">
                 By joining, you agree to our{' '}
-                <a href="#" className="text-gold hover:underline">Terms</a> and{' '}
-                <a href="#" className="text-gold hover:underline">Privacy Policy</a>
+                <Link to="/governance" className="text-gold hover:underline">Terms</Link> and{' '}
+                <Link to="/trust" className="text-gold hover:underline">Privacy Policy</Link>
               </p>
             </form>
           </div>

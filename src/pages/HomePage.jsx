@@ -228,7 +228,7 @@ export default function HomePage() {
         </section>
 
         {/* Take Action: Impact Pathways - Community */}
-        <section className="py-[120px] bg-[#101418]">
+        <section className="py-16 md:py-[120px] bg-[#101418]">
           <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
             <div className="text-center mb-20">
               <span className="text-secondary font-label-caps uppercase tracking-widest mb-4 block">Take Action</span>

@@ -63,7 +63,7 @@ export default function InitiativesPage() {
             </div>
 
             {/* Right: Stat Cluster */}
-            <div className="grid grid-cols-3 gap-[28px]">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-[28px]">
               <div className="text-center">
                 <div className="text-[#D4AF37] text-[42px] font-extrabold">12</div>
                 <div className="text-white/58 text-[12px] uppercase tracking-[2px]">Active Programs</div>
@@ -148,7 +148,7 @@ export default function InitiativesPage() {
       <section className="py-[56px] bg-[#0b1d2b]">
         <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
           <div className="max-w-[1180px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-[24px]">
-            <Link to="/volunteer" className="group rounded-[20px] p-[28px] text-center transition-all duration-250 hover:-translate-y-[2px]" style={{background: 'rgba(255,255,255,.03)', border: '1px solid rgba(255,255,255,.06)'}}>
+            <Link to="/join" className="group rounded-[20px] p-[28px] text-center transition-all duration-250 hover:-translate-y-[2px]" style={{background: 'rgba(255,255,255,.03)', border: '1px solid rgba(255,255,255,.06)'}}>
               <Heart className="w-8 h-8 text-[#D4AF37] mx-auto mb-[16px]" />
               <h3 className="text-white text-[20px] font-bold mb-[10px]">Volunteer</h3>
               <p className="text-white/58 text-[14px]">Join your local chapter</p>
@@ -175,7 +175,7 @@ export default function InitiativesPage() {
             <p className="text-white/72 text-[18px] leading-[1.55] max-w-[720px] mb-[28px]">
               We welcome bids from qualified contractors, suppliers, and service providers for project implementation across all 36 states.
             </p>
-            <Link to="/procurement" className="inline-flex items-center gap-3 bg-[#D4AF37] text-[#031B30] px-[28px] py-[14px] rounded-[999px] font-bold uppercase tracking-[2px] text-[14px]">
+            <Link to="/trust" className="inline-flex items-center gap-3 bg-[#D4AF37] text-[#031B30] px-[28px] py-[14px] rounded-[999px] font-bold uppercase tracking-[2px] text-[14px]">
               View Procurement Portal
             </Link>
           </div>

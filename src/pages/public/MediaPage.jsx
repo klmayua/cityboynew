@@ -28,7 +28,7 @@ export default function MediaPage() {
               </p>
             </div>
             {/* Right: Newsroom Indicator */}
-            <div className="grid grid-cols-3 gap-[28px]">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-[28px]">
               <div className="text-center p-[20px] rounded-[20px]" style={{background: 'rgba(255,255,255,.03)', border: '1px solid rgba(255,255,255,.06)'}}>
                 <Newspaper className="w-6 h-6 text-[#D4AF37] mx-auto mb-[12px]" />
                 <div className="text-white text-[24px] font-bold">4</div>
@@ -68,7 +68,7 @@ export default function MediaPage() {
             {/* Featured Release - Wide */}
             <div className="lg:col-span-3">
               <span className="text-[#D4AF37] text-[12px] font-bold uppercase tracking-[2px] mb-[18px] block">Featured</span>
-              <Link to="/press" className="group block rounded-[24px] p-[36px] transition-all duration-250 hover:-translate-y-[2px]" style={{background: 'linear-gradient(145deg, #0b2234, #102d43)', border: '1px solid rgba(255,255,255,.08)'}}>
+              <Link to="/community" className="group block rounded-[24px] p-[36px] transition-all duration-250 hover:-translate-y-[2px]" style={{background: 'linear-gradient(145deg, #0b2234, #102d43)', border: '1px solid rgba(255,255,255,.08)'}}>
                 <div className="flex items-center gap-3 mb-[18px]">
                   <span className="text-[#D4AF37] text-[11px] uppercase tracking-[2px]">Press Release</span>
                   <span className="text-white/48">•</span>
@@ -90,7 +90,7 @@ export default function MediaPage() {
             <div className="lg:col-span-2 space-y-[16px]">
               <span className="text-[#D4AF37] text-[12px] font-bold uppercase tracking-[2px] mb-[18px] block">Recent</span>
               {releases.slice(1).map((release, i) => (
-                <Link key={i} to="/press" className="group block rounded-[18px] p-[24px] transition-all duration-250 hover:-translate-y-[1px]" style={{background: 'rgba(255,255,255,.03)', border: '1px solid rgba(255,255,255,.06)'}}>
+                <Link key={i} to="/community" className="group block rounded-[18px] p-[24px] transition-all duration-250 hover:-translate-y-[1px]" style={{background: 'rgba(255,255,255,.03)', border: '1px solid rgba(255,255,255,.06)'}}>
                   <div className="flex items-center gap-2 mb-[8px]">
                     <span className="text-white/48 text-[10px]">{release.date}</span>
                   </div>
@@ -109,7 +109,7 @@ export default function MediaPage() {
             <span className="text-[#D4AF37] text-[12px] font-bold uppercase tracking-[2px] mb-[28px] block">Official Statements</span>
             <div className="space-y-[16px]">
               {statements.map((statement, i) => (
-                <Link key={i} to="/statements" className="group flex items-center justify-between rounded-[18px] p-[24px] transition-all duration-250 hover:-translate-y-[1px]" style={{background: 'rgba(255,255,255,.03)', border: '1px solid rgba(255,255,255,.06)'}}>
+                <Link key={i} to="/trust" className="group flex items-center justify-between rounded-[18px] p-[24px] transition-all duration-250 hover:-translate-y-[1px]" style={{background: 'rgba(255,255,255,.03)', border: '1px solid rgba(255,255,255,.06)'}}>
                   <div className="flex items-center gap-4">
                     <FileText className="w-5 h-5 text-[#D4AF37]" />
                     <div>
@@ -137,7 +137,7 @@ export default function MediaPage() {
                 </p>
               </div>
               <div className="lg:text-right">
-                <Link to="/media-kit" className="inline-flex items-center gap-3 bg-[#D4AF37] text-[#031B30] px-[28px] py-[14px] rounded-[999px] font-bold uppercase tracking-[2px] text-[14px]">
+                <Link to="/media" className="inline-flex items-center gap-3 bg-[#D4AF37] text-[#031B30] px-[28px] py-[14px] rounded-[999px] font-bold uppercase tracking-[2px] text-[14px]">
                   Download Kit
                 </Link>
               </div>

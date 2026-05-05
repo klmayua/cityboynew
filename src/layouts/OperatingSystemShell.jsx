@@ -10,7 +10,7 @@ import { seedRuntime } from '../lib/seedRuntime'
 import { deriveKPIs } from '../lib/deriveKPIs'
 import {
   Cpu, Shield, Users, Heart, Wallet, Building2, Eye, Lock, MessageSquare, CreditCard,
-  Home, Map, Target, TrendingUp, Bell, Search, Menu, X, LogOut, Settings, ChevronDown, Bot
+  Home, Map, Target, TrendingUp, Bell, Search, Menu, X, LogOut, Settings, ChevronDown, Bot, Globe
 } from 'lucide-react'
 
 const roleConfig = {
@@ -141,6 +141,10 @@ function Sidebar({ currentRole }) {
             <Cpu className="w-5 h-5 text-black" />
           </div>
           <span className="text-white font-semibold">CityBoy OS</span>
+        </Link>
+        <Link to="/platform" className="flex items-center gap-2 mt-3 text-xs text-gray-500 hover:text-white transition-colors">
+          <Globe className="w-3 h-3" />
+          Return to Platform
         </Link>
       </div>
 

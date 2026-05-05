@@ -232,6 +232,10 @@ function LeftSidebar({ currentRole }) {
             </div>
           </div>
         </Link>
+        <Link to="/platform" className="flex items-center gap-2 mt-3 text-xs text-gray-500 hover:text-white transition-colors">
+          <Globe className="w-3 h-3" />
+          Return to Platform
+        </Link>
       </div>
 
       <div className="flex-1 overflow-y-auto p-4">

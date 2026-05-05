@@ -5,7 +5,7 @@ export default function TrustPage() {
   return (
     <>
       <div className="min-h-screen bg-background pt-24 pb-12">
-        <div className="container mx-auto px-[80px] max-w-[1440px]">
+        <div className="container mx-auto px-4 md:px-[80px] max-w-[1440px]">
           <div className="text-center mb-16">
             <span className="text-secondary font-label-caps uppercase tracking-widest mb-4 block">Trust Framework</span>
             <h1 className="font-h1 text-5xl text-white mb-6">Built On Trust</h1>

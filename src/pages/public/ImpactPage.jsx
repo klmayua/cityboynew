@@ -17,7 +17,7 @@ export default function ImpactPage() {
       <div className="min-h-screen bg-background pt-24 pb-12">
         {/* Hero Strip */}
         <section className="py-16 border-b border-white/6">
-          <div className="container mx-auto px-[80px]">
+          <div className="container mx-auto px-4 md:px-[80px]">
             <span className="text-secondary font-label-caps uppercase tracking-widest">National Impact</span>
             <h1 className="font-h1 text-5xl text-white mt-4 mb-6">Live Delivery View</h1>
             <p className="font-body-lg text-on-surface-variant max-w-2xl">Real-time infrastructure progress across the federation. Every project, every naira, every outcome visible.</p>
@@ -26,7 +26,7 @@ export default function ImpactPage() {
 
         {/* Stats Grid */}
         <section className="py-12">
-          <div className="container mx-auto px-[80px]">
+          <div className="container mx-auto px-4 md:px-[80px]">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               {stats.map(s => (
                 <div key={s.label} className="glass-card rounded-2xl p-6" style={{background: 'rgba(0, 49, 83, 0.6)', border: '1px solid rgba(212, 175, 55, 0.2)'}}>
@@ -41,7 +41,7 @@ export default function ImpactPage() {
 
         {/* Live Projects Feed */}
         <section className="py-12">
-          <div className="container mx-auto px-[80px]">
+          <div className="container mx-auto px-4 md:px-[80px]">
             <div className="flex justify-between items-center mb-8">
               <h2 className="font-h2 text-2xl text-white">Active Projects</h2>
               <Link to="/projects" className="text-secondary font-label-caps">View All</Link>
@@ -66,7 +66,7 @@ export default function ImpactPage() {
 
         {/* Funding Overview */}
         <section className="py-12 border-t border-white/6">
-          <div className="container mx-auto px-[80px]">
+          <div className="container mx-auto px-4 md:px-[80px]">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="font-h2 text-2xl text-white mb-4">Transparent Funding</h2>
@@ -85,7 +85,7 @@ export default function ImpactPage() {
 
         {/* CTA */}
         <section className="py-16">
-          <div className="container mx-auto px-[80px] text-center">
+          <div className="container mx-auto px-4 md:px-[80px] text-center">
             <p className="text-on-surface-variant mb-6">Support visible national progress.</p>
             <Link to="/donate" className="bg-secondary text-on-secondary px-8 py-4 rounded-full font-label-caps hover:brightness-110 transition-all">Support A Project</Link>
           </div>

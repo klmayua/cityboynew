@@ -28,7 +28,7 @@ export default function CommunityPage() {
               </p>
             </div>
             {/* Right Stats */}
-            <div className="grid grid-cols-3 gap-[28px]">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-[28px]">
               <div className="text-center">
                 <div className="text-[#D4AF37] text-[42px] font-extrabold">18K+</div>
                 <div className="text-white/58 text-[12px] uppercase tracking-[2px]">Members</div>

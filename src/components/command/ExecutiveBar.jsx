@@ -1,4 +1,5 @@
-import { Search, Settings } from 'lucide-react'
+import { Search, Settings, Cpu } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import WorkspaceSwitcher from './WorkspaceSwitcher'
 import NotificationCenter from './NotificationCenter'
 
@@ -7,6 +8,12 @@ export default function ExecutiveBar() {
     <div className="sticky top-12 z-50 backdrop-blur-xl border-b border-white/[0.05] bg-[#02060dcc]">
       <div className="max-w-[1680px] mx-auto px-6 h-14 flex items-center justify-between gap-4">
         <div className="flex items-center gap-3">
+          <Link to="/platform" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <div className="w-8 h-8 rounded-lg bg-[#D4AF37] flex items-center justify-center">
+              <Cpu className="w-5 h-5 text-black" />
+            </div>
+            <span className="text-white font-semibold text-sm">CityBoy OS</span>
+          </Link>
           <WorkspaceSwitcher />
         </div>
 

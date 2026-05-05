@@ -3,9 +3,9 @@ import { Link, useLocation } from 'react-router-dom'
 import { Home, Grid3X3, Heart, Users, MoreHorizontal, X, ArrowRight, Shield, FileText, Mail, Users as LeadershipIcon, Globe, Target } from 'lucide-react'
 
 const navItems = [
-  { path: '/arena', label: 'Arena', icon: Home },
+  { path: '/', label: 'Arena', icon: Home },
   { path: '/initiatives', label: 'Initiatives', icon: Grid3X3 },
-  { path: '/volunteer', label: 'Volunteer', icon: Heart },
+  { path: '/join', label: 'Volunteer', icon: Heart },
   { path: '/community', label: 'Community', icon: Users },
   { path: 'more', label: 'More', icon: MoreHorizontal },
 ]
@@ -14,11 +14,11 @@ const moreMenuItems = [
   { path: '/about', label: 'About' },
   { path: '/leadership', label: 'Leadership' },
   { path: '/media', label: 'Media' },
-  { path: '/contact', label: 'Contact' },
-  { path: '/careers', label: 'Careers' },
+  { path: '/trust', label: 'Trust & Safety' },
   { path: '/governance', label: 'Governance' },
-  { path: '/mandate', label: 'Mandate' },
-  { path: '/model', label: 'Model' },
+  { path: '/projects', label: 'Projects' },
+  { path: '/stories', label: 'Stories' },
+  { path: '/partners', label: 'Partners' },
 ]
 
 export default function BottomNav() {
