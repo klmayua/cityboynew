@@ -57,13 +57,11 @@ function Navbar() {
   return (
     <>
       <header className="bg-[#062B49]/90 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-[rgba(212,175,55,.18)]">
-        <div className="grid grid-cols-12 items-center px-4 md:px-8 h-16 md:h-20 max-w-[1440px] mx-auto gap-4">
-          <div className="col-span-2 flex items-center">
-            <Link to="/" className="text-lg md:text-xl font-semibold tracking-widest text-[#D4AF37] uppercase font-['Sora'] hover:brightness-110 hover:-translate-y-px transition-all duration-300">
-              CITY BOY
-            </Link>
-          </div>
-          <nav className="hidden md:flex col-span-7 items-center justify-center gap-6 font-['Sora'] font-medium tracking-tight" aria-label="Main navigation">
+        <div className="flex items-center justify-between px-4 md:px-8 h-16 md:h-20 max-w-[1440px] mx-auto">
+          <Link to="/" className="text-lg md:text-xl font-semibold tracking-widest text-[#D4AF37] uppercase font-['Sora'] hover:brightness-110 hover:-translate-y-px transition-all duration-300">
+            CITY BOY
+          </Link>
+          <nav className="hidden md:flex items-center justify-center gap-6 font-['Sora'] font-medium tracking-tight" aria-label="Main navigation">
             {navLinks.map(link => (
               <Link 
                 key={link.to}
@@ -79,7 +77,7 @@ function Navbar() {
               </Link>
             ))}
           </nav>
-          <div className="col-span-10 flex justify-end items-center">
+          <div className="flex items-center">
             <Link to="/join" className="hidden md:inline-flex bg-[#16A34A] text-white px-6 md:px-8 py-3 md:py-4 rounded font-label-caps text-sm hover:brightness-110 transition-all items-center gap-2">
               <Heart className="w-5 h-5" />
               <span>Volunteer</span>
