@@ -48,7 +48,7 @@ export default function ArenaDesk() {
     <>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed z-[90] bottom-8 right-8 bg-[#D4AF37] text-[#031B30] px-8 py-4 rounded-lg shadow-lg flex items-center gap-2 font-bold"
+        className="fixed z-[90] bottom-20 md:bottom-8 right-4 md:right-8 bg-[#D4AF37] text-[#031B30] px-4 py-3 md:px-8 md:py-4 rounded-lg shadow-lg flex items-center gap-2 font-bold"
       >
         <MessageSquare className="w-4 h-4" />
         <span className="hidden md:inline text-sm">Arena Desk</span>
@@ -56,8 +56,8 @@ export default function ArenaDesk() {
       </button>
       <style>{`
         @media (max-width: 767px) {
-          .arena-desk-btn { right: 16px !important; top: auto !important; bottom: calc(16px + env(safe-area-inset-bottom, 0px)) !important; }
-          .arena-desk-panel { right: 16px !important; bottom: calc(100px + env(safe-area-inset-bottom, 0px)) !important; }
+          .arena-desk-btn { right: 16px !important; top: auto !important; bottom: calc(80px + env(safe-area-inset-bottom, 0px)) !important; }
+          .arena-desk-panel { right: 8px !important; left: 8px !important; width: auto !important; bottom: calc(140px + env(safe-area-inset-bottom, 0px)) !important; max-height: 60vh !important; }
         }
       `}</style>
 

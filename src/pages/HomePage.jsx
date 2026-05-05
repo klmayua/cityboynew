@@ -52,7 +52,7 @@ export default function HomePage() {
         </section>
 
 {/* National Pulse Section - Momentum metrics */}
-        <section className="pt-[72px] pb-[88px] md:pt-[56px] lg:pt-[72px] bg-[#e8ecef]">
+        <section className="pt-12 pb-16 md:pt-[56px] lg:pt-[72px] bg-[#e8ecef]">
           <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
             {/* Header */}
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-[34px]">
@@ -71,41 +71,41 @@ export default function HomePage() {
             </div>
 
             {/* Metric Strip - Executive tiles */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-              <div className="bg-[#082F49] rounded-[24px] p-6" style={{boxShadow: '0 18px 44px rgba(8,47,73,0.18)', border: '1px solid rgba(255,255,255,0.08)'}}>
-                <div className="w-[52px] h-[52px] rounded-[16px] bg-[rgba(212,175,55,0.14)] border border-[rgba(212,175,55,0.25)] flex items-center justify-center mb-4">
-                  <Groups className="w-6 h-6 text-[#D4AF37]" />
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-4">
+              <div className="bg-[#082F49] rounded-2xl md:rounded-[24px] p-3 md:p-6" style={{boxShadow: '0 18px 44px rgba(8,47,73,0.18)', border: '1px solid rgba(255,255,255,0.08)'}}>
+                <div className="w-8 h-8 md:w-[52px] md:h-[52px] rounded-xl md:rounded-[16px] bg-[rgba(212,175,55,0.14)] border border-[rgba(212,175,55,0.25)] flex items-center justify-center mb-2 md:mb-4">
+                  <Groups className="w-4 h-4 md:w-6 md:h-6 text-[#D4AF37]" />
                 </div>
-                <div className="text-[42px] text-white font-extrabold mb-1">18,420+</div>
-                <div className="text-[16px] text-white/72">Volunteers Active</div>
+                <div className="text-lg md:text-[42px] text-white font-extrabold mb-1">18K+</div>
+                <div className="text-xs md:text-[16px] text-white/72">Volunteers</div>
               </div>
-              <div className="bg-[#082F49] rounded-[24px] p-6" style={{boxShadow: '0 18px 44px rgba(8,47,73,0.18)', border: '1px solid rgba(255,255,255,0.08)'}}>
-                <div className="w-[52px] h-[52px] rounded-[16px] bg-[rgba(212,175,55,0.14)] border border-[rgba(212,175,55,0.25)] flex items-center justify-center mb-4">
-                  <Public className="w-6 h-6 text-[#D4AF37]" />
+              <div className="bg-[#082F49] rounded-2xl md:rounded-[24px] p-3 md:p-6" style={{boxShadow: '0 18px 44px rgba(8,47,73,0.18)', border: '1px solid rgba(255,255,255,0.08)'}}>
+                <div className="w-8 h-8 md:w-[52px] md:h-[52px] rounded-xl md:rounded-[16px] bg-[rgba(212,175,55,0.14)] border border-[rgba(212,175,55,0.25)] flex items-center justify-center mb-2 md:mb-4">
+                  <Public className="w-4 h-4 md:w-6 md:h-6 text-[#D4AF37]" />
                 </div>
-                <div className="text-[42px] text-white font-extrabold mb-1">31</div>
-                <div className="text-[16px] text-white/72">States Activated</div>
+                <div className="text-lg md:text-[42px] text-white font-extrabold mb-1">31</div>
+                <div className="text-xs md:text-[16px] text-white/72">States</div>
               </div>
-              <div className="bg-[#082F49] rounded-[24px] p-6" style={{boxShadow: '0 18px 44px rgba(8,47,73,0.18)', border: '1px solid rgba(255,255,255,0.08)'}}>
-                <div className="w-[52px] h-[52px] rounded-[16px] bg-[rgba(212,175,55,0.14)] border border-[rgba(212,175,55,0.25)] flex items-center justify-center mb-4">
-                  <AccountBalance className="w-6 h-6 text-[#D4AF37]" />
+              <div className="bg-[#082F49] rounded-2xl md:rounded-[24px] p-3 md:p-6" style={{boxShadow: '0 18px 44px rgba(8,47,73,0.18)', border: '1px solid rgba(255,255,255,0.08)'}}>
+                <div className="w-8 h-8 md:w-[52px] md:h-[52px] rounded-xl md:rounded-[16px] bg-[rgba(212,175,55,0.14)] border border-[rgba(212,175,55,0.25)] flex items-center justify-center mb-2 md:mb-4">
+                  <AccountBalance className="w-4 h-4 md:w-6 md:h-6 text-[#D4AF37]" />
                 </div>
-                <div className="text-[42px] text-white font-extrabold mb-1">246</div>
-                <div className="text-[16px] text-white/72">Projects Live</div>
+                <div className="text-lg md:text-[42px] text-white font-extrabold mb-1">246</div>
+                <div className="text-xs md:text-[16px] text-white/72">Projects</div>
               </div>
-              <div className="bg-[#082F49] rounded-[24px] p-6" style={{boxShadow: '0 18px 44px rgba(8,47,73,0.18)', border: '1px solid rgba(255,255,255,0.08)'}}>
-                <div className="w-[52px] h-[52px] rounded-[16px] bg-[rgba(212,175,55,0.14)] border border-[rgba(212,175,55,0.25)] flex items-center justify-center mb-4">
-                  <VolunteerActivism className="w-6 h-6 text-[#D4AF37]" />
+              <div className="bg-[#082F49] rounded-2xl md:rounded-[24px] p-3 md:p-6" style={{boxShadow: '0 18px 44px rgba(8,47,73,0.18)', border: '1px solid rgba(255,255,255,0.08)'}}>
+                <div className="w-8 h-8 md:w-[52px] md:h-[52px] rounded-xl md:rounded-[16px] bg-[rgba(212,175,55,0.14)] border border-[rgba(212,175,55,0.25)] flex items-center justify-center mb-2 md:mb-4">
+                  <VolunteerActivism className="w-4 h-4 md:w-6 md:h-6 text-[#D4AF37]" />
                 </div>
-                <div className="text-[42px] text-white font-extrabold mb-1">₦4.2B</div>
-                <div className="text-[16px] text-white/72">Impact Funded</div>
+                <div className="text-lg md:text-[42px] text-white font-extrabold mb-1">₦4.2B</div>
+                <div className="text-xs md:text-[16px] text-white/72">Funded</div>
               </div>
-              <div className="bg-[#082F49] rounded-[24px] p-6" style={{boxShadow: '0 18px 44px rgba(8,47,73,0.18)', border: '1px solid rgba(255,255,255,0.08)'}}>
-                <div className="w-[52px] h-[52px] rounded-[16px] bg-[rgba(212,175,55,0.14)] border border-[rgba(212,175,55,0.25)] flex items-center justify-center mb-4">
-                  <Verified className="w-6 h-6 text-[#D4AF37]" />
+              <div className="bg-[#082F49] rounded-2xl md:rounded-[24px] p-3 md:p-6" style={{boxShadow: '0 18px 44px rgba(8,47,73,0.18)', border: '1px solid rgba(255,255,255,0.08)'}}>
+                <div className="w-8 h-8 md:w-[52px] md:h-[52px] rounded-xl md:rounded-[16px] bg-[rgba(212,175,55,0.14)] border border-[rgba(212,175,55,0.25)] flex items-center justify-center mb-2 md:mb-4">
+                  <Verified className="w-4 h-4 md:w-6 md:h-6 text-[#D4AF37]" />
                 </div>
-                <div className="text-[42px] text-white font-extrabold mb-1">94%</div>
-                <div className="text-[16px] text-white/72">Trust Index</div>
+                <div className="text-lg md:text-[42px] text-white font-extrabold mb-1">94%</div>
+                <div className="text-xs md:text-[16px] text-white/72">Trust</div>
               </div>
             </div>
 
@@ -273,7 +273,7 @@ export default function HomePage() {
         </section>
 
         {/* Impact Proof: Visible Results - Funding */}
-        <section className="pt-[72px] pb-[88px] md:pt-[68px] md:pb-[68px] lg:pt-[72px] lg:pb-[88px] bg-[#EEF3EC]">
+        <section className="pt-12 pb-16 md:pt-[68px] md:pb-[68px] lg:pt-[72px] lg:pb-[88px] bg-[#EEF3EC]">
           <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
             <div className="text-center mb-[34px]">
               <span className="text-[#16A34A] font-bold uppercase tracking-[0.18em] text-[13px] mb-[14px] block">National Impact</span>
@@ -469,7 +469,7 @@ export default function HomePage() {
         </section>
 
         {/* Impact Stories: Masonry Grid */}
-        <section className="pt-[72px] pb-[88px] md:pt-[68px] md:pb-[68px] lg:pt-[72px] lg:pb-[88px] bg-[#F3F5F4] relative overflow-hidden">
+        <section className="pt-12 pb-16 md:pt-[68px] md:pb-[68px] lg:pt-[72px] lg:pb-[88px] bg-[#F3F5F4] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-[420px] h-[420px] rounded-full pointer-events-none" style={{background: 'rgba(212,175,55,0.045)', filter: 'blur(110px)'}}></div>
           <div className="absolute bottom-0 left-0 w-[340px] h-[340px] rounded-full pointer-events-none" style={{background: 'rgba(22,163,74,0.035)', filter: 'blur(90px)'}}></div>
           <div className="container mx-auto px-4 md:px-8 max-w-[1440px] relative z-10">
@@ -532,52 +532,52 @@ export default function HomePage() {
         </section>
 
         {/* Trust Standard: Clean & Ivory */}
-        <section className="pt-[72px] pb-[88px] md:pt-[68px] md:pb-[68px] lg:pt-[72px] lg:pb-[88px]" style={{background: 'linear-gradient(90deg, #082F49 0%, #0B3D5C 100%)'}}>
+        <section className="pt-12 pb-16 md:pt-[68px] md:pb-[68px] lg:pt-[72px] lg:pb-[88px]" style={{background: 'linear-gradient(90deg, #082F49 0%, #0B3D5C 100%)'}}>
           <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-[90px] items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[90px] items-center">
               <div className="lg:w-[46%]">
                 <span className="text-[#22C55E] font-bold uppercase tracking-[0.18em] text-[12px] mb-[24px] block">Institutional Integrity</span>
-                <h2 className="font-h2 text-[64px] text-white mb-[28px] leading-[1.02] tracking-[-0.03em] font-extrabold" style={{maxWidth: '620px'}}>The Trust Standard</h2>
-                <p className="font-body-lg text-white/80 text-[24px] leading-[1.7] font-medium mb-[60px]" style={{maxWidth: '720px'}}>
+                <h2 className="font-h2 text-3xl md:text-[64px] text-white mb-4 md:mb-[28px] leading-[1.02] tracking-[-0.03em] font-extrabold" style={{maxWidth: '620px'}}>The Trust Standard</h2>
+                <p className="text-white/80 text-base md:text-[24px] leading-[1.7] font-medium mb-6 md:mb-[60px]" style={{maxWidth: '720px'}}>
                   Transparency is our baseline. Every naira tracked, every milestone audited by third-party institutional partners. No shadows, just results.
                 </p>
-                <div className="flex gap-[80px] items-center">
+                <div className="flex gap-6 md:gap-[80px] items-center">
                   <div>
-                    <div className="w-[48px] h-1 rounded-[999px] bg-[#22C55E] mb-[18px]"></div>
-                    <div className="text-[68px] text-white font-extrabold leading-none">100%</div>
-                    <div className="text-white/70 text-[13px] font-bold uppercase tracking-[0.16em] mt-[12px]">Audit Transparency</div>
+                    <div className="w-8 md:w-[48px] h-1 rounded-[999px] bg-[#22C55E] mb-3 md:mb-[18px]"></div>
+                    <div className="text-2xl md:text-[68px] text-white font-extrabold leading-none">100%</div>
+                    <div className="text-white/70 text-xs md:text-[13px] font-bold uppercase tracking-[0.16em] mt-2 md:mt-[12px]">Audit Transparency</div>
                   </div>
                   <div>
-                    <div className="w-[48px] h-1 rounded-[999px] bg-[#22C55E] mb-[18px]"></div>
-                    <div className="text-[68px] text-white font-extrabold leading-none">94%</div>
-                    <div className="text-white/70 text-[13px] font-bold uppercase tracking-[0.16em] mt-[12px]">Project Delivery Rate</div>
+                    <div className="w-8 md:w-[48px] h-1 rounded-[999px] bg-[#22C55E] mb-3 md:mb-[18px]"></div>
+                    <div className="text-2xl md:text-[68px] text-white font-extrabold leading-none">94%</div>
+                    <div className="text-white/70 text-xs md:text-[13px] font-bold uppercase tracking-[0.16em] mt-2 md:mt-[12px]">Delivery Rate</div>
                   </div>
                 </div>
               </div>
-              <div className="lg:w-[54%]" style={{width: '640px'}}>
-                <div className="rounded-[32px] p-[48px]" style={{background: 'rgba(255,255,255,0.97)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.55)', boxShadow: '0 30px 80px rgba(0,0,0,0.12)'}}>
-                  <h4 className="text-[#7C93A8] text-[12px] font-bold uppercase tracking-[0.18em] text-center mb-[34px]">Independent Verification Framework</h4>
-                  <div className="grid grid-cols-2 gap-[22px]">
-                    <div className="min-h-[78px] rounded-[16px] flex items-center gap-3 px-6 transition-all duration-200 hover:-translate-y-[2px] hover:border-[rgba(22,163,74,0.28)]" style={{background: '#F7F9FB', border: '1px solid rgba(11,46,79,0.08)', boxShadow: '0 10px 28px rgba(0,0,0,0.06)'}}>
-                      <span className="w-2 h-2 rounded-full bg-[#16A34A]" style={{boxShadow: '0 0 12px rgba(22,163,74,0.35)'}}></span>
-                      <span className="text-[#0B2E4F] text-[15px] font-semibold tracking-[-0.01em]">Independent Audit Oversight</span>
+              <div className="lg:w-[54%]" style={{width: '100%', maxWidth: '640px'}}>
+                <div className="rounded-2xl md:rounded-[32px] p-4 md:p-[48px]" style={{background: 'rgba(255,255,255,0.97)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.55)', boxShadow: '0 30px 80px rgba(0,0,0,0.12)'}}>
+                  <h4 className="text-[#7C93A8] text-[10px] md:text-[12px] font-bold uppercase tracking-[0.18em] text-center mb-4 md:mb-[34px]">Independent Verification</h4>
+                  <div className="grid grid-cols-2 gap-2 md:gap-[22px]">
+                    <div className="min-h-[60px] md:min-h-[78px] rounded-xl md:rounded-[16px] flex items-center gap-2 md:gap-3 px-3 md:px-6 transition-all duration-200 hover:-translate-y-[2px] hover:border-[rgba(22,163,74,0.28)]" style={{background: '#F7F9FB', border: '1px solid rgba(11,46,79,0.08)', boxShadow: '0 10px 28px rgba(0,0,0,0.06)'}}>
+                      <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#16A34A]" style={{boxShadow: '0 0 12px rgba(22,163,74,0.35)'}}></span>
+                      <span className="text-[#0B2E4F] text-xs md:text-[15px] font-semibold tracking-[-0.01em]">Independent Audit</span>
                     </div>
-                    <div className="min-h-[78px] rounded-[16px] flex items-center gap-3 px-6 transition-all duration-200 hover:-translate-y-[2px] hover:border-[rgba(22,163,74,0.28)]" style={{background: '#F7F9FB', border: '1px solid rgba(11,46,79,0.08)', boxShadow: '0 10px 28px rgba(0,0,0,0.06)'}}>
-                      <span className="w-2 h-2 rounded-full bg-[#16A34A]" style={{boxShadow: '0 0 12px rgba(22,163,74,0.35)'}}></span>
-                      <span className="text-[#0B2E4F] text-[15px] font-semibold tracking-[-0.01em]">Public Accountability Ledger</span>
+                    <div className="min-h-[60px] md:min-h-[78px] rounded-xl md:rounded-[16px] flex items-center gap-2 md:gap-3 px-3 md:px-6 transition-all duration-200 hover:-translate-y-[2px] hover:border-[rgba(22,163,74,0.28)]" style={{background: '#F7F9FB', border: '1px solid rgba(11,46,79,0.08)', boxShadow: '0 10px 28px rgba(0,0,0,0.06)'}}>
+                      <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#16A34A]" style={{boxShadow: '0 0 12px rgba(22,163,74,0.35)'}}></span>
+                      <span className="text-[#0B2E4F] text-xs md:text-[15px] font-semibold tracking-[-0.01em]">Public Ledger</span>
                     </div>
-                    <div className="min-h-[78px] rounded-[16px] flex items-center gap-3 px-6 transition-all duration-200 hover:-translate-y-[2px] hover:border-[rgba(22,163,74,0.28)]" style={{background: '#F7F9FB', border: '1px solid rgba(11,46,79,0.08)', boxShadow: '0 10px 28px rgba(0,0,0,0.06)'}}>
-                      <span className="w-2 h-2 rounded-full bg-[#16A34A]" style={{boxShadow: '0 0 12px rgba(22,163,74,0.35)'}}></span>
-                      <span className="text-[#0B2E4F] text-[15px] font-semibold tracking-[-0.01em]">Third-Party Compliance Review</span>
+                    <div className="min-h-[60px] md:min-h-[78px] rounded-xl md:rounded-[16px] flex items-center gap-2 md:gap-3 px-3 md:px-6 transition-all duration-200 hover:-translate-y-[2px] hover:border-[rgba(22,163,74,0.28)]" style={{background: '#F7F9FB', border: '1px solid rgba(11,46,79,0.08)', boxShadow: '0 10px 28px rgba(0,0,0,0.06)'}}>
+                      <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#16A34A]" style={{boxShadow: '0 0 12px rgba(22,163,74,0.35)'}}></span>
+                      <span className="text-[#0B2E4F] text-xs md:text-[15px] font-semibold tracking-[-0.01em]">Compliance Review</span>
                     </div>
-                    <div className="min-h-[78px] rounded-[16px] flex items-center gap-3 px-6 transition-all duration-200 hover:-translate-y-[2px] hover:border-[rgba(22,163,74,0.28)]" style={{background: '#F7F9FB', border: '1px solid rgba(11,46,79,0.08)', boxShadow: '0 10px 28px rgba(0,0,0,0.06)'}}>
-                      <span className="w-2 h-2 rounded-full bg-[#16A34A]" style={{boxShadow: '0 0 12px rgba(22,163,74,0.35)'}}></span>
-                      <span className="text-[#0B2E4F] text-[15px] font-semibold tracking-[-0.01em]">National Transparency Standard</span>
+                    <div className="min-h-[60px] md:min-h-[78px] rounded-xl md:rounded-[16px] flex items-center gap-2 md:gap-3 px-3 md:px-6 transition-all duration-200 hover:-translate-y-[2px] hover:border-[rgba(22,163,74,0.28)]" style={{background: '#F7F9FB', border: '1px solid rgba(11,46,79,0.08)', boxShadow: '0 10px 28px rgba(0,0,0,0.06)'}}>
+                      <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#16A34A]" style={{boxShadow: '0 0 12px rgba(22,163,74,0.35)'}}></span>
+                      <span className="text-[#0B2E4F] text-xs md:text-[15px] font-semibold tracking-[-0.01em]">Transparency</span>
                     </div>
                   </div>
-                  <div className="mt-9 pt-9 flex justify-center" style={{borderTop: '1px solid #E2E8F0'}}>
-                    <button className="py-[18px] px-[42px] rounded-[999px] font-bold text-[15px] transition-all hover:-translate-y-[2px]" style={{background: 'linear-gradient(135deg,#D4AF37,#C89B2C)', color: '#0B2E4F', boxShadow: '0 12px 30px rgba(212,175,55,0.22)'}}>
-                      View Transparency Reports
+                  <div className="mt-6 md:mt-9 pt-4 md:pt-9 flex justify-center" style={{borderTop: '1px solid #E2E8F0'}}>
+                    <button className="py-3 md:py-[18px] px-6 md:px-[42px] rounded-[999px] font-bold text-xs md:text-[15px] transition-all hover:-translate-y-[2px]" style={{background: 'linear-gradient(135deg,#D4AF37,#C89B2C)', color: '#0B2E4F', boxShadow: '0 12px 30px rgba(212,175,55,0.22)'}}>
+                      View Reports
                     </button>
                   </div>
                 </div>
