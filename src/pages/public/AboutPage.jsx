@@ -5,42 +5,30 @@ export default function AboutPage() {
   return (
     <div className="bg-[#07141f] min-h-screen">
       {/* SECTION 1: Founding Statement */}
-      <section className="h-[520px] pt-[72px] pb-[72px]">
+      <section className="h-auto min-h-[400px] md:h-[520px] pt-[72px] pb-[72px]">
         <div className="container mx-auto px-4 md:px-8 max-w-[1440px]">
           <div className="max-w-[1180px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-[56px] items-center">
             {/* LEFT COLUMN */}
             <div className="max-w-[620px]">
-              <span className="text-[#D4AF37] text-[13px] font-bold uppercase tracking-[2px] mb-[24px] block">About City Boy Arena</span>
-              <h2 className="text-[72px] text-white font-extrabold leading-[0.98] mb-[28px]">Who We Are</h2>
-              <p className="text-[24px] text-white/78 leading-[1.55] max-w-[560px] mb-[42px]">
+<span className="text-[#D4AF37] text-[13px] font-bold uppercase tracking-[2px] mb-[24px] block">About City Boy Arena</span>
+              <h2 className="text-[56px] md:text-[72px] text-white font-extrabold leading-[0.98] mb-[28px]">Who We Are</h2>
+              <p className="text-[20px] md:text-[24px] text-white/78 leading-[1.55] max-w-[560px] mb-[42px]">
                 City Boy Arena is Nigeria's premier platform for nation-building, trust-anchored infrastructure, and digital civic engagement. We connect citizens to verified initiatives across all 36 states.
               </p>
               <div className="w-[120px] h-[2px] bg-[#18A34A] mb-[42px]"></div>
-              
-              {/* Vision & Mission */}
-              <div className="mt-12">
-                <p className="text-[#D4AF37] text-[16px] font-semibold mb-3">Our Vision</p>
-                <p className="text-white/80 text-lg leading-relaxed mb-8 max-w-2xl">
-                  A nation where every citizen has equal opportunity to succeed, leadership is accountable, and progress is driven by unity, fairness, and shared responsibility.
-                </p>
-                <p className="text-[#D4AF37] text-[16px] font-semibold mb-3">Our Mission</p>
-                <p className="text-white/80 text-lg leading-relaxed max-w-2xl">
-                  To mobilize, educate, and empower citizens through integrity, transparency, and active civic participation to strengthen democracy and national development.
-                </p>
-              </div>
-              
+               
               {/* Metrics Row */}
-              <div className="flex gap-[42px]">
+              <div className="flex gap-[32px] md:gap-[42px]">
                 <div>
-                  <div className="text-[46px] text-white font-extrabold">36</div>
+                  <div className="text-[36px] md:text-[46px] text-white font-extrabold">36</div>
                   <div className="text-white/58 text-[12px] uppercase tracking-[2px]">States</div>
                 </div>
                 <div>
-                  <div className="text-[46px] text-white font-extrabold">18K+</div>
+                  <div className="text-[36px] md:text-[46px] text-white font-extrabold">18K+</div>
                   <div className="text-white/58 text-[12px] uppercase tracking-[2px]">Volunteers</div>
                 </div>
                 <div>
-                  <div className="text-[46px] text-white font-extrabold">246</div>
+                  <div className="text-[36px] md:text-[46px] text-white font-extrabold">246</div>
                   <div className="text-white/58 text-[12px] uppercase tracking-[2px]">Projects</div>
                 </div>
               </div>
