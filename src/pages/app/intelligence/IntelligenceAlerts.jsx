@@ -5,14 +5,14 @@ import { useIntelStore } from '../../../store/intelStore'
 import { useSystemStore } from '../../../store/systemStore'
 import { 
   Bell, AlertTriangle, CheckCircle, Clock, Filter, Search, 
-  ChevronRight, Info, Warning, XCircle
+  ChevronRight, Info, AlertCircle, XCircle
 } from 'lucide-react'
 
 function AlertCard({ alert }) {
   const navigate = useNavigate()
   const typeStyles = {
     critical: { icon: XCircle, color: 'text-red-400', bg: 'bg-red-500/20 border-red-500/30' },
-    warning: { icon: Warning, color: 'text-yellow-400', bg: 'bg-yellow-500/20 border-yellow-500/30' },
+    warning: { icon: AlertCircle, color: 'text-yellow-400', bg: 'bg-yellow-500/20 border-yellow-500/30' },
     info: { icon: Info, color: 'text-blue-400', bg: 'bg-blue-500/20 border-blue-500/30' },
     success: { icon: CheckCircle, color: 'text-emerald-400', bg: 'bg-emerald-500/20 border-emerald-500/30' },
   }
