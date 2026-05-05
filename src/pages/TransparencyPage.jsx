@@ -60,7 +60,7 @@ export default function TransparencyPage() {
         </section>
 
         {/* Interactive Map Section */}
-        <section className="py-[120px] px-6 max-w-[1440px] mx-auto">
+        <section className="py-20 px-6 max-w-[1440px] mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div className="max-w-xl">
               <span className="font-label-caps text-secondary">Live Geo-Pulse</span>
@@ -116,7 +116,7 @@ export default function TransparencyPage() {
         </section>
 
         {/* Public Ledger Table */}
-        <section className="py-[120px] bg-surface-container-lowest">
+        <section className="py-20 bg-surface-container-lowest">
           <div className="max-w-[1440px] mx-auto px-6">
             <div className="mb-12">
               <h2 className="font-h2 text-white">Public Funding Ledger</h2>
@@ -166,7 +166,7 @@ export default function TransparencyPage() {
         </section>
 
         {/* Project Cards */}
-        <section className="py-[120px] px-6 max-w-[1440px] mx-auto">
+        <section className="py-20 px-6 max-w-[1440px] mx-auto">
           <div className="flex justify-between items-center mb-12">
             <h2 className="font-h2 text-white">Project Spotlight</h2>
             <button className="text-secondary font-bold flex items-center gap-2 hover:translate-x-1 transition-transform">
@@ -274,7 +274,7 @@ export default function TransparencyPage() {
         </section>
 
         {/* Reports Section */}
-        <section className="py-[120px] px-6 bg-[#001F33]">
+        <section className="py-20 px-6 bg-[#001F33]">
           <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
               <span className="font-label-caps text-secondary">Institutional Records</span>

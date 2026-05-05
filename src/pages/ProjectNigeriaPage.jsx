@@ -7,7 +7,7 @@ export default function ProjectNigeriaPage() {
     <>
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="relative h-[921px] flex items-center overflow-hidden">
+        <section className="relative h-[68vh] flex items-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <img className="w-full h-full object-cover brightness-[0.4]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBabdWin9I8xdGhAILzrSU42KTKicyezPSzjQi6fVYzKzVir2d4fn49MMdUbqqs_h2XZbX0j9zSNZveJDcRCj2Bcfv8BjdTG6tShMVA9Bq61DogG7Zyt0Qlbgqr3p_uMYT54JnxkJcEL6FekQdSDZXd3R4KHzwvN8JfFm4UIe4TvBjLEZeFgvH7NdeolqfaDcUCfnPlElqruOBDoL6TeK5FgAcO9hxhH3rICm_5LJhCWiix5WPfiaxo5LIxZgD2E8jfEELkGeWplA" alt="Lagos city"/>
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
@@ -48,7 +48,7 @@ export default function ProjectNigeriaPage() {
         </section>
 
         {/* Featured Stories Carousel */}
-        <section className="py-[120px] px-8 max-w-[1440px] mx-auto">
+        <section className="py-20 px-8 max-w-[1440px] mx-auto">
           <div className="flex justify-between items-end mb-12">
             <div>
               <span className="font-label-caps text-secondary mb-2 block uppercase">Editorial Selections</span>
@@ -84,7 +84,7 @@ export default function ProjectNigeriaPage() {
         </section>
 
         {/* Discover Nigeria Map */}
-        <section className="bg-surface-container-lowest py-[120px]">
+        <section className="bg-surface-container-lowest py-20">
           <div className="max-w-[1440px] mx-auto px-8">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
               <div className="lg:col-span-1">
@@ -128,7 +128,7 @@ export default function ProjectNigeriaPage() {
         </section>
 
         {/* Campaigns & Challenges Grid */}
-        <section className="py-[120px] px-8 max-w-[1440px] mx-auto">
+        <section className="py-20 px-8 max-w-[1440px] mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="font-label-caps text-secondary mb-2 block uppercase">Movement Initiatives</span>
             <h2 className="font-h2 mb-4 text-white">Join the Arena</h2>
@@ -211,7 +211,7 @@ export default function ProjectNigeriaPage() {
         </section>
 
         {/* Creator Spotlight */}
-        <section className="py-[120px] bg-surface-container-low overflow-hidden">
+        <section className="py-20 bg-surface-container-low overflow-hidden">
           <div className="max-w-[1440px] mx-auto px-8">
             <div className="flex items-center justify-between mb-16">
               <h2 className="font-h2 text-white">The Storytellers</h2>
@@ -262,7 +262,7 @@ export default function ProjectNigeriaPage() {
         </section>
 
         {/* Sponsor a Story CTA */}
-        <section className="px-8 max-w-[1440px] mx-auto py-[120px]">
+        <section className="px-8 max-w-[1440px] mx-auto py-20">
           <div className="relative rounded-[40px] overflow-hidden bg-primary-container p-12 md:p-24 border border-secondary/20 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
             <div className="absolute top-0 right-0 w-1/2 h-full opacity-30">
               <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2RvoLRxUJ0hHL7U4rKsGPG60o7cRxIu1Lnp-kbinW6neuFVmpbsf9z2lsz8-75E8OgZP5JoGo8QjZs9K2jB5zA5yD-5IXHb2Yd3zWc0rsOy0XdO1M3i5spjvx4a5cKMN9XMJyX0TTXH_dF7eU7ZAQFE6urXfFT37VtnPRdXuBUZBc13tt0A7ReDg1CyThARB5320ttp2JcUV7vrO55p1Fcl4olIATn-H9MSuqFfGsr7H4M7D27saOnnc8gEdxEJoLToWUPnEWlao" alt="Corporate professionals"/>
@@ -281,7 +281,7 @@ export default function ProjectNigeriaPage() {
         </section>
 
         {/* Content Feed Masonry */}
-        <section className="py-[120px] px-8 max-w-[1440px] mx-auto">
+        <section className="py-20 px-8 max-w-[1440px] mx-auto">
           <div className="flex items-center justify-between mb-16">
             <h2 className="font-h2 text-white">Civic Feed</h2>
             <div className="flex gap-2 p-1 bg-surface-container rounded-full border border-white/5">
