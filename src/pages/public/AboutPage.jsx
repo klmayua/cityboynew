@@ -17,6 +17,18 @@ export default function AboutPage() {
               </p>
               <div className="w-[120px] h-[2px] bg-[#18A34A] mb-[42px]"></div>
               
+              {/* Vision & Mission */}
+              <div className="mt-12">
+                <p className="text-[#D4AF37] text-[16px] font-semibold mb-3">Our Vision</p>
+                <p className="text-white/80 text-lg leading-relaxed mb-8 max-w-2xl">
+                  A nation where every citizen has equal opportunity to succeed, leadership is accountable, and progress is driven by unity, fairness, and shared responsibility.
+                </p>
+                <p className="text-[#D4AF37] text-[16px] font-semibold mb-3">Our Mission</p>
+                <p className="text-white/80 text-lg leading-relaxed max-w-2xl">
+                  To mobilize, educate, and empower citizens through integrity, transparency, and active civic participation to strengthen democracy and national development.
+                </p>
+              </div>
+              
               {/* Metrics Row */}
               <div className="flex gap-[42px]">
                 <div>
