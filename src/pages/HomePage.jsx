@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { GroupAdd, Favorite, Groups, Public, AccountBalance, VolunteerActivism, Verified, ArrowForward, Map, Star, Sensors, Construction, Diversity3, PlayArrow, Description, VerifiedUser, Handshake, FormatQuote, OpenInNew, TrendingFlat } from '@material-symbols-svg/react/outlined'
 import { useAnalytics } from '../analytics'
-import ArenaDesk from '../components/command/ArenaDesk'
 
 export default function HomePage() {
   const { trackJoinClick, trackDonateClick } = useAnalytics()
@@ -643,8 +642,6 @@ export default function HomePage() {
             </div>
           </div>
 </section>
-
-      <ArenaDesk />
     </>
   )
 }

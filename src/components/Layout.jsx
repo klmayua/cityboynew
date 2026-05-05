@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { Heart, Menu, X } from 'lucide-react'
 import BottomNav from './system/BottomNav'
+import ArenaDesk from './command/ArenaDesk'
 
 export const logout = () => {
   localStorage.removeItem('cityboy_auth')
@@ -199,14 +200,15 @@ function Footer() {
 export default function Layout() {
   const location = useLocation()
   
-  return (
+return (
     <div className="min-h-screen flex flex-col bg-[#121414] overflow-x-hidden">
       <Navbar />
-<main className="flex-1 pt-16 md:pt-20 pb-0" role="main">
+      <main className="flex-1 pt-16 md:pt-20 pb-0" role="main">
         <Outlet />
       </main>
       <Footer />
       <BottomNav />
+      <ArenaDesk />
     </div>
   )
 }
