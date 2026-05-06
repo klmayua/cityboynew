@@ -48,6 +48,9 @@ const DonorReports = lazy(() => import('./pages/app/donor/DonorReports'))
 const PartnerDashboard = lazy(() => import('./pages/app/partner/PartnerDashboard'))
 const PartnerSponsorships = lazy(() => import('./pages/app/partner/PartnerSponsorships'))
 const PartnerCampaigns = lazy(() => import('./pages/app/partner/PartnerCampaigns'))
+const DonorSettings = lazy(() => import('./pages/app/donor/DonorSettings'))
+const PartnerSettings = lazy(() => import('./pages/app/partner/PartnerSettings'))
+const ExecutiveSettings = lazy(() => import('./pages/app/executive/ExecutiveSettings'))
 
 const ChapterDashboard = lazy(() => import('./pages/app/chapter/ChapterDashboard'))
 const ChapterMembers = lazy(() => import('./pages/app/chapter/ChapterMembers'))
@@ -94,11 +97,19 @@ const AdminRoles = lazy(() => import('./pages/app/admin/AdminRoles'))
 const AdminProjects = lazy(() => import('./pages/app/admin/AdminProjects'))
 const AdminPayments = lazy(() => import('./pages/app/admin/AdminPayments'))
 const AdminCompliance = lazy(() => import('./pages/app/admin/AdminCompliance'))
+const AdminHealth = lazy(() => import('./pages/app/admin/AdminHealth'))
+const AdminRuntime = lazy(() => import('./pages/app/admin/AdminRuntime'))
+const AdminSeed = lazy(() => import('./pages/app/admin/AdminSeed'))
+const AdminConfig = lazy(() => import('./pages/app/admin/AdminConfig'))
+const AdminExports = lazy(() => import('./pages/app/admin/AdminExports'))
+const AdminLogs = lazy(() => import('./pages/app/admin/AdminLogs'))
 
 const LeadershipDashboard = lazy(() => import('./pages/app/leadership/LeadershipDashboard'))
 const PeopleDirectory = lazy(() => import('./pages/app/leadership/PeopleDirectory'))
 const LeadershipSentiment = lazy(() => import('./pages/app/leadership/LeadershipSentiment'))
 const LeadershipFunding = lazy(() => import('./pages/app/leadership/LeadershipFunding'))
+const LeadershipSettings = lazy(() => import('./pages/app/leadership/LeadershipSettings'))
+const LeadershipDocuments = lazy(() => import('./pages/app/leadership/LeadershipDocuments'))
 
 const LoginPage = lazy(() => import('./pages/auth/LoginPage'))
 const RegisterPage = lazy(() => import('./pages/auth/RegisterPage'))
@@ -209,9 +220,9 @@ function App() {
           <Route path="app/leadership/reports" element={<CommandReports />} />
           <Route path="app/leadership/monitoring" element={<IntelligenceOSINT />} />
           <Route path="app/leadership/sentiment" element={<LeadershipSentiment />} />
-          <Route path="app/leadership/documents" element={<AdminDashboard />} />
+          <Route path="app/leadership/documents" element={<LeadershipDocuments />} />
           <Route path="app/leadership/messages" element={<CommsChats />} />
-          <Route path="app/leadership/settings" element={<AdminDashboard />} />
+          <Route path="app/leadership/settings" element={<LeadershipSettings />} />
           <Route path="app/leadership/alerts" element={<IntelligenceAlerts />} />
           <Route path="app/volunteer/opportunities" element={<AppVolunteerCommunity />} />
           <Route path="app/volunteer/badges" element={<AppVolunteerRewards />} />
@@ -222,31 +233,31 @@ function App() {
           <Route path="app/chapter/treasury" element={<ChapterFinance />} />
           <Route path="app/chapter/funding" element={<LeadershipFunding />} />
           <Route path="app/chapter/inbox" element={<CommsChats />} />
-          <Route path="app/chapter/settings" element={<AdminDashboard />} />
+          <Route path="app/chapter/settings" element={<LeadershipSettings />} />
           <Route path="app/intelligence/osint" element={<IntelligenceOSINT />} />
           <Route path="app/intelligence/trends" element={<IntelligenceSentiment />} />
           <Route path="app/intelligence/threats" element={<IntelligenceAlerts />} />
           <Route path="app/intelligence/narratives" element={<IntelligenceSentiment />} />
           <Route path="app/intelligence/briefs" element={<CommandReports />} />
           <Route path="app/intelligence/escalations" element={<IntelligenceAlerts />} />
-          <Route path="app/admin/audit" element={<AdminDashboard />} />
-          <Route path="app/admin/health" element={<AdminDashboard />} />
-          <Route path="app/admin/runtime" element={<AdminDashboard />} />
-          <Route path="app/admin/seed" element={<AdminDashboard />} />
-          <Route path="app/admin/config" element={<AdminDashboard />} />
-          <Route path="app/admin/exports" element={<AdminDashboard />} />
-          <Route path="app/admin/logs" element={<AdminDashboard />} />
+          <Route path="app/admin/audit" element={<AdminLogs />} />
+          <Route path="app/admin/health" element={<AdminHealth />} />
+          <Route path="app/admin/runtime" element={<AdminRuntime />} />
+          <Route path="app/admin/seed" element={<AdminSeed />} />
+          <Route path="app/admin/config" element={<AdminConfig />} />
+          <Route path="app/admin/exports" element={<AdminExports />} />
+          <Route path="app/admin/logs" element={<AdminLogs />} />
           <Route path="app/donor/allocations" element={<DonorPortfolio />} />
           <Route path="app/donor/statements" element={<DonorPortfolio />} />
           <Route path="app/donor/concierge" element={<CommsChats />} />
-          <Route path="app/donor/settings" element={<AdminDashboard />} />
+          <Route path="app/donor/settings" element={<DonorSettings />} />
           <Route path="app/donor/missions" element={<DonorProjects />} />
           <Route path="app/partner/roi" element={<PartnerDashboard />} />
           <Route path="app/partner/reports" element={<CommandReports />} />
           <Route path="app/partner/messages" element={<CommsChats />} />
-          <Route path="app/partner/settings" element={<AdminDashboard />} />
+          <Route path="app/partner/settings" element={<PartnerSettings />} />
           <Route path="app/executive/messages" element={<CommsChats />} />
-          <Route path="app/executive/settings" element={<AdminDashboard />} />
+          <Route path="app/executive/settings" element={<ExecutiveSettings />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
